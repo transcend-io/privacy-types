@@ -2,10 +2,10 @@
 import { expect } from 'chai';
 
 // global
-import { TEST } from '../index';
+import { RequestAction } from '../index';
 
-describe('TEST', () => {
+describe('RequestAction contains ACCESS', () => {
   it('should test', () => {
-    expect(!!TEST).equals(true);
+    expect(Object.values(RequestAction)).contains('ACCESS');
   });
 });
