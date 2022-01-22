@@ -3,7 +3,7 @@ import { makeEnum } from '@transcend-io/type-utils';
 /**
  * The type of requests that allow for opt-in/opt-out
  */
-export const RequestActionOpt = makeEnum({
+export const RequestActionOptOut = makeEnum({
   /** Opt out of automated decision making */
   AutomatedDecisionMakingOptOut: 'AUTOMATED_DECISION_MAKING_OPT_OUT',
   /** Opt out of all communication */
@@ -15,14 +15,14 @@ export const RequestActionOpt = makeEnum({
 });
 
 /** Type override */
-export type RequestActionOpt =
-  typeof RequestActionOpt[keyof typeof RequestActionOpt];
+export type RequestActionOptOut =
+  typeof RequestActionOptOut[keyof typeof RequestActionOptOut];
 
 /**
  * The types of requests that Data Subject can make
  */
 export const RequestAction = makeEnum({
-  ...RequestActionOpt,
+  ...RequestActionOptOut,
   /** Data Download request */
   Access: 'ACCESS',
   /** Erase the profile from the system */
