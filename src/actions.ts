@@ -52,6 +52,23 @@ export type RequestActionObjectResolver =
   typeof RequestActionObjectResolver[keyof typeof RequestActionObjectResolver];
 
 /**
+ * The privacy actions that can be set at the object level for a
+ * data silo configured as webhook or cron integration.
+ *
+ * Privacy actions are specified globally and logic is left to the
+ * webhook service to implement. The individual objects can still be
+ * labeled for whether they should be included in data access requests.
+ */
+export const InternalDataSiloObjectResolver = makeEnum({
+  /** Data Download request */
+  Access: 'ACCESS',
+});
+
+/** Type override */
+export type InternalDataSiloObjectResolver =
+  typeof InternalDataSiloObjectResolver[keyof typeof InternalDataSiloObjectResolver];
+
+/**
  * The types of requests that Data Subject can make
  */
 export const RequestAction = makeEnum({
