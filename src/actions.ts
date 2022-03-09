@@ -83,8 +83,6 @@ export const RequestAction = makeEnum({
   Rectification: 'RECTIFICATION',
   /** Restrict processing */
   Restriction: 'RESTRICTION',
-  /** Check for data (after an erasure request) */
-  DataCheck: 'DATA_CHECK',
 });
 
 /** Type override */
