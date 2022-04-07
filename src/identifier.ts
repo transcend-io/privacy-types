@@ -1,0 +1,41 @@
+import { makeEnum } from '@transcend-io/type-utils';
+
+/**
+ * An identifier that can be used to communication with the data subject, also implies that the identifier is transcend supported
+ */
+export const CommunicationIdentifierType = makeEnum({
+  /** An email address */
+  Email: 'email',
+  // /** A phone number */
+  // Phone: 'phone',
+});
+
+/**
+ * Overload with type of integration
+ */
+export type CommunicationIdentifierType =
+  typeof CommunicationIdentifierType[keyof typeof CommunicationIdentifierType];
+
+/**
+ * The built in identification strategies
+ */
+export const IdentifierType = makeEnum({
+  ...CommunicationIdentifierType,
+  /** The core id of the organization (usually provided through login) */
+  CoreIdentifier: 'coreIdentifier',
+  /** A custom identifier */
+  Custom: 'custom',
+  /** A phone number */
+  Phone: 'phone',
+  /** An advertising ID (for a mobile device) */
+  AdvertisingId: 'advertisingId',
+  /** An ID for a stripe user */
+  StripeId: 'stripeId',
+  /** An ID for a chargebee user */
+  ChargebeeId: 'chargebeeId',
+});
+
+/**
+ * Overload with type of integration
+ */
+export type IdentifierType = typeof IdentifierType[keyof typeof IdentifierType];
