@@ -4,6 +4,30 @@ import { makeEnum } from '@transcend-io/type-utils';
  * The request statuses that a request can be created directly into.
  * This is useful for the purposes of uploading a backlog
  */
+export const PreflightRequestStatus = makeEnum({
+  /**
+   * The privacy request should be canceled because the
+   * user is not allowed to make the request. The user will be
+   * notified via email of the cancellation.
+   * Note: if the request is in silent mode, no emails are ever sent
+   */
+  CANCELED: 'CANCELED',
+  /**
+   * The privacy request is placed on hold and will need manual intervention.
+   * This will not trigger a notification to the end user, but admin can be
+   * notified that there is a request that requires their review.
+   */
+  ON_HOLD: 'ON_HOLD',
+});
+
+/** Type override */
+export type PreflightRequestStatus =
+  typeof PreflightRequestStatus[keyof typeof PreflightRequestStatus];
+
+/**
+ * The request statuses that a request can be created directly into.
+ * This is useful for the purposes of uploading a backlog
+ */
 export const CompletedRequestStatus = makeEnum({
   /** The data subject failed to verify at least one of the identifier they submit through the form */
   FailedVerification: 'FAILED_VERIFICATION',

@@ -2,7 +2,7 @@
   "author": "Transcend Inc.",
   "name": "@transcend-io/privacy-types",
   "description": "Core enums and types that can be useful when interacting with Transcend's public APIs.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "homepage": "https://github.com/transcend-io/privacy-types",
   "repository": {
     "type": "git",
