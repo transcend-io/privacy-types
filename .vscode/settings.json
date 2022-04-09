@@ -47,6 +47,8 @@
     "depcheck",
     "doctoc",
     "eqeqeq",
+    "filestack",
+    "filestackHandle",
     "gaid",
     "gpadvid",
     "idfa",
