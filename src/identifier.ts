@@ -27,10 +27,21 @@ export const IdentifierType = makeEnum({
   Custom: 'custom',
   /** A phone number */
   Phone: 'phone',
-  /** Google Android mobile identifier */
-  Gpadvid: 'gpadvid',
+  /**
+   * Google/Android mobile identifier
+   *
+   * @see https://www.singular.net/blog/google-advertising-id-gaid/
+   * AKA adid - android advertising id
+   */
+  Gaid: 'gaid',
   /** Apple ios mobile identifier */
   Idfa: 'idfa',
+  /** Microsoft Advertising Id */
+  MicrosoftAdvertisingId: 'microsoftAdvertisingId',
+  /** Amazon fire Advertising Id */
+  AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
+  /** The handle for the filestack file  */
+  FilestackHandle: 'filestackHandle',
   /** An ID for a stripe user */
   StripeId: 'stripeId',
   /** An ID for a chargebee user */

@@ -37,6 +37,8 @@
     "source.fixAll": true
   },
   "cSpell.words": [
+    "aaid",
+    "Adid",
     "camelcase",
     "chargebee",
     "codomain",
@@ -45,6 +47,9 @@
     "depcheck",
     "doctoc",
     "eqeqeq",
+    "filestack",
+    "filestackHandle",
+    "gaid",
     "gpadvid",
     "idfa",
     "linebreak",
