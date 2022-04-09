@@ -31,6 +31,12 @@ export const IdentifierType = makeEnum({
   Gpadvid: 'gpadvid',
   /** Apple ios mobile identifier */
   Idfa: 'idfa',
+  /** Google Android mobile identifier */
+  Adid: 'aaid',
+  /** Microsoft Advertising Id */
+  MicrosoftAdvertisingId: 'microsoftAdvertisingId',
+  /** Amazon fire Advertising Id */
+  AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
   /** An ID for a stripe user */
   StripeId: 'stripeId',
   /** An ID for a chargebee user */
