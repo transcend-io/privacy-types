@@ -46,6 +46,8 @@ export const IdentifierType = makeEnum({
   StripeId: 'stripeId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
+  /** Talkable uuid */
+  TalkableUUID: 'talkableUUID',
   /**
    * An advertising ID (for a mobile device)
    * TODO: https://transcend.height.app/T-13657 - remove this in favor of idfa and gpadvid
