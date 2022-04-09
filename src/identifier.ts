@@ -27,12 +27,15 @@ export const IdentifierType = makeEnum({
   Custom: 'custom',
   /** A phone number */
   Phone: 'phone',
-  /** Google Android mobile identifier */
-  Gpadvid: 'gpadvid',
+  /**
+   * Google/Android mobile identifier
+   *
+   * @see https://www.singular.net/blog/google-advertising-id-gaid/
+   * AKA adid - android advertising id
+   */
+  Gaid: 'gaid',
   /** Apple ios mobile identifier */
   Idfa: 'idfa',
-  /** Google Android mobile identifier */
-  Adid: 'aaid',
   /** Microsoft Advertising Id */
   MicrosoftAdvertisingId: 'microsoftAdvertisingId',
   /** Amazon fire Advertising Id */
