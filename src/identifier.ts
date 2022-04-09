@@ -27,12 +27,19 @@ export const IdentifierType = makeEnum({
   Custom: 'custom',
   /** A phone number */
   Phone: 'phone',
-  /** An advertising ID (for a mobile device) */
-  AdvertisingId: 'advertisingId',
+  /** Google Android mobile identifier */
+  Gpadvid: 'gpadvid',
+  /** Apple ios mobile identifier */
+  Idfa: 'idfa',
   /** An ID for a stripe user */
   StripeId: 'stripeId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
+  /**
+   * An advertising ID (for a mobile device)
+   * TODO: https://transcend.height.app/T-13657 - remove this in favor of idfa and gpadvid
+   */
+  AdvertisingId: 'advertisingId',
 });
 
 /**

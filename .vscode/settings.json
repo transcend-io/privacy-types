@@ -45,6 +45,8 @@
     "depcheck",
     "doctoc",
     "eqeqeq",
+    "gpadvid",
+    "idfa",
     "linebreak",
     "maxlevel",
     "Optionalize",
