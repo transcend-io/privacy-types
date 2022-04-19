@@ -6,6 +6,7 @@ import { FinancialSubCategory } from './financial';
 export const DefaultDataSubCategoryType = makeEnum({
   ...ContactSubCategory,
   ...FinancialSubCategory,
+  // TODO: https://transcend.height.app/T-14003 - add more subcategories (health, demographic, etc.)
 });
 
 /**
