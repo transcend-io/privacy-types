@@ -1,10 +1,10 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+import { ContactSubCategory } from './contact';
 import { FinancialSubCategory } from './financial';
-import { CommunicationIdentifierType } from '../identifier';
 
 export const DefaultDataSubCategoryType = makeEnum({
-  ...CommunicationIdentifierType,
+  ...ContactSubCategory,
   ...FinancialSubCategory,
 });
 
