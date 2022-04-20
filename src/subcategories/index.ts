@@ -1,10 +1,10 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
-import { ContactSubCategory } from './contact';
-import { FinancialSubCategory } from './financial';
 import { ConnectionSubCategory } from './connection';
+import { ContactSubCategory } from './contact';
 import { DemographicSubCategory } from './demographic';
 import { DeviceSubCategory } from './device';
+import { FinancialSubCategory } from './financial';
 import { HealthSubCategory } from './health';
 import { IdSubCategory } from './id';
 import { LocationSubCategory } from './location';
