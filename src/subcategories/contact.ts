@@ -6,6 +6,8 @@ export const ContactSubCategory = makeEnum({
   /** A phone number */
   Phone: 'phone',
   // TODO: https://transcend.height.app/T-14003 - add more contact subcategories (address, etc.)
+  /** Fallback subcategory */
+  Contact: 'contact',
 });
 
 /**
