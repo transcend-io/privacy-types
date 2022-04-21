@@ -10,6 +10,6 @@ describe('RequestAction contains ACCESS', () => {
   });
 
   it('should find email among DefaultDataSubCategoryType', () => {
-    expect(Object.values(DefaultDataSubCategoryType)).contains('email');
+    expect(Object.values(DefaultDataSubCategoryType)).contains('EMAIL');
   });
 });
