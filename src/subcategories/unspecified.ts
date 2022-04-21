@@ -2,7 +2,7 @@ import { makeEnum } from '@transcend-io/type-utils';
 
 export const UnspecifiedSubCategory = makeEnum({
   /** Fallback subcategory */
-  Unspecified: 'unspecified',
+  Unspecified: 'UNSPECIFIED',
 });
 
 /**

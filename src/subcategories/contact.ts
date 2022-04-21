@@ -2,12 +2,12 @@ import { makeEnum } from '@transcend-io/type-utils';
 
 export const ContactSubCategory = makeEnum({
   /** An email address */
-  Email: 'email',
+  Email: 'EMAIL',
   /** A phone number */
-  Phone: 'phone',
+  Phone: 'PHONE',
   // TODO: https://transcend.height.app/T-14003 - add more contact subcategories (address, etc.)
   /** Fallback subcategory */
-  Contact: 'contact',
+  Contact: 'CONTACT',
 });
 
 /**
