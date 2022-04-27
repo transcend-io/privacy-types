@@ -33,7 +33,7 @@ export const DefaultDataSubCategoryType = makeEnum({
 });
 
 /**
- * Overload with type of integration
+ * Overload type
  */
 export type DefaultDataSubCategoryType =
   typeof DefaultDataSubCategoryType[keyof typeof DefaultDataSubCategoryType];
