@@ -3,7 +3,7 @@ import { makeEnum } from '@transcend-io/type-utils';
 export const OnlineActivitySubCategory = makeEnum({
   // TODO: https://transcend.height.app/T-14003 - add more subcategories
   /** Fallback subcategory */
-  OnlineActivity: 'OnlineActivity',
+  OnlineActivity: 'ONLINE_ACTIVITY',
 });
 
 /**
