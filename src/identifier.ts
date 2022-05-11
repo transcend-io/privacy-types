@@ -36,6 +36,14 @@ export const IdentifierType = makeEnum({
   Gaid: 'gaid',
   /** Apple ios mobile identifier */
   Idfa: 'idfa',
+  /**
+   * The Identifier for Vendors
+   *
+   * @see https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor
+   */
+  Idfv: 'idfv',
+  /* Browser Id (such as browser fingerprint ID) */
+  BrowserId: 'browserId',
   /** Microsoft Advertising Id */
   MicrosoftAdvertisingId: 'microsoftAdvertisingId',
   /** Amazon fire Advertising Id */
@@ -46,6 +54,8 @@ export const IdentifierType = makeEnum({
   StripeId: 'stripeId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
+  /** An ID for a Branch.io user */
+  BranchIoId: 'branchIoId',
   /** Talkable uuid */
   TalkableUUID: 'talkableUUID',
   /**
