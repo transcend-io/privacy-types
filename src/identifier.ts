@@ -54,8 +54,6 @@ export const IdentifierType = makeEnum({
   StripeId: 'stripeId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
-  /** An ID for a Branch.io user */
-  BranchIoId: 'branchIoId',
   /** Talkable uuid */
   TalkableUUID: 'talkableUUID',
   /**
