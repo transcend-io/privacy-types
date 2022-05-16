@@ -48,6 +48,8 @@ export const IdentifierType = makeEnum({
   MicrosoftAdvertisingId: 'microsoftAdvertisingId',
   /** Amazon fire Advertising Id */
   AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
+  /** Roku Advertising Id */
+  RokuAdvertisingId: 'rokuAdvertisingId',
   /** The handle for the filestack file  */
   FilestackHandle: 'filestackHandle',
   /** An ID for a stripe user */
