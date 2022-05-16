@@ -48,8 +48,12 @@ export const IdentifierType = makeEnum({
   MicrosoftAdvertisingId: 'microsoftAdvertisingId',
   /** Amazon fire Advertising Id */
   AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
-  /** Roku Advertising Id */
-  RokuAdvertisingId: 'rokuAdvertisingId',
+  /**
+   * Roku Advertising Id
+   *
+   * @see https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md
+   */
+  Rida: 'rida',
   /** The handle for the filestack file  */
   FilestackHandle: 'filestackHandle',
   /** An ID for a stripe user */
