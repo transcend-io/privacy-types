@@ -1,9 +1,18 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 export const UserProfileSubCategory = makeEnum({
-  // TODO: https://transcend.height.app/T-14003 - add more subcategories
   /** Fallback subcategory */
   UserProfile: 'USER_PROFILE',
+  /** Information about one's children */
+  Children: 'CHILDREN',
+  /** Divorce information */
+  Divorce: 'DIVORCE',
+  /** Information about marital status */
+  Marriage: 'MARRIAGE',
+  /** Information about death */
+  Death: 'DEATH',
+  /** Relationship information */
+  Relationship: 'RELATIONSHIP',
 });
 
 /**
