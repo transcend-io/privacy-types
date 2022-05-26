@@ -20,7 +20,6 @@ export const DemographicSubCategory = makeEnum({
   Religion: 'RELIGION',
   /** Information about an individual's political beliefs or party membership */
   PoliticalAffiliation: 'POLITICAL_AFFILIATION',
-  // TODO: https://transcend.height.app/T-14003 - add more subcategories
   /** Fallback subcategory */
   Demographic: 'DEMOGRAPHIC',
 });

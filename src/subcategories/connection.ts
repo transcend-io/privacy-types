@@ -6,9 +6,9 @@ import { makeEnum } from '@transcend-io/type-utils';
  */
 export const ConnectionSubCategory = makeEnum({
   /** A Media Access Control address */
-  MAC_ADDRESS: 'MAC_ADDRESS',
+  MACAddress: 'MAC_ADDRESS',
   /** An internet protocol address */
-  IP_ADDRESS: 'IP_ADDRESS',
+  IPAddress: 'IP_ADDRESS',
   /** Fallback subcategory */
   Connection: 'CONNECTION',
 });
