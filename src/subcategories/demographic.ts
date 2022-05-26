@@ -1,18 +1,25 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+/** Information about the features or characteristics of a user */
 export const DemographicSubCategory = makeEnum({
-  /** Demographic data about race */
-  Race: 'RACE',
-  /** Demographic data about gender */
+  /** Information about an individual's racial or ethnic origin */
+  RaceOrEthnicity: 'RACE_OR_ETHNICITY',
+  /** An individual's gender */
   Gender: 'GENDER',
-  /** Demographic data about birth date */
+  /** An individual's date of birth */
   DateOfBirth: 'DATE_OF_BIRTH',
-  /** Demographic data about location */
-  Location: 'LOCATION',
-  /** Demographic data about industry (occupation) */
+  /** An individual's country, city, or other static location information */
+  Region: 'REGION',
+  /** The industry in which an individual works */
   Industry: 'INDUSTRY',
-  /** Demographic data about sexual orientation */
+  /** An individual's sexual orientation */
   SexualOrientation: 'SEXUAL_ORIENTATION',
+  /** Information about an individual's union membership */
+  UnionMembership: 'UNION_MEMBERSHIP',
+  /** Information about an individual's religious beliefs */
+  Religion: 'RELIGION',
+  /** Information about an individual's political beliefs or party membership */
+  PoliticalAffiliation: 'POLITICAL_AFFILIATION',
   // TODO: https://transcend.height.app/T-14003 - add more subcategories
   /** Fallback subcategory */
   Demographic: 'DEMOGRAPHIC',

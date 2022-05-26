@@ -1,18 +1,14 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 export const UserProfileSubCategory = makeEnum({
+  /** A link to an individual's profile picture */
+  ProfilePictureURL: 'PROFILE_PICTURE_URL',
+  /** An individual's profile picture */
+  ProfilePictureImage: 'PROFILE_PICTURE_IMAGE',
+  /** The user's stated preferences while using an app */
+  UserPreferences: 'USER_PREFERENCES',
   /** Fallback subcategory */
   UserProfile: 'USER_PROFILE',
-  /** Information about one's children */
-  Children: 'CHILDREN',
-  /** Divorce information */
-  Divorce: 'DIVORCE',
-  /** Information about marital status */
-  Marriage: 'MARRIAGE',
-  /** Information about death */
-  Death: 'DEATH',
-  /** Relationship information */
-  Relationship: 'RELATIONSHIP',
 });
 
 /**

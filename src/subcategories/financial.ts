@@ -1,22 +1,21 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+/** Information about an individual's finances */
 export const FinancialSubCategory = makeEnum({
-  /** Fallback subcategory */
-  Financial: 'FINANCIAL',
-  /** Credit Card Number */
-  CreditCardNumber: 'CREDIT_CARD_NUMBER',
   /** Account number */
   AccountNumber: 'ACCOUNT_NUMBER',
+  /** Credit Card Number */
+  CreditCardNumber: 'CREDIT_CARD_NUMBER',
   /** Income */
   Income: 'INCOME',
   /** Tax information */
   Tax: 'TAX',
   /** Routing number */
   RoutingNumber: 'ROUTING_NUMBER',
-  /** Billing address */
-  BillingAddress: 'BILLING_ADDRESS',
   /** Purchase history */
-  PurchaseHistory: 'PURCHASE_HISTORY',
+  DebitCardNUmber: 'DEBIT_CARD_NUMBER',
+  /** Fallback subcategory */
+  Financial: 'FINANCIAL',
 });
 
 /**

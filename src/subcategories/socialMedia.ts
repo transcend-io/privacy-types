@@ -3,14 +3,8 @@ import { makeEnum } from '@transcend-io/type-utils';
 export const SocialMediaSubCategory = makeEnum({
   /** Fallback subcategory */
   SocialMedia: 'SOCIAL_MEDIA',
-  /** Profile */
-  Profile: 'PROFILE',
-  /** Messages */
-  Messages: 'MESSAGES',
-  /** Interactions */
-  Interactions: 'INTERACTIONS',
-  /** Relationships */
-  Relationships: 'RELATIONSHIPS',
+  /** A link to an individual's social media profile */
+  ProfileURL: 'PROFILE_URL',
 });
 
 /**

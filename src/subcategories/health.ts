@@ -1,34 +1,15 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+/** Information about an individual's health */
 export const HealthSubCategory = makeEnum({
+  /** Information relating to an individual's health insurance */
+  Insurance: 'INSURANCE',
+  /** Biometric data from an individual like heart rate or fitness level information */
+  Biometrics: 'BIOMETRICS',
+  /** An individual's genetic data */
+  Genetics: 'GENETICS',
   /** Fallback subcategory */
   Health: 'HEALTH',
-  /** Life expectancy */
-  LifeExpectancy: 'LIFE_EXPECTANCY',
-  /** Risk factors */
-  RiskFactors: 'RISK_FACTORS',
-  /** Pre existing conditions */
-  PreExistingConditions: 'PRE_EXISTING_CONDITIONS',
-  /** Bio metrics */
-  Biometrics: 'BIOMETRICS',
-  /** Fitness tracking */
-  FitnessTracking: 'FITNESS_TRACKING',
-  /** Food consumption */
-  FoodConsumption: 'FOOD_CONSUMPTION',
-  /** Treatment records */
-  TreatmentRecords: 'TREATMENT_RECORDS',
-  /** Imaging */
-  Imaging: 'IMAGING',
-  /** Prescription */
-  Prescriptions: 'PRESCRIPTIONS',
-  /** Immunization records */
-  ImmunizationRecords: 'IMMUNIZATION_RECORDS',
-  /** Drug purchases */
-  DrugPurchases: 'DRUG_PURCHASES',
-  /** Illicit drug use */
-  IllicitDrugUse: 'ILLICIT_DRUG_USE',
-  /** Pregnancy */
-  Pregnancy: 'PREGNANCY',
 });
 
 /**

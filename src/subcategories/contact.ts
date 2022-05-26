@@ -5,11 +5,9 @@ export const ContactSubCategory = makeEnum({
   Email: 'EMAIL',
   /** A phone number */
   Phone: 'PHONE',
-  /** A mailing address */
-  MailingAddress: 'MAILING_ADDRESS',
-  /** First, last, middle names */
-  Name: 'NAME',
-  /** The title to refer to the person */
+  /** A physical postal address */
+  PhysicalAddress: 'PHYSICAL_ADDRESS',
+  /** How to refer to someone (e.g. Sir/Madam/Mr/Ms) */
   Title: 'TITLE',
   /** Fallback subcategory */
   Contact: 'CONTACT',
