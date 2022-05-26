@@ -1,11 +1,21 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+/** Information about an individual's finances */
 export const FinancialSubCategory = makeEnum({
-  // TODO: https://transcend.height.app/T-14003 - add more financial subcategories (routing number, etc.)
-  /** Fallback subcategory */
-  Financial: 'FINANCIAL',
+  /** Account number */
+  AccountNumber: 'ACCOUNT_NUMBER',
   /** Credit Card Number */
   CreditCardNumber: 'CREDIT_CARD_NUMBER',
+  /** Income */
+  Income: 'INCOME',
+  /** Tax information */
+  Tax: 'TAX',
+  /** Routing number */
+  RoutingNumber: 'ROUTING_NUMBER',
+  /** Debit Card Number */
+  DebitCardNumber: 'DEBIT_CARD_NUMBER',
+  /** Fallback subcategory */
+  Financial: 'FINANCIAL',
 });
 
 /**
