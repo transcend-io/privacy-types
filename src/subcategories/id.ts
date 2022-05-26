@@ -4,8 +4,6 @@ import { makeEnum } from '@transcend-io/type-utils';
 export const IdSubCategory = makeEnum({
   /** A username associated with an individual */
   Username: 'USERNAME',
-  /** An individual's phone number */
-  PhoneNumber: 'PHONE_NUMBER',
   /** A person's name */
   Name: 'NAME',
   /** An individual's (US) Social security number */
