@@ -9,6 +9,8 @@ export const ConnectionSubCategory = makeEnum({
   MACAddress: 'MAC_ADDRESS',
   /** An internet protocol address */
   IPAddress: 'IP_ADDRESS',
+  /** The User-Agent request header */
+  UserAgent: 'USER_AGENT',
   /** Fallback subcategory */
   Connection: 'CONNECTION',
 });

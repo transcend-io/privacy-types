@@ -1,15 +1,11 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 /**
- * Permanent (e.g., device IDs, MAC address) or temporary (e.g., IP address)
- * identifiers needed to establish a connection for the current
- * browsing session.
+ * The type of operating system (OS) or web browser that the user uses, or similar computer or device information.
  */
 export const DeviceSubCategory = makeEnum({
-  /** A Media Access Control address used to uniquely identify devices on a network */
-  MACAddress: 'MAC_ADDRESS',
-  /** An internet protocol address  */
-  IPAddress: 'IP_ADDRESS',
+  /** A unique device identifier */
+  SerialNumber: 'SERIAL_NUMBER',
   /** Fallback subcategory */
   Device: 'DEVICE',
 });
