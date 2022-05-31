@@ -12,7 +12,6 @@ import { OtherPurposeSubCategory } from './other';
 import { PersonalizationPurposeSubCategory } from './personalization';
 import { SalePurposeSubCategory } from './sale';
 import { TransferPurposeSubCategory } from './transfer';
-import { UnspecifiedPurposeSubCategory } from './unspecified';
 
 export const DefaultPurposeSubCategoryType = makeEnum({
   ...AdditionalPurposeSubCategory,
@@ -27,7 +26,6 @@ export const DefaultPurposeSubCategoryType = makeEnum({
   ...PersonalizationPurposeSubCategory,
   ...SalePurposeSubCategory,
   ...TransferPurposeSubCategory,
-  ...UnspecifiedPurposeSubCategory,
 });
 
 /**
