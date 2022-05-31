@@ -12,7 +12,6 @@ import { OnlineActivitySubCategory } from './onlineActivity';
 import { SocialMediaSubCategory } from './socialMedia';
 import { SurveySubCategory } from './survey';
 import { TrackingSubCategory } from './tracking';
-import { UnspecifiedSubCategory } from './unspecified';
 import { UserProfileSubCategory } from './userProfile';
 
 export const DefaultDataSubCategoryType = makeEnum({
@@ -28,7 +27,6 @@ export const DefaultDataSubCategoryType = makeEnum({
   ...SocialMediaSubCategory,
   ...SurveySubCategory,
   ...TrackingSubCategory,
-  ...UnspecifiedSubCategory,
   ...UserProfileSubCategory,
 });
 
