@@ -36,10 +36,24 @@ export const IdentifierType = makeEnum({
   Gaid: 'gaid',
   /** Apple ios mobile identifier */
   Idfa: 'idfa',
+  /**
+   * The Identifier for Vendors
+   *
+   * @see https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor
+   */
+  Idfv: 'idfv',
+  /* Browser Id (such as browser fingerprint ID) */
+  BrowserId: 'browserId',
   /** Microsoft Advertising Id */
   MicrosoftAdvertisingId: 'microsoftAdvertisingId',
   /** Amazon fire Advertising Id */
   AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
+  /**
+   * Roku Advertising Id
+   *
+   * @see https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md
+   */
+  Rida: 'rida',
   /** The handle for the filestack file  */
   FilestackHandle: 'filestackHandle',
   /** An ID for a stripe user */

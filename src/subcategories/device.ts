@@ -1,7 +1,11 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
+/**
+ * The type of operating system (OS) or web browser that the user uses, or similar computer or device information.
+ */
 export const DeviceSubCategory = makeEnum({
-  // TODO: https://transcend.height.app/T-14003 - add more subcategories
+  /** A unique device identifier */
+  SerialNumber: 'SERIAL_NUMBER',
   /** Fallback subcategory */
   Device: 'DEVICE',
 });
