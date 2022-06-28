@@ -131,7 +131,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ManageSombraRootKeys]: {
     dependencies: [],
-    description: 'Rotate Hosted Sombra keys',
+    description:
+      'Ability to perform a key rotation on the encryption keys used within your account.',
     title: 'Rotate Hosted Sombra keys',
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
@@ -140,7 +141,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'View Consent Manager',
     type: ScopeType.View,
     dependencies: [],
-    description: 'View the Consent Manager configuration',
+    description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
   },
   [ScopeName.ManageConsentManager]: {
@@ -149,7 +150,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ManageDataFlow,
       ScopeName.ViewDataFlow,
     ],
-    description: 'Manage & Deploy Consent Manager',
+    description:
+      'Manage & deploy the consent manager changes to your websites.',
     title: 'Manage Consent Manager',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
@@ -159,8 +161,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewDataSubjectRequestSettings,
       ScopeName.ViewRequestIdentitySettings,
     ],
-    description:
-      'Submit new data subject requests programmatically through our API.',
+    description: 'Submit a new privacy requests.',
     title: 'Submit New Data Subject Request',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
@@ -180,7 +181,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.DeployPrivacyCenter]: {
     dependencies: [ScopeName.ManagePrivacyCenter],
     description:
-      'Launch the Privacy Center on your own domain, and publish new changes to your deployed instance.',
+      'Launch the Privacy Center on your own domain, and publish new changes.',
     title: 'Publish Privacy Center',
     type: ScopeType.Modify,
     products: [
@@ -281,7 +282,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageRequestIdentities]: {
     dependencies: [ScopeName.ViewRequestIdentitySettings],
     description:
-      'Manage how your organization will verify the identities of new data subject requests, and how that identity will be enriched for all of your data silos to lookup that person.', // eslint-disable-line max-len
+      'Manage how your organization will verify the identities of new privacy requests, and how that identity will be enriched for all of your data silos to lookup that person.', // eslint-disable-line max-len
     title: 'Manage Request Identity Verification',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
@@ -293,7 +294,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ManageRequestCompilation,
     ],
     description:
-      'The ability to approve and manage the state of data subject requests, and communicate with the data subject.',
+      'The ability to approve and manage the state of privacy requests, and communicate with the data subject.',
     title: 'Request Approval and Communication',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
@@ -309,7 +310,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewDataMap]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
     description:
-      "View your organization's Data Map and see the configuration settings for each action your support",
+      "View your organization's Data Map and see the configuration settings for each action your support.",
     title: 'View Data Map',
     type: ScopeType.View,
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
@@ -317,7 +318,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewDataSubjectRequestSettings]: {
     dependencies: [],
     description:
-      'View the DSR actions settings and data subject categories that your organization supports.',
+      'View the privacy request actions settings and data subject categories that your organization supports.',
     title: 'View Data Subject Request Settings',
     type: ScopeType.View,
     products: [TranscendProduct.PrivacyRequests],
@@ -351,7 +352,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewSSO]: {
     dependencies: [],
-    description: 'View SSO configuration for your organization.',
+    description: 'View the SSO configuration for your organization.',
     title: 'View SSO',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
@@ -367,22 +368,21 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewScopes]: {
     dependencies: [ScopeName.ViewEmployees],
     description:
-      'View the potential access control scopes that can be assigned to members in the organization',
+      'View the potential access control scopes that can be assigned to members in the organization.',
     title: 'View Scopes',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ViewEmployees]: {
     dependencies: [],
-    description: 'View the employees within your organization.',
+    description: 'View the list of employees within your organization.',
     title: 'View Employees',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ViewOptOutStatus]: {
     dependencies: [],
-    description:
-      'Check the opt out status of data subjects of your organization',
+    description: 'Check the opt out status of a particular user.',
     title: 'View Opt Out Status',
     type: ScopeType.View,
     products: [
@@ -393,7 +393,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewEmailDomains]: {
     dependencies: [],
     description:
-      'View the domains from which Transcend can send emails on behalf of your organization',
+      'View the domains from which Transcend can send emails on behalf of your organization.',
     title: 'View Email Domains',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
@@ -401,35 +401,38 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageEmailDomains]: {
     dependencies: [ScopeName.ViewEmailDomains],
     description:
-      'Manage the domains from which Transcend can send emails on behalf of your organization',
+      'Manage the domains from which Transcend can send emails on behalf of your organization.',
     title: 'Manage Email Domains',
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ViewDataInventory]: {
     dependencies: [ScopeName.ViewDataMap, ScopeName.ViewGlobalAttributes],
-    description: 'Check data inventory information for your organization',
+    description:
+      'Ability to view the data silos, datapoints, data categories and processing purposes in your data inventory.',
     title: 'View Data Inventory',
     type: ScopeType.View,
     products: [TranscendProduct.DataMapping],
   },
   [ScopeName.ManageDataInventory]: {
     dependencies: [ScopeName.ViewDataInventory],
-    description: 'Manage the data inventory information for your organization',
+    description: 'Manage the data inventory information for your organization.',
     title: 'Manage Data Inventory',
     type: ScopeType.Modify,
     products: [TranscendProduct.DataMapping],
   },
   [ScopeName.ViewGlobalAttributes]: {
     dependencies: [],
-    description: 'View Global Attributes',
+    description: 'View the attribute definition key/value pairs.',
     title: 'VIew Global Attributes',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ManageGlobalAttributes]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
-    description: 'Manage Global Attributes',
+    description:
+      // eslint-disable-next-line max-len
+      'Under the infrastructure tab, manage your custom attributes and select which views those attributes should display in.',
     title: 'Manage Global Attributes',
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
@@ -444,7 +447,7 @@ export const TRANSCEND_SCOPES: {
     dependencies: getEntries(SCOPES_WITHOUT_VIEW_ONLY)
       .filter(([, v]) => v.type === ScopeType.View)
       .map(([k]) => k),
-    description: 'Access is granted to all of the scopes of type "View"',
+    description: 'Access is granted to all of the scopes of type "View".',
     title: 'View Only',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],

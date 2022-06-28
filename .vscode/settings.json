@@ -45,6 +45,7 @@
     "compat",
     "datamap",
     "datapoint",
+    "datapoints",
     "depcheck",
     "doctoc",
     "eqeqeq",
@@ -62,8 +63,8 @@
     "pnpify",
     "preact",
     "Requirize",
-    "Sombra",
     "rida",
+    "Sombra",
     "thlorenz",
     "tsbuildinfo",
     "yarnpkg"
