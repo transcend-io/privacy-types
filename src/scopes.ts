@@ -153,16 +153,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
   },
-  [ScopeName.MakeDataSubjectRequest]: {
-    dependencies: [
-      ScopeName.ViewDataSubjectRequestSettings,
-      ScopeName.ViewRequestIdentitySettings,
-    ],
-    description: 'Submit a new privacy requests.',
-    title: 'Submit New Data Subject Request',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
-  },
   [ScopeName.ManageOrganizationInfo]: {
     dependencies: [],
     description: 'Edit the top-level organization settings details.',
@@ -239,11 +229,79 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
+  [ScopeName.MakeDataSubjectRequest]: {
+    dependencies: [
+      ScopeName.ViewDataSubjectRequestSettings,
+      ScopeName.ViewRequestIdentitySettings,
+    ],
+    description: 'Submit a new privacy requests.',
+    title: 'Submit New Data Subject Request',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ManageDataSubjectRequestSettings]: {
+    dependencies: [ScopeName.ViewDataSubjectRequestSettings],
+    description:
+      'Make changes to the request actions that your organization allows, as well as what data subjects you will serve.',
+    title: 'Manage Data Subject Request Settings',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ManageEmailTemplates]: {
+    dependencies: [ScopeName.ViewEmailTemplates],
+    description:
+      'Manage the email communication templates that your organization uses to communicate with your data subjects.',
+    title: 'Manage Email Templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests],
+  },
   [ScopeName.ManageRequestIdentities]: {
     dependencies: [ScopeName.ViewRequestIdentitySettings],
     description:
       'Manage how your organization will verify the identities of new privacy requests, and how that identity will be enriched for all of your data silos to lookup that person.', // eslint-disable-line max-len
     title: 'Manage Request Identity Verification',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.DeployPrivacyCenter]: {
+    dependencies: [ScopeName.ManagePrivacyCenter],
+    description:
+      'Launch the Privacy Center on your own domain, and publish new changes.',
+    title: 'Publish Privacy Center',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.PrivacyRequests,
+      TranscendProduct.PrivacyCenter,
+    ],
+  },
+  [ScopeName.ManageDataMap]: {
+    dependencies: [ScopeName.ViewDataMap],
+    description:
+      'Edit the configurations on your data silos and determine what information should be included in a request.',
+    title: 'Manage Data Map',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManagePrivacyCenter]: {
+    dependencies: [ScopeName.ViewPrivacyCenter],
+    description:
+      'Make changes to the privacy center configuration and policies.',
+    title: 'Manage Privacy Center Layout',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.PrivacyRequests,
+      TranscendProduct.PrivacyCenter,
+    ],
+  },
+  [ScopeName.RequestApproval]: {
+    dependencies: [
+      ScopeName.ViewRequests,
+      ScopeName.ViewRequestCompilation,
+      ScopeName.ManageRequestCompilation,
+    ],
+    description:
+      'The ability to approve and manage the state of privacy requests, and communicate with the data subject.',
+    title: 'Request Approval and Communication',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
@@ -279,41 +337,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.PrivacyRequests],
   },
-  [ScopeName.DeployPrivacyCenter]: {
-    dependencies: [ScopeName.ManagePrivacyCenter],
-    description:
-      'Launch the Privacy Center on your own domain, and publish new changes.',
-    title: 'Publish Privacy Center',
-    type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.PrivacyCenter,
-    ],
-  },
-  [ScopeName.ManageDataMap]: {
-    dependencies: [ScopeName.ViewDataMap],
-    description:
-      'Edit the configurations on your data silos and determine what information should be included in a request.',
-    title: 'Manage Data Map',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
-  },
-  [ScopeName.ManageDataSubjectRequestSettings]: {
-    dependencies: [ScopeName.ViewDataSubjectRequestSettings],
-    description:
-      'Make changes to the request actions that your organization allows, as well as what data subjects you will serve.',
-    title: 'Manage Data Subject Request Settings',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
-  },
-  [ScopeName.ManageEmailTemplates]: {
-    dependencies: [ScopeName.ViewEmailTemplates],
-    description:
-      'Manage the email communication templates that your organization uses to communicate with your data subjects.',
-    title: 'Manage Email Templates',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
-  },
   [ScopeName.ViewPrivacyCenter]: {
     dependencies: [],
     description: 'View the full configuration of the privacy center.',
@@ -323,29 +346,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.PrivacyRequests,
       TranscendProduct.PrivacyCenter,
     ],
-  },
-  [ScopeName.ManagePrivacyCenter]: {
-    dependencies: [ScopeName.ViewPrivacyCenter],
-    description:
-      'Make changes to the privacy center configuration and policies.',
-    title: 'Manage Privacy Center Layout',
-    type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.PrivacyCenter,
-    ],
-  },
-  [ScopeName.RequestApproval]: {
-    dependencies: [
-      ScopeName.ViewRequests,
-      ScopeName.ViewRequestCompilation,
-      ScopeName.ManageRequestCompilation,
-    ],
-    description:
-      'The ability to approve and manage the state of privacy requests, and communicate with the data subject.',
-    title: 'Request Approval and Communication',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ViewEmailTemplates]: {
     dependencies: [],
@@ -369,6 +369,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
     type: ScopeType.Modify,
   },
+  [ScopeName.ManageDataInventory]: {
+    dependencies: [ScopeName.ViewDataInventory],
+    description: 'Manage the data inventory information for your organization.',
+    title: 'Manage Data Inventory',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DataMapping],
+  },
   [ScopeName.ViewDataMap]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
     description:
@@ -385,12 +392,25 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.DataMapping],
   },
-  [ScopeName.ManageDataInventory]: {
-    dependencies: [ScopeName.ViewDataInventory],
-    description: 'Manage the data inventory information for your organization.',
-    title: 'Manage Data Inventory',
+  [ScopeName.ManageConsentManager]: {
+    dependencies: [
+      ScopeName.ViewConsentManager,
+      ScopeName.ManageDataFlow,
+      ScopeName.ViewDataFlow,
+    ],
+    description:
+      'Manage & deploy the consent manager changes to your websites.',
+    title: 'Manage Consent Manager',
     type: ScopeType.Modify,
-    products: [TranscendProduct.DataMapping],
+    products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ManageDataFlow]: {
+    dependencies: [ScopeName.ViewDataFlow],
+    description:
+      'Manage & Deploy Data Flows (tracking purpose maps, site scans, cookies)',
+    title: 'Manage Data Flows',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
   },
   [ScopeName.ViewOptOutStatus]: {
     dependencies: [],
@@ -414,26 +434,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     dependencies: [],
     description: 'View the consent manager configuration.',
-    products: [TranscendProduct.ConsentManager],
-  },
-  [ScopeName.ManageConsentManager]: {
-    dependencies: [
-      ScopeName.ViewConsentManager,
-      ScopeName.ManageDataFlow,
-      ScopeName.ViewDataFlow,
-    ],
-    description:
-      'Manage & deploy the consent manager changes to your websites.',
-    title: 'Manage Consent Manager',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
-  },
-  [ScopeName.ManageDataFlow]: {
-    dependencies: [ScopeName.ViewDataFlow],
-    description:
-      'Manage & Deploy Data Flows (tracking purpose maps, site scans, cookies)',
-    title: 'Manage Data Flows',
-    type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
   },
 };
