@@ -104,7 +104,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Full administrative access. All scopes are granted.',
     title: 'Full Admin',
     type: ScopeType.Modify,
-    products: Object.values(TranscendProduct),
+    products: [TranscendProduct.Admin],
   },
   [ScopeName.ManageSombraRootKeys]: {
     dependencies: [],
