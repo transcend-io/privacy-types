@@ -53,6 +53,7 @@
     "gaid",
     "gpadvid",
     "idfa",
+    "Idfv",
     "linebreak",
     "maxlevel",
     "Optionalize",
@@ -62,6 +63,7 @@
     "preact",
     "Requirize",
     "Sombra",
+    "rida",
     "thlorenz",
     "tsbuildinfo",
     "yarnpkg"
