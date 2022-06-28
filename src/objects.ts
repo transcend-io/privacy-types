@@ -66,6 +66,8 @@ export const DataCategoryType = makeEnum({
   Other: 'OTHER',
   /** The type of information is not explicitly stated or unclear */
   Unspecified: 'UNSPECIFIED',
+  /** Information that is NOT personal data */
+  NotPersonalData: 'NOT_PERSONAL_DATA',
 });
 
 /** Type override */

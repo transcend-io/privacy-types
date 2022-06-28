@@ -13,6 +13,7 @@ import { SocialMediaSubCategory } from './socialMedia';
 import { SurveySubCategory } from './survey';
 import { TrackingSubCategory } from './tracking';
 import { UserProfileSubCategory } from './userProfile';
+import { NotPersonalDataSubCategory } from './notPersonalData';
 
 export const DefaultDataSubCategoryType = makeEnum({
   ...ConnectionSubCategory,
@@ -28,6 +29,7 @@ export const DefaultDataSubCategoryType = makeEnum({
   ...SurveySubCategory,
   ...TrackingSubCategory,
   ...UserProfileSubCategory,
+  ...NotPersonalDataSubCategory,
 });
 
 /**
