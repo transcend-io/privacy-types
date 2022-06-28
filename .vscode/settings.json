@@ -43,6 +43,7 @@
     "chargebee",
     "codomain",
     "compat",
+    "datamap",
     "datapoint",
     "depcheck",
     "doctoc",
@@ -60,6 +61,7 @@
     "pnpify",
     "preact",
     "Requirize",
+    "Sombra",
     "thlorenz",
     "tsbuildinfo",
     "yarnpkg"
