@@ -3,7 +3,7 @@ import { makeEnum } from '@transcend-io/type-utils';
 /** Information that does not belong to an individual */
 export const NotPersonalDataSubCategory = makeEnum({
   /** Fallback subcategory */
-  NOT_PERSONAL_DATA: 'NOT_PERSONAL_DATA',
+  NotPersonalData: 'NOT_PERSONAL_DATA',
 });
 
 /**
