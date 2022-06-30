@@ -26,8 +26,6 @@ export const RequestActionObjectResolver = makeEnum({
   Access: 'ACCESS',
   /** Erase the file completely */
   Erasure: 'ERASURE',
-  /** Run an account deletion instead of a fully compliant deletion */
-  AccountDeletion: 'ACCOUNT_DELETION',
   /** Opt out of automated decision making */
   AutomatedDecisionMakingOptOut: 'AUTOMATED_DECISION_MAKING_OPT_OUT',
   /** A contact opt out request */
@@ -40,11 +38,6 @@ export const RequestActionObjectResolver = makeEnum({
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
   Restriction: 'RESTRICTION',
-  /**
-   * TODO: https://transcend.height.app/T-4327 - add in the ability to choose ERASURE vs REDACT
-   * --  Redact the personal data from the file, without deleting it entirely
-   */
-  // Redact: 'REDACT',
 });
 
 /** Type override */
@@ -77,8 +70,6 @@ export const RequestAction = makeEnum({
   Access: 'ACCESS',
   /** Erase the profile from the system */
   Erasure: 'ERASURE',
-  /** Run an account deletion instead of a fully compliant deletion */
-  AccountDeletion: 'ACCOUNT_DELETION',
   /** Make an update to an inaccurate record */
   Rectification: 'RECTIFICATION',
   /** Restrict processing */
