@@ -6,8 +6,8 @@ import { makeEnum } from '@transcend-io/type-utils';
 export const CommunicationIdentifierType = makeEnum({
   /** An email address */
   Email: 'email',
-  // /** A phone number */
-  // Phone: 'phone',
+  /** A phone number */
+  Phone: 'phone',
 });
 
 /**
@@ -25,8 +25,6 @@ export const IdentifierType = makeEnum({
   CoreIdentifier: 'coreIdentifier',
   /** A custom identifier */
   Custom: 'custom',
-  /** A phone number */
-  Phone: 'phone',
   /**
    * Google/Android mobile identifier
    *
