@@ -23,6 +23,7 @@ export enum ScopeName {
   ManageOrganizationInfo = 'manageOrganizationInfo',
   ManagePrivacyCenter = 'managePrivacyCenter',
   ViewPrivacyCenter = 'viewPrivacyCenter',
+  ManageLegalHold = 'manageLegalHold',
   ManageRequestCompilation = 'manageRequestCompilation',
   ManageRequestIdentities = 'manageRequestIdentities',
   ManageRequestSecurity = 'manageRequestSecurity',
@@ -33,6 +34,7 @@ export enum ScopeName {
   ViewApiKeys = 'viewApiKeys',
   ViewDataFlow = 'viewDataFlow',
   ViewDataMap = 'viewDataMap',
+  ViewLegalHold = 'viewLegalHold',
   ViewDataSubjectRequestSettings = 'viewDataSubjectRequestSettings',
   ViewEmailTemplates = 'viewEmailTemplates',
   ViewEmailDomains = 'viewEmailDomains',
@@ -212,6 +214,21 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'VIew Global Attributes',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ViewLegalHold]: {
+    dependencies: [],
+    description: 'View the individuals that have been placed on legal holds.',
+    title: 'View Legal Hold',
+    type: ScopeType.View,
+    products: [TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ManageLegalHold]: {
+    dependencies: [],
+    description:
+      'Manage and edit the individuals that have been placed on legal holds.',
+    title: 'Manage Legal Holds',
+    type: ScopeType.View,
+    products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ManageRequestSecurity]: {
     dependencies: [],
