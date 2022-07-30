@@ -223,7 +223,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ManageLegalHold]: {
-    dependencies: [],
+    dependencies: [ScopeName.ViewLegalHold],
     description:
       'Manage and edit the individuals that have been placed on legal holds.',
     title: 'Manage Legal Holds',
