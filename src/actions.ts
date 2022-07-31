@@ -74,6 +74,8 @@ export const RequestAction = makeEnum({
   Rectification: 'RECTIFICATION',
   /** Restrict processing */
   Restriction: 'RESTRICTION',
+  /** Business Purpose Report */
+  BusinessPurpose: 'BUSINESS_PURPOSE',
 });
 
 /** Type override */
