@@ -38,6 +38,8 @@ export const RequestActionObjectResolver = makeEnum({
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
   Restriction: 'RESTRICTION',
+  /** Business Purpose Report */
+  BusinessPurpose: 'BUSINESS_PURPOSE',
 });
 
 /** Type override */
@@ -74,6 +76,8 @@ export const RequestAction = makeEnum({
   Rectification: 'RECTIFICATION',
   /** Restrict processing */
   Restriction: 'RESTRICTION',
+  /** Business Purpose Report */
+  BusinessPurpose: 'BUSINESS_PURPOSE',
 });
 
 /** Type override */
