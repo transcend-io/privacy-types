@@ -6,3 +6,4 @@ export * from './subcategories';
 export * from './purposeSubCategories';
 export * from './promptAVendor';
 export * from './scopes';
+export * from './isoRegion';
