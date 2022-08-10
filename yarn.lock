@@ -318,8 +318,6 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: 2.25.4
     eslint-plugin-jsdoc: ^37.9.4
-    fp-ts: 2.11.4
-    io-ts: 2.2.16
     mocha: ^9.2.1
     prettier: ^2.5.1
     ts-node: ^10.5.0
@@ -2150,13 +2148,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fp-ts@npm:2.11.4":
-  version: 2.11.4
-  resolution: "fp-ts@npm:2.11.4"
-  checksum: aeb67498c3ecea0c6659c71732a09e828cf1e6153c5e74e91cebd7aaff2ea307329b7f56be4232e2ed3115229fef5594b37e6abe793f3ae9490abe304a8588a5
-  languageName: node
-  linkType: hard
-
 "fp-ts@npm:^2.11.8":
   version: 2.11.8
   resolution: "fp-ts@npm:2.11.8"
@@ -2589,7 +2580,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"io-ts@npm:2.2.16, io-ts@npm:^2.2.16":
+"io-ts@npm:^2.2.16":
   version: 2.2.16
   resolution: "io-ts@npm:2.2.16"
   peerDependencies:

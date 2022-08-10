@@ -1,6 +1,4 @@
-import * as t from 'io-ts';
-
-import { makeEnum, valuesOf } from '@transcend-io/type-utils';
+import { makeEnum } from '@transcend-io/type-utils';
 
 import { ISO_31661 } from './isoConstants/iso3166-1';
 import { ISO_31662 } from './isoConstants/iso3166-2';

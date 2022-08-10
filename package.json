@@ -24,9 +24,7 @@
     "test": "yarn pnpify mocha './src/**/*.test.ts'"
   },
   "dependencies": {
-    "@transcend-io/type-utils": "^1.0.5",
-    "fp-ts": "2.11.4",
-    "io-ts": "2.2.16"
+    "@transcend-io/type-utils": "^1.0.5"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
