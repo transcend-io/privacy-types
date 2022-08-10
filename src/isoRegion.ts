@@ -19,19 +19,19 @@ function getDictFromKeys<T>(source: T): {
   ) as any;
 }
 
+/**
+ * Country Code taken from https://github.com/umpirsky/country-list/blob/master/data/en/country.json
+ */
 export const IsoCountryCode = makeEnum(getDictFromKeys(ISO_31661));
+
+/** Type override */
+export type IsoCountryCode = typeof IsoCountryCode[keyof typeof IsoCountryCode];
+
+/**
+ * Country subdivisions taken from taken from https://github.com/wooorm/iso-3166/blob/main/2.js
+ */
 export const IsoCountrySubdivisionCode = makeEnum(getDictFromKeys(ISO_31662));
 
-export const IsoRegion = t.intersection([
-  t.type({
-    /** the ISO 3166-1 country code */
-    countryCode: valuesOf(IsoCountryCode),
-  }),
-  t.partial({
-    /** the ISO 3166-2 country subdivision code */
-    countrySubdivisionCode: valuesOf(IsoCountrySubdivisionCode),
-  }),
-]);
-
-/** Override type. */
-export type IsoRegion = t.TypeOf<typeof IsoRegion>;
+/** Type override */
+export type IsoCountrySubdivisionCode =
+  typeof IsoCountrySubdivisionCode[keyof typeof IsoCountrySubdivisionCode];
