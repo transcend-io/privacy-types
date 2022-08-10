@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-eslint-comments", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:3.2.0"],\
             ["eslint-plugin-import", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.25.4"],\
             ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:37.9.4"],\
+            ["fp-ts", "npm:2.11.4"],\
             ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
             ["mocha", "npm:9.2.1"],\
             ["prettier", "npm:2.5.1"],\
@@ -409,6 +410,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-eslint-comments", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:3.2.0"],\
             ["eslint-plugin-import", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.25.4"],\
             ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:37.9.4"],\
+            ["fp-ts", "npm:2.11.4"],\
             ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
             ["mocha", "npm:9.2.1"],\
             ["prettier", "npm:2.5.1"],\
@@ -2691,6 +2693,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["fp-ts", [\
+        ["npm:2.11.4", {\
+          "packageLocation": "./.yarn/cache/fp-ts-npm-2.11.4-578b1bf7c0-aeb67498c3.zip/node_modules/fp-ts/",\
+          "packageDependencies": [\
+            ["fp-ts", "npm:2.11.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.11.8", {\
           "packageLocation": "./.yarn/cache/fp-ts-npm-2.11.8-1b278a55a3-481b824797.zip/node_modules/fp-ts/",\
           "packageDependencies": [\
@@ -3199,7 +3208,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
             ["@types/fp-ts", null],\
-            ["fp-ts", null]\
+            ["fp-ts", "npm:2.11.4"]\
           ],\
           "packagePeers": [\
             "@types/fp-ts",\
