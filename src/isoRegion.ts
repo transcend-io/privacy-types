@@ -9,12 +9,12 @@ import { ISO_31662 } from './isoConstants/iso3166-2';
  * @param source - the source lookup
  * @returns the typed dictionary
  */
-function getDictFromKeys<T>(source: T): {
-  [K in keyof T]: K;
-} {
+function getDictFromKeys<T>(source: T) {
   return Object.fromEntries(
     Object.keys(source).map((code) => [code, code]),
-  ) as any;
+  ) as {
+    [K in keyof T]: K;
+  };
 }
 
 /**
