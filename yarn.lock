@@ -318,6 +318,7 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: 2.25.4
     eslint-plugin-jsdoc: ^37.9.4
+    io-ts: 2.2.16
     mocha: ^9.2.1
     prettier: ^2.5.1
     ts-node: ^10.5.0
@@ -2580,7 +2581,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"io-ts@npm:^2.2.16":
+"io-ts@npm:2.2.16, io-ts@npm:^2.2.16":
   version: 2.2.16
   resolution: "io-ts@npm:2.2.16"
   peerDependencies:
