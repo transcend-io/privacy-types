@@ -12,8 +12,6 @@ export const FinancialSubCategory = makeEnum({
   Tax: 'TAX',
   /** Routing number */
   RoutingNumber: 'ROUTING_NUMBER',
-  /** Debit Card Number */
-  DebitCardNumber: 'DEBIT_CARD_NUMBER',
   /** Fallback subcategory */
   Financial: 'FINANCIAL',
 });
