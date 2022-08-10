@@ -347,7 +347,10 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ViewRequests]: {
-    dependencies: [ScopeName.ViewGlobalAttributes],
+    dependencies: [
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
     description:
       'View the stream of incoming requests, and any details submit through the form or later enriched.',
     title: 'View Incoming Requests',
