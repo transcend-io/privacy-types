@@ -6,8 +6,6 @@ import { makeEnum } from '@transcend-io/type-utils';
 export const PromptAVendorEmailSendType = makeEnum({
   /** Send a single email encapsulating all profiles, i.e. at the RequestDataSilo level. */
   PerDsr: 'PER_DSR',
-  /** Send an email per profile, i.e. at the ProfileDataPoint level. */
-  PerProfile: 'PER_PROFILE',
   /** Send an email for all DSRs, that the vendor has not been notified of yet. */
   CrossDsr: 'CROSS_DSR',
 });
