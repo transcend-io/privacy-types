@@ -7,3 +7,4 @@ export * from './purposeSubCategories';
 export * from './promptAVendor';
 export * from './scopes';
 export * from './isoRegion';
+export * from './isoConstants';
