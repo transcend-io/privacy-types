@@ -8,6 +8,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           node-version: '14.17.3'
+      - run: npm install -g "yarn@1.22.5"
+        shell: bash
+      - uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 6
+          max_attempts: 3
+          retry_on: error
+          command: yarn install --immutable
       - name: Build the typescript code
         run: yarn build
       - uses: actions/upload-artifact@main
