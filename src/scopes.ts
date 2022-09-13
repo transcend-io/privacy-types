@@ -227,7 +227,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Manage and edit the individuals that have been placed on legal holds.',
     title: 'Manage Legal Holds',
-    type: ScopeType.View,
+    type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ManageRequestSecurity]: {
