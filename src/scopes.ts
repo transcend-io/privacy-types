@@ -13,6 +13,8 @@ export enum ScopeName {
   DeployPrivacyCenter = 'deployPrivacyCenter',
   ManageConsentManager = 'manageConsentManager',
   ViewConsentManager = 'viewConsentManager',
+  ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
+  ViewCustomerDataPrivacyRequests = 'viewCustomerDataPrivacyRequests',
   ManageAccessControl = 'manageAccessControl',
   ManageApiKeys = 'manageApiKeys',
   ManageBilling = 'manageBilling',
@@ -169,6 +171,22 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'Manage Email Domains',
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ViewCustomerDataPrivacyRequests]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the data in an access request.',
+    title: 'View Customer Data in Privacy Requests',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ViewCustomerDataDataMapping]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the sampled data in the data mapping product.',
+    title: 'View Customer Data in Data Mapping',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewApiKeys]: {
     dependencies: [],
