@@ -405,7 +405,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewDataInventory]: {
-    dependencies: [ScopeName.ViewDataMap, ScopeName.ViewGlobalAttributes],
+    dependencies: [
+      ScopeName.ViewDataMap,
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
     description:
       'Ability to view the data silos, datapoints, data categories and processing purposes in your data inventory.',
     title: 'View Data Inventory',
