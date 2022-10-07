@@ -13,6 +13,8 @@ export enum ScopeName {
   DeployPrivacyCenter = 'deployPrivacyCenter',
   ManageConsentManager = 'manageConsentManager',
   ViewConsentManager = 'viewConsentManager',
+  ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
+  ViewCustomerDataPrivacyRequests = 'viewCustomerDataPrivacyRequests',
   ManageAccessControl = 'manageAccessControl',
   ManageApiKeys = 'manageApiKeys',
   ManageBilling = 'manageBilling',
@@ -169,6 +171,22 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'Manage Email Domains',
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ViewCustomerDataPrivacyRequests]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the data in an access request.',
+    title: 'View Customer Data in Privacy Requests',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ViewCustomerDataDataMapping]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the sampled data in the data mapping product.',
+    title: 'View Customer Data in Data Mapping',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewApiKeys]: {
     dependencies: [],
@@ -405,7 +423,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewDataInventory]: {
-    dependencies: [ScopeName.ViewDataMap, ScopeName.ViewGlobalAttributes],
+    dependencies: [
+      ScopeName.ViewDataMap,
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
     description:
       'Ability to view the data silos, datapoints, data categories and processing purposes in your data inventory.',
     title: 'View Data Inventory',
