@@ -78,6 +78,8 @@ export enum TranscendProduct {
   PrivacyCenter = 'PRIVACY_CENTER',
   /** Administration and access control */
   Admin = 'ADMIN',
+  /** Assessments Product */
+  Assessments = 'ASSESSMENTS',
 }
 
 /**
@@ -478,6 +480,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ManageDocuments]: {
+    dependencies: [],
+    description: 'Edit the configurations on documents and document templates.',
+    title: 'Manage Documents',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments],
   },
 };
 
