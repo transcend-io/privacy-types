@@ -34,6 +34,10 @@ export const RequestActionObjectResolver = makeEnum({
   SaleOptOut: 'SALE_OPT_OUT',
   /** A tracking opt out request */
   TrackingOptOut: 'TRACKING_OPT_OUT',
+  /** Opt-in to the sale of personal data */
+  SaleOptIn: 'SALE_OPT_IN',
+  /** A tracking opt in request */
+  TrackingOptIn: 'TRACKING_OPT_IN',
   /** Make an update to an inaccurate record */
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
