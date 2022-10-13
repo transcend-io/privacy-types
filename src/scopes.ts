@@ -51,6 +51,7 @@ export enum ScopeName {
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
   ViewGlobalAttributes = 'viewGlobalAttributes',
+  ManageDocuments = 'manageDocuments',
 }
 
 /**
