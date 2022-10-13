@@ -1,7 +1,7 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 /**
- * The type of requests that allow for opt-in/opt-out
+ * The type of requests that allow for opt-out
  */
 export const RequestActionOptOut = makeEnum({
   /** Opt out of automated decision making */
@@ -19,6 +19,22 @@ export type RequestActionOptOut =
   typeof RequestActionOptOut[keyof typeof RequestActionOptOut];
 
 /**
+ * The type of requests that allow for opt-in
+ */
+export const RequestActionOptIn = makeEnum({
+  /** Opt in to automated decision making */
+  AutomatedDecisionMakingOptIn: 'AUTOMATED_DECISION_MAKING_OPT_IN',
+  /** Opt-in to the sale of personal data */
+  SaleOptIn: 'SALE_OPT_IN',
+  /** Opt in to tracking */
+  TrackingOptIn: 'TRACKING_OPT_IN',
+});
+
+/** Type override */
+export type RequestActionOptIn =
+  typeof RequestActionOptIn[keyof typeof RequestActionOptIn];
+
+/**
  * An request action resolve types that can be run at the object level
  */
 export const RequestActionObjectResolver = makeEnum({
@@ -34,16 +50,13 @@ export const RequestActionObjectResolver = makeEnum({
   SaleOptOut: 'SALE_OPT_OUT',
   /** A tracking opt out request */
   TrackingOptOut: 'TRACKING_OPT_OUT',
-  /** Opt-in to the sale of personal data */
-  SaleOptIn: 'SALE_OPT_IN',
-  /** A tracking opt in request */
-  TrackingOptIn: 'TRACKING_OPT_IN',
   /** Make an update to an inaccurate record */
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
   Restriction: 'RESTRICTION',
   /** Business Purpose Report */
   BusinessPurpose: 'BUSINESS_PURPOSE',
+  ...RequestActionOptIn,
 });
 
 /** Type override */
@@ -72,6 +85,7 @@ export type InternalDataSiloObjectResolver =
  */
 export const RequestAction = makeEnum({
   ...RequestActionOptOut,
+  ...RequestActionOptIn,
   /** Data Download request */
   Access: 'ACCESS',
   /** Erase the profile from the system */
