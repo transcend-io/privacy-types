@@ -492,7 +492,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageAssessments]: {
     title: 'Manage Assessments',
     dependencies: [ScopeName.ViewAssessments],
-    description: 'Edit the configurations on documents and document templates.',
+    description: 'Manage and edit assessments and assessment templates',
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
