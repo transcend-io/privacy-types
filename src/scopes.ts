@@ -51,7 +51,7 @@ export enum ScopeName {
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
   ViewGlobalAttributes = 'viewGlobalAttributes',
-  ManageDocuments = 'manageDocuments',
+  ManageAssessments = 'manageAssessments',
 }
 
 /**
@@ -481,7 +481,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
   },
-  [ScopeName.ManageDocuments]: {
+  [ScopeName.ManageAssessments]: {
     dependencies: [],
     description: 'Edit the configurations on documents and document templates.',
     title: 'Manage Documents',
