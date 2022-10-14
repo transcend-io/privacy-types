@@ -497,6 +497,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
+  [ScopeName.ApproveAssessments]: {
+    title: 'Approve Assessments',
+    dependencies: [ScopeName.ViewAssessments],
+    description: 'Approve the assessments and assessment templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
 };
 
 export const TRANSCEND_SCOPES: {
