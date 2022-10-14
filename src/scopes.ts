@@ -274,7 +274,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewRequestIdentitySettings,
     ],
     description: 'Submit a new privacy requests.',
-    title: 'Submit New Data Subjecft Request',
+    title: 'Submit New Data Subject Request',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
