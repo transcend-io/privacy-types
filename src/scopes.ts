@@ -482,10 +482,17 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
   },
+  [ScopeName.ViewAssessments]: {
+    title: 'View Assessments',
+    dependencies: [],
+    description: 'View the assessments configuration.',
+    type: ScopeType.View,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
   [ScopeName.ManageAssessments]: {
+    title: 'Manage Assessments',
     dependencies: [ScopeName.ViewAssessments],
     description: 'Edit the configurations on documents and document templates.',
-    title: 'Manage Documents',
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
