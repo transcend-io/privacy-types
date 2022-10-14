@@ -53,6 +53,7 @@ export enum ScopeName {
   ViewGlobalAttributes = 'viewGlobalAttributes',
   ViewAssessments = 'viewAssessments',
   ManageAssessments = 'manageAssessments',
+  ApproveAssessments = 'approveAssessments',
 }
 
 /**
