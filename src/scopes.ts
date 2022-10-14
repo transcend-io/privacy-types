@@ -485,7 +485,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewAssessments]: {
     title: 'View Assessments',
     dependencies: [],
-    description: 'View the assessments configuration.',
+    description: 'View the assessments and assessment templates.',
     type: ScopeType.View,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
