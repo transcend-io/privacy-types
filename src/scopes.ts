@@ -51,6 +51,9 @@ export enum ScopeName {
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
   ViewGlobalAttributes = 'viewGlobalAttributes',
+  ViewAssessments = 'viewAssessments',
+  ManageAssessments = 'manageAssessments',
+  ApproveAssessments = 'approveAssessments',
 }
 
 /**
@@ -77,6 +80,8 @@ export enum TranscendProduct {
   PrivacyCenter = 'PRIVACY_CENTER',
   /** Administration and access control */
   Admin = 'ADMIN',
+  /** Assessments Product */
+  Assessments = 'ASSESSMENTS',
 }
 
 /**
@@ -477,6 +482,27 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ViewAssessments]: {
+    title: 'View Assessments',
+    dependencies: [],
+    description: 'View the assessments and assessment templates.',
+    type: ScopeType.View,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManageAssessments]: {
+    title: 'Manage Assessments',
+    dependencies: [ScopeName.ViewAssessments],
+    description: 'Manage and edit assessments and assessment templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ApproveAssessments]: {
+    title: 'Approve Assessments',
+    dependencies: [ScopeName.ViewAssessments],
+    description: 'Approve the assessments and assessment templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
 };
 
