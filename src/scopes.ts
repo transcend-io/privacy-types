@@ -51,6 +51,7 @@ export enum ScopeName {
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
   ViewGlobalAttributes = 'viewGlobalAttributes',
+  ViewAssessments = 'viewAssessments',
   ManageAssessments = 'manageAssessments',
 }
 
@@ -273,7 +274,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewRequestIdentitySettings,
     ],
     description: 'Submit a new privacy requests.',
-    title: 'Submit New Data Subject Request',
+    title: 'Submit New Data Subjecft Request',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
@@ -482,7 +483,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.ConsentManager],
   },
   [ScopeName.ManageAssessments]: {
-    dependencies: [],
+    dependencies: [ScopeName.ViewAssessments],
     description: 'Edit the configurations on documents and document templates.',
     title: 'Manage Documents',
     type: ScopeType.Modify,
