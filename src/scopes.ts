@@ -229,7 +229,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewGlobalAttributes]: {
     dependencies: [],
     description: 'View the attribute definition key/value pairs.',
-    title: 'VIew Global Attributes',
+    title: 'View Global Attributes',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
