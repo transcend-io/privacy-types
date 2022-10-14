@@ -486,7 +486,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Edit the configurations on documents and document templates.',
     title: 'Manage Documents',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
 };
 
