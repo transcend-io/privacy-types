@@ -1,4 +1,4 @@
-import { makeEnum } from '@transcend-io/type-utils';
+import { invert, makeEnum } from '@transcend-io/type-utils';
 
 /**
  * The type of requests that allow for opt-out
@@ -12,6 +12,8 @@ export const RequestActionOptOut = makeEnum({
   SaleOptOut: 'SALE_OPT_OUT',
   /** Opt out of tracking */
   TrackingOptOut: 'TRACKING_OPT_OUT',
+  /** Opt out custom */
+  CustomOptOut: 'CUSTOM_OPT_OUT',
 });
 
 /** Type override */
@@ -28,11 +30,33 @@ export const RequestActionOptIn = makeEnum({
   SaleOptIn: 'SALE_OPT_IN',
   /** Opt in to tracking */
   TrackingOptIn: 'TRACKING_OPT_IN',
+  /** Opt in to contact */
+  ContactOptIn: 'CONTACT_OPT_IN',
+  /** Opt in custom */
+  CustomOptIn: 'CUSTOM_OPT_IN',
 });
 
 /** Type override */
 export type RequestActionOptIn =
   typeof RequestActionOptIn[keyof typeof RequestActionOptIn];
+
+/**
+ * Mapping between request actions that are inverses
+ * of one another.
+ */
+export const REQUEST_ACTION_OPT_OUT_TO_OPT_IN: {
+  [k in RequestActionOptOut]: RequestActionOptIn;
+} = {
+  [RequestActionOptOut.AutomatedDecisionMakingOptOut]:
+    RequestActionOptIn.AutomatedDecisionMakingOptIn,
+  [RequestActionOptOut.ContactOptOut]: RequestActionOptIn.ContactOptIn,
+  [RequestActionOptOut.TrackingOptOut]: RequestActionOptIn.TrackingOptIn,
+  [RequestActionOptOut.SaleOptOut]: RequestActionOptIn.SaleOptIn,
+  [RequestActionOptOut.CustomOptOut]: RequestActionOptIn.CustomOptIn,
+};
+export const REQUEST_ACTION_OPT_IN_TO_OPT_OUT = invert(
+  REQUEST_ACTION_OPT_OUT_TO_OPT_IN,
+);
 
 /**
  * An request action resolve types that can be run at the object level
