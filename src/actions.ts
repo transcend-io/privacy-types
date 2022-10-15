@@ -1,4 +1,4 @@
-import { makeEnum } from '@transcend-io/type-utils';
+import { invert, makeEnum } from '@transcend-io/type-utils';
 
 /**
  * The type of requests that allow for opt-out
@@ -39,6 +39,24 @@ export const RequestActionOptIn = makeEnum({
 /** Type override */
 export type RequestActionOptIn =
   typeof RequestActionOptIn[keyof typeof RequestActionOptIn];
+
+/**
+ * Mapping between request actions that are inverses
+ * of one another.
+ */
+export const REQUEST_ACTION_OPT_OUT_TO_OPT_IN: {
+  [k in RequestActionOptOut]: RequestActionOptIn;
+} = {
+  [RequestActionOptOut.AutomatedDecisionMakingOptOut]:
+    RequestActionOptIn.AutomatedDecisionMakingOptIn,
+  [RequestActionOptOut.ContactOptOut]: RequestActionOptIn.ContactOptIn,
+  [RequestActionOptOut.TrackingOptOut]: RequestActionOptIn.TrackingOptIn,
+  [RequestActionOptOut.SaleOptOut]: RequestActionOptIn.SaleOptIn,
+  [RequestActionOptOut.CustomOptOut]: RequestActionOptIn.CustomOptIn,
+};
+export const REQUEST_ACTION_OPT_IN_TO_OPT_OUT = invert(
+  REQUEST_ACTION_OPT_OUT_TO_OPT_IN,
+);
 
 /**
  * An request action resolve types that can be run at the object level
