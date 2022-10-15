@@ -12,6 +12,8 @@ export const RequestActionOptOut = makeEnum({
   SaleOptOut: 'SALE_OPT_OUT',
   /** Opt out of tracking */
   TrackingOptOut: 'TRACKING_OPT_OUT',
+  /** Opt out custom */
+  CustomOptOut: 'CUSTOM_OPT_OUT',
 });
 
 /** Type override */
@@ -28,6 +30,10 @@ export const RequestActionOptIn = makeEnum({
   SaleOptIn: 'SALE_OPT_IN',
   /** Opt in to tracking */
   TrackingOptIn: 'TRACKING_OPT_IN',
+  /** Opt in to contact */
+  ContactOptIn: 'CONTACT_OPT_IN',
+  /** Opt in custom */
+  CustomOptIn: 'CUSTOM_OPT_IN',
 });
 
 /** Type override */
