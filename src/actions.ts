@@ -66,20 +66,13 @@ export const RequestActionObjectResolver = makeEnum({
   Access: 'ACCESS',
   /** Erase the file completely */
   Erasure: 'ERASURE',
-  /** Opt out of automated decision making */
-  AutomatedDecisionMakingOptOut: 'AUTOMATED_DECISION_MAKING_OPT_OUT',
-  /** A contact opt out request */
-  ContactOptOut: 'CONTACT_OPT_OUT',
-  /** Opt-out of the sale of personal data */
-  SaleOptOut: 'SALE_OPT_OUT',
-  /** A tracking opt out request */
-  TrackingOptOut: 'TRACKING_OPT_OUT',
   /** Make an update to an inaccurate record */
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
   Restriction: 'RESTRICTION',
   /** Business Purpose Report */
   BusinessPurpose: 'BUSINESS_PURPOSE',
+  ...RequestActionOptOut,
   ...RequestActionOptIn,
 });
 
