@@ -257,4 +257,14 @@ export const COUNTRY_LOOKUP = {
 
 export const COUNTRIES = Object.values(COUNTRY_LOOKUP);
 
-export const ISO_31661 = COUNTRY_LOOKUP;
+// taken from https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Exceptional_reservations
+// special code used as alias for set of European country codes defined elsewhere
+export const EXCEPTIONAL_RESERVATION_LOOKUP = {
+  EU: 'European Union',
+};
+
+export const EXCEPTIONAL_RESERVATIONS = Object.values(
+  EXCEPTIONAL_RESERVATION_LOOKUP,
+);
+
+export const ISO_31661 = COUNTRY_LOOKUP + EXCEPTIONAL_RESERVATIONS;
