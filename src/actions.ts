@@ -1,7 +1,7 @@
-import { makeEnum } from '@transcend-io/type-utils';
+import { invert, makeEnum } from '@transcend-io/type-utils';
 
 /**
- * The type of requests that allow for opt-in/opt-out
+ * The type of requests that allow for opt-out
  */
 export const RequestActionOptOut = makeEnum({
   /** Opt out of automated decision making */
@@ -12,11 +12,51 @@ export const RequestActionOptOut = makeEnum({
   SaleOptOut: 'SALE_OPT_OUT',
   /** Opt out of tracking */
   TrackingOptOut: 'TRACKING_OPT_OUT',
+  /** Opt out custom */
+  CustomOptOut: 'CUSTOM_OPT_OUT',
 });
 
 /** Type override */
 export type RequestActionOptOut =
   typeof RequestActionOptOut[keyof typeof RequestActionOptOut];
+
+/**
+ * The type of requests that allow for opt-in
+ */
+export const RequestActionOptIn = makeEnum({
+  /** Opt in to automated decision making */
+  AutomatedDecisionMakingOptIn: 'AUTOMATED_DECISION_MAKING_OPT_IN',
+  /** Opt-in to the sale of personal data */
+  SaleOptIn: 'SALE_OPT_IN',
+  /** Opt in to tracking */
+  TrackingOptIn: 'TRACKING_OPT_IN',
+  /** Opt in to contact */
+  ContactOptIn: 'CONTACT_OPT_IN',
+  /** Opt in custom */
+  CustomOptIn: 'CUSTOM_OPT_IN',
+});
+
+/** Type override */
+export type RequestActionOptIn =
+  typeof RequestActionOptIn[keyof typeof RequestActionOptIn];
+
+/**
+ * Mapping between request actions that are inverses
+ * of one another.
+ */
+export const REQUEST_ACTION_OPT_OUT_TO_OPT_IN: {
+  [k in RequestActionOptOut]: RequestActionOptIn;
+} = {
+  [RequestActionOptOut.AutomatedDecisionMakingOptOut]:
+    RequestActionOptIn.AutomatedDecisionMakingOptIn,
+  [RequestActionOptOut.ContactOptOut]: RequestActionOptIn.ContactOptIn,
+  [RequestActionOptOut.TrackingOptOut]: RequestActionOptIn.TrackingOptIn,
+  [RequestActionOptOut.SaleOptOut]: RequestActionOptIn.SaleOptIn,
+  [RequestActionOptOut.CustomOptOut]: RequestActionOptIn.CustomOptIn,
+};
+export const REQUEST_ACTION_OPT_IN_TO_OPT_OUT = invert(
+  REQUEST_ACTION_OPT_OUT_TO_OPT_IN,
+);
 
 /**
  * An request action resolve types that can be run at the object level
@@ -26,20 +66,14 @@ export const RequestActionObjectResolver = makeEnum({
   Access: 'ACCESS',
   /** Erase the file completely */
   Erasure: 'ERASURE',
-  /** Opt out of automated decision making */
-  AutomatedDecisionMakingOptOut: 'AUTOMATED_DECISION_MAKING_OPT_OUT',
-  /** A contact opt out request */
-  ContactOptOut: 'CONTACT_OPT_OUT',
-  /** Opt-out of the sale of personal data */
-  SaleOptOut: 'SALE_OPT_OUT',
-  /** A tracking opt out request */
-  TrackingOptOut: 'TRACKING_OPT_OUT',
   /** Make an update to an inaccurate record */
   Rectification: 'RECTIFICATION',
   /** A restriction of processing request */
   Restriction: 'RESTRICTION',
   /** Business Purpose Report */
   BusinessPurpose: 'BUSINESS_PURPOSE',
+  ...RequestActionOptOut,
+  ...RequestActionOptIn,
 });
 
 /** Type override */
@@ -68,6 +102,7 @@ export type InternalDataSiloObjectResolver =
  */
 export const RequestAction = makeEnum({
   ...RequestActionOptOut,
+  ...RequestActionOptIn,
   /** Data Download request */
   Access: 'ACCESS',
   /** Erase the profile from the system */

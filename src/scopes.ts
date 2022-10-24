@@ -13,6 +13,8 @@ export enum ScopeName {
   DeployPrivacyCenter = 'deployPrivacyCenter',
   ManageConsentManager = 'manageConsentManager',
   ViewConsentManager = 'viewConsentManager',
+  ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
+  ViewCustomerDataPrivacyRequests = 'viewCustomerDataPrivacyRequests',
   ManageAccessControl = 'manageAccessControl',
   ManageApiKeys = 'manageApiKeys',
   ManageBilling = 'manageBilling',
@@ -49,6 +51,9 @@ export enum ScopeName {
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
   ViewGlobalAttributes = 'viewGlobalAttributes',
+  ViewAssessments = 'viewAssessments',
+  ManageAssessments = 'manageAssessments',
+  ApproveAssessments = 'approveAssessments',
 }
 
 /**
@@ -75,6 +80,8 @@ export enum TranscendProduct {
   PrivacyCenter = 'PRIVACY_CENTER',
   /** Administration and access control */
   Admin = 'ADMIN',
+  /** Assessments Product */
+  Assessments = 'ASSESSMENTS',
 }
 
 /**
@@ -170,6 +177,22 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
   },
+  [ScopeName.ViewCustomerDataPrivacyRequests]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the data in an access request.',
+    title: 'View Customer Data in Privacy Requests',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.PrivacyRequests],
+  },
+  [ScopeName.ViewCustomerDataDataMapping]: {
+    dependencies: [],
+    description:
+      'Give permissions for an employee to view the sampled data in the data mapping product.',
+    title: 'View Customer Data in Data Mapping',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin, TranscendProduct.DataMapping],
+  },
   [ScopeName.ViewApiKeys]: {
     dependencies: [],
     description:
@@ -211,7 +234,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ViewGlobalAttributes]: {
     dependencies: [],
     description: 'View the attribute definition key/value pairs.',
-    title: 'VIew Global Attributes',
+    title: 'View Global Attributes',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
@@ -227,7 +250,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Manage and edit the individuals that have been placed on legal holds.',
     title: 'Manage Legal Holds',
-    type: ScopeType.View,
+    type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
   [ScopeName.ManageRequestSecurity]: {
@@ -405,7 +428,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewDataInventory]: {
-    dependencies: [ScopeName.ViewDataMap, ScopeName.ViewGlobalAttributes],
+    dependencies: [
+      ScopeName.ViewDataMap,
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
     description:
       'Ability to view the data silos, datapoints, data categories and processing purposes in your data inventory.',
     title: 'View Data Inventory',
@@ -455,6 +482,27 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ViewAssessments]: {
+    title: 'View Assessments',
+    dependencies: [],
+    description: 'View the assessments and assessment templates.',
+    type: ScopeType.View,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManageAssessments]: {
+    title: 'Manage Assessments',
+    dependencies: [ScopeName.ViewAssessments],
+    description: 'Manage and edit assessments and assessment templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ApproveAssessments]: {
+    title: 'Approve Assessments',
+    dependencies: [ScopeName.ViewAssessments],
+    description: 'Approve the assessments and assessment templates',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
 };
 

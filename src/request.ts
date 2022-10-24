@@ -94,4 +94,6 @@ export enum RequestOrigin {
   AdminDashboard = 'ADMIN_DASHBOARD',
   /** Programmatic through the API */
   Api = 'API',
+  /** Request made from Shopify Webhook */
+  Shopify = 'SHOPIFY',
 }
