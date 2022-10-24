@@ -2,7 +2,7 @@
 import { makeEnum } from '@transcend-io/type-utils';
 
 /**
- * Time zones detected by airgap_core
+ * Time zones detected by airgap.js
  * Generated via Intl.supportedValuesOf('timeZone')
  */
 export const BrowserTimeZones = makeEnum({
