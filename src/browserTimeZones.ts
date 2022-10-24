@@ -3,6 +3,7 @@ import { makeEnum } from '@transcend-io/type-utils';
 
 /**
  * Time zones detected by airgap_core
+ * Generated via Intl.supportedValuesOf('timeZone')
  */
 export const BrowserTimeZones = makeEnum({
   AfricaAbidjan: 'Africa/Abidjan',
