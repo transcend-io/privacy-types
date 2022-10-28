@@ -41,3 +41,6 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.mongodb]: 'MongoDB',
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
 });
+
+/** Overrides type */
+export type DatabaseDriver = typeof DatabaseDriver[keyof typeof DatabaseDriver];

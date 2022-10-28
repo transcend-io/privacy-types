@@ -9,3 +9,4 @@ export * from './scopes';
 export * from './isoRegion';
 export * from './isoConstants';
 export * from './database';
+export * from './browserTimeZones';
