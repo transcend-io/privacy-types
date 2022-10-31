@@ -12,7 +12,7 @@ export const MacroRegion = makeEnum({
 /** Type override */
 export type MacroRegion = typeof MacroRegion[keyof typeof MacroRegion];
 
-export const DEFAULT_MARCRO_REGIONS_MAP = {
+export const DEFAULT_MACROREGIONS_MAP = {
   [MacroRegion.EU]: [
     IsoCountryCode.BE, // Belgium
     IsoCountryCode.EL, // Greece
