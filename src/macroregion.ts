@@ -16,6 +16,7 @@ export const DEFAULT_MARCRO_REGIONS_MAP = {
   [MacroRegion.EU]: [
     IsoCountryCode.BE, // Belgium
     IsoCountryCode.EL, // Greece
+    IsoCountryCode.GR, // Greece
     IsoCountryCode.LT, // Lithuania
     IsoCountryCode.PT, // Portugal
     IsoCountryCode.BG, // Bulgaria
