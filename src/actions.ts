@@ -29,7 +29,7 @@ export const RequestActionOptIn = makeEnum({
   /** Opt in to automated decision making */
   AutomatedDecisionMakingOptIn: 'AUTOMATED_DECISION_MAKING_OPT_IN',
   /** Ability to opt in to the use of sensitive information. A requirement under the CPRA and similar laws. */
-  UseOfSensitiveInformationOptIn: 'USE_OF_SENSITIVE_INFORMATION_OPT_OUT',
+  UseOfSensitiveInformationOptIn: 'USE_OF_SENSITIVE_INFORMATION_OPT_IN',
   /** Opt-in to the sale of personal data */
   SaleOptIn: 'SALE_OPT_IN',
   /** Opt in to tracking */
