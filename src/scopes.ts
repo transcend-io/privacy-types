@@ -19,6 +19,14 @@ export enum ScopeName {
   ManageApiKeys = 'manageApiKeys',
   ManageBilling = 'manageBilling',
   ManageDataMap = 'manageDataMap',
+  ManageAssignedIntegrations = 'managedAssignedIntegrations',
+  ManageAssignedDataInventory = 'managedAssignedDataInventory',
+  ManageAssignedConsentManager = 'managedAssignedConsentManager',
+  ManageAssignedRequests = 'managedAssignedRequests',
+  ViewAssignedIntegrations = 'viewAssignedIntegrations',
+  ViewAssignedDataInventory = 'viewAssignedDataInventory',
+  ViewAssignedConsentManager = 'viewAssignedConsentManager',
+  ViewAssignedRequests = 'viewAssignedRequests',
   ManageDataFlow = 'manageDataFlow',
   ManageDataSubjectRequestSettings = 'manageDataSubjectRequestSettings',
   ManageEmailTemplates = 'manageEmailTemplates',
@@ -269,6 +277,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyRequests],
   },
+  [ScopeName.ManageAssignedRequests]: {
+    dependencies: [ScopeName.ViewAssignedRequests],
+    description:
+      'Make changes to the compilation process of a request for requests assigned to your or your team. This involves changing the status of data silos in your Data Map, as well as editing profiles and files.', // eslint-disable-line max-len
+    title: 'Manage Assigned Privacy Requests',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests],
+  },
   [ScopeName.MakeDataSubjectRequest]: {
     dependencies: [
       ScopeName.ViewDataSubjectRequestSettings,
@@ -380,6 +396,18 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.PrivacyRequests],
   },
+  [ScopeName.ViewAssignedRequests]: {
+    dependencies: [
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
+    description:
+      // eslint-disable-next-line max-len
+      'View the stream of incoming requests assigned to you and your team. You will be able to see any request details submitted through the form or later enriched.',
+    title: 'View Assigned Privacy Requests',
+    type: ScopeType.View,
+    products: [TranscendProduct.PrivacyRequests],
+  },
   [ScopeName.ViewPrivacyCenter]: {
     dependencies: [],
     description: 'View the full configuration of the privacy center.',
@@ -414,10 +442,28 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ManageDataInventory]: {
     dependencies: [ScopeName.ViewDataInventory],
-    description: 'Manage the data inventory information for your organization.',
+    description:
+      // eslint-disable-next-line max-len
+      'Ability to manage and edit everything in the data mapping product. Includes the data inventory, ROPE, and content classification views.',
     title: 'Manage Data Inventory',
     type: ScopeType.Modify,
     products: [TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManageAssignedDataInventory]: {
+    dependencies: [ScopeName.ViewAssignedDataInventory],
+    description:
+      "Manage the data inventory rows in your organization's Data Map that are assigned to you or your team.",
+    title: 'Manage Assigned Data Inventory',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManageAssignedIntegrations]: {
+    dependencies: [ScopeName.ViewAssignedIntegrations],
+    description:
+      "Manage the integrations in your organization's Data Map that are assigned to you or your team.",
+    title: 'Manage Assigned Integrations',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewDataMap]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
@@ -427,6 +473,25 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
   },
+  [ScopeName.ViewAssignedIntegrations]: {
+    dependencies: [ScopeName.ViewGlobalAttributes],
+    description:
+      "View the integrations in your organization's Data Map that are assigned to you or your team.",
+    title: 'View Assigned Integrations',
+    type: ScopeType.View,
+    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ViewAssignedDataInventory]: {
+    dependencies: [
+      ScopeName.ViewGlobalAttributes,
+      ScopeName.ViewDataSubjectRequestSettings,
+    ],
+    description:
+      'Ability to view the resources in the data mapping product that are assigned to your or your team.',
+    title: 'View Data Inventory',
+    type: ScopeType.View,
+    products: [TranscendProduct.DataMapping],
+  },
   [ScopeName.ViewDataInventory]: {
     dependencies: [
       ScopeName.ViewDataMap,
@@ -434,7 +499,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewDataSubjectRequestSettings,
     ],
     description:
-      'Ability to view the data silos, datapoints, data categories and processing purposes in your data inventory.',
+      // eslint-disable-next-line max-len
+      'Ability to view all of the data mapping product. Includes the data inventory, ROPA, and content classification views.',
     title: 'View Data Inventory',
     type: ScopeType.View,
     products: [TranscendProduct.DataMapping],
@@ -448,6 +514,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Manage & deploy the consent manager changes to your websites.',
     title: 'Manage Consent Manager',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ManageAssignedConsentManager]: {
+    dependencies: [ScopeName.ViewAssignedConsentManager],
+    description: 'Manage Data Flows & Cookies assigned to you or your team.',
+    title: 'Manage Assigned Consent Manager',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
   },
@@ -476,10 +549,17 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.ConsentManager],
   },
+  [ScopeName.ViewAssignedConsentManager]: {
+    dependencies: [ScopeName.ViewGlobalAttributes],
+    description: 'View Data Flows and Cookies assigned to you or your team.',
+    title: 'View Assigned Consent Manager',
+    type: ScopeType.View,
+    products: [TranscendProduct.ConsentManager],
+  },
   [ScopeName.ViewConsentManager]: {
     title: 'View Consent Manager',
     type: ScopeType.View,
-    dependencies: [],
+    dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
   },
