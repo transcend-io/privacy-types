@@ -78,6 +78,10 @@ export const RequestActionObjectResolver = makeEnum({
   Restriction: 'RESTRICTION',
   /** Business Purpose Report */
   BusinessPurpose: 'BUSINESS_PURPOSE',
+  /** Add user to a legal hold */
+  PlaceOnLegalHold: 'PLACE_ON_LEGAL_HOLD',
+  /** Remove a user from a legal hold */
+  RemoveFromLegalHold: 'REMOVE_FROM_LEGAL_HOLD',
   ...RequestActionOptOut,
   ...RequestActionOptIn,
 });
