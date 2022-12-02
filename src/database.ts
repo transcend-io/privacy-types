@@ -13,6 +13,7 @@ export const DatabaseIntegration = makeEnum({
   maria: 'maria',
   mongodb: 'mongodb',
   amazondynamodb: 'amazondynamodb',
+  teradata: 'teradata',
 });
 
 /**
@@ -40,6 +41,7 @@ export const DatabaseDriver = makeEnum({
   ...SQLDriverWithDataMapping,
   [DatabaseIntegration.mongodb]: 'MongoDB',
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
+  [DatabaseIntegration.teradata]: 'Teradata',
 });
 
 /** Overrides type */
