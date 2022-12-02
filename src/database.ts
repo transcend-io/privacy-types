@@ -27,6 +27,7 @@ export const SQLDriverWithDataMapping = makeEnum({
   [DatabaseIntegration.bigquery]: 'Google BigQuery',
   [DatabaseIntegration.microsoftsql]: 'Microsoft SQL',
   [DatabaseIntegration.maria]: 'MariaDB',
+  [DatabaseIntegration.teradata]: 'Teradata',
 });
 
 /** Overrides type */
@@ -41,7 +42,6 @@ export const DatabaseDriver = makeEnum({
   ...SQLDriverWithDataMapping,
   [DatabaseIntegration.mongodb]: 'MongoDB',
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
-  [DatabaseIntegration.teradata]: 'Teradata',
 });
 
 /** Overrides type */
