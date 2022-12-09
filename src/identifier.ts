@@ -56,6 +56,8 @@ export const IdentifierType = makeEnum({
   FilestackHandle: 'filestackHandle',
   /** An ID for a stripe user */
   StripeId: 'stripeId',
+  /** The ID used to key braintree customer */
+  BraintreeCustomerId: 'braintreeCustomerId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
   /** Talkable uuid */
