@@ -62,6 +62,7 @@ export enum ScopeName {
   ViewAssessments = 'viewAssessments',
   ManageAssessments = 'manageAssessments',
   ApproveAssessments = 'approveAssessments',
+  ViewAuditEvents = 'viewAuditEvents',
 }
 
 /**
@@ -206,6 +207,15 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'View the API keys on your account and see what scopes are assigned to them.',
     title: 'View API Keys',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ViewAuditEvents]: {
+    dependencies: [],
+    description:
+      // eslint-disable-next-line max-len
+      'View any audit events made throughout the platform. This includes any of the "Audit Trail" tabs across the Admin Dashboard.',
+    title: 'View Audit Events',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
