@@ -399,6 +399,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [
       ScopeName.ViewGlobalAttributes,
       ScopeName.ViewDataSubjectRequestSettings,
+      ScopeName.ViewEmailTemplates,
     ],
     description:
       'View the stream of incoming requests, and any details submit through the form or later enriched.',
@@ -410,6 +411,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [
       ScopeName.ViewGlobalAttributes,
       ScopeName.ViewDataSubjectRequestSettings,
+      ScopeName.ViewEmailTemplates,
     ],
     description:
       // eslint-disable-next-line max-len
