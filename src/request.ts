@@ -77,6 +77,8 @@ export const RequestStatus = makeEnum({
   Secondary: 'SECONDARY',
   /** The secondary request action completed compilation */
   SecondaryCompleted: 'SECONDARY_COMPLETED',
+  /** The request is pending approval before final deletion request email is sent to the data subject */
+  SecondaryApproving: 'SECONDARY_APPROVING',
   /** The request was revoked because it was a duplicate (another open request covers it) */
   Revoked: 'REVOKED',
 });
