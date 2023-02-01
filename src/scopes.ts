@@ -500,7 +500,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     ],
     description:
       'Ability to view the resources in the data mapping product that are assigned to your or your team.',
-    title: 'View Data Inventory',
+    title: 'View Assigned Data Inventory',
     type: ScopeType.View,
     products: [TranscendProduct.DataMapping],
   },
