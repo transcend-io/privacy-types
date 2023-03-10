@@ -14,6 +14,8 @@ export const IdSubCategory = makeEnum({
   PassportNumber: 'PASSPORT_NUMBER',
   /** A digital representation of an individual's unique physical characteristics (e.g. fingerprint, retina or iris image, etc.) */
   BiometricIdentifier: 'BIOMETRIC_IDENTIFIER',
+  /** The user ID */
+  UserId: 'USER_ID',
   /** Fallback subcategory */
   Id: 'ID',
 });
