@@ -13,6 +13,9 @@ export enum ScopeName {
   DeployPrivacyCenter = 'deployPrivacyCenter',
   ManageConsentManager = 'manageConsentManager',
   ViewConsentManager = 'viewConsentManager',
+  ManageConsentManagerDisplaySettings = 'manageConsentManagerDisplaySettings',
+  ManageDataFlow = 'manageDataFlow',
+  DeployConsentManager = 'deployConsentManager',
   ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
   ViewCustomerDataPrivacyRequests = 'viewCustomerDataPrivacyRequests',
   ManageAccessControl = 'manageAccessControl',
@@ -27,7 +30,6 @@ export enum ScopeName {
   ViewAssignedDataInventory = 'viewAssignedDataInventory',
   ViewAssignedConsentManager = 'viewAssignedConsentManager',
   ViewAssignedRequests = 'viewAssignedRequests',
-  ManageDataFlow = 'manageDataFlow',
   ManageDataSubjectRequestSettings = 'manageDataSubjectRequestSettings',
   ManageEmailTemplates = 'manageEmailTemplates',
   ManageOrganizationInfo = 'manageOrganizationInfo',
@@ -521,11 +523,30 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [
       ScopeName.ViewConsentManager,
       ScopeName.ManageDataFlow,
+      ScopeName.ManageConsentManagerDisplaySettings,
+      ScopeName.DeployConsentManager,
       ScopeName.ViewDataFlow,
     ],
     description:
       'Manage & deploy the consent manager changes to your websites.',
     title: 'Manage Consent Manager',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ManageConsentManagerDisplaySettings]: {
+    dependencies: [ScopeName.ViewConsentManager],
+    description:
+      'Manage the display settings for the consent manager. This includes messages, styles and other UI settings.',
+    title: 'Manage Consent Manager Display Settings',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.DeployConsentManager]: {
+    dependencies: [ScopeName.ViewConsentManager],
+    description:
+      // eslint-disable-next-line max-len
+      'Ability to publish changes to the production and test bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
+    title: 'Deploy Consent Manager',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
   },
