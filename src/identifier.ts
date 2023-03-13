@@ -60,6 +60,8 @@ export const IdentifierType = makeEnum({
   BraintreeCustomerId: 'braintreeCustomerId',
   /** An ID for a chargebee user */
   ChargebeeId: 'chargebeeId',
+  /** An ID for a Thrive TRM contact */
+  thriveTrmContactId: 'thriveTrmContactId',
   /** Talkable uuid */
   TalkableUUID: 'talkableUUID',
   /**
