@@ -560,7 +560,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageDataFlow]: {
     dependencies: [ScopeName.ViewDataFlow],
     description:
-      'Manage & Deploy Data Flows (tracking purpose maps, site scans, cookies)',
+      'Ability to manage and delete Data Flows and Cookies within the Consent Manager product.',
     title: 'Manage Data Flows',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
