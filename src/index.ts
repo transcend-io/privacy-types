@@ -12,3 +12,5 @@ export * from './isoConstants';
 export * from './database';
 export * from './browserTimeZones';
 export * from './regexes';
+export * from './browserLanguage';
+export * from './experience';

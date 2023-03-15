@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@transcend-io/airgap.js-types", "npm:8.29.1"],\
             ["@transcend-io/type-utils", "npm:1.0.5"],\
             ["@types/chai", "npm:4.3.0"],\
             ["@types/mocha", "npm:9.1.0"],\
@@ -48,6 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-eslint-comments", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:3.2.0"],\
             ["eslint-plugin-import", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.25.4"],\
             ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:37.9.4"],\
+            ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
             ["mocha", "npm:9.2.1"],\
             ["prettier", "npm:2.5.1"],\
             ["ts-node", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:10.5.0"],\
@@ -388,11 +390,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@transcend-io/airgap.js-types", [\
+        ["npm:8.29.1", {\
+          "packageLocation": "./.yarn/cache/@transcend-io-airgap.js-types-npm-8.29.1-69aef33f8a-5bfed114e9.zip/node_modules/@transcend-io/airgap.js-types/",\
+          "packageDependencies": [\
+            ["@transcend-io/airgap.js-types", "npm:8.29.1"],\
+            ["@transcend-io/type-utils", "npm:1.0.5"],\
+            ["fp-ts", "npm:2.11.8"],\
+            ["io-ts", "virtual:53d562f9656f9223c4532e7e2b6feefabcf4bfa2c0659bc8d6557c1f9633b17688cca8b3d2effb8a926da81d6d2f2353092c812bd38f1a03f5ff9a9a3e1b3408#npm:2.2.16"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@transcend-io/privacy-types", [\
         ["workspace:.", {\
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@transcend-io/privacy-types", "workspace:."],\
+            ["@transcend-io/airgap.js-types", "npm:8.29.1"],\
             ["@transcend-io/type-utils", "npm:1.0.5"],\
             ["@types/chai", "npm:4.3.0"],\
             ["@types/mocha", "npm:9.1.0"],\
@@ -408,6 +423,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-eslint-comments", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:3.2.0"],\
             ["eslint-plugin-import", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.25.4"],\
             ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:37.9.4"],\
+            ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
             ["mocha", "npm:9.2.1"],\
             ["prettier", "npm:2.5.1"],\
             ["ts-node", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:10.5.0"],\
@@ -3185,6 +3201,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["io-ts", "virtual:53d562f9656f9223c4532e7e2b6feefabcf4bfa2c0659bc8d6557c1f9633b17688cca8b3d2effb8a926da81d6d2f2353092c812bd38f1a03f5ff9a9a3e1b3408#npm:2.2.16"],\
             ["@types/fp-ts", null],\
             ["fp-ts", "npm:2.11.8"]\
+          ],\
+          "packagePeers": [\
+            "@types/fp-ts",\
+            "fp-ts"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16", {\
+          "packageLocation": "./.yarn/__virtual__/io-ts-virtual-e23cc0d31c/0/cache/io-ts-npm-2.2.16-b76df10271-1b5855682e.zip/node_modules/io-ts/",\
+          "packageDependencies": [\
+            ["io-ts", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:2.2.16"],\
+            ["@types/fp-ts", null],\
+            ["fp-ts", null]\
           ],\
           "packagePeers": [\
             "@types/fp-ts",\
