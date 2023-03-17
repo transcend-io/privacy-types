@@ -618,6 +618,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
+  [ScopeName.ViewPreferences]: {
+    title: 'View Preferences',
+    dependencies: [],
+    description: 'View preferences for users or organizations',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin],
+  },
 };
 
 export const TRANSCEND_SCOPES: {
