@@ -65,6 +65,7 @@ export enum ScopeName {
   ManageAssessments = 'manageAssessments',
   ApproveAssessments = 'approveAssessments',
   ViewAuditEvents = 'viewAuditEvents',
+  ViewPreferences = 'viewPreferences',
 }
 
 /**
