@@ -14,6 +14,7 @@ export enum ScopeName {
   ManageConsentManager = 'manageConsentManager',
   ViewConsentManager = 'viewConsentManager',
   ManageConsentManagerDisplaySettings = 'manageConsentManagerDisplaySettings',
+  ManageConsentManagerDeveloperSettings = 'manageConsentManagerDeveloperSettings',
   ManageDataFlow = 'manageDataFlow',
   DeployConsentManager = 'deployConsentManager',
   ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
@@ -524,12 +525,22 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewConsentManager,
       ScopeName.ManageDataFlow,
       ScopeName.ManageConsentManagerDisplaySettings,
+      ScopeName.ManageConsentManagerDeveloperSettings,
       ScopeName.DeployConsentManager,
       ScopeName.ViewDataFlow,
     ],
     description:
       'Manage & deploy the consent manager changes to your websites.',
     title: 'Manage Consent Manager',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
+  },
+  [ScopeName.ManageConsentManagerDeveloperSettings]: {
+    dependencies: [ScopeName.ViewConsentManager],
+    description:
+      'Manage the developer settings for the Consent Manager. ' +
+      'This does not allow for clicking the "Set Changes Live" button.',
+    title: 'Manage Consent Manager Developer Settings',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
   },
