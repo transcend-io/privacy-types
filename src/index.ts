@@ -14,3 +14,4 @@ export * from './browserTimeZones';
 export * from './regexes';
 export * from './attribute';
 export * from './consentManager';
+export * from './enricher';
