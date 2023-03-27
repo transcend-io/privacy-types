@@ -35,3 +35,37 @@ export const DataFlowScope = makeEnum({
 
 /** Type override */
 export type DataFlowScope = typeof DataFlowScope[keyof typeof DataFlowScope];
+
+export const ConsentBundleType = makeEnum({
+  /** Bundle hosted at /cm path */
+  Production: 'PRODUCTION',
+  /** Bundle hosted at /cm-test path */
+  Test: 'TEST',
+});
+
+/** Override type */
+export type ConsentBundleType =
+  typeof ConsentBundleType[keyof typeof ConsentBundleType];
+
+export const UnknownRequestPolicy = makeEnum({
+  Allow: 'ALLOW',
+  RequireFullConsent: 'REQUIRE_FULL_CONSENT',
+  Block: 'BLOCK',
+});
+
+/** Override type */
+export type UnknownRequestPolicy =
+  typeof UnknownRequestPolicy[keyof typeof UnknownRequestPolicy];
+
+export const TelemetryPartitionStrategy = makeEnum({
+  /** Partition telemetry data by the origin (default) */
+  Origin: 'origin',
+  /** Partition telemetry data by the origin + path */
+  Path: 'path',
+  /** Partition telemetry data by the full URL */
+  Url: 'url',
+});
+
+/** Override type */
+export type TelemetryPartitionStrategy =
+  typeof TelemetryPartitionStrategy[keyof typeof TelemetryPartitionStrategy];
