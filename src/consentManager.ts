@@ -69,3 +69,22 @@ export const TelemetryPartitionStrategy = makeEnum({
 /** Override type */
 export type TelemetryPartitionStrategy =
   typeof TelemetryPartitionStrategy[keyof typeof TelemetryPartitionStrategy];
+
+/**
+ * The possible options for configuring the Consent resolution precedence
+ *
+ * If this is set to 'user' (default), then confirmed consent is persisted, even
+ * if the consent opts the user into tracking purposes opted out by the user's
+ * detected privacy signals.
+ *
+ * If this is set to 'signals', then detected privacy signals always take precedence
+ * over confirmed consent.
+ */
+export const ConsentPrecedenceOption = makeEnum({
+  User: 'user',
+  Signal: 'signal',
+});
+
+/** Override type */
+export type ConsentPrecedenceOption =
+  typeof ConsentPrecedenceOption[keyof typeof ConsentPrecedenceOption];
