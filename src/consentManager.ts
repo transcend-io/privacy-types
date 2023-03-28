@@ -88,3 +88,66 @@ export const ConsentPrecedenceOption = makeEnum({
 /** Override type */
 export type ConsentPrecedenceOption =
   typeof ConsentPrecedenceOption[keyof typeof ConsentPrecedenceOption];
+
+/**
+ * The possible options for configuring the CSP
+ *
+ * These options are simplified for the UI.
+ * Their equivalence in the airgap.js browser API:
+ * Strict => strict
+ * Lax => allow-subdomains allow-known-hosts
+ * On => allow-subdomains
+ * Off => off
+ */
+export const CspOption = makeEnum({
+  Strict: 'Strict',
+  Lax: 'Lax',
+  On: 'On',
+  Off: 'Off',
+});
+
+/** Override type */
+export type CspOption = typeof CspOption[keyof typeof CspOption];
+
+/**
+ * Options for configuring the US Privacy API
+ *
+ * On
+ * Off
+ */
+export const UspapiOption = makeEnum({
+  On: 'on',
+  Off: 'off',
+});
+
+/** Override type */
+export type UspapiOption = typeof UspapiOption[keyof typeof UspapiOption];
+
+/**
+ * Options for configuring the US Privacy API
+ *
+ * Yes
+ * No
+ */
+export const SignedIabAgreementOption = makeEnum({
+  Yes: 'yes',
+  No: 'no',
+});
+
+/** Override type */
+export type SignedIabAgreementOption =
+  typeof SignedIabAgreementOption[keyof typeof SignedIabAgreementOption];
+
+/**
+ * Describes whether listed countries/country subdivisions are included in an experience
+ */
+export const RegionsOperator = makeEnum({
+  /** The listed countries/country subdivisions, time zones, and languages are included in this experience */
+  In: 'IN',
+  /** The listed countries/country subdivisions, time zones, and languages are NOT included in this experience */
+  NotIn: 'NOT_IN',
+});
+
+/** Override type */
+export type RegionsOperator =
+  typeof RegionsOperator[keyof typeof RegionsOperator];
