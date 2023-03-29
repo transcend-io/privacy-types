@@ -118,7 +118,6 @@ export type CspOption = typeof CspOption[keyof typeof CspOption];
 export const UspapiOption = makeEnum({
   On: 'on',
   Off: 'off',
-  Unknown: 'unknown',
 });
 
 /** Override type */
@@ -129,10 +128,12 @@ export type UspapiOption = typeof UspapiOption[keyof typeof UspapiOption];
  *
  * Yes
  * No
+ * Unknown
  */
 export const SignedIabAgreementOption = makeEnum({
   Yes: 'yes',
   No: 'no',
+  Unknown: 'unknown',
 });
 
 /** Override type */
