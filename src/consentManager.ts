@@ -164,3 +164,7 @@ export const BackendSyncOption = makeEnum({
   On: 'on',
   Off: 'off',
 });
+
+/** Override type */
+export type BackendSyncOption =
+  typeof BackendSyncOption[keyof typeof BackendSyncOption];
