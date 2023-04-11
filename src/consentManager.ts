@@ -128,10 +128,12 @@ export type UspapiOption = typeof UspapiOption[keyof typeof UspapiOption];
  *
  * Yes
  * No
+ * Unknown
  */
 export const SignedIabAgreementOption = makeEnum({
   Yes: 'yes',
   No: 'no',
+  Unknown: 'unknown',
 });
 
 /** Override type */
@@ -151,3 +153,18 @@ export const RegionsOperator = makeEnum({
 /** Override type */
 export type RegionsOperator =
   typeof RegionsOperator[keyof typeof RegionsOperator];
+
+/**
+ * Options for configuring Backend Sync
+ *
+ * On
+ * Off
+ */
+export const BackendSyncOption = makeEnum({
+  On: 'on',
+  Off: 'off',
+});
+
+/** Override type */
+export type BackendSyncOption =
+  typeof BackendSyncOption[keyof typeof BackendSyncOption];
