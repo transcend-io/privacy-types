@@ -5,7 +5,7 @@ import { makeEnum } from '@transcend-io/type-utils';
  * Time zones detected by airgap.js
  * Generated via Intl.supportedValuesOf('timeZone')
  */
-export const BrowserTimeZones = makeEnum({
+export const BrowserTimeZone = makeEnum({
   AfricaAbidjan: 'Africa/Abidjan',
   AfricaAccra: 'Africa/Accra',
   AfricaAddisAbaba: 'Africa/Addis_Ababa',
@@ -437,6 +437,6 @@ export const BrowserTimeZones = makeEnum({
 });
 
 /** Type override */
-export type BrowserTimeZones =
-  typeof BrowserTimeZones[keyof typeof BrowserTimeZones];
+export type BrowserTimeZone =
+  typeof BrowserTimeZone[keyof typeof BrowserTimeZone];
 /* eslint-enable max-lines */

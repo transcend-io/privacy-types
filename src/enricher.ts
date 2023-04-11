@@ -18,6 +18,8 @@ export const CustomEnricherType = makeEnum({
   RegexMatch: 'REGEX_MATCH',
   /** Perform conditional logic based on region */
   RegionMatcher: 'REGION_MATCH',
+  /** Execute an SQL query against a database */
+  Database: 'DATABASE',
   /** Execute a look in looker to map identifiers */
   Looker: 'LOOKER',
   /** Adds an enricher dependency */
