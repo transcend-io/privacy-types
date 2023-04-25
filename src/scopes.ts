@@ -66,6 +66,7 @@ export enum ScopeName {
   ManageAssessments = 'manageAssessments',
   ApproveAssessments = 'approveAssessments',
   ViewAuditEvents = 'viewAuditEvents',
+  ManageActionItemCollections = 'manageActionItemCollections',
 }
 
 /**
@@ -627,6 +628,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Approve the assessments and assessment templates',
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ManageActionItemCollections]: {
+    title: 'Manage Action Item Collections',
+    dependencies: [],
+    description: 'Manage and edit action item collections',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Admin],
   },
 };
 
