@@ -645,7 +645,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Send logs from your Sombra to Transcend, using the Transcend Collector',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Sombra],
+    products: [TranscendProduct.Admin, TranscendProduct.Sombra],
   },
 };
 
