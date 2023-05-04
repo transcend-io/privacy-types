@@ -67,7 +67,7 @@ export enum ScopeName {
   ApproveAssessments = 'approveAssessments',
   ViewAuditEvents = 'viewAuditEvents',
   ManageActionItemCollections = 'manageActionItemCollections',
-  SendSombraLogsToCollector = 'sendSombraLogsToCollector'
+  SendSombraLogsToCollector = 'sendSombraLogsToCollector',
 }
 
 /**
@@ -97,7 +97,7 @@ export enum TranscendProduct {
   /** Assessments Product */
   Assessments = 'ASSESSMENTS',
   /** Sombra. */
-  Sombra = 'SOMBRA'
+  Sombra = 'SOMBRA',
 }
 
 /**
@@ -642,10 +642,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.SendSombraLogsToCollector]: {
     title: 'Send Sombra logs to the Transcend Collector',
     dependencies: [],
-    description: 'Send logs from your Sombra to Transcend, using the Transcend Collector',
+    description:
+      'Send logs from your Sombra to Transcend, using the Transcend Collector',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Sombra]
-  }
+    products: [TranscendProduct.Sombra],
+  },
 };
 
 export const TRANSCEND_SCOPES: {
