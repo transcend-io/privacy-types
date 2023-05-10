@@ -8,6 +8,7 @@ import { FinancialSubCategory } from './financial';
 import { HealthSubCategory } from './health';
 import { IdSubCategory } from './id';
 import { LocationSubCategory } from './location';
+import { OtherDataSubCategory } from './other';
 import { OnlineActivitySubCategory } from './onlineActivity';
 import { SocialMediaSubCategory } from './socialMedia';
 import { SurveySubCategory } from './survey';
@@ -30,6 +31,7 @@ export const DefaultDataSubCategoryType = makeEnum({
   ...TrackingSubCategory,
   ...UserProfileSubCategory,
   ...NotPersonalDataSubCategory,
+  ...OtherDataSubCategory,
 });
 
 /**
