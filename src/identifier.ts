@@ -64,6 +64,8 @@ export const IdentifierType = makeEnum({
   thriveTrmContactId: 'thriveTrmContactId',
   /** Talkable uuid */
   TalkableUUID: 'talkableUUID',
+  /** URL of a LinkedIn profile */
+  linkedInURL: 'linkedInURL',
   /**
    * An advertising ID (for a mobile device)
    * TODO: https://transcend.height.app/T-13657 - remove this in favor of idfa and gpadvid
