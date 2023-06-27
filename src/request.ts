@@ -150,3 +150,20 @@ export const RequestDataSiloStatus = makeEnum({
  */
 export type RequestDataSiloStatus =
   typeof RequestDataSiloStatus[keyof typeof RequestDataSiloStatus];
+
+/**
+ * The different ways that regions can be detected at time of
+ * request submit.
+ */
+export const RegionDetectionMethod = makeEnum({
+  /** Region detection is disabled */
+  Disabled: 'DISABLED',
+  /** Auto detect the region and collect in form silently */
+  Auto: 'AUTO',
+  /** Collect information about the user's region by presenting the user a form */
+  Form: 'FORM',
+});
+
+/** Type override */
+export type RegionDetectionMethod =
+  typeof RegionDetectionMethod[keyof typeof RegionDetectionMethod];
