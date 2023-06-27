@@ -99,3 +99,54 @@ export enum RequestOrigin {
   /** Request made from Shopify Webhook */
   Shopify = 'SHOPIFY',
 }
+
+/**
+ * The statuses that a queue is expected to implement
+ */
+export const QueueStatus = makeEnum({
+  /** The row is queued up to be processed by the service worker. */
+  Queued: 'QUEUED',
+  /**
+   * The service worker has fired and is waiting on an asynchronous response.
+   * If waiting for too long, the item should be retried
+   */
+  Waiting: 'WAITING',
+  /**
+   * The processing was skipped because the record was no longer found.
+   * The information may have been deleted already by another process.
+   *
+   * If a data silo is consistently skipping operations, there may be a deeper issue.
+   */
+  Skipped: 'SKIPPED',
+  /** An error occurred while processing the row. The error message is stored on the model. */
+  Error: 'ERROR',
+  /** The service worker successfully processed the row. */
+  Resolved: 'RESOLVED',
+  /** The item requires attention for some reason */
+  ActionRequired: 'ACTION_REQUIRED',
+  /**
+   * The Item has been successfully ingested by our SQS task queue,
+   * and is currently in line to being processed.
+   */
+  RemoteProcessing: 'REMOTE_PROCESSING',
+});
+
+/**
+ * Overload type
+ */
+export type QueueStatus = typeof QueueStatus[keyof typeof QueueStatus];
+
+/**
+ * Status of request/data-silo combo
+ */
+export const RequestDataSiloStatus = makeEnum({
+  ...QueueStatus,
+  /** The request not processed due to some exception */
+  SkippedDueToException: 'SKIPPED_DUE_TO_EXCEPTION',
+});
+
+/**
+ * Overload type
+ */
+export type RequestDataSiloStatus =
+  typeof RequestDataSiloStatus[keyof typeof RequestDataSiloStatus];
