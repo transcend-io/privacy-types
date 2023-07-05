@@ -609,7 +609,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     dependencies: [
       ScopeName.ViewGlobalAttributes, 
-      ScopeName.ViewManagedConsentDatabaseAdminApi,
+      ScopeName.ViewManagedConsentDatabaseAdminApi
     ],
     description: 'View the consent manager configuration.',
     products: [TranscendProduct.ConsentManager],
