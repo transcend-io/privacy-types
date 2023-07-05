@@ -641,7 +641,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewManagedConsentDatabaseAdminApi]: {
     title: 'View Managed Consent Database Admin Api',
-    dependencies: [ScopeName.ViewConsentManager],
+    dependencies: [],
     description:
       'Ability to query user consent preferences with the Managed Consent Database Admin API',
     type: ScopeType.View,
