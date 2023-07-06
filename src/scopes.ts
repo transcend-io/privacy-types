@@ -643,7 +643,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ViewManagedConsentDatabaseAdminApi]: {
-    title: 'View Managed Consent Database Admin Api',
+    title: 'View Managed Consent Database Admin API',
     dependencies: [],
     description:
       'Ability to query user consent preferences with the Managed Consent Database Admin API',
