@@ -15,7 +15,6 @@ export type MacroRegion = typeof MacroRegion[keyof typeof MacroRegion];
 export const DEFAULT_MACROREGIONS_MAP = {
   [MacroRegion.EU]: [
     IsoCountryCode.BE, // Belgium
-    IsoCountryCode.EL, // Greece
     IsoCountryCode.GR, // Greece
     IsoCountryCode.LT, // Lithuania
     IsoCountryCode.PT, // Portugal
