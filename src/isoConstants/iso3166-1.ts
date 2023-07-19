@@ -92,7 +92,6 @@ export const COUNTRY_LOOKUP = {
   GH: 'Ghana',
   GI: 'Gibraltar',
   GR: 'Greece',
-  EL: 'Greece',
   GL: 'Greenland',
   GD: 'Grenada',
   GP: 'Guadeloupe',
