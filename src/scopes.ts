@@ -656,7 +656,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.AuthenticateAIGovernanceProxyRequest]: {
     dependencies: [],
     description: 'Ability to send requests to the AI Governancy Proxy. Typically granted to the API Keys used to authenticate requests to the service.',
-    title: 'Authenticate AI Governance Proxy Requests',
+    title: 'Authenticate AI Governance Proxy',
     type: ScopeType.Modify,
     products: [TranscendProduct.AIGovernanceProxy]
 },
