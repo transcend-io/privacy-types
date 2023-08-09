@@ -28,6 +28,7 @@ export const SQLDriverWithDataMapping = makeEnum({
   [DatabaseIntegration.bigquery]: 'Google BigQuery',
   [DatabaseIntegration.microsoftsql]: 'Microsoft SQL',
   [DatabaseIntegration.maria]: 'MariaDB',
+  [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
 });
 
 /** Overrides type */
