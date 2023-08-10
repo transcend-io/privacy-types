@@ -655,8 +655,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.AuthenticateAIGovernanceProxyRequest]: {
     dependencies: [],
-    // eslint-disable-next-line max-len
     description:
+      // eslint-disable-next-line max-len
       'Ability to send requests to the AI Governancy Proxy. Typically granted to the API Keys used to authenticate requests to the service.',
     title: 'Authenticate AI Governance Proxy',
     type: ScopeType.Modify,
