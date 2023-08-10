@@ -68,7 +68,6 @@ export enum ScopeName {
   ViewAuditEvents = 'viewAuditEvents',
   ManageActionItemCollections = 'manageActionItemCollections',
   ViewManagedConsentDatabaseAdminApi = 'viewManagedConsentDatabaseAdminApi',
-  AuthenticateAIGovernanceProxyRequest = 'authenticateAIGovernanceProxyRequest',
 }
 
 /**
@@ -99,8 +98,6 @@ export enum TranscendProduct {
   Assessments = 'ASSESSMENTS',
   /** Sombra. */
   Sombra = 'SOMBRA',
-  /** AI Governance Proxy */
-  AIGovernanceProxy = 'AI_GOVERNANCE_PROXY',
 }
 
 /**
@@ -652,15 +649,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to query user consent preferences with the Managed Consent Database Admin API',
     type: ScopeType.View,
     products: [TranscendProduct.ConsentManager],
-  },
-  [ScopeName.AuthenticateAIGovernanceProxyRequest]: {
-    dependencies: [],
-    description:
-      // eslint-disable-next-line max-len
-      'Ability to send requests to the AI Governancy Proxy. Typically granted to the API Keys used to authenticate requests to the service.',
-    title: 'Authenticate AI Governance Proxy',
-    type: ScopeType.Modify,
-    products: [TranscendProduct.AIGovernanceProxy],
   },
 };
 
