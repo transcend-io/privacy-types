@@ -2,6 +2,8 @@
  * Resources within the Transcend dashboard that support the attributes feature
  */
 export enum AttributeSupportedResourceType {
+  /** Action items table */
+  ActionItem = 'actionItem',
   /** Data silos table */
   DataSilo = 'dataSilo',
   /** Subdatapoints table (shows up under Data Inventory > Data Points tab) */
