@@ -72,7 +72,7 @@ export const DataCategoryType = makeEnum({
    * Information identifying an object associated with a particular integration.
    * For example, Salesforce Object Ids.
    */
-  IntegrationIdentifier: 'INTEGRATION_IDENTIFIER'
+  IntegrationIdentifier: 'INTEGRATION_IDENTIFIER',
 });
 
 /** Type override */
