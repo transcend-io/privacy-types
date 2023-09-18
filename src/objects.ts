@@ -68,6 +68,11 @@ export const DataCategoryType = makeEnum({
   Unspecified: 'UNSPECIFIED',
   /** Information that is NOT personal data */
   NotPersonalData: 'NOT_PERSONAL_DATA',
+  /**
+   * Information identifying an object associated with a particular integration.
+   * For example, Salesforce Object Ids.
+   */
+  IntegrationIdentifier: 'INTEGRATION_IDENTIFIER'
 });
 
 /** Type override */
