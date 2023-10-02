@@ -24,6 +24,8 @@ export const CustomEnricherType = makeEnum({
   Looker: 'LOOKER',
   /** Adds an enricher dependency */
   WaitPeriod: 'WAIT_PERIOD',
+  /** Verify a government ID */
+  GovernmentId: 'GOVERNMENT_ID',
 });
 
 /**
