@@ -17,6 +17,7 @@ export enum ScopeName {
   ManageConsentManagerDeveloperSettings = 'manageConsentManagerDeveloperSettings',
   ManageDataFlow = 'manageDataFlow',
   DeployConsentManager = 'deployConsentManager',
+  DeployTestConsentManager = 'deployTestConsentManager',
   ViewCustomerDataDataMapping = 'viewCustomerDataDataMapping',
   ViewCustomerDataPrivacyRequests = 'viewCustomerDataPrivacyRequests',
   ManageAccessControl = 'manageAccessControl',
@@ -534,6 +535,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ManageConsentManagerDisplaySettings,
       ScopeName.ManageConsentManagerDeveloperSettings,
       ScopeName.DeployConsentManager,
+      ScopeName.DeployTestConsentManager,
       ScopeName.ViewDataFlow,
     ],
     description:
@@ -559,11 +561,20 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
   },
+  [ScopeName.DeployTestConsentManager]: {
+    dependencies: [ScopeName.ViewConsentManager],
+    description:
+      // eslint-disable-next-line max-len
+      'Ability to publish changes to the test Consent Manager bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
+    title: 'Deploy Test Consent Manager',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager],
+  },
   [ScopeName.DeployConsentManager]: {
     dependencies: [ScopeName.ViewConsentManager],
     description:
       // eslint-disable-next-line max-len
-      'Ability to publish changes to the production and test bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
+      'Ability to publish changes to the production Consent Manager test bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
     title: 'Deploy Consent Manager',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
