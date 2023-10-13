@@ -571,10 +571,10 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.ConsentManager],
   },
   [ScopeName.DeployConsentManager]: {
-    dependencies: [ScopeName.ViewConsentManager],
+    dependencies: [ScopeName.ViewConsentManager, ScopeName.DeployTestConsentManager],
     description:
       // eslint-disable-next-line max-len
-      'Ability to publish changes to the production Consent Manager test bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
+      'Ability to publish changes to the production and test Consent Manager bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
     title: 'Deploy Consent Manager',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManager],
