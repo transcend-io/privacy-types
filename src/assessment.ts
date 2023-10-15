@@ -24,5 +24,7 @@ export enum TemplateVariableModelName {
   DataSilos = 'dataSilos',
   ProcessingPurpose = 'processingPurpose',
   ProcessingPurposes = 'processingPurposes',
+  DataPointProperty = 'dataPointProperty',
+  DataPointObject = 'dataPointObject',
   DataReport = 'dataReport',
 }
