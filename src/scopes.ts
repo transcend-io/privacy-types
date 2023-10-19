@@ -67,6 +67,9 @@ export enum ScopeName {
   ManageAssessments = 'manageAssessments',
   ApproveAssessments = 'approveAssessments',
   ManagePrompts = 'managePrompts',
+  ManagePromptRuns = 'managePromptRuns',
+  ExecutePrompt = 'executePrompt',
+  ViewPromptRuns = 'viewPromptRuns',
   ViewPrompts = 'viewPrompts',
   ApprovePrompts = 'approvePrompts',
   ViewAuditEvents = 'viewAuditEvents',
@@ -102,6 +105,12 @@ export enum TranscendProduct {
   Assessments = 'ASSESSMENTS',
   /** Sombra. */
   Sombra = 'SOMBRA',
+  /** Prompt Manager */
+  PromptManager = 'PROMPT_MANAGER',
+  /** Auditor */
+  Auditor = 'AUDITOR',
+  /** Contract Scanning */
+  ContractScanning = 'CONTRACT_SCANNING',
 }
 
 /**
@@ -657,21 +666,42 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     description: 'View the prompts and prompt templates.',
     type: ScopeType.View,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.PromptManager],
   },
   [ScopeName.ManagePrompts]: {
     title: 'Manage Prompts',
     dependencies: [ScopeName.ViewPrompts],
     description: 'Manage and edit prompts and prompt templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.PromptManager],
+  },
+  [ScopeName.ViewPromptRuns]: {
+    title: 'View Prompt Runs',
+    dependencies: [ScopeName.ViewPrompts],
+    description: 'View the output run results for prompts.',
+    type: ScopeType.View,
+    products: [TranscendProduct.PromptManager],
+  },
+  [ScopeName.ManagePromptRuns]: {
+    title: 'Manage Prompt Runs',
+    dependencies: [ScopeName.ViewPromptRuns, ScopeName.ViewPrompts],
+    description: 'Manage, edit and create prompt run results',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PromptManager],
+  },
+  [ScopeName.ExecutePrompt]: {
+    title: 'Execute Prompt',
+    dependencies: [ScopeName.ViewPromptRuns, ScopeName.ViewPrompts],
+    description: 'Ability to execute a prompt ans view the outputs',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PromptManager],
   },
   [ScopeName.ApprovePrompts]: {
     title: 'Approve Prompts',
     dependencies: [ScopeName.ViewPrompts],
     description: 'Approve the prompts and prompt templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.PromptManager],
   },
   [ScopeName.ManageActionItemCollections]: {
     title: 'Manage Action Item Collections',
