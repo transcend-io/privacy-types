@@ -22,6 +22,18 @@ export enum AttributeSupportedResourceType {
   DataSubCategory = 'dataSubCategory',
   /** Processing purpose table */
   ProcessingPurposeSubCategory = 'processingPurposeSubCategory',
+  /** Assessment table */
+  Assessment = 'assessment',
+  /** AssessmentTemplate table */
+  AssessmentTemplate = 'assessmentTemplate',
+  /** Prompt table */
+  Prompt = 'prompt',
+  /** PromptGroup table */
+  PromptGroup = 'promptGroup',
+  /** PromptRun table */
+  PromptRun = 'promptRun',
+  /** PromptTemplate table */
+  PromptTemplate = 'promptTemplate',
 }
 
 /**
