@@ -16,8 +16,8 @@ export enum AssessmentFormStatus {
 
 /** AssessmentFormTemplate status types */
 export enum AssessmentFormTemplateStatus {
-    /** The template is being created */
-    Draft = 'DRAFT',
-    /** The template is ready to be used to create forms */
-    Published = 'PUBLISHED',
+  /** The template is being created */
+  Draft = 'DRAFT',
+  /** The template is ready to be used to create forms */
+  Published = 'PUBLISHED',
 }
