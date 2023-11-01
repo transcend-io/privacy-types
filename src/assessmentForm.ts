@@ -1,6 +1,6 @@
 /** AssessmentForm status types */
 export enum AssessmentFormStatus {
-    /** The form has been created from a template and shared to be filled out */
+  /** The form has been created from a template and shared to be filled out */
   Shared = 'SHARED',
   /** The form is in process of being answered */
   InProgress = 'IN_PROGRESS',
