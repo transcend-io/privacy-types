@@ -13,3 +13,8 @@ export enum AssessmentFormStatus {
   /** The reviewers approved the answers */
   Approved = 'APPROVED',
 }
+
+export enum AssessmentFormTemplateStatus {
+    Draft = 'DRAFT',
+    Published = 'PUBLISHED',
+}
