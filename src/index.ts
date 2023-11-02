@@ -16,4 +16,5 @@ export * from './attribute';
 export * from './consentManager';
 export * from './enricher';
 export * from './assessment';
+export * from './assessmentForm';
 export * from './datapoint';
