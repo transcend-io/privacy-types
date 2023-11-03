@@ -33,3 +33,16 @@ export const ChatCompletionMessage = t.type({
 
 /** Type override */
 export type ChatCompletionMessage = t.TypeOf<typeof ChatCompletionMessage>;
+
+/**
+ * LLM model clients
+ */
+export const LargeLanguageModelClient = makeEnum({
+  OpenAi: 'openai',
+  Claude: 'claude',
+  Llama: 'llama',
+});
+
+/** Overrides type */
+export type LargeLanguageModelClient =
+  typeof LargeLanguageModelClient[keyof typeof LargeLanguageModelClient];
