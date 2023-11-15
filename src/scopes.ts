@@ -78,6 +78,7 @@ export enum ScopeName {
   ViewAuditEvents = 'viewAuditEvents',
   ManageActionItemCollections = 'manageActionItemCollections',
   ViewManagedConsentDatabaseAdminApi = 'viewManagedConsentDatabaseAdminApi',
+  ManageStoredPreferences = 'manageStoredPreferences'
 }
 
 /**
@@ -114,6 +115,8 @@ export enum TranscendProduct {
   Auditor = 'AUDITOR',
   /** Contract Scanning */
   ContractScanning = 'CONTRACT_SCANNING',
+  /** The preference store */
+  PreferenceStore = 'PREFERENCE_STORE'
 }
 
 /**
@@ -740,7 +743,15 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Ability to query user consent preferences with the Managed Consent Database Admin API',
     type: ScopeType.View,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManager, TranscendProduct.PreferenceStore],
+  },
+  [ScopeName.ManageStoredPreferences]: {
+    title: 'Modify User Stored Preferences',
+    dependencies: [ScopeName.ViewManagedConsentDatabaseAdminApi],
+    description:
+      'Ability to make updates to user stored consent preferences',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.ConsentManager, TranscendProduct.PreferenceStore],
   },
 };
 
