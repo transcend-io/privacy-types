@@ -23,6 +23,18 @@ export enum ConsentTrackerStatus {
 }
 
 /**
+ * Statuses for a consent service
+ */
+export enum ConsentServiceStatus {
+  /** Consent services to be included in live airgap bundles */
+  Live = 'LIVE',
+  /** Consent services that won't be included in live airgap bundles because they need a human review */
+  NeedsReview = 'NEEDS_REVIEW',
+  /** Consent services that won't be included in live airgap bundles because they have been reviewed and marked as junk */
+  Junk = 'JUNK',
+}
+
+/**
  * Applicable data flow scopes for a given URL
  */
 export const DataFlowScope = makeEnum({
