@@ -19,3 +19,4 @@ export * from './assessment';
 export * from './assessmentForm';
 export * from './datapoint';
 export * from './largeLanguageModels';
+export * from './prompt';
