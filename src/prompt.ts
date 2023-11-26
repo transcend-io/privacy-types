@@ -3,7 +3,7 @@
  * that can be injected into an HTML template
  */
 export enum TemplateVariableModelName {
-  Attribute = 'attribute',
+  CustomField = 'customField',
   BusinessEntity = 'businessEntity',
   BusinessEntities = 'businessEntities',
   DataCategory = 'dataCategory',
