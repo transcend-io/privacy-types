@@ -32,8 +32,6 @@ export enum AttributeSupportedResourceType {
   PromptGroup = 'promptGroup',
   /** PromptRun table */
   PromptRun = 'promptRun',
-  /** PromptTemplate table */
-  PromptTemplate = 'promptTemplate',
 }
 
 /**
