@@ -74,6 +74,10 @@ export enum ScopeName {
   ApprovePrompts = 'approvePrompts',
   ManageAuditor = 'manageAuditor',
   ExecuteAuditor = 'executeAuditor',
+  ViewPathfinder = 'viewPathfinder',
+  ManagePathfinder = 'managePathfinder',
+  ViewContractScanning = 'viewContractScanning',
+  ManageContractScanning = 'manageContractScanning',
   ViewAuditorRuns = 'viewAuditorRuns',
   ViewAuditEvents = 'viewAuditEvents',
   ManageActionItemCollections = 'manageActionItemCollections',
@@ -115,6 +119,8 @@ export enum TranscendProduct {
   Auditor = 'AUDITOR',
   /** Contract Scanning */
   ContractScanning = 'CONTRACT_SCANNING',
+  /** Pathfinder */
+  Pathfinder = 'PATHFINDER',
   /** The preference store */
   PreferenceStore = 'PREFERENCE_STORE',
 }
@@ -666,6 +672,37 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Approve the assessments and assessment templates',
     type: ScopeType.Modify,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+  },
+  [ScopeName.ViewPathfinder]: {
+    title: 'View Pathfinder',
+    dependencies: [],
+    description: 'View the pathfinder settings.',
+    type: ScopeType.View,
+    products: [TranscendProduct.Pathfinder],
+  },
+  [ScopeName.ManagePathfinder]: {
+    title: 'Manage Pathfinder',
+    dependencies: [ScopeName.ViewPathfinder],
+    description:
+      'Manage the pathfinder settings under that pathfinder side menu',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Pathfinder],
+  },
+  [ScopeName.ViewContractScanning]: {
+    title: 'View Contract Scanning',
+    dependencies: [],
+    description:
+      'View the contract scanning side menu - including setting and contracts.',
+    type: ScopeType.View,
+    products: [TranscendProduct.Pathfinder],
+  },
+  [ScopeName.ManageContractScanning]: {
+    title: 'Manage Contract Scanning',
+    dependencies: [ScopeName.ViewContractScanning],
+    description:
+      'Upload and manage contracts under the contract scanning side menu',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.Pathfinder],
   },
   [ScopeName.ViewPrompts]: {
     title: 'View Prompts',
