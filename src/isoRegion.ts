@@ -5,11 +5,12 @@ import { ISO_31662 } from './isoConstants/iso3166-2';
 
 /**
  * gets a typed Dictionary (identical key/values) from a source lookup object
- *
  * @param source - the source lookup
  * @returns the typed dictionary
  */
-function getDictFromKeys<T>(source: T): {
+function getDictFromKeys<T extends object>(
+  source: T,
+): {
   [K in keyof T]: K;
 } {
   return Object.fromEntries(
