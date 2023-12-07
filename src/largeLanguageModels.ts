@@ -13,7 +13,7 @@ export const ChatCompletionRole = makeEnum({
 
 /** Overrides type */
 export type ChatCompletionRole =
-  (typeof ChatCompletionRole)[keyof typeof ChatCompletionRole];
+  typeof ChatCompletionRole[keyof typeof ChatCompletionRole];
 
 /**
  * The supported product areas where the prompts can be run
@@ -46,4 +46,4 @@ export const LargeLanguageModelClient = makeEnum({
 
 /** Overrides type */
 export type LargeLanguageModelClient =
-  (typeof LargeLanguageModelClient)[keyof typeof LargeLanguageModelClient];
+  typeof LargeLanguageModelClient[keyof typeof LargeLanguageModelClient];
