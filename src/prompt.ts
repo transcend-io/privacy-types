@@ -26,3 +26,11 @@ export enum PromptResponseFormat {
   Text = 'text',
   JsonObject = 'json_object',
 }
+
+/**
+ * The purpose for uploading a file to a prompt or agent
+ */
+export enum PromptFilePurpose {
+  Assistants = 'ASSISTANTS',
+  FineTune = 'FINE_TUNE',
+}
