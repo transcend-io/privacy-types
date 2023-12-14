@@ -14,4 +14,4 @@ export const CodePackageType = makeEnum({
 
 /** Overrides type */
 export type CodePackageType =
-  (typeof CodePackageType)[keyof typeof CodePackageType];
+  typeof CodePackageType[keyof typeof CodePackageType];
