@@ -1,3 +1,4 @@
+*.pnp.cjs
 node_modules
 .pnp.cjs
 .pnp.loader.mjs
