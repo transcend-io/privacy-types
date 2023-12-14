@@ -20,3 +20,5 @@ export * from './assessmentForm';
 export * from './datapoint';
 export * from './largeLanguageModels';
 export * from './prompt';
+export * from './getRegistryLink';
+export * from './code';
