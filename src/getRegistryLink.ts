@@ -11,6 +11,7 @@ export const CODE_PACKAGE_TYPE_TO_LINK: {
   [CodePackageType.RequirementsTxt]: (name) =>
     `https://pypi.org/project/${name}`,
   [CodePackageType.Pubspec]: (name) => `https://pub.dev/packages/${name}`,
+  [CodePackageType.Gemfile]: (name) => `https://rubygems.org/gems/${name}`,
 };
 
 /**

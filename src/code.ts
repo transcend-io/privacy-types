@@ -7,4 +7,5 @@ export enum CodePackageType {
   Gradle = 'GRADLE',
   CocoaPods = 'COCOA_PODS',
   Pubspec = 'PUBSPEC',
+  Gemfile = 'GEMFILE',
 }
