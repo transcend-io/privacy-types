@@ -1,5 +1,7 @@
 /** AssessmentForm status types */
 export enum AssessmentFormStatus {
+  /** The form has been created but has not been shared with assignees */
+  Draft = 'DRAFT',
   /** The form has been created from a template and shared to be filled out */
   Shared = 'SHARED',
   /** The form is in process of being answered */
