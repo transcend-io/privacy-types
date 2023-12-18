@@ -30,7 +30,7 @@ export const SQLDriverWithDataMapping = makeEnum({
   [DatabaseIntegration.microsoftsql]: 'Microsoft SQL',
   [DatabaseIntegration.maria]: 'MariaDB',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
-  [DatabaseIntegration.db2]: 'IBM DB2',
+  [DatabaseIntegration.ibmdb2]: 'IBM DB2',
 });
 
 /** Overrides type */
