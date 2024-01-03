@@ -68,6 +68,8 @@ export const IdentifierType = makeEnum({
    * TODO: https://transcend.height.app/T-13657 - remove this in favor of idfa and gpadvid
    */
   AdvertisingId: 'advertisingId',
+  /** An ID for a Persona account */
+  PersonaReferenceId: 'personaReferenceId',
 });
 
 /**
