@@ -671,14 +671,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
   [ScopeName.ViewAssignedAssessments]: {
-    title: 'View Assessments',
+    title: 'View Assigned Assessments',
     dependencies: [],
-    description: 'View the asssigned assessments forms.',
+    description: 'View the assigned assessments forms.',
     type: ScopeType.View,
     products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
   },
   [ScopeName.ManageAssignedAssessments]: {
-    title: 'Manage Assessments',
+    title: 'Manage Assigned Assessments',
     dependencies: [ScopeName.ViewAssignedAssessments],
     description: 'Manage and edit the assigned assessments.',
     type: ScopeType.Modify,
