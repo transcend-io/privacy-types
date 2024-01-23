@@ -70,6 +70,8 @@ export const IdentifierType = makeEnum({
   AdvertisingId: 'advertisingId',
   /** An ID for a Persona account */
   PersonaReferenceId: 'personaReferenceId',
+  /** An ID for a Stream user */
+  StreamUserId: 'streamUserId',
 });
 
 /**
