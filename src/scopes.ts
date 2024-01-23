@@ -693,7 +693,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewPathfinder]: {
     title: 'View Pathfinder',
-    dependencies: [],
+    dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the pathfinder settings.',
     type: ScopeType.View,
     products: [TranscendProduct.Pathfinder],
@@ -708,7 +708,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewContractScanning]: {
     title: 'View Contract Scanning',
-    dependencies: [],
+    dependencies: [ScopeName.ViewGlobalAttributes],
     description:
       'View the contract scanning side menu - including setting and contracts.',
     type: ScopeType.View,
@@ -724,7 +724,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewPrompts]: {
     title: 'View Prompts',
-    dependencies: [],
+    dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the prompts and prompt templates.',
     type: ScopeType.View,
     products: [TranscendProduct.PromptManager],
@@ -752,7 +752,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   },
   [ScopeName.ViewCodeScanning]: {
     title: 'View Code Scanning',
-    dependencies: [],
+    dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the code scanning tables.',
     type: ScopeType.View,
     products: [TranscendProduct.DataMapping],
