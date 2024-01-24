@@ -72,6 +72,8 @@ export const IdentifierType = makeEnum({
   PersonaReferenceId: 'personaReferenceId',
   /** An ID for a Stream user */
   StreamUserId: 'streamUserId',
+  /** A token used to make API calls on behalf of a Plaid account. */
+  plaidProcessorToken: 'streamUserId',
 });
 
 /**
