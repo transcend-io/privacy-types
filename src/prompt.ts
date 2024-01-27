@@ -33,5 +33,15 @@ export enum PromptResponseFormat {
 export enum PromptFilePurpose {
   Assistants = 'ASSISTANTS',
   FineTune = 'FINE_TUNE',
+  FineTuneResults = 'FINE_TUNE_RESULTS',
   AssistantsOutput = 'ASSISTANTS_OUTPUT',
 }
+
+export const PROMPT_FILE_PURPOSE_TO_OPEN_AI: {
+  [k in PromptFilePurpose]: string;
+} = {
+  [PromptFilePurpose.Assistants]: 'assistants',
+  [PromptFilePurpose.AssistantsOutput]: 'assistants_output',
+  [PromptFilePurpose.FineTune]: 'fine-tune',
+  [PromptFilePurpose.FineTuneResults]: 'fine-tune-results',
+};
