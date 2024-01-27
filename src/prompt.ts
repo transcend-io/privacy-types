@@ -33,4 +33,5 @@ export enum PromptResponseFormat {
 export enum PromptFilePurpose {
   Assistants = 'ASSISTANTS',
   FineTune = 'FINE_TUNE',
+  AssistantsOutput = 'ASSISTANTS_OUTPUT',
 }
