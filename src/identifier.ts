@@ -74,6 +74,8 @@ export const IdentifierType = makeEnum({
   StreamUserId: 'streamUserId',
   /** A token used to make API calls on behalf of a Plaid account. */
   PlaidProcessorToken: 'plaidProcessorToken',
+  /** An ID for an applicant on Onfido */
+  OnfidoApplicantId: 'onfidoApplicantId',
 });
 
 /**
