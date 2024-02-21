@@ -8,6 +8,7 @@ import { getEntries } from '@transcend-io/type-utils';
 export enum ScopeName {
   ReadOnly = 'readOnly',
   FullAdmin = 'fullAdmin',
+  ViewAllActionItems = 'viewAllActionItems',
   MakeDataSubjectRequest = 'makeDataSubjectRequest',
   ConnectDataSilos = 'connectDataSilos',
   DeployPrivacyCenter = 'deployPrivacyCenter',
@@ -267,6 +268,15 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'View the potential access control scopes that can be assigned to members in the organization.',
     title: 'View Scopes',
+    type: ScopeType.View,
+    products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ViewAllActionItems]: {
+    dependencies: [],
+    description:
+      'View all action items in the organization, regardless of assignee or scopes for specific resources. ' +
+      'This is necessary when querying API keys via the API.',
+    title: 'View All Action Items',
     type: ScopeType.View,
     products: [TranscendProduct.Admin],
   },
