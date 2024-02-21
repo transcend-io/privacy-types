@@ -1,4 +1,5 @@
 export * from './actions';
+export * from './actionItems';
 export * from './objects';
 export * from './request';
 export * from './identifier';
