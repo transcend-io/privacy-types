@@ -9,6 +9,7 @@ export enum ScopeName {
   ReadOnly = 'readOnly',
   FullAdmin = 'fullAdmin',
   ViewAllActionItems = 'viewAllActionItems',
+  ManageAllActionItems = 'manageAllActionItems',
   MakeDataSubjectRequest = 'makeDataSubjectRequest',
   ConnectDataSilos = 'connectDataSilos',
   DeployPrivacyCenter = 'deployPrivacyCenter',
@@ -278,6 +279,15 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'This is necessary when querying API keys via the API.',
     title: 'View All Action Items',
     type: ScopeType.View,
+    products: [TranscendProduct.Admin],
+  },
+  [ScopeName.ManageAllActionItems]: {
+    dependencies: [],
+    description:
+      'Manage all action items in the organization, regardless of assignee or scopes for specific resources. ' +
+      'This is necessary when querying API keys via the API.',
+    title: 'Manage All Action Items',
+    type: ScopeType.Modify,
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ViewEmployees]: {
