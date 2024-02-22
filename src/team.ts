@@ -16,4 +16,5 @@ export enum StaticTeamType {
   ProjectManagers = 'PROJECT_MANAGERS',
   Marketing = 'MARKETING',
   SystemOwners = 'SYSTEM_OWNERS',
+  FrontendDeveloper = 'FRONTEND_DEVELOPER',
 }
