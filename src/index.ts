@@ -19,6 +19,7 @@ export * from './enricher';
 export * from './assessment';
 export * from './assessmentForm';
 export * from './datapoint';
+export * from './team';
 export * from './largeLanguageModels';
 export * from './prompt';
 export * from './getRegistryLink';
