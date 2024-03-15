@@ -14,7 +14,6 @@ export const DatabaseIntegration = makeEnum({
   mongodb: 'mongodb',
   amazondynamodb: 'amazondynamodb',
   amazons3: 'amazons3',
-  amazonwebservice: 'amazonwebservice',
   databrickslakehouse: 'databrickslakehouse',
   ibmdb2: 'ibmdb2',
 });
@@ -47,7 +46,6 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.mongodb]: 'MongoDB',
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
   [DatabaseIntegration.amazons3]: 'AmazonS3',
-  [DatabaseIntegration.amazonwebservice]: 'AmazonWebService',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
 });
 
