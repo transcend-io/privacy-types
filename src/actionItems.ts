@@ -1,8 +1,7 @@
 /**
- * The type of actionItem a person will be notified to fulfill, without the assessments v1 action items
+ * The type of actionItem a person will be notified to fulfill
  */
-// TODO: https://transcend.height.app/T-34487 - remove after monorepo FE and BE have migrated
-export enum ActionItemCodeWithoutAssessmentsV1 {
+export enum ActionItemCode {
   /**
    * - The action is not connected to any data silos or data points
    */
@@ -177,9 +176,10 @@ export enum ActionItemCodeWithoutAssessmentsV1 {
 
 
 /**
- * The type of actionItem a person will be notified to fulfill
+ * The type of actionItem a person will be notified to fulfill, with deprecated assessments v1 action items
  */
-export enum ActionItemCode {
+// TODO: https://transcend.height.app/T-34487 - remove after monorepo FE and BE have migrated
+export enum ActionItemCodeWithDeprecatedEntry {
   /**
    * - The action is not connected to any data silos or data points
    */
