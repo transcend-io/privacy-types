@@ -45,3 +45,13 @@ export const PROMPT_FILE_PURPOSE_TO_OPEN_AI: {
   [PromptFilePurpose.FineTune]: 'fine-tune',
   [PromptFilePurpose.FineTuneResults]: 'fine-tune-results',
 };
+
+/** Prompt status types */
+export enum PromptStatus {
+  Draft = 'DRAFT',
+  Submitted = 'SUBMITTED',
+  InReview = 'IN_REVIEW',
+  ChangesRequested = 'CHANGES_REQUESTED',
+  Rejected = 'REJECTED',
+  Approved = 'APPROVED',
+}
