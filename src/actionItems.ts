@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /**
  * The type of actionItem a person will be notified to fulfill
  */
@@ -378,3 +379,4 @@ export enum ActionItemPriorityOverride {
   High = 'HIGH',
   Critical = 'CRITICAL',
 }
+/* eslint-enable max-lines */
