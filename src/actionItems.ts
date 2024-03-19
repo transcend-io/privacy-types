@@ -175,7 +175,6 @@ export enum ActionItemCode {
   DataPointDatabaseQueryNeedsApproval = 'DATA_POINT_DATABASE_QUERY_NEEDS_APPROVAL',
 }
 
-
 // TODO: https://transcend.height.app/T-34487 - remove after monorepo FE and BE have migrated
 /**
  * The type of actionItem a person will be notified to fulfill, with deprecated assessments v1 action items
