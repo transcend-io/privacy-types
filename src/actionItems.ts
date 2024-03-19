@@ -176,10 +176,10 @@ export enum ActionItemCode {
 }
 
 
+// TODO: https://transcend.height.app/T-34487 - remove after monorepo FE and BE have migrated
 /**
  * The type of actionItem a person will be notified to fulfill, with deprecated assessments v1 action items
  */
-// TODO: https://transcend.height.app/T-34487 - remove after monorepo FE and BE have migrated
 export enum ActionItemCodeWithDeprecatedEntry {
   /**
    * - The action is not connected to any data silos or data points
