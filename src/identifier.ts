@@ -61,6 +61,8 @@ export const IdentifierType = makeEnum({
   thriveTrmContactId: 'thriveTrmContactId',
   /** Talkable uuid */
   TalkableUUID: 'talkableUUID',
+  /** Recurly site account ID */
+  RecurlyId: 'recurlyId',
   /** URL of a LinkedIn profile */
   linkedInURL: 'linkedInURL',
   /**
