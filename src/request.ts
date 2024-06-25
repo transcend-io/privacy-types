@@ -152,6 +152,23 @@ export type RequestDataSiloStatus =
   typeof RequestDataSiloStatus[keyof typeof RequestDataSiloStatus];
 
 /**
+ * The request enrichers are a standard queue.
+ */
+export const RequestEnricherStatus = makeEnum({
+  ...QueueStatus,
+  /** Waiting on dependencies  in the enrichment step to finish running */
+  WaitingOnDependencies: 'WAITING_ON_DEPENDENCIES',
+  /** Polling for result */
+  Polling: 'POLLING',
+});
+
+/**
+ * Overload type
+ */
+export type RequestEnricherStatus =
+  typeof RequestEnricherStatus[keyof typeof RequestEnricherStatus];
+
+/**
  * The different ways that regions can be detected at time of
  * request submit.
  */
