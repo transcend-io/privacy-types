@@ -22,7 +22,7 @@ export const PreflightRequestStatus = makeEnum({
 
 /** Type override */
 export type PreflightRequestStatus =
-  typeof PreflightRequestStatus[keyof typeof PreflightRequestStatus];
+  (typeof PreflightRequestStatus)[keyof typeof PreflightRequestStatus];
 
 /**
  * The request statuses that a request can be created directly into.
@@ -43,7 +43,7 @@ export const CompletedRequestStatus = makeEnum({
 
 /** Type override */
 export type CompletedRequestStatus =
-  typeof CompletedRequestStatus[keyof typeof CompletedRequestStatus];
+  (typeof CompletedRequestStatus)[keyof typeof CompletedRequestStatus];
 
 /**
  * The statuses that a request can take on
@@ -84,7 +84,7 @@ export const RequestStatus = makeEnum({
 });
 
 /** Type override */
-export type RequestStatus = typeof RequestStatus[keyof typeof RequestStatus];
+export type RequestStatus = (typeof RequestStatus)[keyof typeof RequestStatus];
 
 /**
  * The places a DSR can originate from
@@ -134,7 +134,7 @@ export const QueueStatus = makeEnum({
 /**
  * Overload type
  */
-export type QueueStatus = typeof QueueStatus[keyof typeof QueueStatus];
+export type QueueStatus = (typeof QueueStatus)[keyof typeof QueueStatus];
 
 /**
  * Status of request/data-silo combo
@@ -149,7 +149,24 @@ export const RequestDataSiloStatus = makeEnum({
  * Overload type
  */
 export type RequestDataSiloStatus =
-  typeof RequestDataSiloStatus[keyof typeof RequestDataSiloStatus];
+  (typeof RequestDataSiloStatus)[keyof typeof RequestDataSiloStatus];
+
+/**
+ * The request enrichers are a standard queue.
+ */
+export const RequestEnricherStatus = makeEnum({
+  ...QueueStatus,
+  /** Waiting on dependencies  in the enrichment step to finish running */
+  WaitingOnDependencies: 'WAITING_ON_DEPENDENCIES',
+  /** Polling for result */
+  Polling: 'POLLING',
+});
+
+/**
+ * Overload type
+ */
+export type RequestEnricherStatus =
+  (typeof RequestEnricherStatus)[keyof typeof RequestEnricherStatus];
 
 /**
  * The different ways that regions can be detected at time of
@@ -166,4 +183,4 @@ export const RegionDetectionMethod = makeEnum({
 
 /** Type override */
 export type RegionDetectionMethod =
-  typeof RegionDetectionMethod[keyof typeof RegionDetectionMethod];
+  (typeof RegionDetectionMethod)[keyof typeof RegionDetectionMethod];
