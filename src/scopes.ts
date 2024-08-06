@@ -89,6 +89,8 @@ export enum ScopeName {
   ManageActionItemCollections = 'manageActionItemCollections',
   ViewManagedConsentDatabaseAdminApi = 'viewManagedConsentDatabaseAdminApi',
   ManageStoredPreferences = 'manageStoredPreferences',
+  ManagePreferenceStoreSettings = 'managePreferenceStoreSettings',
+  ViewPreferenceStoreSettings = 'viewPreferenceStoreSettings',
 }
 
 /**
@@ -846,6 +848,20 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.ConsentManager,
       TranscendProduct.PreferenceStore,
     ],
+  },
+  [ScopeName.ManagePreferenceStoreSettings]: {
+    title: 'Manage Preference Store Settings',
+    dependencies: [ScopeName.ViewPreferenceStoreSettings],
+    description: 'Ability to make updates to preference store settings',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PreferenceStore],
+  },
+  [ScopeName.ViewPreferenceStoreSettings]: {
+    title: 'View Preference Store Settings',
+    dependencies: [ScopeName.ViewPreferenceStoreSettings],
+    description: 'Ability to view preference store settings',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PreferenceStore],
   },
 };
 
