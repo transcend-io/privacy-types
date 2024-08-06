@@ -849,15 +849,19 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.PreferenceStore,
     ],
   },
-  [ScopeName.ManageStoredPreferences]: {
-    title: 'Modify User Stored Preferences',
-    dependencies: [ScopeName.ViewManagedConsentDatabaseAdminApi],
-    description: 'Ability to make updates to user stored consent preferences',
+  [ScopeName.ManagePreferenceStoreSettings]: {
+    title: 'Manage Preference Store Settings',
+    dependencies: [ScopeName.ViewPreferenceStoreSettings],
+    description: 'Ability to make updates to preference store settings',
     type: ScopeType.Modify,
-    products: [
-      TranscendProduct.ConsentManager,
-      TranscendProduct.PreferenceStore,
-    ],
+    products: [TranscendProduct.PreferenceStore],
+  },
+  [ScopeName.ViewPreferenceStoreSettings]: {
+    title: 'View Preference Store Settings',
+    dependencies: [ScopeName.ViewPreferenceStoreSettings],
+    description: 'Ability to view preference store settings',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.PreferenceStore],
   },
 };
 
