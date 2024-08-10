@@ -427,19 +427,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Make changes to the policies defined underneath the privacy center.',
     title: 'Manage Privacy Center Layout',
     type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyCenter,
-    ],
+    products: [TranscendProduct.PrivacyCenter],
   },
   [ScopeName.ViewPolicies]: {
     dependencies: [],
-    description:
-      'View the policies defined underneath the privacy center.',
+    description: 'View the policies defined underneath the privacy center.',
     title: 'View Policies',
     type: ScopeType.View,
-    products: [
-      TranscendProduct.PrivacyCenter,
-    ],
+    products: [TranscendProduct.PrivacyCenter],
   },
   [ScopeName.ManageIntlMessages]: {
     dependencies: [ScopeName.ViewIntlMessages],
@@ -447,10 +442,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage the internationalization messages used in the privacy center.',
     title: 'Manage Internationalization Messages',
     type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyCenter,
-      TranscendProduct.ConsentManager,
-    ],
+    products: [TranscendProduct.PrivacyCenter, TranscendProduct.ConsentManager],
   },
   [ScopeName.ViewIntlMessages]: {
     dependencies: [],
@@ -458,10 +450,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the internationalization messages used in the privacy center.',
     title: 'View Internationalization Messages',
     type: ScopeType.View,
-    products: [
-      TranscendProduct.PrivacyCenter,
-      TranscendProduct.ConsentManager,
-    ],
+    products: [TranscendProduct.PrivacyCenter, TranscendProduct.ConsentManager],
   },
   [ScopeName.RequestApproval]: {
     dependencies: [
