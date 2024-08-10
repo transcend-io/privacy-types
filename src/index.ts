@@ -23,4 +23,5 @@ export * from './team';
 export * from './largeLanguageModels';
 export * from './prompt';
 export * from './getRegistryLink';
+export * from './theme';
 export * from './code';

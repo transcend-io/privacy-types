@@ -5,6 +5,7 @@ import { ISO_31662 } from './isoConstants/iso3166-2';
 
 /**
  * gets a typed Dictionary (identical key/values) from a source lookup object
+ *
  * @param source - the source lookup
  * @returns the typed dictionary
  */

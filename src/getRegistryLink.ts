@@ -16,6 +16,7 @@ export const CODE_PACKAGE_TYPE_TO_LINK: {
 
 /**
  * Get the registry link for a given code package
+ *
  * @param name - Name of package
  * @param type - Type of registry
  * @returns The registry link

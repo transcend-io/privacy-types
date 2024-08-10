@@ -27,6 +27,7 @@ export const IdentifierType = makeEnum({
   Custom: 'custom',
   /**
    * Google/Android mobile identifier
+   *
    * @see https://www.singular.net/blog/google-advertising-id-gaid/
    * AKA adid - android advertising id
    */
@@ -35,6 +36,7 @@ export const IdentifierType = makeEnum({
   Idfa: 'idfa',
   /**
    * The Identifier for Vendors
+   *
    * @see https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor
    */
   Idfv: 'idfv',
@@ -46,6 +48,7 @@ export const IdentifierType = makeEnum({
   AmazonFireAdvertisingId: 'amazonFireAdvertisingId',
   /**
    * Roku Advertising Id
+   *
    * @see https://developer.roku.com/docs/developer-program/advertising/integrating-roku-advertising-framework.md
    */
   Rida: 'rida',
