@@ -172,7 +172,7 @@ export type PrivacyCenterTextStyles = t.TypeOf<typeof PrivacyCenterTextStyles>;
 /**
  * Input for defining a new theme
  */
-export const PrivacyCenterTheme = t.intersection([
+export const PrivacyCenterThemePartial = t.intersection([
   t.type({
     /** The display name of the theme */
     name: t.string,
@@ -188,7 +188,9 @@ export const PrivacyCenterTheme = t.intersection([
 ]);
 
 /** Type override */
-export type PrivacyCenterTheme = t.TypeOf<typeof PrivacyCenterTheme>;
+export type PrivacyCenterThemePartial = t.TypeOf<
+  typeof PrivacyCenterThemePartial
+>;
 
 /**
  * The known colors that can be customized
