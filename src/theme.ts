@@ -106,38 +106,42 @@ export type ConfigurableColorPaletteColor =
 /**
  * Colors that can be customized through a GUI only if the organization user has the extended brand customization setting.
  */
-export enum ExtendedOnlyColorPaletteColor {
+export const ExtendedOnlyColorPaletteColor = makeEnum({
   // ///////////// //
   // Text Coloring //
   // ///////////// //
 
   /** The main text color to use when text is shown on an object colored bg */
-  TextOnBg = 'textOnBg',
+  TextOnBg: 'textOnBg',
   /** A lighter text color to use when text is shown on an object colored bg */
-  TextLightOnBg = 'textLightOnBg',
+  TextLightOnBg: 'textLightOnBg',
   /** The main text color to use when text is shown on an object colored primary */
-  TextOnPrimary = 'textOnPrimary',
+  TextOnPrimary: 'textOnPrimary',
   /** Text on sidebar */
-  TextOnSidebar = 'textOnSidebar',
+  TextOnSidebar: 'textOnSidebar',
   /** Accent on sidebar */
-  AccentOnSidebar = 'accentOnSidebar',
+  AccentOnSidebar: 'accentOnSidebar',
   /** Text to use on hero */
-  TextOnHero = 'textOnHero',
+  TextOnHero: 'textOnHero',
   /** Text to use on About Transcend widget */
-  TextOnAboutTranscend = 'textOnAboutTranscend',
+  TextOnAboutTranscend: 'textOnAboutTranscend',
   /** Used to highlight text */
-  Highlight = 'highlight',
+  Highlight: 'highlight',
   /** The color of the table outline */
-  TableOutline = 'tableOutline',
+  TableOutline: 'tableOutline',
 
   // //// //
   // Page //
   // //// //
   /** The page's accent background color (used in call-outs and asides) */
-  BgAccent = 'bgAccent',
+  BgAccent: 'bgAccent',
   /** Error color -- something went wrong */
-  Error = 'error',
-}
+  Error: 'error',
+});
+
+/** Type override */
+export type ExtendedOnlyColorPaletteColor =
+  (typeof ExtendedOnlyColorPaletteColor)[keyof typeof ExtendedOnlyColorPaletteColor];
 
 /**
  * The shape of a configurable color palette
