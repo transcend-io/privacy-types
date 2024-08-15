@@ -85,28 +85,6 @@ export const OptionalConfigurableColorPaletteColor = makeEnum({
    * The background of the widget
    */
   WidgetBg: 'widgetBg',
-});
-
-/** Type override */
-export type OptionalConfigurableColorPaletteColor =
-  typeof OptionalConfigurableColorPaletteColor[keyof typeof OptionalConfigurableColorPaletteColor];
-
-/**
- * The color palette that an organization can customize on their privacy center exposed in the default GUI.
- */
-export const ConfigurableColorPaletteColor = makeEnum({
-  ...RequiredConfigurableColorPaletteColor,
-  ...OptionalConfigurableColorPaletteColor,
-});
-
-/** Type override */
-export type ConfigurableColorPaletteColor =
-  typeof ConfigurableColorPaletteColor[keyof typeof ConfigurableColorPaletteColor];
-
-/**
- * Colors that can be customized through a GUI only if the organization user has the extended brand customization setting.
- */
-export const ExtendedOnlyColorPaletteColor = makeEnum({
   // ///////////// //
   // Text Coloring //
   // ///////////// //
@@ -140,8 +118,20 @@ export const ExtendedOnlyColorPaletteColor = makeEnum({
 });
 
 /** Type override */
-export type ExtendedOnlyColorPaletteColor =
-  typeof ExtendedOnlyColorPaletteColor[keyof typeof ExtendedOnlyColorPaletteColor];
+export type OptionalConfigurableColorPaletteColor =
+  typeof OptionalConfigurableColorPaletteColor[keyof typeof OptionalConfigurableColorPaletteColor];
+
+/**
+ * The color palette that an organization can customize on their privacy center exposed in the default GUI.
+ */
+export const ConfigurableColorPaletteColor = makeEnum({
+  ...RequiredConfigurableColorPaletteColor,
+  ...OptionalConfigurableColorPaletteColor,
+});
+
+/** Type override */
+export type ConfigurableColorPaletteColor =
+  typeof ConfigurableColorPaletteColor[keyof typeof ConfigurableColorPaletteColor];
 
 /**
  * The shape of a configurable color palette
@@ -166,19 +156,6 @@ export const PrivacyCenterComponentStyles = t.partial(
 /** Type override */
 export type PrivacyCenterComponentStyles = t.TypeOf<
   typeof PrivacyCenterComponentStyles
->;
-
-/**
- * Customizable color palette
- */
-export const PrivacyCenterCustomizableColorPalette = t.intersection([
-  t.record(valuesOf(ConfigurableColorPaletteColor), t.string),
-  t.partial(applyEnum(ExtendedOnlyColorPaletteColor, () => t.string)),
-]);
-
-/** Type override */
-export type PrivacyCenterCustomizableColorPalette = t.TypeOf<
-  typeof PrivacyCenterCustomizableColorPalette
 >;
 
 /**
@@ -220,7 +197,7 @@ export const PrivacyCenterThemePartial = t.intersection([
     /** The display name of the theme */
     name: t.string,
     /** The theme colors */
-    colors: PrivacyCenterCustomizableColorPalette,
+    colors: PrivacyCenterConfigurableColorPalette,
   }),
   t.partial({
     /** Styles to apply to components */
@@ -234,10 +211,3 @@ export const PrivacyCenterThemePartial = t.intersection([
 export type PrivacyCenterThemePartial = t.TypeOf<
   typeof PrivacyCenterThemePartial
 >;
-
-/**
- * The known colors that can be customized
- */
-export type PrivacyCenterCustomizedColorPaletteColor =
-  | ConfigurableColorPaletteColor
-  | ExtendedOnlyColorPaletteColor;
