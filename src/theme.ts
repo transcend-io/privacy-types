@@ -1,4 +1,4 @@
-import { applyEnum, valuesOf } from '@transcend-io/type-utils';
+import { applyEnum, makeEnum, valuesOf } from '@transcend-io/type-utils';
 import * as t from 'io-ts';
 
 /**
@@ -42,9 +42,9 @@ export enum CustomizableText {
 }
 
 /**
- * The color palette that an organization can customize on their privacy center exposed in the default GUI.
+ * The color palette that must be defined
  */
-export enum ConfigurableColorPaletteColor {
+export const RequiredConfigurableColorPaletteColor = makeEnum({
   /**
    * Used everywhere...
    *
@@ -54,7 +54,7 @@ export enum ConfigurableColorPaletteColor {
    *  3. **Primary CTA (call to action)**
    *  4. **Primary links and active states**
    */
-  Primary = 'primary',
+  Primary: 'primary',
   /**
    * Used everywhere...
    *
@@ -62,20 +62,46 @@ export enum ConfigurableColorPaletteColor {
    *   1. **Secondary CTAs**
    *   2. **Secondary links**
    */
-  Secondary = 'secondary',
+  Secondary: 'secondary',
+});
+
+/** Type override */
+export type RequiredConfigurableColorPaletteColor =
+  (typeof RequiredConfigurableColorPaletteColor)[keyof typeof RequiredConfigurableColorPaletteColor];
+
+/**
+ * The optional color pallette colors
+ */
+export const OptionalConfigurableColorPaletteColor = makeEnum({
   /**
    * The background color will be set by the primary color by default with the ability to change it to secondary color, black or white.
    */
-  SidebarNavBg = 'sidebarNavBg',
+  SidebarNavBg: 'sidebarNavBg',
   /**
    * The hero background color
    */
-  HeroBg = 'heroBg',
+  HeroBg: 'heroBg',
   /**
    * The background of the widget
    */
-  WidgetBg = 'widgetBg',
-}
+  WidgetBg: 'widgetBg',
+});
+
+/** Type override */
+export type OptionalConfigurableColorPaletteColor =
+  (typeof OptionalConfigurableColorPaletteColor)[keyof typeof OptionalConfigurableColorPaletteColor];
+
+/**
+ * The color palette that an organization can customize on their privacy center exposed in the default GUI.
+ */
+export const ConfigurableColorPaletteColor = makeEnum({
+  ...RequiredConfigurableColorPaletteColor,
+  ...OptionalConfigurableColorPaletteColor,
+});
+
+/** Type override */
+export type ConfigurableColorPaletteColor =
+  (typeof ConfigurableColorPaletteColor)[keyof typeof ConfigurableColorPaletteColor];
 
 /**
  * Colors that can be customized through a GUI only if the organization user has the extended brand customization setting.
@@ -107,11 +133,24 @@ export enum ExtendedOnlyColorPaletteColor {
   // //// //
   // Page //
   // //// //
-  /** The page's accent background color (used in callouts and asides) */
+  /** The page's accent background color (used in call-outs and asides) */
   BgAccent = 'bgAccent',
   /** Error color -- something went wrong */
   Error = 'error',
 }
+
+/**
+ * The shape of a configurable color palette
+ */
+export const PrivacyCenterConfigurableColorPalette = t.intersection([
+  t.record(valuesOf(RequiredConfigurableColorPaletteColor), t.string),
+  t.partial(applyEnum(OptionalConfigurableColorPaletteColor, () => t.string)),
+]);
+
+/** Type override */
+export type PrivacyCenterConfigurableColorPalette = t.TypeOf<
+  typeof PrivacyCenterConfigurableColorPalette
+>;
 
 /**
  * Custom CSS for privacy center
