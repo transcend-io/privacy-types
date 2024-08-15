@@ -67,7 +67,7 @@ export const RequiredConfigurableColorPaletteColor = makeEnum({
 
 /** Type override */
 export type RequiredConfigurableColorPaletteColor =
-  (typeof RequiredConfigurableColorPaletteColor)[keyof typeof RequiredConfigurableColorPaletteColor];
+  typeof RequiredConfigurableColorPaletteColor[keyof typeof RequiredConfigurableColorPaletteColor];
 
 /**
  * The optional color pallette colors
@@ -89,7 +89,7 @@ export const OptionalConfigurableColorPaletteColor = makeEnum({
 
 /** Type override */
 export type OptionalConfigurableColorPaletteColor =
-  (typeof OptionalConfigurableColorPaletteColor)[keyof typeof OptionalConfigurableColorPaletteColor];
+  typeof OptionalConfigurableColorPaletteColor[keyof typeof OptionalConfigurableColorPaletteColor];
 
 /**
  * The color palette that an organization can customize on their privacy center exposed in the default GUI.
@@ -101,7 +101,7 @@ export const ConfigurableColorPaletteColor = makeEnum({
 
 /** Type override */
 export type ConfigurableColorPaletteColor =
-  (typeof ConfigurableColorPaletteColor)[keyof typeof ConfigurableColorPaletteColor];
+  typeof ConfigurableColorPaletteColor[keyof typeof ConfigurableColorPaletteColor];
 
 /**
  * Colors that can be customized through a GUI only if the organization user has the extended brand customization setting.
@@ -141,7 +141,7 @@ export const ExtendedOnlyColorPaletteColor = makeEnum({
 
 /** Type override */
 export type ExtendedOnlyColorPaletteColor =
-  (typeof ExtendedOnlyColorPaletteColor)[keyof typeof ExtendedOnlyColorPaletteColor];
+  typeof ExtendedOnlyColorPaletteColor[keyof typeof ExtendedOnlyColorPaletteColor];
 
 /**
  * The shape of a configurable color palette
