@@ -425,7 +425,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [ScopeName.ViewPolicies],
     description:
       'Make changes to the policies defined underneath the privacy center.',
-    title: 'Manage Privacy Center Layout',
+    title: 'Manage Policies',
     type: ScopeType.Modify,
     products: [TranscendProduct.PrivacyCenter],
   },
