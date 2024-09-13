@@ -205,7 +205,6 @@ export enum ActionItemPriorityOverride {
  * the possible locations for action item collection UIs
  */
 export enum ActionItemCollectionLocation {
-  CodeScanning = 'CODE_SCANNING',
   PrivacyRequestDashboard = 'PRIVACY_REQUESTS_DASHBOARD',
   DataMappingDashboard = 'DATA_MAPPING_DASHBOARD',
   ConsentDashboard = 'CONSENT_DASHBOARD',
@@ -213,6 +212,7 @@ export enum ActionItemCollectionLocation {
   AdministrationSettings = 'ADMINISTRATION_SETTINGS',
   Assessments = 'ASSESSMENTS',
   Pathfinder = 'PATHFINDER',
+  PreferenceManagement = 'PREFERENCE_MANAGEMENT',
   PromptManagement = 'PROMPT_MANAGEMENT',
   ContractScanning = 'CONTRACT_SCANNING',
 }
