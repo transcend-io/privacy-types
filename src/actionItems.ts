@@ -216,4 +216,9 @@ export enum ActionItemCollectionLocation {
   PromptManagement = 'PROMPT_MANAGER',
   ContractScanning = 'CONTRACT_SCANNING',
   WebAuditor = 'WEB_AUDITOR',
+  Sombra = 'SOMBRA',
+  SiloDiscovery = 'SILO_DISCOVERY',
+  StructuredDiscovery = 'STRUCTURED_DISCOVERY',
+  UnstructuredDiscovery = 'UNSTRUCTURED_DISCOVERY',
+  DataLineage = 'DATA_LINEAGE',
 }
