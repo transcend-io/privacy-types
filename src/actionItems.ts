@@ -215,4 +215,5 @@ export enum ActionItemCollectionLocation {
   PreferenceManagement = 'PREFERENCE_MANAGEMENT',
   PromptManagement = 'PROMPT_MANAGER',
   ContractScanning = 'CONTRACT_SCANNING',
+  WebAuditor = 'WEB_AUDITOR',
 }
