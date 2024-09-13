@@ -205,14 +205,20 @@ export enum ActionItemPriorityOverride {
  * the possible locations for action item collection UIs
  */
 export enum ActionItemCollectionLocation {
-  CodeScanning = 'CODE_SCANNING',
-  PrivacyRequestDashboard = 'PRIVACY_REQUESTS_DASHBOARD',
-  DataMappingDashboard = 'DATA_MAPPING_DASHBOARD',
-  ConsentDashboard = 'CONSENT_DASHBOARD',
-  PrivacyCenterSettings = 'PRIVACY_CENTER_SETTINGS',
-  AdministrationSettings = 'ADMINISTRATION_SETTINGS',
+  DsrAutomation = 'DSR_AUTOMATION',
+  DataInventory = 'DATA_INVENTORY',
+  ConsentManagement = 'CONSENT_MANAGEMENT',
+  PrivacyCenter = 'PRIVACY_CENTER',
+  AdministrationSettings = 'ADMINISTRATION',
   Assessments = 'ASSESSMENTS',
   Pathfinder = 'PATHFINDER',
-  PromptManagement = 'PROMPT_MANAGEMENT',
+  PreferenceManagement = 'PREFERENCE_MANAGEMENT',
+  PromptManagement = 'PROMPT_MANAGER',
   ContractScanning = 'CONTRACT_SCANNING',
+  WebAuditor = 'WEB_AUDITOR',
+  Sombra = 'SOMBRA',
+  SiloDiscovery = 'SILO_DISCOVERY',
+  StructuredDiscovery = 'STRUCTURED_DISCOVERY',
+  UnstructuredDiscovery = 'UNSTRUCTURED_DISCOVERY',
+  DataLineage = 'DATA_LINEAGE',
 }
