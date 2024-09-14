@@ -288,7 +288,10 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.Admin],
   },
   [ScopeName.ManageAllActionItems]: {
-    dependencies: [],
+    dependencies: [
+      ScopeName.ViewAllActionItems,
+      ScopeName.ViewGlobalAttributes,
+    ],
     description:
       'Manage all action items in the organization, regardless of assignee or scopes for specific resources. ' +
       'This is necessary when querying API keys via the API.',
