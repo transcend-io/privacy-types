@@ -10,6 +10,7 @@ export const CodePackageType = makeEnum({
   CocoaPods: 'COCOA_PODS',
   Pubspec: 'PUBSPEC',
   Gemfile: 'GEMFILE',
+  ComposerJson: 'COMPOSER_JSON',
 });
 
 /** Overrides type */
