@@ -97,17 +97,9 @@ export enum ActionItemCode {
    */
   RequestExpiry = 'REQUEST_EXPIRY',
   /**
-   * - A request data silo with a status that is waiting or queued
-   */
-  RequestDataSiloWaitingQueued = 'REQUEST_DATA_SILO_WAITING_QUEUED',
-  /**
    * - A request data silo that has thrown an error
    */
   RequestDataSiloError = 'REQUEST_DATA_SILO_ERROR',
-  /**
-   * - non person enricher that's waiting or queued
-   */
-  RequestEnricherWaitingQueued = 'REQUEST_ENRICHER_WAITING_QUEUED',
   /**
    * - enricher that has an error
    */
