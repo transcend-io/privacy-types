@@ -66,6 +66,8 @@ export const IdentifierType = makeEnum({
   TalkableUUID: 'talkableUUID',
   /** Recurly site account ID */
   RecurlyId: 'recurlyId',
+  /** The customer.io ID - also known as cio_id */
+  customerIoId: 'customerIoId',
   /** URL of a LinkedIn profile */
   linkedInURL: 'linkedInURL',
   /**
