@@ -25,6 +25,7 @@ export enum TemplateVariableModelName {
 export enum PromptResponseFormat {
   Text = 'text',
   JsonObject = 'json_object',
+  JsonSchema = 'json_schema',
 }
 
 /**
