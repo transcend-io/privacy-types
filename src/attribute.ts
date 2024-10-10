@@ -4,34 +4,56 @@
 export enum AttributeSupportedResourceType {
   /** Action items table */
   ActionItem = 'actionItem',
-  /** Data silos table */
-  DataSilo = 'dataSilo',
-  /** Subdatapoints table (shows up under Data Inventory > Data Points tab) */
-  SubDataPoint = 'subDataPoint',
-  /** Cookies tabs */
+  /** Airgap Cookie tabs */
   AirgapCookie = 'airgapCookie',
-  /** Data Flow tabs */
+  /** Airgap Data Flow tabs */
   AirgapDataFlow = 'airgapDataFlow',
-  /** Requests table */
-  Request = 'request',
-  /** Vendor table */
-  Vendor = 'vendor',
+  /** Assessment table */
+  Assessment = 'assessment',
+  /** AssessmentForm table */
+  AssessmentForm = 'assessmentForm',
+  /** AssessmentGroup table */
+  AssessmentGroup = 'assessmentGroup',
+  /** AssessmentTemplate table */
+  AssessmentTemplate = 'assessmentTemplate',
+  /** AuditorRun table */
+  AuditorRun = 'auditorRun',
+  /** AuditorSchedule table */
+  AuditorSchedule = 'auditorSchedule',
   /** Business entity table */
   BusinessEntity = 'businessEntity',
   /** Categories table */
   DataSubCategory = 'dataSubCategory',
+  /** Datapoint table */
+  DataPoint = 'dataPoint',
+  /** Datapoint level table */
+  DataPointLevel = 'dataPointLevel',
+  /** Data silos table */
+  DataSilo = 'dataSilo',
+  /** Enricher table */
+  Enricher = 'enricher',
+  /** Identifier table */
+  Identifier = 'identifier',
+  /** LegalHold table */
+  LegalHold = 'legalHold',
+  /** LegalMatter table */
+  LegalMatter = 'legalMatter',
   /** Processing purpose table */
   ProcessingPurposeSubCategory = 'processingPurposeSubCategory',
-  /** Assessment table */
-  Assessment = 'assessment',
-  /** AssessmentTemplate table */
-  AssessmentTemplate = 'assessmentTemplate',
   /** Prompt table */
   Prompt = 'prompt',
   /** PromptGroup table */
   PromptGroup = 'promptGroup',
   /** PromptRun table */
   PromptRun = 'promptRun',
+  /** Requests table */
+  Request = 'request',
+  /** Subject table */
+  Subject = 'subject',
+  /** Subdatapoints table (shows up under Data Inventory > Data Points tab) */
+  SubDataPoint = 'subDataPoint',
+  /** Vendor table */
+  Vendor = 'vendor',
 }
 
 /**
