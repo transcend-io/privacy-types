@@ -53,7 +53,7 @@ export enum AttributeSupportedResourceType {
   /** Subdatapoints table (shows up under Data Inventory > Data Points tab) */
   SubDataPoint = 'subDataPoint',
   /** Vendor table */
-  Vendor = 'vendor'
+  Vendor = 'vendor',
 }
 
 /**
