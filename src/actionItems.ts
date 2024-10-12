@@ -192,25 +192,3 @@ export enum ActionItemPriorityOverride {
   High = 'HIGH',
   Critical = 'CRITICAL',
 }
-
-/**
- * the possible locations for action item collection UIs
- */
-export enum ActionItemCollectionLocation {
-  DsrAutomation = 'DSR_AUTOMATION',
-  DataInventory = 'DATA_INVENTORY',
-  ConsentManagement = 'CONSENT_MANAGEMENT',
-  PrivacyCenter = 'PRIVACY_CENTER',
-  AdministrationSettings = 'ADMINISTRATION',
-  Assessments = 'ASSESSMENTS',
-  Pathfinder = 'PATHFINDER',
-  PreferenceManagement = 'PREFERENCE_MANAGEMENT',
-  PromptManagement = 'PROMPT_MANAGER',
-  ContractScanning = 'CONTRACT_SCANNING',
-  WebAuditor = 'WEB_AUDITOR',
-  Sombra = 'SOMBRA',
-  SiloDiscovery = 'SILO_DISCOVERY',
-  StructuredDiscovery = 'STRUCTURED_DISCOVERY',
-  UnstructuredDiscovery = 'UNSTRUCTURED_DISCOVERY',
-  DataLineage = 'DATA_LINEAGE',
-}

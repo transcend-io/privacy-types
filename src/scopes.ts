@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 
-import { getEntries } from '@transcend-io/type-utils';
+import { getEntries, getValues } from '@transcend-io/type-utils';
 
 /**
  * The possible scopes that can be assigned to a user or team
@@ -111,30 +111,22 @@ export enum ScopeType {
  * The related product offering where the scope is used
  */
 export enum TranscendProduct {
-  /** Used in the privacy requests product */
-  PrivacyRequests = 'PRIVACY_REQUESTS',
-  /** Data Mapping product */
-  DataMapping = 'DATA_MAPPING',
-  /** Consent Manager product */
-  ConsentManager = 'CONSENT_MANAGER',
-  /** Privacy center */
+  DsrAutomation = 'DSR_AUTOMATION',
+  DataInventory = 'DATA_INVENTORY',
+  ConsentManagement = 'CONSENT_MANAGEMENT',
   PrivacyCenter = 'PRIVACY_CENTER',
-  /** Administration and access control */
-  Admin = 'ADMIN',
-  /** Assessments Product */
+  Administration = 'ADMINISTRATION',
   Assessments = 'ASSESSMENTS',
-  /** Sombra. */
-  Sombra = 'SOMBRA',
-  /** Prompt Manager */
-  PromptManager = 'PROMPT_MANAGER',
-  /** Auditor */
-  Auditor = 'AUDITOR',
-  /** Contract Scanning */
-  ContractScanning = 'CONTRACT_SCANNING',
-  /** Pathfinder */
   Pathfinder = 'PATHFINDER',
-  /** The preference store */
-  PreferenceStore = 'PREFERENCE_STORE',
+  PreferenceManagement = 'PREFERENCE_MANAGEMENT',
+  PromptManagement = 'PROMPT_MANAGER',
+  ContractScanning = 'CONTRACT_SCANNING',
+  WebAuditor = 'WEB_AUDITOR',
+  Sombra = 'SOMBRA',
+  SiloDiscovery = 'SILO_DISCOVERY',
+  StructuredDiscovery = 'STRUCTURED_DISCOVERY',
+  UnstructuredDiscovery = 'UNSTRUCTURED_DISCOVERY',
+  DataLineage = 'DATA_LINEAGE',
 }
 
 /**
@@ -166,7 +158,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Full administrative access. All scopes are granted.',
     title: 'Full Admin',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: getValues(TranscendProduct),
   },
   [ScopeName.ManageSombraRootKeys]: {
     dependencies: [],
@@ -174,7 +166,18 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to perform a key rotation on the encryption keys used within your account.',
     title: 'Rotate Hosted Sombra keys',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.ConsentManagement,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.Administration,
+      TranscendProduct.Assessments,
+      TranscendProduct.Pathfinder,
+      TranscendProduct.PromptManagement,
+      TranscendProduct.WebAuditor,
+      TranscendProduct.ContractScanning,
+    ],
   },
   [ScopeName.ManageGlobalAttributes]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
@@ -183,7 +186,18 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Under the infrastructure tab, manage your custom attributes and select which views those attributes should display in.',
     title: 'Manage Global Attributes',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.ConsentManagement,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.Administration,
+      TranscendProduct.Assessments,
+      TranscendProduct.Pathfinder,
+      TranscendProduct.PromptManagement,
+      TranscendProduct.WebAuditor,
+      TranscendProduct.ContractScanning,
+    ],
   },
   [ScopeName.ManageAccessControl]: {
     dependencies: [ScopeName.ViewEmployees, ScopeName.ViewScopes],
@@ -191,21 +205,21 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage what employees in your organization can access within Transcend.',
     title: 'Manage Access Controls',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageBilling]: {
     dependencies: [],
     description: 'Manage billing details for your organization.',
     title: 'Manage Billing',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageSSO]: {
     dependencies: [ScopeName.ViewSSO],
     description: 'Manage SSO configuration for members of your organization.',
     title: 'Manage SSO',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageApiKeys]: {
     dependencies: [ScopeName.ViewApiKeys],
@@ -213,14 +227,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Create, update and delete API keys for programmatic access to your Transcend organization.',
     title: 'Manage API Keys',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageOrganizationInfo]: {
     dependencies: [],
     description: 'Edit the top-level organization settings details.',
     title: 'Manage Organization Information',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageEmailDomains]: {
     dependencies: [ScopeName.ViewEmailDomains],
@@ -228,7 +242,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage the domains from which Transcend can send emails on behalf of your organization.',
     title: 'Manage Email Domains',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [
+      TranscendProduct.Administration,
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.PrivacyCenter,
+      TranscendProduct.Assessments,
+    ],
   },
   [ScopeName.ViewCustomerDataPrivacyRequests]: {
     dependencies: [],
@@ -236,7 +255,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Give permissions for an employee to view the data in an access request.',
     title: 'View Customer Data in Privacy Requests',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin, TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.Administration, TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewCustomerDataDataMapping]: {
     dependencies: [],
@@ -244,7 +263,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Give permissions for an employee to view the sampled data in the data mapping product.',
     title: 'View Customer Data in Data Mapping',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.Administration,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ViewApiKeys]: {
     dependencies: [],
@@ -252,7 +275,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the API keys on your account and see what scopes are assigned to them.',
     title: 'View API Keys',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewAuditEvents]: {
     dependencies: [],
@@ -261,14 +284,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View any audit events made throughout the platform. This includes any of the "Audit Trail" tabs across the Admin Dashboard.',
     title: 'View Audit Events',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewSSO]: {
     dependencies: [],
     description: 'View the SSO configuration for your organization.',
     title: 'View SSO',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewScopes]: {
     dependencies: [ScopeName.ViewEmployees],
@@ -276,7 +299,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the potential access control scopes that can be assigned to members in the organization.',
     title: 'View Scopes',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewAllActionItems]: {
     dependencies: [],
@@ -285,7 +308,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'This is necessary when querying API keys via the API.',
     title: 'View All Action Items',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ManageAllActionItems]: {
     dependencies: [
@@ -297,14 +320,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'This is necessary when querying API keys via the API.',
     title: 'Manage All Action Items',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewEmployees]: {
     dependencies: [],
     description: 'View the list of employees within your organization.',
     title: 'View Employees',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewEmailDomains]: {
     dependencies: [],
@@ -312,21 +335,37 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the domains from which Transcend can send emails on behalf of your organization.',
     title: 'View Email Domains',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [
+      TranscendProduct.Administration,
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.PrivacyCenter,
+      TranscendProduct.Assessments,
+    ],
   },
   [ScopeName.ViewGlobalAttributes]: {
     dependencies: [],
     description: 'View the attribute definition key/value pairs.',
     title: 'View Global Attributes',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.ConsentManagement,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.Administration,
+      TranscendProduct.Assessments,
+      TranscendProduct.Pathfinder,
+      TranscendProduct.PromptManagement,
+      TranscendProduct.WebAuditor,
+      TranscendProduct.ContractScanning,
+    ],
   },
   [ScopeName.ViewLegalHold]: {
     dependencies: [],
     description: 'View the individuals that have been placed on legal holds.',
     title: 'View Legal Hold',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageLegalHold]: {
     dependencies: [ScopeName.ViewLegalHold],
@@ -334,7 +373,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage and edit the individuals that have been placed on legal holds.',
     title: 'Manage Legal Holds',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageRequestSecurity]: {
     dependencies: [],
@@ -342,7 +381,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'ReSign expired request encryption contexts, and data silo contexts.',
     title: 'Manage Request Security',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin, TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.Administration, TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageRequestCompilation]: {
     dependencies: [ScopeName.ViewRequests, ScopeName.ViewRequestCompilation],
@@ -350,7 +389,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Make changes to the compilation process of a request. This involves changing the status of data silos in your Data Map, as well as editing profiles and files.', // eslint-disable-line max-len
     title: 'Manage Request Compilation',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageAssignedRequests]: {
     dependencies: [ScopeName.ViewAssignedRequests],
@@ -358,7 +397,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Make changes to the compilation process of a request for requests assigned to your or your team. This involves changing the status of data silos in your Data Map, as well as editing profiles and files.', // eslint-disable-line max-len
     title: 'Manage Assigned Privacy Requests',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.MakeDataSubjectRequest]: {
     dependencies: [
@@ -368,7 +407,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Submit a new privacy requests.',
     title: 'Submit New Data Subject Request',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageDataSubjectRequestSettings]: {
     dependencies: [ScopeName.ViewDataSubjectRequestSettings],
@@ -376,7 +415,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Make changes to the request actions that your organization allows, as well as what data subjects you will serve.',
     title: 'Manage Data Subject Request Settings',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageEmailTemplates]: {
     dependencies: [ScopeName.ViewEmailTemplates],
@@ -384,7 +423,11 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage the email communication templates that your organization uses to communicate with your data subjects.',
     title: 'Manage Email Templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.PrivacyCenter,
+      TranscendProduct.Assessments,
+    ],
   },
   [ScopeName.ManageRequestIdentities]: {
     dependencies: [ScopeName.ViewRequestIdentitySettings],
@@ -392,7 +435,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage how your organization will verify the identities of new privacy requests, and how that identity will be enriched for all of your data silos to lookup that person.', // eslint-disable-line max-len
     title: 'Manage Request Identity Verification',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.DeployPrivacyCenter]: {
     dependencies: [ScopeName.ManagePrivacyCenter],
@@ -400,10 +443,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Launch the Privacy Center on your own domain, and publish new changes.',
     title: 'Publish Privacy Center',
     type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.PrivacyCenter,
-    ],
+    products: [TranscendProduct.PrivacyCenter],
   },
   [ScopeName.ManageDataMap]: {
     dependencies: [ScopeName.ViewDataMap],
@@ -411,7 +451,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Edit the configurations on your data silos and determine what information should be included in a request.',
     title: 'Manage Data Map',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ManagePrivacyCenter]: {
     dependencies: [ScopeName.ViewPrivacyCenter, ScopeName.ManagePolicies],
@@ -419,10 +465,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Make changes to the privacy center configuration and policies.',
     title: 'Manage Privacy Center Layout',
     type: ScopeType.Modify,
-    products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.PrivacyCenter,
-    ],
+    products: [TranscendProduct.PrivacyCenter],
   },
   [ScopeName.ManagePolicies]: {
     dependencies: [ScopeName.ViewPolicies],
@@ -445,7 +488,10 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage the internationalization messages used in the privacy center.',
     title: 'Manage Internationalization Messages',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyCenter, TranscendProduct.ConsentManager],
+    products: [
+      TranscendProduct.PrivacyCenter,
+      TranscendProduct.ConsentManagement,
+    ],
   },
   [ScopeName.ViewIntlMessages]: {
     dependencies: [],
@@ -453,7 +499,10 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the internationalization messages used in the privacy center.',
     title: 'View Internationalization Messages',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyCenter, TranscendProduct.ConsentManager],
+    products: [
+      TranscendProduct.PrivacyCenter,
+      TranscendProduct.ConsentManagement,
+    ],
   },
   [ScopeName.RequestApproval]: {
     dependencies: [
@@ -465,7 +514,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'The ability to approve and manage the state of privacy requests, and communicate with the data subject.',
     title: 'Request Approval and Communication',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewDataSubjectRequestSettings]: {
     dependencies: [],
@@ -473,7 +522,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the privacy request actions settings and data subject categories that your organization supports.',
     title: 'View Data Subject Request Settings',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewRequestCompilation]: {
     dependencies: [ScopeName.ViewRequests],
@@ -481,7 +530,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the status of requests as they compile across your Data Map.',
     title: 'View the Request Compilation',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewRequestIdentitySettings]: {
     dependencies: [],
@@ -489,7 +538,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the settings for data subject request identity verification.',
     title: 'View Identity Verification Settings',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewRequests]: {
     dependencies: [
@@ -501,7 +550,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the stream of incoming requests, and any details submit through the form or later enriched.',
     title: 'View Incoming Requests',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewAssignedRequests]: {
     dependencies: [
@@ -514,17 +563,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'View the stream of incoming requests assigned to you and your team. You will be able to see any request details submitted through the form or later enriched.',
     title: 'View Assigned Privacy Requests',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests],
+    products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ViewPrivacyCenter]: {
     dependencies: [],
     description: 'View the full configuration of the privacy center.',
     title: 'View Privacy Center Layout',
     type: ScopeType.View,
-    products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.PrivacyCenter,
-    ],
+    products: [TranscendProduct.PrivacyCenter],
   },
   [ScopeName.ViewEmailTemplates]: {
     dependencies: [],
@@ -533,8 +579,9 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'View Email Templates',
     type: ScopeType.View,
     products: [
-      TranscendProduct.PrivacyRequests,
+      TranscendProduct.DsrAutomation,
       TranscendProduct.PrivacyCenter,
+      TranscendProduct.Assessments,
     ],
   },
   [ScopeName.ConnectDataSilos]: {
@@ -545,7 +592,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     ],
     description: 'Connect new data silos to your Data Map.',
     title: 'Connect Data Silos',
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
     type: ScopeType.Modify,
   },
   [ScopeName.ManageDataInventory]: {
@@ -555,7 +607,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to manage and edit everything in the data mapping product. Includes the data inventory, ROPE, and content classification views.',
     title: 'Manage Data Inventory',
     type: ScopeType.Modify,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ManageAssignedDataInventory]: {
     dependencies: [ScopeName.ViewAssignedDataInventory],
@@ -563,7 +620,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       "Manage the data inventory rows in your organization's Data Map that are assigned to you or your team.",
     title: 'Manage Assigned Data Inventory',
     type: ScopeType.Modify,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ManageAssignedIntegrations]: {
     dependencies: [ScopeName.ViewAssignedIntegrations],
@@ -571,7 +633,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       "Manage the integrations in your organization's Data Map that are assigned to you or your team.",
     title: 'Manage Assigned Integrations',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ViewDataMap]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
@@ -579,7 +647,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       "View your organization's Data Map and see the configuration settings for each action your support.",
     title: 'View Data Map',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ViewAssignedIntegrations]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
@@ -587,7 +661,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       "View the integrations in your organization's Data Map that are assigned to you or your team.",
     title: 'View Assigned Integrations',
     type: ScopeType.View,
-    products: [TranscendProduct.PrivacyRequests, TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ViewAssignedDataInventory]: {
     dependencies: [
@@ -598,7 +678,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to view the resources in the data mapping product that are assigned to your or your team.',
     title: 'View Assigned Data Inventory',
     type: ScopeType.View,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ViewDataInventory]: {
     dependencies: [
@@ -611,7 +696,12 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to view all of the data mapping product. Includes the data inventory, ROPA, and content classification views.',
     title: 'View Data Inventory',
     type: ScopeType.View,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.SiloDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
   [ScopeName.ManageConsentManager]: {
     dependencies: [
@@ -627,7 +717,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage & deploy the consent manager changes to your websites.',
     title: 'Manage Consent Manager',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ManageConsentManagerDeveloperSettings]: {
     dependencies: [ScopeName.ViewConsentManager],
@@ -636,7 +726,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'This does not allow for clicking the "Set Changes Live" button.',
     title: 'Manage Consent Manager Developer Settings',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ManageConsentManagerDisplaySettings]: {
     dependencies: [ScopeName.ViewConsentManager],
@@ -644,7 +734,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Manage the display settings for the consent manager. This includes messages, styles and other UI settings.',
     title: 'Manage Consent Manager Display Settings',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.DeployTestConsentManager]: {
     dependencies: [ScopeName.ViewConsentManager],
@@ -653,7 +743,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to publish changes to the test Consent Manager bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
     title: 'Deploy Test Consent Manager',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.DeployConsentManager]: {
     dependencies: [
@@ -665,14 +755,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to publish changes to the production and test Consent Manager bundle. This changes the code contents of airgap.js and attempts to invalidate the CDN.',
     title: 'Deploy Consent Manager',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ManageAssignedConsentManager]: {
     dependencies: [ScopeName.ViewAssignedConsentManager],
     description: 'Manage Data Flows & Cookies assigned to you or your team.',
     title: 'Manage Assigned Consent Manager',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ManageDataFlow]: {
     dependencies: [ScopeName.ViewDataFlow],
@@ -680,7 +770,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to manage and delete Data Flows and Cookies within the Consent Manager product.',
     title: 'Manage Data Flows',
     type: ScopeType.Modify,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ViewOptOutStatus]: {
     dependencies: [],
@@ -688,8 +778,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'View Opt Out Status',
     type: ScopeType.View,
     products: [
-      TranscendProduct.PrivacyRequests,
-      TranscendProduct.ConsentManager,
+      TranscendProduct.DsrAutomation,
+      TranscendProduct.ConsentManagement,
     ],
   },
   [ScopeName.ViewDataFlow]: {
@@ -697,14 +787,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'View Data Flows (tracking purpose maps, site scans)',
     title: 'View Data Flows',
     type: ScopeType.View,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ViewAssignedConsentManager]: {
     dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View Data Flows and Cookies assigned to you or your team.',
     title: 'View Assigned Consent Manager',
     type: ScopeType.View,
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ViewConsentManager]: {
     title: 'View Consent Manager',
@@ -714,42 +804,42 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       ScopeName.ViewManagedConsentDatabaseAdminApi,
     ],
     description: 'View the consent manager configuration.',
-    products: [TranscendProduct.ConsentManager],
+    products: [TranscendProduct.ConsentManagement],
   },
   [ScopeName.ViewAssessments]: {
     title: 'View Assessments',
     dependencies: [],
     description: 'View the assessments and assessment templates.',
     type: ScopeType.View,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataInventory],
   },
   [ScopeName.ManageAssessments]: {
     title: 'Manage Assessments',
     dependencies: [ScopeName.ViewAssessments],
     description: 'Manage and edit assessments and assessment templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataInventory],
   },
   [ScopeName.ViewAssignedAssessments]: {
     title: 'View Assigned Assessments',
     dependencies: [],
     description: 'View the assigned assessments forms.',
     type: ScopeType.View,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataInventory],
   },
   [ScopeName.ManageAssignedAssessments]: {
     title: 'Manage Assigned Assessments',
     dependencies: [ScopeName.ViewAssignedAssessments],
     description: 'Manage and edit the assigned assessments.',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataInventory],
   },
   [ScopeName.ApproveAssessments]: {
     title: 'Approve Assessments',
     dependencies: [ScopeName.ViewAssessments],
     description: 'Approve the assessments and assessment templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Assessments, TranscendProduct.DataMapping],
+    products: [TranscendProduct.Assessments, TranscendProduct.DataInventory],
   },
   [ScopeName.ViewPathfinder]: {
     title: 'View Pathfinder',
@@ -787,84 +877,90 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the prompts and prompt templates.',
     type: ScopeType.View,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement],
   },
   [ScopeName.ManagePrompts]: {
     title: 'Manage Prompts',
     dependencies: [ScopeName.ViewPrompts],
     description: 'Manage and edit prompts and prompt templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement],
   },
   [ScopeName.ViewPromptRuns]: {
     title: 'View Prompt Runs',
     dependencies: [ScopeName.ViewPrompts],
     description: 'View the output run results for prompts.',
     type: ScopeType.View,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement],
   },
   [ScopeName.ManagePromptRuns]: {
     title: 'Manage Prompt Runs',
     dependencies: [ScopeName.ViewPromptRuns, ScopeName.ViewPrompts],
     description: 'Manage, edit and create prompt run results',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement, TranscendProduct.Pathfinder],
   },
   [ScopeName.ViewCodeScanning]: {
     title: 'View Code Scanning',
     dependencies: [ScopeName.ViewGlobalAttributes],
     description: 'View the code scanning tables.',
     type: ScopeType.View,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.ConsentManagement,
+    ],
   },
   [ScopeName.ManageCodeScanning]: {
     title: 'Manage Code Scanning',
     dependencies: [ScopeName.ViewCodeScanning],
     description: 'Manage, edit and create records in code scanning',
     type: ScopeType.Modify,
-    products: [TranscendProduct.DataMapping],
+    products: [
+      TranscendProduct.DataInventory,
+      TranscendProduct.ConsentManagement,
+    ],
   },
   [ScopeName.ExecutePrompt]: {
     title: 'Execute Prompt',
     dependencies: [ScopeName.ViewPromptRuns, ScopeName.ViewPrompts],
     description: 'Ability to execute a prompt and view the outputs',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement],
   },
   [ScopeName.ViewAuditorRuns]: {
     title: 'View Auditor Runs',
     dependencies: [],
     description: 'View the output run results for Auditor.',
     type: ScopeType.View,
-    products: [TranscendProduct.Auditor],
+    products: [TranscendProduct.WebAuditor],
   },
   [ScopeName.ManageAuditor]: {
     title: 'Manage Auditor Runs and Schedules',
     dependencies: [ScopeName.ViewAuditorRuns],
     description: 'Manage, edit and create prompt run results',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Auditor],
+    products: [TranscendProduct.WebAuditor],
   },
   [ScopeName.ExecuteAuditor]: {
     title: 'Execute Auditor',
     dependencies: [ScopeName.ViewAuditorRuns],
     description: 'Ability to execute or schedule Auditor and view the outputs',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Auditor],
+    products: [TranscendProduct.WebAuditor],
   },
   [ScopeName.ApprovePrompts]: {
     title: 'Approve Prompts',
     dependencies: [ScopeName.ViewPrompts],
     description: 'Approve the prompts and prompt templates',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PromptManager],
+    products: [TranscendProduct.PromptManagement],
   },
   [ScopeName.ManageActionItemCollections]: {
     title: 'Manage Action Item Collections',
     dependencies: [],
     description: 'Manage and edit action item collections',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Admin],
+    products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewManagedConsentDatabaseAdminApi]: {
     title: 'View Managed Consent Database Admin API',
@@ -873,8 +969,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       'Ability to query user consent preferences with the Managed Consent Database Admin API',
     type: ScopeType.View,
     products: [
-      TranscendProduct.ConsentManager,
-      TranscendProduct.PreferenceStore,
+      TranscendProduct.ConsentManagement,
+      TranscendProduct.PreferenceManagement,
     ],
   },
   [ScopeName.ManageStoredPreferences]: {
@@ -883,8 +979,8 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Ability to make updates to user stored consent preferences',
     type: ScopeType.Modify,
     products: [
-      TranscendProduct.ConsentManager,
-      TranscendProduct.PreferenceStore,
+      TranscendProduct.ConsentManagement,
+      TranscendProduct.PreferenceManagement,
     ],
   },
   [ScopeName.ManagePreferenceStoreSettings]: {
@@ -892,14 +988,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [ScopeName.ViewPreferenceStoreSettings],
     description: 'Ability to make updates to preference store settings',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PreferenceStore],
+    products: [TranscendProduct.PreferenceManagement],
   },
   [ScopeName.ViewPreferenceStoreSettings]: {
     title: 'View Preference Store Settings',
     dependencies: [ScopeName.ViewPreferenceStoreSettings],
     description: 'Ability to view preference store settings',
     type: ScopeType.Modify,
-    products: [TranscendProduct.PreferenceStore],
+    products: [TranscendProduct.PreferenceManagement],
   },
 };
 
@@ -913,7 +1009,7 @@ export const TRANSCEND_SCOPES: {
     description: 'Access is granted to all of the scopes of type "View".',
     title: 'View Only',
     type: ScopeType.View,
-    products: [TranscendProduct.Admin],
+    products: getValues(TranscendProduct),
   },
   ...SCOPES_WITHOUT_VIEW_ONLY,
 };
