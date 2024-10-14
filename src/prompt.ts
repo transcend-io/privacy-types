@@ -19,6 +19,16 @@ export enum TemplateVariableModelName {
   DataReport = 'dataReport',
 }
 
+/** Prompt status types */
+export enum PromptStatus {
+  Draft = 'DRAFT',
+  Submitted = 'SUBMITTED',
+  InReview = 'IN_REVIEW',
+  ChangesRequested = 'CHANGES_REQUESTED',
+  Rejected = 'REJECTED',
+  Approved = 'APPROVED',
+}
+
 /**
  * The response format of a LLM prompt
  */
