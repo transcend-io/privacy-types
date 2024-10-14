@@ -13,27 +13,11 @@ export enum ActionItemCode {
   /**
    * An assessment has been assigned for completion
    */
-  AssessmentAssigned = 'ASSESSMENT_ASSIGNED',
-  /**
-   * An assessment needs review
-   */
-  AssessmentNeedsReview = 'ASSESSMENT_NEEDS_REVIEW',
-  /**
-   * An assessment has been assigned for completion
-   */
   AssessmentFormAssigned = 'ASSESSMENT_FORM_ASSIGNED',
   /**
    * An assessment needs review
    */
   AssessmentFormNeedsReview = 'ASSESSMENT_FORM_NEEDS_REVIEW',
-  /**
-   * An assessment has changes requested
-   */
-  AssessmentChangesRequested = 'ASSESSMENT_CHANGES_REQUESTED',
-  /**
-   * An assessment has been rejected
-   */
-  AssessmentRejected = 'ASSESSMENT_REJECTED',
   /**
    * Someone marked a request as requiring manual review
    */
