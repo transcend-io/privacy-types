@@ -8,14 +8,10 @@ export enum AttributeSupportedResourceType {
   AirgapCookie = 'airgapCookie',
   /** Airgap Data Flow tabs */
   AirgapDataFlow = 'airgapDataFlow',
-  /** Assessment table */
-  Assessment = 'assessment',
   /** AssessmentForm table */
   AssessmentForm = 'assessmentForm',
   /** AssessmentGroup table */
   AssessmentGroup = 'assessmentGroup',
-  /** AssessmentTemplate table */
-  AssessmentTemplate = 'assessmentTemplate',
   /** AuditorRun table */
   AuditorRun = 'auditorRun',
   /** AuditorSchedule table */
