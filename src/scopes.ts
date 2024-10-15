@@ -851,7 +851,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'View the contract scanning side menu - including setting and contracts.',
     type: ScopeType.View,
-    products: [TranscendProduct.Pathfinder],
+    products: [TranscendProduct.ContractScanning],
   },
   [ScopeName.ManageContractScanning]: {
     title: 'Manage Contract Scanning',
@@ -859,7 +859,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Upload and manage contracts under the contract scanning side menu',
     type: ScopeType.Modify,
-    products: [TranscendProduct.Pathfinder],
+    products: [TranscendProduct.ContractScanning],
   },
   [ScopeName.ViewPrompts]: {
     title: 'View Prompts',
