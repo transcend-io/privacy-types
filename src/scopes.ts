@@ -987,6 +987,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.Modify,
     products: [TranscendProduct.PreferenceManagement],
   },
+  [ScopeName.LLMLogTransfer]: {
+    title: 'LLM Log Transfer',
+    dependencies: [ScopeName.ManageDataInventory],
+    description: 'Ability to transfer logs from LLM to Transcend',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.StructuredDiscovery],
+  }
 };
 
 export const TRANSCEND_SCOPES: {
