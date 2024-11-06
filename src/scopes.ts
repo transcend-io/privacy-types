@@ -95,6 +95,7 @@ export enum ScopeName {
   ViewPolicies = 'viewPolicies',
   ManageIntlMessages = 'manageIntlMessages',
   ViewIntlMessages = 'viewIntlMessages',
+  LLMLogTransfer = 'llmLogTransfer',
 }
 
 /**
@@ -985,6 +986,16 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Ability to view preference store settings',
     type: ScopeType.Modify,
     products: [TranscendProduct.PreferenceManagement],
+  },
+  [ScopeName.LLMLogTransfer]: {
+    title: 'LLM Log Transfer',
+    dependencies: [ScopeName.ManageDataInventory],
+    description: 'Ability to transfer logs from LLM to Transcend',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.StructuredDiscovery,
+      TranscendProduct.UnstructuredDiscovery,
+    ],
   },
 };
 
