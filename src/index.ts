@@ -19,6 +19,7 @@ export * from './assessmentQuestion';
 export * from './enricher';
 export * from './assessmentForm';
 export * from './datapoint';
+export * from './preferences';
 export * from './team';
 export * from './largeLanguageModels';
 export * from './prompt';
