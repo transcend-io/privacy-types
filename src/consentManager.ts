@@ -34,7 +34,7 @@ export const DataFlowScope = makeEnum({
 });
 
 /** Type override */
-export type DataFlowScope = typeof DataFlowScope[keyof typeof DataFlowScope];
+export type DataFlowScope = (typeof DataFlowScope)[keyof typeof DataFlowScope];
 
 export const ConsentBundleType = makeEnum({
   /** Bundle hosted at /cm path */
@@ -45,7 +45,7 @@ export const ConsentBundleType = makeEnum({
 
 /** Override type */
 export type ConsentBundleType =
-  typeof ConsentBundleType[keyof typeof ConsentBundleType];
+  (typeof ConsentBundleType)[keyof typeof ConsentBundleType];
 
 export const UnknownRequestPolicy = makeEnum({
   Allow: 'ALLOW',
@@ -55,7 +55,7 @@ export const UnknownRequestPolicy = makeEnum({
 
 /** Override type */
 export type UnknownRequestPolicy =
-  typeof UnknownRequestPolicy[keyof typeof UnknownRequestPolicy];
+  (typeof UnknownRequestPolicy)[keyof typeof UnknownRequestPolicy];
 
 export const TelemetryPartitionStrategy = makeEnum({
   /** Partition telemetry data by the origin (default) */
@@ -68,7 +68,7 @@ export const TelemetryPartitionStrategy = makeEnum({
 
 /** Override type */
 export type TelemetryPartitionStrategy =
-  typeof TelemetryPartitionStrategy[keyof typeof TelemetryPartitionStrategy];
+  (typeof TelemetryPartitionStrategy)[keyof typeof TelemetryPartitionStrategy];
 
 /**
  * The possible options for configuring the Consent resolution precedence
@@ -87,7 +87,7 @@ export const ConsentPrecedenceOption = makeEnum({
 
 /** Override type */
 export type ConsentPrecedenceOption =
-  typeof ConsentPrecedenceOption[keyof typeof ConsentPrecedenceOption];
+  (typeof ConsentPrecedenceOption)[keyof typeof ConsentPrecedenceOption];
 
 /**
  * The possible options for configuring the CSP
@@ -107,7 +107,7 @@ export const CspOption = makeEnum({
 });
 
 /** Override type */
-export type CspOption = typeof CspOption[keyof typeof CspOption];
+export type CspOption = (typeof CspOption)[keyof typeof CspOption];
 
 /**
  * Options for configuring the US Privacy API
@@ -121,7 +121,7 @@ export const UspapiOption = makeEnum({
 });
 
 /** Override type */
-export type UspapiOption = typeof UspapiOption[keyof typeof UspapiOption];
+export type UspapiOption = (typeof UspapiOption)[keyof typeof UspapiOption];
 
 /**
  * Options for configuring the US Privacy API
@@ -138,7 +138,7 @@ export const SignedIabAgreementOption = makeEnum({
 
 /** Override type */
 export type SignedIabAgreementOption =
-  typeof SignedIabAgreementOption[keyof typeof SignedIabAgreementOption];
+  (typeof SignedIabAgreementOption)[keyof typeof SignedIabAgreementOption];
 
 /**
  * Describes whether listed countries/country subdivisions are included in an experience
@@ -152,7 +152,7 @@ export const RegionsOperator = makeEnum({
 
 /** Override type */
 export type RegionsOperator =
-  typeof RegionsOperator[keyof typeof RegionsOperator];
+  (typeof RegionsOperator)[keyof typeof RegionsOperator];
 
 /**
  * Options for configuring Backend Sync
@@ -167,7 +167,7 @@ export const BackendSyncOption = makeEnum({
 
 /** Override type */
 export type BackendSyncOption =
-  typeof BackendSyncOption[keyof typeof BackendSyncOption];
+  (typeof BackendSyncOption)[keyof typeof BackendSyncOption];
 
 /**
  * Whether or not to run cross-domain sync
@@ -182,4 +182,5 @@ export const LocalSyncOption = makeEnum({
 });
 
 /** Type override */
-export type LocalSyncOption = typeof LocalSyncOption[keyof typeof LocalSyncOption];
+export type LocalSyncOption =
+  (typeof LocalSyncOption)[keyof typeof LocalSyncOption];
