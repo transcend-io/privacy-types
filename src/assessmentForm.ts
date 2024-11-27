@@ -43,7 +43,7 @@ export const AssessmentFormTemplateSource = makeEnum({
  * Overload type
  */
 export type AssessmentFormTemplateSource =
-  (typeof AssessmentFormTemplateSource)[keyof typeof AssessmentFormTemplateSource];
+  typeof AssessmentFormTemplateSource[keyof typeof AssessmentFormTemplateSource];
 
 /** The types of the assessment question */
 export const AssessmentQuestionType = makeEnum({
@@ -65,7 +65,7 @@ export const AssessmentQuestionType = makeEnum({
  * Overload type
  */
 export type AssessmentQuestionType =
-  (typeof AssessmentQuestionType)[keyof typeof AssessmentQuestionType];
+  typeof AssessmentQuestionType[keyof typeof AssessmentQuestionType];
 
 /**
  * The sub-types of the assessment question
@@ -121,7 +121,7 @@ export const AssessmentQuestionSubType = makeEnum({
  * Overload type
  */
 export type AssessmentQuestionSubType =
-  (typeof AssessmentQuestionSubType)[keyof typeof AssessmentQuestionSubType];
+  typeof AssessmentQuestionSubType[keyof typeof AssessmentQuestionSubType];
 
 /** The possible actions within an assessment question's display logic */
 export const AssessmentsDisplayLogicAction = makeEnum({
@@ -135,7 +135,7 @@ export const AssessmentsDisplayLogicAction = makeEnum({
  * Overload type
  */
 export type AssessmentsDisplayLogicAction =
-  (typeof AssessmentsDisplayLogicAction)[keyof typeof AssessmentsDisplayLogicAction];
+  typeof AssessmentsDisplayLogicAction[keyof typeof AssessmentsDisplayLogicAction];
 
 /** The comparison operators to use in an assessment question's display logic  */
 export const ComparisonOperator = makeEnum({
@@ -159,7 +159,7 @@ export const ComparisonOperator = makeEnum({
  * Overload type
  */
 export type ComparisonOperator =
-  (typeof ComparisonOperator)[keyof typeof ComparisonOperator];
+  typeof ComparisonOperator[keyof typeof ComparisonOperator];
 
 /** The logic operators to use in an assessment question's display logic  */
 export const LogicOperator = makeEnum({
@@ -172,7 +172,7 @@ export const LogicOperator = makeEnum({
 /**
  * Overload type
  */
-export type LogicOperator = (typeof LogicOperator)[keyof typeof LogicOperator];
+export type LogicOperator = typeof LogicOperator[keyof typeof LogicOperator];
 
 /**
  * types of data to be managed by the data retention policy
