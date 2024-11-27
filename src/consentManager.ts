@@ -177,7 +177,7 @@ export const LocalSyncOption = makeEnum({
   AllowNetworkObservable: 'allow-network-observable',
   /** disable XDI sync */
   Off: 'off',
-  /** comparable to 'private' -- use private consent sync only */
+  /** comparable to 'private' -- use private consent sync only -- Default state */
   On: 'on',
 });
 
