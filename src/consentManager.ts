@@ -173,12 +173,12 @@ export type BackendSyncOption =
  * Whether or not to run cross-domain sync
  */
 export const LocalSyncOption = makeEnum({
-  /** comparable to 'on' -- use private consent sync only */
-  Private: 'private',
   /** allow network-observable sync when private sync is unavailable */
   AllowNetworkObservable: 'allow-network-observable',
   /** disable XDI sync */
   Off: 'off',
+  /** comparable to 'private' -- use private consent sync only */
+  On: 'on',
 });
 
 /** Type override */
