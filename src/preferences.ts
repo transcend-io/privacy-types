@@ -191,3 +191,16 @@ export const PreferenceStorePurposeUpdate = t.intersection([
 export type PreferenceStorePurposeUpdate = t.TypeOf<
   typeof PreferenceStorePurposeUpdate
 >;
+
+/**
+ * The supported preference topic types
+ */
+export const PreferenceTopicType = makeEnum({
+  Select: 'SELECT',
+  MultiSelect: 'MULTI_SELECT',
+  Boolean: 'BOOLEAN',
+});
+
+/** Override type */
+export type PreferenceTopicType =
+  typeof PreferenceTopicType[keyof typeof PreferenceTopicType];
