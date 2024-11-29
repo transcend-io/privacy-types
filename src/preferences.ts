@@ -192,6 +192,38 @@ export type PreferenceStorePurposeUpdate = t.TypeOf<
   typeof PreferenceStorePurposeUpdate
 >;
 
+export const PreferenceUpdateItem = t.intersection([
+  PreferenceStoreKeyConditionals,
+  t.partial({
+    /** Preference store purposes */
+    purposes: t.array(PreferenceStorePurposeUpdate),
+    /** Consent management related fields */
+    consentManagement: t.partial(PreferenceStoreConsentFields.props),
+    /**
+     * Language to translate DSR processing
+     * TODO: https://transcend.height.app/T-40208 - move this to `PreferenceStoreKeyConditionals` when stored on record
+     */
+    locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    /** The metadata associated with the record */
+    metadata: t.array(
+      t.type({
+        /** metadata key */
+        key: t.string,
+        /**
+         * metadata value
+         *
+         * - **null**: to remove the metadata key
+         * - **string**: to set the metadata key
+         */
+        value: t.union([t.string, t.null]),
+      }),
+    ),
+  }),
+]);
+
+/** Type override */
+export type PreferenceUpdateItem = t.TypeOf<typeof PreferenceUpdateItem>;
+
 /**
  * The supported preference topic types
  */
