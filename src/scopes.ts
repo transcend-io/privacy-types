@@ -953,10 +953,9 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.Administration],
   },
   [ScopeName.ViewManagedConsentDatabaseAdminApi]: {
-    title: 'View Managed Consent Database Admin API',
+    title: 'Read User Stored Preferences',
     dependencies: [],
-    description:
-      'Ability to query user consent preferences with the Managed Consent Database Admin API',
+    description: 'Ability to read user stored preferences',
     type: ScopeType.View,
     products: [
       TranscendProduct.ConsentManagement,
@@ -966,7 +965,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageStoredPreferences]: {
     title: 'Modify User Stored Preferences',
     dependencies: [ScopeName.ViewManagedConsentDatabaseAdminApi],
-    description: 'Ability to make updates to user stored consent preferences',
+    description: 'Ability to make updates to user stored preferences',
     type: ScopeType.Modify,
     products: [
       TranscendProduct.ConsentManagement,
