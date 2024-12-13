@@ -68,6 +68,8 @@ export const IdentifierType = makeEnum({
   RecurlyId: 'recurlyId',
   /** The customer.io ID - also known as cio_id */
   customerIoId: 'customerIoId',
+  /** The visitorId for the Sprig integration */
+  sprigVisitorId: 'sprigVisitorId',
   /** URL of a LinkedIn profile */
   linkedInURL: 'linkedInURL',
   /**
