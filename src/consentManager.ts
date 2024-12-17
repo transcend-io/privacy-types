@@ -171,7 +171,7 @@ export type BackendSyncOption =
 
 /**
  * Whether or not to run cross-domain sync
- * 
+ *
  * default: 'on'
  */
 export const LocalSyncOption = makeEnum({
@@ -188,4 +188,3 @@ export const LocalSyncOption = makeEnum({
 /** Type override */
 export type LocalSyncOption =
   typeof LocalSyncOption[keyof typeof LocalSyncOption];
-  
