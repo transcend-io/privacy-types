@@ -168,3 +168,24 @@ export const BackendSyncOption = makeEnum({
 /** Override type */
 export type BackendSyncOption =
   typeof BackendSyncOption[keyof typeof BackendSyncOption];
+
+/**
+ * Whether or not to run cross-domain sync
+ * 
+ * default: 'on'
+ */
+export const LocalSyncOption = makeEnum({
+  /** use private consent sync only */
+  Private: 'private',
+  /** allow network-observable sync when private sync is unavailable */
+  AllowNetworkObservable: 'allow-network-observable',
+  /** comparable to 'allow-network-observable' -- allow network-observable sync when private sync is unavailble */
+  On: 'on',
+  /** disable local sync */
+  Off: 'off',
+});
+
+/** Type override */
+export type LocalSyncOption =
+  typeof LocalSyncOption[keyof typeof LocalSyncOption];
+  
