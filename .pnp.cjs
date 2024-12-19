@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable */
+// @ts-nocheck
 "use strict";
 
 const RAW_RUNTIME_STATE =
@@ -31,8 +32,8 @@ const RAW_RUNTIME_STATE =
           ["@types/mocha", "npm:10.0.6"],\
           ["@typescript-eslint/eslint-plugin", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:6.13.2"],\
-          ["@yarnpkg/pnpify", "npm:4.0.1"],\
-          ["@yarnpkg/sdks", "npm:3.1.0"],\
+          ["@yarnpkg/pnpify", "npm:4.1.3"],\
+          ["@yarnpkg/sdks", "npm:3.2.0"],\
           ["chai", "npm:4.3.10"],\
           ["depcheck", "npm:1.4.7"],\
           ["eslint", "npm:8.57.0"],\
@@ -43,7 +44,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:41.1.2"],\
           ["fp-ts", "npm:2.16.1"],\
           ["io-ts", "virtual:5854e0cd60a992995ce0d771fa1d48298ec800f80af7abdc0e60d02514c9a182e99cc4bde571f660b9fc4287bfca6c18cdd1b4a6f9131bf565feeea610c516bc#npm:2.2.21"],\
-          ["mocha", "npm:10.2.0"],\
+          ["mocha", "npm:10.8.2"],\
           ["prettier", "npm:2.8.8"],\
           ["ts-node", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
@@ -504,8 +505,8 @@ const RAW_RUNTIME_STATE =
           ["@types/mocha", "npm:10.0.6"],\
           ["@typescript-eslint/eslint-plugin", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:6.13.2"],\
           ["@typescript-eslint/parser", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:6.13.2"],\
-          ["@yarnpkg/pnpify", "npm:4.0.1"],\
-          ["@yarnpkg/sdks", "npm:3.1.0"],\
+          ["@yarnpkg/pnpify", "npm:4.1.3"],\
+          ["@yarnpkg/sdks", "npm:3.2.0"],\
           ["chai", "npm:4.3.10"],\
           ["depcheck", "npm:1.4.7"],\
           ["eslint", "npm:8.57.0"],\
@@ -516,7 +517,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-jsdoc", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:41.1.2"],\
           ["fp-ts", "npm:2.16.1"],\
           ["io-ts", "virtual:5854e0cd60a992995ce0d771fa1d48298ec800f80af7abdc0e60d02514c9a182e99cc4bde571f660b9fc4287bfca6c18cdd1b4a6f9131bf565feeea610c516bc#npm:2.2.21"],\
-          ["mocha", "npm:10.2.0"],\
+          ["mocha", "npm:10.8.2"],\
           ["prettier", "npm:2.8.8"],\
           ["ts-node", "virtual:bf1a4345394809fde8cdfbdd5f2c3aad95f74533773e2fec1473925551e86a9f9e212350833d82726dfb7ad9ff5a63d7436788dedc60db9cbd102341a022df6f#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"]\
@@ -1010,22 +1011,22 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@yarnpkg/core", [\
-      ["npm:4.0.2", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-core-npm-4.0.2-9a073b0439-10c0.zip/node_modules/@yarnpkg/core/",\
+      ["npm:4.1.6", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-core-npm-4.1.6-9a4fedf5cf-10c0.zip/node_modules/@yarnpkg/core/",\
         "packageDependencies": [\
-          ["@yarnpkg/core", "npm:4.0.2"],\
+          ["@yarnpkg/core", "npm:4.1.6"],\
           ["@arcanis/slice-ansi", "npm:1.1.1"],\
           ["@types/semver", "npm:7.5.6"],\
           ["@types/treeify", "npm:1.0.3"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
-          ["@yarnpkg/libzip", "virtual:9a073b04394983ad22e38c945041076f9725a9019692d02867acc748d784cda634cd51872d0f7218f06f75e30f6d00fcd9d0b3b9380ae7265c9f133546b90346#npm:3.0.0"],\
-          ["@yarnpkg/parsers", "npm:3.0.0"],\
-          ["@yarnpkg/shell", "npm:4.0.0"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
+          ["@yarnpkg/libzip", "virtual:9a4fedf5cfa52d65d4531d1193ebb3740286722fac9cb6b579c5c716520478d5994f256b21e32705033554e0a0fcbeaf703fbcff19bba1d97fe7a3b456f4a066#npm:3.1.0"],\
+          ["@yarnpkg/parsers", "npm:3.0.2"],\
+          ["@yarnpkg/shell", "npm:4.1.1"],\
           ["camelcase", "npm:5.3.1"],\
           ["chalk", "npm:3.0.0"],\
-          ["ci-info", "npm:3.9.0"],\
-          ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["ci-info", "npm:4.1.0"],\
+          ["clipanion", "virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["diff", "npm:5.1.0"],\
           ["dotenv", "npm:16.3.1"],\
           ["fast-glob", "npm:3.3.2"],\
@@ -1045,30 +1046,30 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@yarnpkg/fslib", [\
-      ["npm:3.0.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-fslib-npm-3.0.1-df63ac76ba-10c0.zip/node_modules/@yarnpkg/fslib/",\
+      ["npm:3.1.1", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-fslib-npm-3.1.1-dfd6328a15-10c0.zip/node_modules/@yarnpkg/fslib/",\
         "packageDependencies": [\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
           ["tslib", "npm:2.6.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@yarnpkg/libzip", [\
-      ["npm:3.0.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-libzip-npm-3.0.0-13ff999030-10c0.zip/node_modules/@yarnpkg/libzip/",\
+      ["npm:3.1.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-libzip-npm-3.1.0-73edb40bfc-10c0.zip/node_modules/@yarnpkg/libzip/",\
         "packageDependencies": [\
-          ["@yarnpkg/libzip", "npm:3.0.0"]\
+          ["@yarnpkg/libzip", "npm:3.1.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:9a073b04394983ad22e38c945041076f9725a9019692d02867acc748d784cda634cd51872d0f7218f06f75e30f6d00fcd9d0b3b9380ae7265c9f133546b90346#npm:3.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@yarnpkg-libzip-virtual-0d78d487c9/3/home/codespace/.yarn/berry/cache/@yarnpkg-libzip-npm-3.0.0-13ff999030-10c0.zip/node_modules/@yarnpkg/libzip/",\
+      ["virtual:9a4fedf5cfa52d65d4531d1193ebb3740286722fac9cb6b579c5c716520478d5994f256b21e32705033554e0a0fcbeaf703fbcff19bba1d97fe7a3b456f4a066#npm:3.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@yarnpkg-libzip-virtual-bd8a773c0b/3/home/codespace/.yarn/berry/cache/@yarnpkg-libzip-npm-3.1.0-73edb40bfc-10c0.zip/node_modules/@yarnpkg/libzip/",\
         "packageDependencies": [\
-          ["@yarnpkg/libzip", "virtual:9a073b04394983ad22e38c945041076f9725a9019692d02867acc748d784cda634cd51872d0f7218f06f75e30f6d00fcd9d0b3b9380ae7265c9f133546b90346#npm:3.0.0"],\
+          ["@yarnpkg/libzip", "virtual:9a4fedf5cfa52d65d4531d1193ebb3740286722fac9cb6b579c5c716520478d5994f256b21e32705033554e0a0fcbeaf703fbcff19bba1d97fe7a3b456f4a066#npm:3.1.0"],\
           ["@types/emscripten", "npm:1.39.10"],\
           ["@types/yarnpkg__fslib", null],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
           ["tslib", "npm:2.6.2"]\
         ],\
         "packagePeers": [\
@@ -1079,22 +1080,22 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@yarnpkg/nm", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-nm-npm-4.0.1-f5b36f08be-10c0.zip/node_modules/@yarnpkg/nm/",\
+      ["npm:4.0.5", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-nm-npm-4.0.5-291f47d2d1-10c0.zip/node_modules/@yarnpkg/nm/",\
         "packageDependencies": [\
-          ["@yarnpkg/nm", "npm:4.0.1"],\
-          ["@yarnpkg/core", "npm:4.0.2"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
-          ["@yarnpkg/pnp", "npm:4.0.1"]\
+          ["@yarnpkg/nm", "npm:4.0.5"],\
+          ["@yarnpkg/core", "npm:4.1.6"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
+          ["@yarnpkg/pnp", "npm:4.0.7"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@yarnpkg/parsers", [\
-      ["npm:3.0.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-parsers-npm-3.0.0-f62f25a57b-10c0.zip/node_modules/@yarnpkg/parsers/",\
+      ["npm:3.0.2", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-parsers-npm-3.0.2-c5e3ccc563-10c0.zip/node_modules/@yarnpkg/parsers/",\
         "packageDependencies": [\
-          ["@yarnpkg/parsers", "npm:3.0.0"],\
+          ["@yarnpkg/parsers", "npm:3.0.2"],\
           ["js-yaml", "npm:3.14.1"],\
           ["tslib", "npm:2.6.2"]\
         ],\
@@ -1102,40 +1103,40 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@yarnpkg/pnp", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-pnp-npm-4.0.1-2c8b9cfa11-10c0.zip/node_modules/@yarnpkg/pnp/",\
+      ["npm:4.0.7", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-pnp-npm-4.0.7-b6fb79cac8-10c0.zip/node_modules/@yarnpkg/pnp/",\
         "packageDependencies": [\
-          ["@yarnpkg/pnp", "npm:4.0.1"],\
+          ["@yarnpkg/pnp", "npm:4.0.7"],\
           ["@types/node", "npm:18.19.2"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"]\
+          ["@yarnpkg/fslib", "npm:3.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@yarnpkg/pnpify", [\
-      ["npm:4.0.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-pnpify-npm-4.0.1-199710eb23-10c0.zip/node_modules/@yarnpkg/pnpify/",\
+      ["npm:4.1.3", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-pnpify-npm-4.1.3-9a92008dd9-10c0.zip/node_modules/@yarnpkg/pnpify/",\
         "packageDependencies": [\
-          ["@yarnpkg/pnpify", "npm:4.0.1"],\
-          ["@yarnpkg/core", "npm:4.0.2"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
-          ["@yarnpkg/nm", "npm:4.0.1"],\
-          ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
+          ["@yarnpkg/pnpify", "npm:4.1.3"],\
+          ["@yarnpkg/core", "npm:4.1.6"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
+          ["@yarnpkg/nm", "npm:4.0.5"],\
+          ["clipanion", "virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2"],\
           ["tslib", "npm:2.6.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@yarnpkg/sdks", [\
-      ["npm:3.1.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-sdks-npm-3.1.0-a480fb9a26-10c0.zip/node_modules/@yarnpkg/sdks/",\
+      ["npm:3.2.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-sdks-npm-3.2.0-03b1f3c8a8-10c0.zip/node_modules/@yarnpkg/sdks/",\
         "packageDependencies": [\
-          ["@yarnpkg/sdks", "npm:3.1.0"],\
-          ["@yarnpkg/core", "npm:4.0.2"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
-          ["@yarnpkg/parsers", "npm:3.0.0"],\
+          ["@yarnpkg/sdks", "npm:3.2.0"],\
+          ["@yarnpkg/core", "npm:4.1.6"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
+          ["@yarnpkg/parsers", "npm:3.0.2"],\
           ["chalk", "npm:3.0.0"],\
-          ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
+          ["clipanion", "virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2"],\
           ["comment-json", "npm:2.4.2"],\
           ["lodash", "npm:4.17.21"],\
           ["tslib", "npm:2.6.2"]\
@@ -1144,15 +1145,15 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@yarnpkg/shell", [\
-      ["npm:4.0.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-shell-npm-4.0.0-3927f33f2f-10c0.zip/node_modules/@yarnpkg/shell/",\
+      ["npm:4.1.1", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/@yarnpkg-shell-npm-4.1.1-e74e0c7fac-10c0.zip/node_modules/@yarnpkg/shell/",\
         "packageDependencies": [\
-          ["@yarnpkg/shell", "npm:4.0.0"],\
-          ["@yarnpkg/fslib", "npm:3.0.1"],\
-          ["@yarnpkg/parsers", "npm:3.0.0"],\
+          ["@yarnpkg/shell", "npm:4.1.1"],\
+          ["@yarnpkg/fslib", "npm:3.1.1"],\
+          ["@yarnpkg/parsers", "npm:3.0.2"],\
           ["chalk", "npm:3.0.0"],\
-          ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["clipanion", "virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["fast-glob", "npm:3.3.2"],\
           ["micromatch", "npm:4.0.8"],\
           ["tslib", "npm:2.6.2"]\
@@ -1244,10 +1245,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ansi-colors", [\
-      ["npm:4.1.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/ansi-colors-npm-4.1.1-97ad42f223-10c0.zip/node_modules/ansi-colors/",\
+      ["npm:4.1.3", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/ansi-colors-npm-4.1.3-8ffd0ae6c7-10c0.zip/node_modules/ansi-colors/",\
         "packageDependencies": [\
-          ["ansi-colors", "npm:4.1.1"]\
+          ["ansi-colors", "npm:4.1.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1701,10 +1702,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["chokidar", [\
-      ["npm:3.5.3", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/chokidar-npm-3.5.3-c5f9b0a56a-10c0.zip/node_modules/chokidar/",\
+      ["npm:3.6.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/chokidar-npm-3.6.0-3c413a828f-10c0.zip/node_modules/chokidar/",\
         "packageDependencies": [\
-          ["chokidar", "npm:3.5.3"],\
+          ["chokidar", "npm:3.6.0"],\
           ["anymatch", "npm:3.1.3"],\
           ["braces", "npm:3.0.3"],\
           ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
@@ -1727,10 +1728,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ci-info", [\
-      ["npm:3.9.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/ci-info-npm-3.9.0-646784ca0e-10c0.zip/node_modules/ci-info/",\
+      ["npm:4.1.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/ci-info-npm-4.1.0-f0fb92b1e5-10c0.zip/node_modules/ci-info/",\
         "packageDependencies": [\
-          ["ci-info", "npm:3.9.0"]\
+          ["ci-info", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1752,10 +1753,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2", {\
-        "packageLocation": "./.yarn/__virtual__/clipanion-virtual-ecd813bb06/3/home/codespace/.yarn/berry/cache/clipanion-npm-4.0.0-rc.2-ad27d804c4-10c0.zip/node_modules/clipanion/",\
+      ["virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2", {\
+        "packageLocation": "./.yarn/__virtual__/clipanion-virtual-c418cdf25b/3/home/codespace/.yarn/berry/cache/clipanion-npm-4.0.0-rc.2-ad27d804c4-10c0.zip/node_modules/clipanion/",\
         "packageDependencies": [\
-          ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
+          ["clipanion", "virtual:e74e0c7face772469c5d9d70719bbd83a0b053c4a74b651bfc2a4f7de3d205468e1258219594675d4ae727005789cab9cdeba038300276cac6c939326b4ca52c#npm:4.0.0-rc.2"],\
           ["@types/typanion", null],\
           ["typanion", "npm:3.14.0"]\
         ],\
@@ -1894,10 +1895,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["cross-spawn", [\
-      ["npm:7.0.3", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/cross-spawn-npm-7.0.3-e4ff3e65b3-10c0.zip/node_modules/cross-spawn/",\
+      ["npm:7.0.6", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/cross-spawn-npm-7.0.6-264bddf921-10c0.zip/node_modules/cross-spawn/",\
         "packageDependencies": [\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["path-key", "npm:3.1.1"],\
           ["shebang-command", "npm:2.0.0"],\
           ["which", "npm:2.0.2"]\
@@ -1963,12 +1964,19 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:87db25c7c5e6b25bbc12571091cdabc648b79d427ab445d1714ccfdcdfb3265c9de6561ca760cc3de470037cbedf3af4be56ba3b684b3a1c01d4c9c2fd55a741#npm:4.3.4", {\
-        "packageLocation": "./.yarn/__virtual__/debug-virtual-762d08cbe9/3/home/codespace/.yarn/berry/cache/debug-npm-4.3.4-4513954577-10c0.zip/node_modules/debug/",\
+      ["npm:4.4.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/debug-npm-4.4.0-f6efe76023-10c0.zip/node_modules/debug/",\
         "packageDependencies": [\
-          ["debug", "virtual:87db25c7c5e6b25bbc12571091cdabc648b79d427ab445d1714ccfdcdfb3265c9de6561ca760cc3de470037cbedf3af4be56ba3b684b3a1c01d4c9c2fd55a741#npm:4.3.4"],\
+          ["debug", "npm:4.4.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:4295e5e50bf02edb15c91f73adb375310693eb0dbb08366e704fd6065f00dffb187ef944f360b50aa62659c9a1be7e34da59df3f842a07f05f345c9b169858e7#npm:4.4.0", {\
+        "packageLocation": "./.yarn/__virtual__/debug-virtual-efb26ed5ee/3/home/codespace/.yarn/berry/cache/debug-npm-4.4.0-f6efe76023-10c0.zip/node_modules/debug/",\
+        "packageDependencies": [\
+          ["debug", "virtual:4295e5e50bf02edb15c91f73adb375310693eb0dbb08366e704fd6065f00dffb187ef944f360b50aa62659c9a1be7e34da59df3f842a07f05f345c9b169858e7#npm:4.4.0"],\
           ["@types/supports-color", null],\
-          ["ms", "npm:2.1.2"],\
+          ["ms", "npm:2.1.3"],\
           ["supports-color", "npm:8.1.1"]\
         ],\
         "packagePeers": [\
@@ -2159,17 +2167,17 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:5.0.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/diff-npm-5.0.0-ad6900db18-10c0.zip/node_modules/diff/",\
-        "packageDependencies": [\
-          ["diff", "npm:5.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:5.1.0", {\
         "packageLocation": "../../home/codespace/.yarn/berry/cache/diff-npm-5.1.0-d24d222280-10c0.zip/node_modules/diff/",\
         "packageDependencies": [\
           ["diff", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:5.2.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/diff-npm-5.2.0-f523a581f3-10c0.zip/node_modules/diff/",\
+        "packageDependencies": [\
+          ["diff", "npm:5.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2509,7 +2517,7 @@ const RAW_RUNTIME_STATE =
           ["@ungap/structured-clone", "npm:1.2.0"],\
           ["ajv", "npm:6.12.6"],\
           ["chalk", "npm:4.1.2"],\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["debug", "virtual:a4d284491e3edd5bd310dbcd3effd4bfe430bd776a40d8832be0de78dd10557702ecd8471eaf3ff78b607a08047f9a467a0d0977069d0b1c388c69f17cf7399d#npm:4.3.4"],\
           ["doctrine", "npm:3.0.0"],\
           ["escape-string-regexp", "npm:4.0.0"],\
@@ -3027,7 +3035,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../home/codespace/.yarn/berry/cache/foreground-child-npm-3.1.1-77e78ed774-10c0.zip/node_modules/foreground-child/",\
         "packageDependencies": [\
           ["foreground-child", "npm:3.1.1"],\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["signal-exit", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
@@ -3207,19 +3215,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:7.2.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/glob-npm-7.2.0-bb4644d239-10c0.zip/node_modules/glob/",\
-        "packageDependencies": [\
-          ["glob", "npm:7.2.0"],\
-          ["fs.realpath", "npm:1.0.0"],\
-          ["inflight", "npm:1.0.6"],\
-          ["inherits", "npm:2.0.4"],\
-          ["minimatch", "npm:3.1.2"],\
-          ["once", "npm:1.4.0"],\
-          ["path-is-absolute", "npm:1.0.1"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:7.2.3", {\
         "packageLocation": "../../home/codespace/.yarn/berry/cache/glob-npm-7.2.3-2d866d17a5-10c0.zip/node_modules/glob/",\
         "packageDependencies": [\
@@ -3230,6 +3225,18 @@ const RAW_RUNTIME_STATE =
           ["minimatch", "npm:3.1.2"],\
           ["once", "npm:1.4.0"],\
           ["path-is-absolute", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:8.1.0", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/glob-npm-8.1.0-65f64af8b1-10c0.zip/node_modules/glob/",\
+        "packageDependencies": [\
+          ["glob", "npm:8.1.0"],\
+          ["fs.realpath", "npm:1.0.0"],\
+          ["inflight", "npm:1.0.6"],\
+          ["inherits", "npm:2.0.4"],\
+          ["minimatch", "npm:5.1.6"],\
+          ["once", "npm:1.4.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4299,10 +4306,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:5.0.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/minimatch-npm-5.0.1-612724f6f0-10c0.zip/node_modules/minimatch/",\
+      ["npm:5.1.6", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/minimatch-npm-5.1.6-1e71429f4c-10c0.zip/node_modules/minimatch/",\
         "packageDependencies": [\
-          ["minimatch", "npm:5.0.1"],\
+          ["minimatch", "npm:5.1.6"],\
           ["brace-expansion", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
@@ -4431,30 +4438,29 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["mocha", [\
-      ["npm:10.2.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/mocha-npm-10.2.0-87db25c7c5-10c0.zip/node_modules/mocha/",\
+      ["npm:10.8.2", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/mocha-npm-10.8.2-4295e5e50b-10c0.zip/node_modules/mocha/",\
         "packageDependencies": [\
-          ["mocha", "npm:10.2.0"],\
-          ["ansi-colors", "npm:4.1.1"],\
+          ["mocha", "npm:10.8.2"],\
+          ["ansi-colors", "npm:4.1.3"],\
           ["browser-stdout", "npm:1.3.1"],\
-          ["chokidar", "npm:3.5.3"],\
-          ["debug", "virtual:87db25c7c5e6b25bbc12571091cdabc648b79d427ab445d1714ccfdcdfb3265c9de6561ca760cc3de470037cbedf3af4be56ba3b684b3a1c01d4c9c2fd55a741#npm:4.3.4"],\
-          ["diff", "npm:5.0.0"],\
+          ["chokidar", "npm:3.6.0"],\
+          ["debug", "virtual:4295e5e50bf02edb15c91f73adb375310693eb0dbb08366e704fd6065f00dffb187ef944f360b50aa62659c9a1be7e34da59df3f842a07f05f345c9b169858e7#npm:4.4.0"],\
+          ["diff", "npm:5.2.0"],\
           ["escape-string-regexp", "npm:4.0.0"],\
           ["find-up", "npm:5.0.0"],\
-          ["glob", "npm:7.2.0"],\
+          ["glob", "npm:8.1.0"],\
           ["he", "npm:1.2.0"],\
           ["js-yaml", "npm:4.1.0"],\
           ["log-symbols", "npm:4.1.0"],\
-          ["minimatch", "npm:5.0.1"],\
+          ["minimatch", "npm:5.1.6"],\
           ["ms", "npm:2.1.3"],\
-          ["nanoid", "npm:3.3.3"],\
-          ["serialize-javascript", "npm:6.0.0"],\
+          ["serialize-javascript", "npm:6.0.2"],\
           ["strip-json-comments", "npm:3.1.1"],\
           ["supports-color", "npm:8.1.1"],\
-          ["workerpool", "npm:6.2.1"],\
+          ["workerpool", "npm:6.5.1"],\
           ["yargs", "npm:16.2.0"],\
-          ["yargs-parser", "npm:20.2.4"],\
+          ["yargs-parser", "npm:20.2.9"],\
           ["yargs-unparser", "npm:2.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -4491,17 +4497,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["nanoid", [\
-      ["npm:3.3.3", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/nanoid-npm-3.3.3-25d865be84-10c0.zip/node_modules/nanoid/",\
+      ["npm:3.3.8", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/nanoid-npm-3.3.8-d22226208b-10c0.zip/node_modules/nanoid/",\
         "packageDependencies": [\
-          ["nanoid", "npm:3.3.3"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:3.3.7", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/nanoid-npm-3.3.7-98824ba130-10c0.zip/node_modules/nanoid/",\
-        "packageDependencies": [\
-          ["nanoid", "npm:3.3.7"]\
+          ["nanoid", "npm:3.3.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4846,7 +4845,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../home/codespace/.yarn/berry/cache/postcss-npm-8.4.32-2004ba88b8-10c0.zip/node_modules/postcss/",\
         "packageDependencies": [\
           ["postcss", "npm:8.4.32"],\
-          ["nanoid", "npm:3.3.7"],\
+          ["nanoid", "npm:3.3.8"],\
           ["picocolors", "npm:1.0.0"],\
           ["source-map-js", "npm:1.0.2"]\
         ],\
@@ -5202,10 +5201,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["serialize-javascript", [\
-      ["npm:6.0.0", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/serialize-javascript-npm-6.0.0-0bb8a3c88d-10c0.zip/node_modules/serialize-javascript/",\
+      ["npm:6.0.2", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/serialize-javascript-npm-6.0.2-cc09461d45-10c0.zip/node_modules/serialize-javascript/",\
         "packageDependencies": [\
-          ["serialize-javascript", "npm:6.0.0"],\
+          ["serialize-javascript", "npm:6.0.2"],\
           ["randombytes", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
@@ -6012,10 +6011,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["workerpool", [\
-      ["npm:6.2.1", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/workerpool-npm-6.2.1-1486cb2056-10c0.zip/node_modules/workerpool/",\
+      ["npm:6.5.1", {\
+        "packageLocation": "../../home/codespace/.yarn/berry/cache/workerpool-npm-6.5.1-7e0dd85ca7-10c0.zip/node_modules/workerpool/",\
         "packageDependencies": [\
-          ["workerpool", "npm:6.2.1"]\
+          ["workerpool", "npm:6.5.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6095,13 +6094,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["yargs-parser", [\
-      ["npm:20.2.4", {\
-        "packageLocation": "../../home/codespace/.yarn/berry/cache/yargs-parser-npm-20.2.4-1de20916a6-10c0.zip/node_modules/yargs-parser/",\
-        "packageDependencies": [\
-          ["yargs-parser", "npm:20.2.4"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:20.2.9", {\
         "packageLocation": "../../home/codespace/.yarn/berry/cache/yargs-parser-npm-20.2.9-a1d19e598d-10c0.zip/node_modules/yargs-parser/",\
         "packageDependencies": [\
@@ -6240,26 +6232,24 @@ function ERR_DIR_CLOSED() {
 
 const DEFAULT_MODE = S_IFREG | 420;
 class StatEntry {
-  constructor() {
-    this.uid = 0;
-    this.gid = 0;
-    this.size = 0;
-    this.blksize = 0;
-    this.atimeMs = 0;
-    this.mtimeMs = 0;
-    this.ctimeMs = 0;
-    this.birthtimeMs = 0;
-    this.atime = new Date(0);
-    this.mtime = new Date(0);
-    this.ctime = new Date(0);
-    this.birthtime = new Date(0);
-    this.dev = 0;
-    this.ino = 0;
-    this.mode = DEFAULT_MODE;
-    this.nlink = 1;
-    this.rdev = 0;
-    this.blocks = 1;
-  }
+  uid = 0;
+  gid = 0;
+  size = 0;
+  blksize = 0;
+  atimeMs = 0;
+  mtimeMs = 0;
+  ctimeMs = 0;
+  birthtimeMs = 0;
+  atime = /* @__PURE__ */ new Date(0);
+  mtime = /* @__PURE__ */ new Date(0);
+  ctime = /* @__PURE__ */ new Date(0);
+  birthtime = /* @__PURE__ */ new Date(0);
+  dev = 0;
+  ino = 0;
+  mode = DEFAULT_MODE;
+  nlink = 1;
+  rdev = 0;
+  blocks = 1;
   isBlockDevice() {
     return false;
   }
@@ -6283,30 +6273,28 @@ class StatEntry {
   }
 }
 class BigIntStatsEntry {
-  constructor() {
-    this.uid = BigInt(0);
-    this.gid = BigInt(0);
-    this.size = BigInt(0);
-    this.blksize = BigInt(0);
-    this.atimeMs = BigInt(0);
-    this.mtimeMs = BigInt(0);
-    this.ctimeMs = BigInt(0);
-    this.birthtimeMs = BigInt(0);
-    this.atimeNs = BigInt(0);
-    this.mtimeNs = BigInt(0);
-    this.ctimeNs = BigInt(0);
-    this.birthtimeNs = BigInt(0);
-    this.atime = new Date(0);
-    this.mtime = new Date(0);
-    this.ctime = new Date(0);
-    this.birthtime = new Date(0);
-    this.dev = BigInt(0);
-    this.ino = BigInt(0);
-    this.mode = BigInt(DEFAULT_MODE);
-    this.nlink = BigInt(1);
-    this.rdev = BigInt(0);
-    this.blocks = BigInt(1);
-  }
+  uid = BigInt(0);
+  gid = BigInt(0);
+  size = BigInt(0);
+  blksize = BigInt(0);
+  atimeMs = BigInt(0);
+  mtimeMs = BigInt(0);
+  ctimeMs = BigInt(0);
+  birthtimeMs = BigInt(0);
+  atimeNs = BigInt(0);
+  mtimeNs = BigInt(0);
+  ctimeNs = BigInt(0);
+  birthtimeNs = BigInt(0);
+  atime = /* @__PURE__ */ new Date(0);
+  mtime = /* @__PURE__ */ new Date(0);
+  ctime = /* @__PURE__ */ new Date(0);
+  birthtime = /* @__PURE__ */ new Date(0);
+  dev = BigInt(0);
+  ino = BigInt(0);
+  mode = BigInt(DEFAULT_MODE);
+  nlink = BigInt(1);
+  rdev = BigInt(0);
+  blocks = BigInt(1);
   isBlockDevice() {
     return false;
   }
@@ -6341,7 +6329,7 @@ function clearStats(stats) {
       } else if (typeof element === `bigint`) {
         stats[key] = BigInt(0);
       } else if (nodeUtils__namespace.types.isDate(element)) {
-        stats[key] = new Date(0);
+        stats[key] = /* @__PURE__ */ new Date(0);
       }
     }
   }
@@ -6432,6 +6420,9 @@ const Filename = {
   manifest: `package.json`,
   lockfile: `yarn.lock`,
   virtual: `__virtual__`,
+  /**
+   * @deprecated
+   */
   pnpJs: `.pnp.js`,
   pnpCjs: `.pnp.cjs`,
   pnpData: `.pnp.data.json`,
@@ -6535,10 +6526,9 @@ async function copyImpl(prelayout, postlayout, destinationFs, destination, sourc
         updated = await copySymlink(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts);
       }
       break;
-    default:
-      {
-        throw new Error(`Unsupported file type (${sourceStat.mode})`);
-      }
+    default: {
+      throw new Error(`Unsupported file type (${sourceStat.mode})`);
+    }
   }
   if (opts.linkStrategy?.type !== `HardlinkFromIndex` || !sourceStat.isFile()) {
     if (updated || destinationStat?.mtime?.getTime() !== mtime.getTime() || destinationStat?.atime?.getTime() !== atime.getTime()) {
@@ -6601,7 +6591,10 @@ async function copyFolder(prelayout, postlayout, destinationFs, destination, des
 }
 async function copyFileViaIndex(prelayout, postlayout, destinationFs, destination, destinationStat, sourceFs, source, sourceStat, opts, linkStrategy) {
   const sourceHash = await sourceFs.checksumFilePromise(source, { algorithm: `sha1` });
-  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${sourceHash}.dat`);
+  const defaultMode = 420;
+  const sourceMode = sourceStat.mode & 511;
+  const indexFileName = `${sourceHash}${sourceMode !== defaultMode ? sourceMode.toString(8) : ``}`;
+  const indexPath = destinationFs.pathUtils.join(linkStrategy.indexPath, sourceHash.slice(0, 2), `${indexFileName}.dat`);
   let AtomicBehavior;
   ((AtomicBehavior2) => {
     AtomicBehavior2[AtomicBehavior2["Lock"] = 0] = "Lock";
@@ -6657,8 +6650,12 @@ async function copyFileViaIndex(prelayout, postlayout, destinationFs, destinatio
     }
   });
   postlayout.push(async () => {
-    if (!indexStat)
+    if (!indexStat) {
       await destinationFs.lutimesPromise(indexPath, defaultTime, defaultTime);
+      if (sourceMode !== defaultMode) {
+        await destinationFs.chmodPromise(indexPath, sourceMode);
+      }
+    }
     if (tempPath && !tempPathCleaned) {
       await destinationFs.unlinkPromise(tempPath);
     }
@@ -6707,8 +6704,8 @@ class CustomDir {
     this.path = path;
     this.nextDirent = nextDirent;
     this.opts = opts;
-    this.closed = false;
   }
+  closed = false;
   throwIfClosed() {
     if (this.closed) {
       throw ERR_DIR_CLOSED();
@@ -6766,20 +6763,24 @@ function assertStatus(current, expected) {
   }
 }
 class CustomStatWatcher extends events.EventEmitter {
-  constructor(fakeFs, path, { bigint = false } = {}) {
-    super();
-    this.status = "ready" /* Ready */;
-    this.changeListeners = /* @__PURE__ */ new Map();
-    this.startTimeout = null;
-    this.fakeFs = fakeFs;
-    this.path = path;
-    this.bigint = bigint;
-    this.lastStats = this.stat();
-  }
+  fakeFs;
+  path;
+  bigint;
+  status = "ready" /* Ready */;
+  changeListeners = /* @__PURE__ */ new Map();
+  lastStats;
+  startTimeout = null;
   static create(fakeFs, path, opts) {
     const statWatcher = new CustomStatWatcher(fakeFs, path, opts);
     statWatcher.start();
     return statWatcher;
+  }
+  constructor(fakeFs, path, { bigint = false } = {}) {
+    super();
+    this.fakeFs = fakeFs;
+    this.path = path;
+    this.bigint = bigint;
+    this.lastStats = this.stat();
   }
   start() {
     assertStatus(this.status, "ready" /* Ready */);
@@ -6808,6 +6809,11 @@ class CustomStatWatcher extends events.EventEmitter {
       return clearStats(statInstance);
     }
   }
+  /**
+   * Creates an interval whose callback compares the current stats with the previous stats and notifies all listeners in case of changes.
+   *
+   * @param opts.persistent Decides whether the interval should be immediately unref-ed.
+   */
   makeInterval(opts) {
     const interval = setInterval(() => {
       const currentStats = this.stat();
@@ -6819,10 +6825,16 @@ class CustomStatWatcher extends events.EventEmitter {
     }, opts.interval);
     return opts.persistent ? interval : interval.unref();
   }
+  /**
+   * Registers a listener and assigns it an interval.
+   */
   registerChangeListener(listener, opts) {
     this.addListener("change" /* Change */, listener);
     this.changeListeners.set(listener, this.makeInterval(opts));
   }
+  /**
+   * Unregisters the listener and clears the assigned interval.
+   */
   unregisterChangeListener(listener) {
     this.removeListener("change" /* Change */, listener);
     const interval = this.changeListeners.get(listener);
@@ -6830,6 +6842,9 @@ class CustomStatWatcher extends events.EventEmitter {
       clearInterval(interval);
     this.changeListeners.delete(listener);
   }
+  /**
+   * Unregisters all listeners and clears all assigned intervals.
+   */
   unregisterAllChangeListeners() {
     for (const listener of this.changeListeners.keys()) {
       this.unregisterChangeListener(listener);
@@ -6838,11 +6853,17 @@ class CustomStatWatcher extends events.EventEmitter {
   hasChangeListeners() {
     return this.changeListeners.size > 0;
   }
+  /**
+   * Refs all stored intervals.
+   */
   ref() {
     for (const interval of this.changeListeners.values())
       interval.ref();
     return this;
   }
+  /**
+   * Unrefs all stored intervals.
+   */
   unref() {
     for (const interval of this.changeListeners.values())
       interval.unref();
@@ -6913,6 +6934,7 @@ function unwatchAllFiles(fakeFs) {
 }
 
 class FakeFS {
+  pathUtils;
   constructor(pathUtils) {
     this.pathUtils = pathUtils;
   }
@@ -7460,6 +7482,12 @@ class ProxiedFS extends FakeFS {
   rmdirSync(p, opts) {
     return this.baseFs.rmdirSync(this.mapToBase(p), opts);
   }
+  async rmPromise(p, opts) {
+    return this.baseFs.rmPromise(this.mapToBase(p), opts);
+  }
+  rmSync(p, opts) {
+    return this.baseFs.rmSync(this.mapToBase(p), opts);
+  }
   async linkPromise(existingP, newP) {
     return this.baseFs.linkPromise(this.mapToBase(existingP), this.mapToBase(newP));
   }
@@ -7515,6 +7543,7 @@ class ProxiedFS extends FakeFS {
   watch(p, a, b) {
     return this.baseFs.watch(
       this.mapToBase(p),
+      // @ts-expect-error
       a,
       b
     );
@@ -7522,6 +7551,7 @@ class ProxiedFS extends FakeFS {
   watchFile(p, a, b) {
     return this.baseFs.watchFile(
       this.mapToBase(p),
+      // @ts-expect-error
       a,
       b
     );
@@ -7545,6 +7575,7 @@ function direntToPortable(dirent) {
   return portableDirent;
 }
 class NodeFS extends BasePortableFakeFS {
+  realFs;
   constructor(realFs = fs__default.default) {
     super();
     this.realFs = realFs;
@@ -7841,6 +7872,18 @@ class NodeFS extends BasePortableFakeFS {
   rmdirSync(p, opts) {
     return this.realFs.rmdirSync(npath.fromPortablePath(p), opts);
   }
+  async rmPromise(p, opts) {
+    return await new Promise((resolve, reject) => {
+      if (opts) {
+        this.realFs.rm(npath.fromPortablePath(p), opts, this.makeCallback(resolve, reject));
+      } else {
+        this.realFs.rm(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
+      }
+    });
+  }
+  rmSync(p, opts) {
+    return this.realFs.rmSync(npath.fromPortablePath(p), opts);
+  }
   async linkPromise(existingP, newP) {
     return await new Promise((resolve, reject) => {
       this.realFs.link(npath.fromPortablePath(existingP), npath.fromPortablePath(newP), this.makeCallback(resolve, reject));
@@ -7928,6 +7971,7 @@ class NodeFS extends BasePortableFakeFS {
   watch(p, a, b) {
     return this.realFs.watch(
       npath.fromPortablePath(p),
+      // @ts-expect-error
       a,
       b
     );
@@ -7935,6 +7979,7 @@ class NodeFS extends BasePortableFakeFS {
   watchFile(p, a, b) {
     return this.realFs.watchFile(
       npath.fromPortablePath(p),
+      // @ts-expect-error
       a,
       b
     );
@@ -7955,16 +8000,25 @@ class NodeFS extends BasePortableFakeFS {
 
 const MOUNT_MASK = 4278190080;
 class MountFS extends BasePortableFakeFS {
+  baseFs;
+  mountInstances;
+  fdMap = /* @__PURE__ */ new Map();
+  nextFd = 3;
+  factoryPromise;
+  factorySync;
+  filter;
+  getMountPoint;
+  magic;
+  maxAge;
+  maxOpenFiles;
+  typeCheck;
+  isMount = /* @__PURE__ */ new Set();
+  notMount = /* @__PURE__ */ new Set();
+  realPaths = /* @__PURE__ */ new Map();
   constructor({ baseFs = new NodeFS(), filter = null, magicByte = 42, maxOpenFiles = Infinity, useCache = true, maxAge = 5e3, typeCheck = fs.constants.S_IFREG, getMountPoint, factoryPromise, factorySync }) {
     if (Math.floor(magicByte) !== magicByte || !(magicByte > 1 && magicByte <= 127))
       throw new Error(`The magic byte must be set to a round value between 1 and 127 included`);
     super();
-    this.fdMap = /* @__PURE__ */ new Map();
-    this.nextFd = 3;
-    this.isMount = /* @__PURE__ */ new Set();
-    this.notMount = /* @__PURE__ */ new Set();
-    this.realPaths = /* @__PURE__ */ new Map();
-    this.limitOpenFilesTimeout = null;
     this.baseFs = baseFs;
     this.mountInstances = useCache ? /* @__PURE__ */ new Map() : null;
     this.factoryPromise = factoryPromise;
@@ -8496,6 +8550,20 @@ class MountFS extends BasePortableFakeFS {
       return mountFs.rmdirSync(subPath, opts);
     });
   }
+  async rmPromise(p, opts) {
+    return await this.makeCallPromise(p, async () => {
+      return await this.baseFs.rmPromise(p, opts);
+    }, async (mountFs, { subPath }) => {
+      return await mountFs.rmPromise(subPath, opts);
+    });
+  }
+  rmSync(p, opts) {
+    return this.makeCallSync(p, () => {
+      return this.baseFs.rmSync(p, opts);
+    }, (mountFs, { subPath }) => {
+      return mountFs.rmSync(subPath, opts);
+    });
+  }
   async linkPromise(existingP, newP) {
     return await this.makeCallPromise(newP, async () => {
       return await this.baseFs.linkPromise(existingP, newP);
@@ -8606,12 +8674,14 @@ class MountFS extends BasePortableFakeFS {
     return this.makeCallSync(p, () => {
       return this.baseFs.watch(
         p,
+        // @ts-expect-error
         a,
         b
       );
     }, (mountFs, { subPath }) => {
       return mountFs.watch(
         subPath,
+        // @ts-expect-error
         a,
         b
       );
@@ -8621,6 +8691,7 @@ class MountFS extends BasePortableFakeFS {
     return this.makeCallSync(p, () => {
       return this.baseFs.watchFile(
         p,
+        // @ts-expect-error
         a,
         b
       );
@@ -8671,7 +8742,7 @@ class MountFS extends BasePortableFakeFS {
         if (this.notMount.has(filePath))
           continue;
         try {
-          if (this.typeCheck !== null && (this.baseFs.lstatSync(filePath).mode & fs.constants.S_IFMT) !== this.typeCheck) {
+          if (this.typeCheck !== null && (this.baseFs.statSync(filePath).mode & fs.constants.S_IFMT) !== this.typeCheck) {
             this.notMount.add(filePath);
             continue;
           }
@@ -8686,6 +8757,7 @@ class MountFS extends BasePortableFakeFS {
       };
     }
   }
+  limitOpenFilesTimeout = null;
   limitOpenFiles(max) {
     if (this.mountInstances === null)
       return;
@@ -8775,6 +8847,7 @@ class MountFS extends BasePortableFakeFS {
 }
 
 class PosixFS extends ProxiedFS {
+  baseFs;
   constructor(baseFs) {
     super(npath);
     this.baseFs = baseFs;
@@ -8791,10 +8864,7 @@ const NUMBER_REGEXP = /^[0-9]+$/;
 const VIRTUAL_REGEXP = /^(\/(?:[^/]+\/)*?(?:\$\$virtual|__virtual__))((?:\/((?:[^/]+-)?[a-f0-9]+)(?:\/([^/]+))?)?((?:\/.*)?))$/;
 const VALID_COMPONENT = /^([^/]+-)?[a-f0-9]+$/;
 class VirtualFS extends ProxiedFS {
-  constructor({ baseFs = new NodeFS() } = {}) {
-    super(ppath);
-    this.baseFs = baseFs;
-  }
+  baseFs;
   static makeVirtualPath(base, component, to) {
     if (ppath.basename(base) !== `__virtual__`)
       throw new Error(`Assertion failed: Virtual folders must be named "__virtual__"`);
@@ -8823,6 +8893,10 @@ class VirtualFS extends ProxiedFS {
     const backstep = `../`.repeat(depth);
     const subpath = match[5] || `.`;
     return VirtualFS.resolveVirtual(ppath.join(target, backstep, subpath));
+  }
+  constructor({ baseFs = new NodeFS() } = {}) {
+    super(ppath);
+    this.baseFs = baseFs;
   }
   getExtractHint(hints) {
     return this.baseFs.getExtractHint(hints);
@@ -8862,7 +8936,10 @@ class VirtualFS extends ProxiedFS {
   }
 }
 
+const URL = Number(process.versions.node.split('.', 1)[0]) < 20 ? url.URL : globalThis.URL;
+
 class NodePathFS extends ProxiedFS {
+  baseFs;
   constructor(baseFs) {
     super(npath);
     this.baseFs = baseFs;
@@ -8873,7 +8950,7 @@ class NodePathFS extends ProxiedFS {
   mapToBase(path) {
     if (typeof path === `string`)
       return path;
-    if (path instanceof url.URL)
+    if (path instanceof URL)
       return url.fileURLToPath(path);
     if (Buffer.isBuffer(path)) {
       const str = path.toString();
@@ -8890,7 +8967,6 @@ function isUtf8(buf, str) {
   return Buffer.byteLength(str) === buf.byteLength;
 }
 
-var _a, _b, _c, _d;
 const kBaseFs = Symbol(`kBaseFs`);
 const kFd = Symbol(`kFd`);
 const kClosePromise = Symbol(`kClosePromise`);
@@ -8900,11 +8976,13 @@ const kRefs = Symbol(`kRefs`);
 const kRef = Symbol(`kRef`);
 const kUnref = Symbol(`kUnref`);
 class FileHandle {
+  [kBaseFs];
+  [kFd];
+  [kRefs] = 1;
+  [kClosePromise] = void 0;
+  [kCloseResolve] = void 0;
+  [kCloseReject] = void 0;
   constructor(fd, baseFs) {
-    this[_a] = 1;
-    this[_b] = void 0;
-    this[_c] = void 0;
-    this[_d] = void 0;
     this[kBaseFs] = baseFs;
     this[kFd] = fd;
   }
@@ -8942,9 +9020,11 @@ class FileHandle {
   createWriteStream(options) {
     return this[kBaseFs].createWriteStream(null, { ...options, fd: this.fd });
   }
+  // FIXME: Missing FakeFS version
   datasync() {
     throw new Error(`Method not implemented.`);
   }
+  // FIXME: Missing FakeFS version
   sync() {
     throw new Error(`Method not implemented.`);
   }
@@ -9009,6 +9089,7 @@ class FileHandle {
       this[kUnref]();
     }
   }
+  // FIXME: Missing FakeFS version
   utimes(atime, mtime) {
     throw new Error(`Method not implemented.`);
   }
@@ -9037,6 +9118,7 @@ class FileHandle {
       this[kUnref]();
     }
   }
+  // TODO: Use writev from FakeFS when that is implemented
   async writev(buffers, position) {
     try {
       this[kRef](this.writev);
@@ -9061,14 +9143,13 @@ class FileHandle {
       this[kUnref]();
     }
   }
+  // FIXME: Missing FakeFS version
   readv(buffers, position) {
     throw new Error(`Method not implemented.`);
   }
   close() {
-    if (this[kFd] === -1)
-      return Promise.resolve();
-    if (this[kClosePromise])
-      return this[kClosePromise];
+    if (this[kFd] === -1) return Promise.resolve();
+    if (this[kClosePromise]) return this[kClosePromise];
     this[kRefs]--;
     if (this[kRefs] === 0) {
       const fd = this[kFd];
@@ -9088,7 +9169,7 @@ class FileHandle {
     }
     return this[kClosePromise];
   }
-  [(_a = kRefs, _b = kClosePromise, _c = kCloseResolve, _d = kCloseReject, kRef)](caller) {
+  [kRef](caller) {
     if (this[kFd] === -1) {
       const err = new Error(`file closed`);
       err.code = `EBADF`;
@@ -9132,6 +9213,7 @@ const SYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `realpathSync`,
   `renameSync`,
   `rmdirSync`,
+  `rmSync`,
   `statSync`,
   `symlinkSync`,
   `truncateSync`,
@@ -9167,6 +9249,7 @@ const ASYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `readlinkPromise`,
   `renamePromise`,
   `rmdirPromise`,
+  `rmPromise`,
   `statPromise`,
   `symlinkPromise`,
   `truncatePromise`,
@@ -9346,8 +9429,7 @@ var libzipSync = {exports: {}};
 var frozenFs = Object.assign({}, fs__default.default);
 var createModule = function() {
   var _scriptDir = void 0;
-  if (typeof __filename !== "undefined")
-    _scriptDir = _scriptDir || __filename;
+  if (typeof __filename !== "undefined") _scriptDir = _scriptDir || __filename;
   return function(createModule2) {
     createModule2 = createModule2 || {};
     var Module = typeof createModule2 !== "undefined" ? createModule2 : {};
@@ -9382,10 +9464,8 @@ var createModule = function() {
         if (ret) {
           return binary ? ret : ret.toString();
         }
-        if (!nodeFS)
-          nodeFS = frozenFs;
-        if (!nodePath)
-          nodePath = path__default.default;
+        if (!nodeFS) nodeFS = frozenFs;
+        if (!nodePath) nodePath = path__default.default;
         filename = nodePath["normalize"](filename);
         return nodeFS["readFileSync"](filename, binary ? null : "utf8");
       };
@@ -9413,23 +9493,18 @@ var createModule = function() {
       }
     }
     moduleOverrides = null;
-    if (Module["arguments"])
-      ;
-    if (Module["thisProgram"])
-      ;
-    if (Module["quit"])
-      ;
+    if (Module["arguments"]) ;
+    if (Module["thisProgram"]) ;
+    if (Module["quit"]) ;
     var wasmBinary;
-    if (Module["wasmBinary"])
-      wasmBinary = Module["wasmBinary"];
+    if (Module["wasmBinary"]) wasmBinary = Module["wasmBinary"];
     Module["noExitRuntime"] || true;
     if (typeof WebAssembly !== "object") {
       abort("no native wasm support detected");
     }
     function getValue(ptr, type, noSafe) {
       type = type || "i8";
-      if (type.charAt(type.length - 1) === "*")
-        type = "i32";
+      if (type.charAt(type.length - 1) === "*") type = "i32";
       switch (type) {
         case "i1":
           return HEAP8[ptr >> 0];
@@ -9483,10 +9558,8 @@ var createModule = function() {
         }
       };
       function convertReturnValue(ret2) {
-        if (returnType === "string")
-          return UTF8ToString(ret2);
-        if (returnType === "boolean")
-          return Boolean(ret2);
+        if (returnType === "string") return UTF8ToString(ret2);
+        if (returnType === "boolean") return Boolean(ret2);
         return ret2;
       }
       var func = getCFunc(ident);
@@ -9496,8 +9569,7 @@ var createModule = function() {
         for (var i = 0; i < args.length; i++) {
           var converter = toC[argTypes[i]];
           if (converter) {
-            if (stack === 0)
-              stack = stackSave();
+            if (stack === 0) stack = stackSave();
             cArgs[i] = converter(args[i]);
           } else {
             cArgs[i] = args[i];
@@ -9506,8 +9578,7 @@ var createModule = function() {
       }
       var ret = func.apply(null, cArgs);
       ret = convertReturnValue(ret);
-      if (stack !== 0)
-        stackRestore(stack);
+      if (stack !== 0) stackRestore(stack);
       return ret;
     }
     function cwrap(ident, returnType, argTypes, opts) {
@@ -9525,16 +9596,13 @@ var createModule = function() {
     }
     var UTF8Decoder = new TextDecoder("utf8");
     function UTF8ToString(ptr, maxBytesToRead) {
-      if (!ptr)
-        return "";
+      if (!ptr) return "";
       var maxPtr = ptr + maxBytesToRead;
-      for (var end = ptr; !(end >= maxPtr) && HEAPU8[end]; )
-        ++end;
+      for (var end = ptr; !(end >= maxPtr) && HEAPU8[end]; ) ++end;
       return UTF8Decoder.decode(HEAPU8.subarray(ptr, end));
     }
     function stringToUTF8Array(str, heap, outIdx, maxBytesToWrite) {
-      if (!(maxBytesToWrite > 0))
-        return 0;
+      if (!(maxBytesToWrite > 0)) return 0;
       var startIdx = outIdx;
       var endIdx = outIdx + maxBytesToWrite - 1;
       for (var i = 0; i < str.length; ++i) {
@@ -9544,23 +9612,19 @@ var createModule = function() {
           u = 65536 + ((u & 1023) << 10) | u1 & 1023;
         }
         if (u <= 127) {
-          if (outIdx >= endIdx)
-            break;
+          if (outIdx >= endIdx) break;
           heap[outIdx++] = u;
         } else if (u <= 2047) {
-          if (outIdx + 1 >= endIdx)
-            break;
+          if (outIdx + 1 >= endIdx) break;
           heap[outIdx++] = 192 | u >> 6;
           heap[outIdx++] = 128 | u & 63;
         } else if (u <= 65535) {
-          if (outIdx + 2 >= endIdx)
-            break;
+          if (outIdx + 2 >= endIdx) break;
           heap[outIdx++] = 224 | u >> 12;
           heap[outIdx++] = 128 | u >> 6 & 63;
           heap[outIdx++] = 128 | u & 63;
         } else {
-          if (outIdx + 3 >= endIdx)
-            break;
+          if (outIdx + 3 >= endIdx) break;
           heap[outIdx++] = 240 | u >> 18;
           heap[outIdx++] = 128 | u >> 12 & 63;
           heap[outIdx++] = 128 | u >> 6 & 63;
@@ -9579,22 +9643,17 @@ var createModule = function() {
         var u = str.charCodeAt(i);
         if (u >= 55296 && u <= 57343)
           u = 65536 + ((u & 1023) << 10) | str.charCodeAt(++i) & 1023;
-        if (u <= 127)
-          ++len;
-        else if (u <= 2047)
-          len += 2;
-        else if (u <= 65535)
-          len += 3;
-        else
-          len += 4;
+        if (u <= 127) ++len;
+        else if (u <= 2047) len += 2;
+        else if (u <= 65535) len += 3;
+        else len += 4;
       }
       return len;
     }
     function allocateUTF8(str) {
       var size = lengthBytesUTF8(str) + 1;
       var ret = _malloc(size);
-      if (ret)
-        stringToUTF8Array(str, HEAP8, ret, size);
+      if (ret) stringToUTF8Array(str, HEAP8, ret, size);
       return ret;
     }
     function writeArrayToMemory(array, buffer2) {
@@ -9811,8 +9870,7 @@ var createModule = function() {
       var start = Date.UTC(date.getUTCFullYear(), 0, 1, 0, 0, 0, 0);
       var yday = (date.getTime() - start) / (1e3 * 60 * 60 * 24) | 0;
       LE_HEAP_STORE_I32((tmPtr + 28 >> 2) * 4, yday);
-      if (!_gmtime_r.GMTString)
-        _gmtime_r.GMTString = allocateUTF8("GMT");
+      if (!_gmtime_r.GMTString) _gmtime_r.GMTString = allocateUTF8("GMT");
       LE_HEAP_STORE_I32((tmPtr + 40 >> 2) * 4, _gmtime_r.GMTString);
       return tmPtr;
     }
@@ -9864,10 +9922,9 @@ var createModule = function() {
       return ret;
     }
     function _tzset() {
-      if (_tzset.called)
-        return;
+      if (_tzset.called) return;
       _tzset.called = true;
-      var currentYear = new Date().getFullYear();
+      var currentYear = (/* @__PURE__ */ new Date()).getFullYear();
       var winter = new Date(currentYear, 0, 1);
       var summer = new Date(currentYear, 6, 1);
       var winterOffset = winter.getTimezoneOffset();
@@ -9995,10 +10052,8 @@ var createModule = function() {
     Module["getValue"] = getValue;
     var calledRun;
     dependenciesFulfilled = function runCaller() {
-      if (!calledRun)
-        run();
-      if (!calledRun)
-        dependenciesFulfilled = runCaller;
+      if (!calledRun) run();
+      if (!calledRun) dependenciesFulfilled = runCaller;
     };
     function run(args) {
       if (runDependencies > 0) {
@@ -10009,16 +10064,13 @@ var createModule = function() {
         return;
       }
       function doRun() {
-        if (calledRun)
-          return;
+        if (calledRun) return;
         calledRun = true;
         Module["calledRun"] = true;
-        if (ABORT)
-          return;
+        if (ABORT) return;
         initRuntime();
         readyPromiseResolve(Module);
-        if (Module["onRuntimeInitialized"])
-          Module["onRuntimeInitialized"]();
+        if (Module["onRuntimeInitialized"]) Module["onRuntimeInitialized"]();
         postRun();
       }
       if (Module["setStatus"]) {
@@ -10052,7 +10104,9 @@ const createModule = libzipSync.exports;
 
 const number64 = [
   `number`,
+  // low
   `number`
+  // high
 ];
 var Errors = /* @__PURE__ */ ((Errors2) => {
   Errors2[Errors2["ZIP_ER_OK"] = 0] = "ZIP_ER_OK";
@@ -10090,6 +10144,7 @@ var Errors = /* @__PURE__ */ ((Errors2) => {
   return Errors2;
 })(Errors || {});
 const makeInterface = (emZip) => ({
+  // Those are getters because they can change after memory growth
   get HEAPU8() {
     return emZip.HEAPU8;
   },
@@ -10292,6 +10347,7 @@ function makeEmptyArchive() {
   ]);
 }
 class LibzipError extends Error {
+  code;
   constructor(message, code) {
     super(message);
     this.name = `Libzip Error`;
@@ -10299,15 +10355,28 @@ class LibzipError extends Error {
   }
 }
 class ZipFS extends BasePortableFakeFS {
+  libzip;
+  baseFs;
+  path;
+  stats;
+  zip;
+  lzSource;
+  level;
+  listings = /* @__PURE__ */ new Map();
+  entries = /* @__PURE__ */ new Map();
+  /**
+   * A cache of indices mapped to file sources.
+   * Populated by `setFileSource` calls.
+   * Required for supporting read after write.
+   */
+  fileSources = /* @__PURE__ */ new Map();
+  symlinkCount;
+  fds = /* @__PURE__ */ new Map();
+  nextFd = 0;
+  ready = false;
+  readOnly = false;
   constructor(source, opts = {}) {
     super();
-    this.listings = /* @__PURE__ */ new Map();
-    this.entries = /* @__PURE__ */ new Map();
-    this.fileSources = /* @__PURE__ */ new Map();
-    this.fds = /* @__PURE__ */ new Map();
-    this.nextFd = 0;
-    this.ready = false;
-    this.readOnly = false;
     const pathOptions = opts;
     this.level = typeof pathOptions.level !== `undefined` ? pathOptions.level : DEFAULT_COMPRESSION_LEVEL;
     source ??= makeEmptyArchive();
@@ -10439,8 +10508,10 @@ class ZipFS extends BasePortableFakeFS {
           throw new Error(`Incomplete read`);
         else if (rc > size)
           throw new Error(`Overread`);
-        const memory = this.libzip.HEAPU8.subarray(buffer, buffer + size);
-        return Buffer.from(memory);
+        let result = Buffer.from(this.libzip.HEAPU8.subarray(buffer, buffer + size));
+        if (process.env.YARN_IS_TEST_ENV && process.env.YARN_ZIP_DATA_EPILOGUE)
+          result = Buffer.concat([result, Buffer.from(process.env.YARN_ZIP_DATA_EPILOGUE)]);
+        return result;
       } finally {
         this.libzip.free(buffer);
       }
@@ -10554,6 +10625,7 @@ class ZipFS extends BasePortableFakeFS {
         },
         bytesRead: 0,
         path: p,
+        // "This property is `true` if the underlying file has not been opened yet"
         pending: false
       }
     );
@@ -10600,6 +10672,7 @@ class ZipFS extends BasePortableFakeFS {
         },
         bytesWritten: 0,
         path: p,
+        // "This property is `true` if the underlying file has not been opened yet"
         pending: false
       }
     );
@@ -11190,6 +11263,27 @@ class ZipFS extends BasePortableFakeFS {
       throw EINVAL(`rmdir '${p}'`);
     this.deleteEntry(p, index);
   }
+  async rmPromise(p, opts) {
+    return this.rmSync(p, opts);
+  }
+  rmSync(p, { recursive = false } = {}) {
+    if (this.readOnly)
+      throw EROFS(`rm '${p}'`);
+    if (recursive) {
+      this.removeSync(p);
+      return;
+    }
+    const resolvedP = this.resolveFilename(`rm '${p}'`, p);
+    const directoryListing = this.listings.get(resolvedP);
+    if (!directoryListing)
+      throw ENOTDIR(`rm '${p}'`);
+    if (directoryListing.size > 0)
+      throw ENOTEMPTY(`rm '${p}'`);
+    const index = this.entries.get(resolvedP);
+    if (typeof index === `undefined`)
+      throw EINVAL(`rm '${p}'`);
+    this.deleteEntry(p, index);
+  }
   hydrateDirectory(resolvedP) {
     const index = this.libzip.dir.add(this.zip, ppath.relative(PortablePath.root, resolvedP));
     if (index === -1)
@@ -11498,7 +11592,7 @@ function applyPatch(pnpapi, opts) {
   process.versions.pnp = String(pnpapi.VERSIONS.std);
   const moduleExports = require$$0__default.default;
   moduleExports.findPnpApi = (lookupSource) => {
-    const lookupPath = lookupSource instanceof url.URL ? url.fileURLToPath(lookupSource) : lookupSource;
+    const lookupPath = lookupSource instanceof URL ? url.fileURLToPath(lookupSource) : lookupSource;
     const apiPath = opts.manager.findApiPathFor(lookupPath);
     if (apiPath === null)
       return null;
@@ -11718,6 +11812,8 @@ function hydrateRuntimeState(data, { basePath }) {
         packagePeers: new Set(packageInformationData.packagePeers),
         linkType: packageInformationData.linkType,
         discardFromLookup,
+        // we only need this for packages that are used by the currently running script
+        // this is a lazy getter because `ppath.join` has some overhead
         get packageLocation() {
           return resolvedPackageLocation || (resolvedPackageLocation = ppath.join(absolutePortablePath, packageInformationData.packageLocation));
         }
@@ -11920,28 +12016,6 @@ function getPackageScopeConfig(resolved, readFileSyncFn) {
   return packageConfig;
 }
 
-/**
-  @license
-  Copyright Node.js contributors. All rights reserved.
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
-*/
 function throwImportNotDefined(specifier, packageJSONUrl, base) {
   throw new ERR_PACKAGE_IMPORT_NOT_DEFINED(
     specifier,
@@ -12001,8 +12075,7 @@ function resolvePackageTargetString(target, subpath, match, packageJSONUrl, base
   const packagePath = new URL(".", packageJSONUrl).pathname;
   if (!StringPrototypeStartsWith(resolvedPath, packagePath))
     throwInvalidPackageTarget(match, target, packageJSONUrl, internal, base);
-  if (subpath === "")
-    return resolved;
+  if (subpath === "") return resolved;
   if (RegExpPrototypeExec(invalidSegmentRegEx, subpath) !== null) {
     const request = pattern ? StringPrototypeReplace(match, "*", () => subpath) : match + subpath;
     throwInvalidSubpath(request, packageJSONUrl, internal, base);
@@ -12016,8 +12089,7 @@ function resolvePackageTargetString(target, subpath, match, packageJSONUrl, base
 }
 function isArrayIndex(key) {
   const keyNum = +key;
-  if (`${keyNum}` !== key)
-    return false;
+  if (`${keyNum}` !== key) return false;
   return keyNum >= 0 && keyNum < 4294967295;
 }
 function resolvePackageTarget(packageJSONUrl, target, subpath, packageSubpath, base, pattern, internal, conditions) {
@@ -12094,8 +12166,7 @@ function resolvePackageTarget(packageJSONUrl, target, subpath, packageSubpath, b
           internal,
           conditions
         );
-        if (resolveResult === void 0)
-          continue;
+        if (resolveResult === void 0) continue;
         return resolveResult;
       }
     }
@@ -12116,25 +12187,17 @@ function patternKeyCompare(a, b) {
   const bPatternIndex = StringPrototypeIndexOf(b, "*");
   const baseLenA = aPatternIndex === -1 ? a.length : aPatternIndex + 1;
   const baseLenB = bPatternIndex === -1 ? b.length : bPatternIndex + 1;
-  if (baseLenA > baseLenB)
-    return -1;
-  if (baseLenB > baseLenA)
-    return 1;
-  if (aPatternIndex === -1)
-    return 1;
-  if (bPatternIndex === -1)
-    return -1;
-  if (a.length > b.length)
-    return -1;
-  if (b.length > a.length)
-    return 1;
+  if (baseLenA > baseLenB) return -1;
+  if (baseLenB > baseLenA) return 1;
+  if (aPatternIndex === -1) return 1;
+  if (bPatternIndex === -1) return -1;
+  if (a.length > b.length) return -1;
+  if (b.length > a.length) return 1;
   return 0;
 }
 function isConditionalExportsMainSugar(exports, packageJSONUrl, base) {
-  if (typeof exports === "string" || ArrayIsArray(exports))
-    return true;
-  if (typeof exports !== "object" || exports === null)
-    return false;
+  if (typeof exports === "string" || ArrayIsArray(exports)) return true;
+  if (typeof exports !== "object" || exports === null) return false;
   const keys = ObjectGetOwnPropertyNames(exports);
   let isConditionalSugar = false;
   let i = 0;
@@ -12163,8 +12226,7 @@ function throwExportsNotFound(subpath, packageJSONUrl, base) {
 const emittedPackageWarnings = /* @__PURE__ */ new Set();
 function emitTrailingSlashPatternDeprecation(match, pjsonUrl, base) {
   const pjsonPath = url.fileURLToPath(pjsonUrl);
-  if (emittedPackageWarnings.has(pjsonPath + "|" + match))
-    return;
+  if (emittedPackageWarnings.has(pjsonPath + "|" + match)) return;
   emittedPackageWarnings.add(pjsonPath + "|" + match);
   process.emitWarning(
     `Use of deprecated trailing slash pattern mapping "${match}" in the "exports" field module resolution of the package at ${pjsonPath}${base ? ` imported from ${url.fileURLToPath(base)}` : ""}. Mapping specifiers ending in "/" is no longer supported.`,
@@ -13433,9 +13495,9 @@ const defaultFsLayer = new VirtualFS({
   })
 });
 class DynamicFS extends ProxiedFS {
+  baseFs = defaultFsLayer;
   constructor() {
     super(ppath);
-    this.baseFs = defaultFsLayer;
   }
   mapToBase(p) {
     return p;
@@ -13450,6 +13512,11 @@ const defaultApi = Object.assign(makeApi(defaultRuntimeState, {
   fakeFs: dynamicFsLayer,
   pnpapiResolution: defaultPnpapiResolution
 }), {
+  /**
+   * Can be used to generate a different API than the default one (for example
+   * to map it on `/` rather than the local directory path, or to use a
+   * different FS layer than the default one).
+   */
   makeApi: ({
     basePath = void 0,
     fakeFs = dynamicFsLayer,
@@ -13463,6 +13530,10 @@ const defaultApi = Object.assign(makeApi(defaultRuntimeState, {
       ...rest
     });
   },
+  /**
+   * Will inject the specified API into the environment, monkey-patching FS. Is
+   * automatically called when the hook is loaded through `--require`.
+   */
   setup: (api) => {
     applyPatch(api || defaultApi, {
       fakeFs: defaultFsLayer,
