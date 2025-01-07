@@ -85,6 +85,8 @@ export const IdentifierType = makeEnum({
   PlaidProcessorToken: 'plaidProcessorToken',
   /** An ID for an applicant on Onfido */
   OnfidoApplicantId: 'onfidoApplicantId',
+  /** Custom ID for a Vero user */
+  VeroUserId: 'veroUserId',
 });
 
 /**
