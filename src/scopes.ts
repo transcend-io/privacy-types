@@ -60,7 +60,6 @@ export enum ScopeName {
   ViewScopes = 'viewScopes',
   ViewSSO = 'viewSSO',
   ViewEmployees = 'viewEmployees',
-  ViewOptOutStatus = 'viewOptOutStatus',
   ViewDataInventory = 'viewDataInventory',
   ManageDataInventory = 'manageDataInventory',
   ManageGlobalAttributes = 'manageGlobalAttributes',
@@ -761,16 +760,6 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     title: 'Manage Data Flows',
     type: ScopeType.Modify,
     products: [TranscendProduct.ConsentManagement],
-  },
-  [ScopeName.ViewOptOutStatus]: {
-    dependencies: [],
-    description: 'Check the opt out status of a particular user.',
-    title: 'View Opt Out Status',
-    type: ScopeType.View,
-    products: [
-      TranscendProduct.DsrAutomation,
-      TranscendProduct.ConsentManagement,
-    ],
   },
   [ScopeName.ViewDataFlow]: {
     dependencies: [ScopeName.ViewConsentManager],
