@@ -95,7 +95,7 @@ export const OneTrustAssessmentSectionSubmittedBy = t.union([
             name: t.string,
         }),
         t.partial({
-            /** The name key */
+            /** The name key of the user who submitted the section */
             nameKey: t.union([t.string, t.null]),
         }),
     ]),

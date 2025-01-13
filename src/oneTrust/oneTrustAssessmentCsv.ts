@@ -1,4 +1,3 @@
-
 /**
  * The header fields of the OneTrust assessment csv file exported via the Transcend CLI.
  * These are built off the values returned by the OneTrust APIs.
@@ -20,12 +19,6 @@ export enum OneTrustAssessmentCsvHeader {
   OpenRiskCount = 'openRiskCount',
   /** Name of the organization group assigned to the assessment. */
   OrgGroupName = 'orgGroupName',
-  /** GUID of the inventory record which is the primary record of the assessment.*/
-  PrimaryInventoryDetails_PrimaryInventoryId = 'primaryInventoryDetails_primaryInventoryId',
-  /** Name of the inventory record. */
-  PrimaryInventoryDetails_PrimaryInventoryName = 'primaryInventoryDetails_primaryInventoryName',
-  /** Integer ID of the inventory record. */
-  PrimaryInventoryDetails_PrimaryInventoryNumber = 'primaryInventoryDetails_primaryInventoryNumber',
   /** Overall risk score after considering existing controls. */
   ResidualRiskScore = 'residualRiskScore',
   /** Result of the assessment. NOTE: This field will be deprecated soon. Please reference the 'resultName' field instead. */
@@ -52,12 +45,6 @@ export enum OneTrustAssessmentCsvHeader {
   CompletedOn = 'completedOn',
   /** Status of the assessment. */
   Status = 'status',
-  /** The ID of the creator */
-  CreatedBy_Id = 'createdBy_id',
-  /** The name of the creator */
-  CreatedBy_Name = 'createdBy_name',
-  /** The name key of the template */
-  CreatedBy_NameKey = 'createdBy_nameKey',
   /** Date and time at which the assessment was created. */
   CreatedDT = 'createdDT',
   /** Date and time by which the assessment must be completed. */
@@ -70,12 +57,6 @@ export enum OneTrustAssessmentCsvHeader {
   MediumRisk = 'mediumRisk',
   /** Number of risks captured on the assessment with a high risk level. */
   HighRisk = 'highRisk',
-  /** The ID of the organization group */
-  OrgGroup_Id = 'orgGroup_id',
-  /** The name of the organization group */
-  OrgGroup_Name = 'orgGroup_name',
-  /** The name key of the template */
-  OrgGroup_NameKey = 'orgGroup_nameKey',
   /** Type of inventory record designated as the primary record. */
   PrimaryRecordType = 'primaryRecordType',
   /** Risk level of the assessment. */
@@ -94,22 +75,52 @@ export enum OneTrustAssessmentCsvHeader {
   VeryHighRisk = 'veryHighRisk',
   /** Welcome text if any in the assessment. */
   WelcomeText = 'welcomeText',
+}
+
+
+export enum OneTrustAssessmentPrimaryInventoryDetailCsvHeader {
+  /** GUID of the inventory record which is the primary record of the assessment.*/
+  PrimaryInventoryDetails_PrimaryInventoryId = 'primaryInventoryDetails_primaryInventoryId',
+  /** Name of the inventory record. */
+  PrimaryInventoryDetails_PrimaryInventoryName = 'primaryInventoryDetails_primaryInventoryName',
+  /** Integer ID of the inventory record. */
+  PrimaryInventoryDetails_PrimaryInventoryNumber = 'primaryInventoryDetails_primaryInventoryNumber',
+}
+
+export enum OneTrustAssessmentCreatedByCsvHeader {
+    /** The ID of the creator */
+    CreatedBy_Id = 'createdBy_id',
+    /** The name of the creator */
+    CreatedBy_Name = 'createdBy_name',
+    /** The name key of the template */
+    CreatedBy_NameKey = 'createdBy_nameKey',
+}
+
+
+export enum OneTrustAssessmentOrgGroupCsvHeader {
+  /** The ID of the organization group */
+  OrgGroup_Id = 'orgGroup_id',
+  /** The name of the organization group */
+  OrgGroup_Name = 'orgGroup_name',
+  /** The name key of the template */
+  OrgGroup_NameKey = 'orgGroup_nameKey',
+}
+
+export enum OneTrustAssessmentApproverCsvHeader {
   /** ID of the user assigned as an approver. */
   Approvers_Id = 'approvers_id',
   /** ID of the workflow stage */
   Approvers_WorkflowStageId = 'approvers_workflowStageId',
   /** Name of the user assigned as an approver. */
   Approvers_Name = 'approvers_name',
-  /** ID of the user assigned as an approver. */
-  Approvers_Approver_Id = 'approvers_approver_id',
   /** Full name of the user assigned as an approver. */
-  Approvers_Approver_FullName = 'approvers_approver_fullName',
+  Approvers_FullName = 'approvers_fullName',
   /** Email of the user assigned as an approver. */
-  Approvers_Approver_Email = 'approvers_approver_email',
+  Approvers_Email = 'approvers_email',
   /** Whether the user assigned as an approver was deleted. */
-  Approvers_Approver_Deleted = 'approvers_approver_deleted',
+  Approvers_Deleted = 'approvers_deleted',
   /** The assignee type */
-  Approvers_Approver_AssigneeType = 'approvers_approver_assigneeType',
+  Approvers_AssigneeType = 'approvers_assigneeType',
   /** Assessment approval status. */
   Approvers_ApprovalState = 'approvers_approvalState',
   /** Date and time at which the assessment was approved. */
@@ -120,12 +131,18 @@ export enum OneTrustAssessmentCsvHeader {
   Approvers_ResultName = 'approvers_resultName',
   /** Name key of the assessment result. */
   Approvers_ResultNameKey = 'approvers_resultNameKey',
-  /** The ID of the respondent */
-  Respondents_Id = 'respondents_id',
-  /** The name or email of the respondent */
-  Respondents_Name = 'respondents_name',
-  /** The name key of the template */
-  Respondents_NameKey = 'respondents_nameKey',
+}
+
+export enum OneTrustAssessmentRespondentCsvHeader {
+    /** The ID of the respondent */
+    Respondents_Id = 'respondents_id',
+    /** The name or email of the respondent */
+    Respondents_Name = 'respondents_name',
+    /** The name key of the template */
+    Respondents_NameKey = 'respondents_nameKey',
+}
+
+export enum OneTrustAssessmentPrimaryEntityDetailCsvHeader {
   /** Unique ID for the primary record. */
   PrimaryEntityDetails_Id = 'primaryEntityDetails_id',
   /** Name of the primary record. */
@@ -138,20 +155,35 @@ export enum OneTrustAssessmentCsvHeader {
   PrimaryEntityDetails_RelationshipResponseDetails = 'primaryEntityDetails_relationshipResponseDetails',
   /** The entity business key */
   PrimaryEntityDetails_EntityBusinessKey = 'primaryEntityDetails_entityBusinessKey',
-  Sections_HasNavigationRules = 'sections_hasNavigationRules',
+
+}
+
+
+export enum OneTrustAssessmentSectionSubmittedByCsvHeader {
+  /** The ID of the user who submitted the section */
   Sections_SubmittedBy_Id = 'sections_submittedBy_id',
+  /** The name or email of the user who submitted the section */
   Sections_SubmittedBy_Name = 'sections_submittedBy_name',
+  /** The name key of the user who submitted the section */
   Sections_SubmittedBy_NameKey = 'sections_submittedBy_nameKey',
+}
+
+export enum OneTrustAssessmentSectionCsvHeader {
+  /** Indicates whether navigation rules are enabled for the question. */
+  Sections_HasNavigationRules = 'sections_hasNavigationRules',
+  /** Date of the submission */
   Sections_SubmittedDt = 'sections_submittedDt',
   /** Name of the section. */
   Sections_Name = 'sections_name',
   /** Indicates whether the section is hidden in the assessment. */
   Sections_Hidden = 'sections_hidden',
+  /** Indicates whether the section is valid. */
   Sections_Valid = 'sections_valid',
   /** ID of the section in the assessment. */
   Sections_SectionId = 'sections_sectionId',
   /** Sequence of the section within the form */
   Sections_Sequence = 'sections_sequence',
+  /** Indicates whether the section was submitted. */
   Sections_Submitted = 'sections_submitted',
   /** Description of the section header. */
   Sections_Description = 'sections_description',
@@ -171,12 +203,18 @@ export enum OneTrustAssessmentCsvHeader {
   Sections_EffectivenessQuestionIds = 'sections_effectivenessQuestionIds',
   /** The name key of the template */
   Sections_NameKey = 'sections_nameKey',
+}
+
+export enum OneTrustAssessmentSectionRiskStatisticCsvHeader {
   /** Maximum level of risk in the section. */
   Sections_RiskStatistics_MaxRiskLevel = 'sections_riskStatistics_maxRiskLevel',
   /** Number of risks in the section. */
   Sections_RiskStatistics_RiskCount = 'sections_riskStatistics_riskCount',
   /** ID of the section in the assessment. */
   Sections_RiskStatistics_SectionId = 'sections_riskStatistics_sectionId',
+}
+
+export enum OneTrustAssessmentQuestionCsvHeaderCsvHeader {
   /** Indicates whether the question is hidden on the assessment. */
   Sections_Questions_Hidden = 'sections_questions_hidden',
   /** Reason for locking the question in the assessment. */
@@ -277,6 +315,9 @@ export enum OneTrustAssessmentCsvHeader {
   Sections_Questions_Content = 'sections_questions_content',
   /** Indicates whether justification comments are required for the question. */
   Sections_Questions_RequireJustification = 'sections_questions_requireJustification',
+}
+
+export enum OneTrustAssessmentQuestionOptionCsvHeaderCsvHeader {
   /** The translationIdentifier */
   Sections_Questions_Options_TranslationIdentifier = 'sections_questions_options_translationIdentifier',
   /** ID of the option. */
@@ -299,8 +340,10 @@ export enum OneTrustAssessmentCsvHeader {
   Sections_Questions_Options_Attributes = 'sections_questions_options_attributes',
   /** Type of option. */
   Sections_Questions_Options_OptionType = 'sections_questions_options_optionType',
-  /** ID of the question for which the risk was flagged. */
-  Sections_Questions_Risks_QuestionId = 'sections_questions_risks_questionId',
+
+}
+
+export enum OneTrustAssessmentQuestionRiskCsvHeaderCsvHeader {
   /** ID of the flagged risk. */
   Sections_Questions_Risks_RiskId = 'sections_questions_risks_riskId',
   /** Level of risk flagged on the question. */
@@ -321,17 +364,75 @@ export enum OneTrustAssessmentCsvHeader {
   Sections_Questions_Risks_TreatmentStatus = 'sections_questions_risks_treatmentStatus',
   /** Risk Type. */
   Sections_Questions_Risks_Type = 'sections_questions_risks_type',
-  /** The currentStageApprovers */
-  Sections_Questions_Risks_Stage_CurrentStageApprovers = 'sections_questions_risks_stage_currentStageApprovers',
-  /** The badgeColor */
-  Sections_Questions_Risks_Stage_BadgeColor = 'sections_questions_risks_stage_badgeColor',
-  Sections_Questions_Risks_Stage_Id = 'sections_questions_risks_stage_id',
-  Sections_Questions_Risks_Stage_Name = 'sections_questions_risks_stage_name',
-  Sections_Questions_Risks_Stage_NameKey = 'sections_questions_risks_stage_nameKey',
   /** The risk state */
   Sections_Questions_Risks_State = 'sections_questions_risks_state',
   /** Risk Result. */
   Sections_Questions_Risks_Result = 'sections_questions_risks_result',
+  /** ID of the question for which the risk was flagged. */
+  Sections_Questions_Risks_QuestionId = 'sections_questions_risks_questionId',
+}
+
+export enum OneTrustAssessmentQuestionRiskStageCsvHeader {
+  /** The currentStageApprovers */
+  Sections_Questions_Risks_Stage_CurrentStageApprovers = 'sections_questions_risks_stage_currentStageApprovers',
+  /** The badgeColor */
+  Sections_Questions_Risks_Stage_BadgeColor = 'sections_questions_risks_stage_badgeColor',
+  /** ID of an entity. */
+  Sections_Questions_Risks_Stage_Id = 'sections_questions_risks_stage_id',
+  /** Name of an entity. */
+  Sections_Questions_Risks_Stage_Name = 'sections_questions_risks_stage_name',
+  /** NameKey of an entity. */
+  Sections_Questions_Risks_Stage_NameKey = 'sections_questions_risks_stage_nameKey',
+}
+
+export enum OneTrustAssessmentQuestionResponseCsvHeader {
+    /** The response maturityScale */
+    Sections_Questions_QuestionResponses_MaturityScale = 'sections_questions_questionResponses_maturityScale',
+    /** The response effectivenessScale */
+    Sections_Questions_QuestionResponses_EffectivenessScale = 'sections_questions_questionResponses_effectivenessScale',
+    /** The response parentAssessmentDetailId */
+    Sections_Questions_QuestionResponses_ParentAssessmentDetailId = 'sections_questions_questionResponses_parentAssessmentDetailId',
+    /** The response display label */
+    Sections_Questions_QuestionResponses_DisplayLabel = 'sections_questions_questionResponses_displayLabel',
+    /** The response type of the parent question */
+    Sections_Questions_QuestionResponses_ParentQuestionType = 'sections_questions_questionResponses_parentQuestionType',
+    /** The response ID of the parent response */
+    Sections_Questions_QuestionResponses_ParentResponseId = 'sections_questions_questionResponses_parentResponseId',
+    /** Whether it's local version */
+    Sections_Questions_QuestionResponses_IsLocalVersion = 'sections_questions_questionResponses_isLocalVersion',
+    /** Whether relationshipDisplayInformation */
+    Sections_Questions_QuestionResponses_RelationshipDisplayInformation = 'sections_questions_questionResponses_relationshipDisplayInformation',
+    /** The response lock reason */
+    Sections_Questions_QuestionResponses_LockReason = 'sections_questions_questionResponses_lockReason',
+    /** The controlResponse */
+    Sections_Questions_QuestionResponses_ControlResponse = 'sections_questions_questionResponses_controlResponse',
+    /** The relationshipResponseDetails */
+    Sections_Questions_QuestionResponses_RelationshipResponseDetails = 'sections_questions_questionResponses_relationshipResponseDetails',
+    /** The textRedacted */
+    Sections_Questions_QuestionResponses_TextRedacted = 'sections_questions_questionResponses_textRedacted',
+    /** The responseMap */
+    Sections_Questions_QuestionResponses_ResponseMap = 'sections_questions_questionResponses_responseMap',
+    /** ID of the response. */
+    Sections_Questions_QuestionResponses_ResponseId = 'sections_questions_questionResponses_responseId',
+    /** Content of the response. */
+    Sections_Questions_QuestionResponses_Response = 'sections_questions_questionResponses_response',
+    /** The response key */
+    Sections_Questions_QuestionResponses_ResponseKey = 'sections_questions_questionResponses_responseKey',
+    /** The response key */
+    Sections_Questions_QuestionResponses_ContractResponse = 'sections_questions_questionResponses_contractResponse',
+    /** Type of response. */
+    Sections_Questions_QuestionResponses_Type = 'sections_questions_questionResponses_type',
+    /** Source from which the assessment is launched. */
+    Sections_Questions_QuestionResponses_ResponseSourceType = 'sections_questions_questionResponses_responseSourceType',
+    /** Error associated with the response. */
+    Sections_Questions_QuestionResponses_ErrorCode = 'sections_questions_questionResponses_errorCode',
+    /** Indicates whether the response is valid. */
+    Sections_Questions_QuestionResponses_Valid = 'sections_questions_questionResponses_valid',
+    /** Justification comments for the given response. */
+    Sections_Questions_QuestionResponses_Justification = 'sections_questions_questionResponses_justification'  
+}
+
+export enum OneTrustAssessmentQuestionRiskCategoryCsvHeader {
   /** Whether the category was seeded */
   Sections_Questions_Risks_Categories_Seeded = 'sections_questions_risks_categories_seeded',
   /** Identifier for Risk Category. */
@@ -340,67 +441,56 @@ export enum OneTrustAssessmentCsvHeader {
   Sections_Questions_Risks_Categories_Name = 'sections_questions_risks_categories_name',
   /** Risk Category Name Key value for translation. */
   Sections_Questions_Risks_Categories_NameKey = 'sections_questions_risks_categories_nameKey',
-  /** The response maturityScale */
-  Sections_Questions_QuestionResponses_MaturityScale = 'sections_questions_questionResponses_maturityScale',
-  /** The response effectivenessScale */
-  Sections_Questions_QuestionResponses_EffectivenessScale = 'sections_questions_questionResponses_effectivenessScale',
-  /** The response parentAssessmentDetailId */
-  Sections_Questions_QuestionResponses_ParentAssessmentDetailId = 'sections_questions_questionResponses_parentAssessmentDetailId',
-  /** The response display label */
-  Sections_Questions_QuestionResponses_DisplayLabel = 'sections_questions_questionResponses_displayLabel',
-  /** The response type of the parent question */
-  Sections_Questions_QuestionResponses_ParentQuestionType = 'sections_questions_questionResponses_parentQuestionType',
-  /** The response ID of the parent response */
-  Sections_Questions_QuestionResponses_ParentResponseId = 'sections_questions_questionResponses_parentResponseId',
-  /** Whether it's local version */
-  Sections_Questions_QuestionResponses_IsLocalVersion = 'sections_questions_questionResponses_isLocalVersion',
-  /** Whether relationshipDisplayInformation */
-  Sections_Questions_QuestionResponses_RelationshipDisplayInformation = 'sections_questions_questionResponses_relationshipDisplayInformation',
-  /** The response lock reason */
-  Sections_Questions_QuestionResponses_LockReason = 'sections_questions_questionResponses_lockReason',
-  /** The controlResponse */
-  Sections_Questions_QuestionResponses_ControlResponse = 'sections_questions_questionResponses_controlResponse',
-  /** The relationshipResponseDetails */
-  Sections_Questions_QuestionResponses_RelationshipResponseDetails = 'sections_questions_questionResponses_relationshipResponseDetails',
-  /** The textRedacted */
-  Sections_Questions_QuestionResponses_TextRedacted = 'sections_questions_questionResponses_textRedacted',
-  /** The responseMap */
-  Sections_Questions_QuestionResponses_ResponseMap = 'sections_questions_questionResponses_responseMap',
-  /** ID of the response. */
-  Sections_Questions_QuestionResponses_ResponseId = 'sections_questions_questionResponses_responseId',
-  /** Content of the response. */
-  Sections_Questions_QuestionResponses_Response = 'sections_questions_questionResponses_response',
-  /** The response key */
-  Sections_Questions_QuestionResponses_ResponseKey = 'sections_questions_questionResponses_responseKey',
-  /** The response key */
-  Sections_Questions_QuestionResponses_ContractResponse = 'sections_questions_questionResponses_contractResponse',
-  /** Type of response. */
-  Sections_Questions_QuestionResponses_Type = 'sections_questions_questionResponses_type',
-  /** Source from which the assessment is launched. */
-  Sections_Questions_QuestionResponses_ResponseSourceType = 'sections_questions_questionResponses_responseSourceType',
-  /** Error associated with the response. */
-  Sections_Questions_QuestionResponses_ErrorCode = 'sections_questions_questionResponses_errorCode',
-  /** Indicates whether the response is valid. */
-  Sections_Questions_QuestionResponses_Valid = 'sections_questions_questionResponses_valid',
-  /** The ID of the data subject */
+}
+
+export enum OneTrustAssessmentQuestionResponsesDataSubjectCsvHeader {
+    /** The ID of the data subject */
   Sections_Questions_QuestionResponses_DataSubject_Id = 'sections_questions_questionResponses_dataSubject_id',
   /** The ID of the data subject */
   Sections_Questions_QuestionResponses_DataSubject_Name = 'sections_questions_questionResponses_dataSubject_name',
   /** The nameKey of the data category */
   Sections_Questions_QuestionResponses_DataSubject_NameKey = 'sections_questions_questionResponses_dataSubject_nameKey',
+}
+
+export enum OneTrustAssessmentQuestionResponsesDataCategoryCsvHeader {
   /** The ID of the data category */
   Sections_Questions_QuestionResponses_DataCategory_Id = 'sections_questions_questionResponses_dataCategory_id',
   /** The name of the data category */
   Sections_Questions_QuestionResponses_DataCategory_Name = 'sections_questions_questionResponses_dataCategory_name',
   /** The nameKey of the data category */
   Sections_Questions_QuestionResponses_DataCategory_NameKey = 'sections_questions_questionResponses_dataCategory_nameKey',
+}
+
+export enum OneTrustAssessmentQuestionResponsesDataElementCsvHeader  {
   /** The ID of the data element */
   Sections_Questions_QuestionResponses_DataElement_Id = 'sections_questions_questionResponses_dataElement_id',
   /** The name of the data element */
   Sections_Questions_QuestionResponses_DataElement_Name = 'sections_questions_questionResponses_dataElement_name',
   /** The name key of the data element */
   Sections_Questions_QuestionResponses_DataElement_NameKey = 'sections_questions_questionResponses_dataElement_nameKey',
-  /** Justification comments for the given response. */
-  Sections_Questions_QuestionResponses_Justification = 'sections_questions_questionResponses_justification'
 }
 
+export const OneTrustAssessmentMergedCsvHeader = {
+  ...OneTrustAssessmentCsvHeader,
+  ...OneTrustAssessmentCreatedByCsvHeader,
+  ...OneTrustAssessmentOrgGroupCsvHeader,
+  ...OneTrustAssessmentPrimaryInventoryDetailCsvHeader,
+  ...OneTrustAssessmentApproverCsvHeader,
+  ...OneTrustAssessmentRespondentCsvHeader,
+  ...OneTrustAssessmentPrimaryEntityDetailCsvHeader,
+  ...OneTrustAssessmentSectionCsvHeader,
+  ...OneTrustAssessmentSectionSubmittedByCsvHeader,
+  ...OneTrustAssessmentSectionRiskStatisticCsvHeader,
+  ...OneTrustAssessmentQuestionCsvHeaderCsvHeader,
+  ...OneTrustAssessmentQuestionOptionCsvHeaderCsvHeader,
+  ...OneTrustAssessmentQuestionRiskCsvHeaderCsvHeader,
+  ...OneTrustAssessmentQuestionRiskStageCsvHeader,
+  ...OneTrustAssessmentQuestionResponseCsvHeader,
+  ...OneTrustAssessmentQuestionRiskCategoryCsvHeader,
+  ...OneTrustAssessmentQuestionResponsesDataSubjectCsvHeader,
+  ...OneTrustAssessmentQuestionResponsesDataCategoryCsvHeader,
+  ...OneTrustAssessmentQuestionResponsesDataElementCsvHeader,
+}
+
+// type override
+type OneTrustAssessmentMergedCsvHeader = typeof OneTrustAssessmentMergedCsvHeader;
