@@ -26,3 +26,4 @@ export * from './prompt';
 export * from './getRegistryLink';
 export * from './theme';
 export * from './code';
+export * from './oneTrust';
