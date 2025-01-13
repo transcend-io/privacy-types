@@ -1,6 +1,5 @@
 import * as t from 'io-ts';
 
-
 /**
  * The header fields of the OneTrust assessment csv file exported via the Transcend CLI.
  * These are built off the values returned by the OneTrust APIs.
@@ -407,7 +406,6 @@ export enum OneTrustAssessmentCsvHeader {
 }
 
 /**
- * 
  * A map from OneTrustAssessmentCsvHeader to string. Useful for ensuring a
  * OneTrust Assessment record has all expected keys before converting to a CSV row.
  */
