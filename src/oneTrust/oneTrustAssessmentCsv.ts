@@ -1,4 +1,8 @@
-/** The header fields of the OneTrust assessment csv file exported via the Transcend CLI */
+
+/**
+ * The header fields of the OneTrust assessment csv file exported via the Transcend CLI.
+ * These are built off the values returned by the OneTrust APIs.
+ */
 export enum OneTrustAssessmentCsvHeader {
   /** ID of an assessment. */
   AssessmentId = 'assessmentId',
