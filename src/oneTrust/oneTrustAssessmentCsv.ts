@@ -1,3 +1,5 @@
+import * as t from 'io-ts';
+
 
 /**
  * The header fields of the OneTrust assessment csv file exported via the Transcend CLI.
@@ -20,7 +22,7 @@ export enum OneTrustAssessmentCsvHeader {
   OpenRiskCount = 'openRiskCount',
   /** Name of the organization group assigned to the assessment. */
   OrgGroupName = 'orgGroupName',
-  /** GUID of the inventory record which is the primary record of the assessment.*/
+  /** GUID of the inventory record which is the primary record of the assessment. */
   PrimaryInventoryDetails_PrimaryInventoryId = 'primaryInventoryDetails_primaryInventoryId',
   /** Name of the inventory record. */
   PrimaryInventoryDetails_PrimaryInventoryName = 'primaryInventoryDetails_primaryInventoryName',
@@ -401,6 +403,279 @@ export enum OneTrustAssessmentCsvHeader {
   /** The name key of the data element */
   Sections_Questions_QuestionResponses_DataElement_NameKey = 'sections_questions_questionResponses_dataElement_nameKey',
   /** Justification comments for the given response. */
-  Sections_Questions_QuestionResponses_Justification = 'sections_questions_questionResponses_justification'
+  Sections_Questions_QuestionResponses_Justification = 'sections_questions_questionResponses_justification',
 }
 
+/**
+ * 
+ * A map from OneTrustAssessmentCsvHeader to string. Useful for ensuring a
+ * OneTrust Assessment record has all expected keys before converting to a CSV row.
+ */
+export const OneTrustAssessmentCsvRecord = t.record(
+  t.keyof({
+    [OneTrustAssessmentCsvHeader.AssessmentId]: null,
+    [OneTrustAssessmentCsvHeader.CreateDt]: null,
+    [OneTrustAssessmentCsvHeader.InherentRiskScore]: null,
+    [OneTrustAssessmentCsvHeader.LastUpdated]: null,
+    [OneTrustAssessmentCsvHeader.Name]: null,
+    [OneTrustAssessmentCsvHeader.Number]: null,
+    [OneTrustAssessmentCsvHeader.OpenRiskCount]: null,
+    [OneTrustAssessmentCsvHeader.OrgGroupName]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryInventoryDetails_PrimaryInventoryId]:
+      null,
+    [OneTrustAssessmentCsvHeader.PrimaryInventoryDetails_PrimaryInventoryName]:
+      null,
+    [OneTrustAssessmentCsvHeader.PrimaryInventoryDetails_PrimaryInventoryNumber]:
+      null,
+    [OneTrustAssessmentCsvHeader.ResidualRiskScore]: null,
+    [OneTrustAssessmentCsvHeader.Result]: null,
+    [OneTrustAssessmentCsvHeader.ResultId]: null,
+    [OneTrustAssessmentCsvHeader.ResultName]: null,
+    [OneTrustAssessmentCsvHeader.State]: null,
+    [OneTrustAssessmentCsvHeader.Tags]: null,
+    [OneTrustAssessmentCsvHeader.TargetRiskScore]: null,
+    [OneTrustAssessmentCsvHeader.TemplateId]: null,
+    [OneTrustAssessmentCsvHeader.TemplateName]: null,
+    [OneTrustAssessmentCsvHeader.TemplateRootVersionId]: null,
+    [OneTrustAssessmentCsvHeader.AssessmentNumber]: null,
+    [OneTrustAssessmentCsvHeader.CompletedOn]: null,
+    [OneTrustAssessmentCsvHeader.Status]: null,
+    [OneTrustAssessmentCsvHeader.CreatedBy_Id]: null,
+    [OneTrustAssessmentCsvHeader.CreatedBy_Name]: null,
+    [OneTrustAssessmentCsvHeader.CreatedBy_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.CreatedDT]: null,
+    [OneTrustAssessmentCsvHeader.Deadline]: null,
+    [OneTrustAssessmentCsvHeader.Description]: null,
+    [OneTrustAssessmentCsvHeader.LowRisk]: null,
+    [OneTrustAssessmentCsvHeader.MediumRisk]: null,
+    [OneTrustAssessmentCsvHeader.HighRisk]: null,
+    [OneTrustAssessmentCsvHeader.OrgGroup_Id]: null,
+    [OneTrustAssessmentCsvHeader.OrgGroup_Name]: null,
+    [OneTrustAssessmentCsvHeader.OrgGroup_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryRecordType]: null,
+    [OneTrustAssessmentCsvHeader.RiskLevel]: null,
+    [OneTrustAssessmentCsvHeader.SubmittedOn]: null,
+    [OneTrustAssessmentCsvHeader.Template_Id]: null,
+    [OneTrustAssessmentCsvHeader.Template_Name]: null,
+    [OneTrustAssessmentCsvHeader.Template_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.TotalRiskCount]: null,
+    [OneTrustAssessmentCsvHeader.VeryHighRisk]: null,
+    [OneTrustAssessmentCsvHeader.WelcomeText]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Id]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_WorkflowStageId]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Name]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Approver_Id]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Approver_FullName]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Approver_Email]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Approver_Deleted]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_Approver_AssigneeType]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_ApprovalState]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_ApprovedOn]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_ResultId]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_ResultName]: null,
+    [OneTrustAssessmentCsvHeader.Approvers_ResultNameKey]: null,
+    [OneTrustAssessmentCsvHeader.Respondents_Id]: null,
+    [OneTrustAssessmentCsvHeader.Respondents_Name]: null,
+    [OneTrustAssessmentCsvHeader.Respondents_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_Id]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_Name]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_Number]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_DisplayName]: null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_RelationshipResponseDetails]:
+      null,
+    [OneTrustAssessmentCsvHeader.PrimaryEntityDetails_EntityBusinessKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_HasNavigationRules]: null,
+    [OneTrustAssessmentCsvHeader.Sections_SubmittedBy_Id]: null,
+    [OneTrustAssessmentCsvHeader.Sections_SubmittedBy_Name]: null,
+    [OneTrustAssessmentCsvHeader.Sections_SubmittedBy_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_SubmittedDt]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Name]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Hidden]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Valid]: null,
+    [OneTrustAssessmentCsvHeader.Sections_SectionId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Sequence]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Submitted]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Description]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Status]: null,
+    [OneTrustAssessmentCsvHeader.Sections_OpenNMIQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_InvalidQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_RequiredUnansweredQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_RequiredQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_UnansweredQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_EffectivenessQuestionIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_RiskStatistics_MaxRiskLevel]: null,
+    [OneTrustAssessmentCsvHeader.Sections_RiskStatistics_RiskCount]: null,
+    [OneTrustAssessmentCsvHeader.Sections_RiskStatistics_SectionId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Hidden]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_LockReason]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_CopyErrors]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_HasNavigationRules]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_RootRequestInformationIds]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_TotalAttachments]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AttachmentIds]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_CanReopenWithAllowEditOption]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_RiskCreationAllowed]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_RiskDeletionPopupAllowed]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AllowMaturityScaleOnQuestions]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionAssociations]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Issues]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_ResponseEditableWhileUnderReview]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_BusinessKeyReference]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Topic]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionLaws]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AttachmentRequired]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_ResponseFilter]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_LinkAssessmentToResponseEntity]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_TranslationIdentifier]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_ReadOnly]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Schema]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AttributeId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_VendorQuestion]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Seeded]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AllowJustification]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AssetQuestion]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_EntityQuestion]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Paquestion]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_InventoryTypeEnum]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_ForceOther]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_IsParentQuestionMultiSelect]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Id]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_RootVersionId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Sequence]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionType]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Required]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Attributes]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_FriendlyName]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Description]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Hint]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_ParentQuestionId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_PrePopulateResponse]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_LinkAssessmentToInventory]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Valid]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Type]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_AllowMultiSelect]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Content]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_RequireJustification]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_TranslationIdentifier]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Id]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Option]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_OptionKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Hint]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_HintKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Score]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_PreSelectedOption]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Sequence]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_Attributes]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Options_OptionType]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_QuestionId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_RiskId]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Level]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Score]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Probability]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_ImpactLevel]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Description]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Name]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Treatment]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_TreatmentStatus]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Type]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Stage_CurrentStageApprovers]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Stage_BadgeColor]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Stage_Id]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Stage_Name]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Stage_NameKey]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_State]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Result]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Categories_Seeded]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Categories_Id]: null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Categories_Name]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_Risks_Categories_NameKey]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_MaturityScale]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_EffectivenessScale]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ParentAssessmentDetailId]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DisplayLabel]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ParentQuestionType]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ParentResponseId]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_IsLocalVersion]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_RelationshipDisplayInformation]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_LockReason]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ControlResponse]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_RelationshipResponseDetails]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_TextRedacted]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ResponseMap]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ResponseId]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_Response]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ResponseKey]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ContractResponse]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_Type]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ResponseSourceType]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_ErrorCode]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_Valid]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataSubject_Id]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataSubject_Name]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataSubject_NameKey]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataCategory_Id]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataCategory_Name]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataCategory_NameKey]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataElement_Id]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataElement_Name]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_DataElement_NameKey]:
+      null,
+    [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_Justification]:
+      null,
+  }),
+  t.union([t.string, t.number]),
+);
+
+/**
+ *
+ */
+export type OneTrustAssessmentCsvRecord = t.TypeOf<
+  typeof OneTrustAssessmentCsvRecord
+>;
