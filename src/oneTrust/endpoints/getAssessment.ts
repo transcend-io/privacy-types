@@ -1,10 +1,9 @@
 import * as t from 'io-ts';
+
 /**
  * reference: https://developer.onetrust.com/onetrust/reference/exportassessmentusingget
  * Return types of the "Get Assessments" endpoint
  */
-
-
 export const OneTrustApprover = t.type({
     /** ID of the user assigned as an approver. */
     id: t.string,

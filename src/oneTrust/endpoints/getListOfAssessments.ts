@@ -4,7 +4,6 @@ import * as t from 'io-ts';
  * reference: https://developer.onetrust.com/onetrust/reference/getallassessmentbasicdetailsusingget
  * Return types of the "Get List of Assessments" endpoint
  */
-
 export const OneTrustAssessment = t.type({
     /** ID of the assessment. */
     assessmentId: t.string,

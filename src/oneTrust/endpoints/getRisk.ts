@@ -4,7 +4,6 @@ import * as t from 'io-ts';
  * reference: https://developer.onetrust.com/onetrust/reference/getriskusingget
  * Return types of the "Get Risk" endpoint
  */
-
 const OneTrustEntityType = t.type({
     /** Indicates whether entity type is eligible for linking/relating with risk or not */
     eligibleForEntityLink: t.boolean,
