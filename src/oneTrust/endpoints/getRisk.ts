@@ -2,7 +2,7 @@ import * as t from 'io-ts';
 
 /**
  * reference: https://developer.onetrust.com/onetrust/reference/getriskusingget
- * Return types of the "Get Assessments" endpoint
+ * Return types of the "Get Risk" endpoint
  */
 
 const OneTrustEntityType = t.type({
