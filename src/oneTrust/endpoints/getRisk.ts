@@ -25,7 +25,6 @@ const OneTrustEntityType = t.type({
   translationKey: t.string,
 });
 
-
 const OneTrustRiskLevel = t.type({
   /** Risk Impact Level name. */
   impactLevel: t.union([t.string, t.null]),
@@ -42,7 +41,6 @@ const OneTrustRiskLevel = t.type({
   /** Risk Score. */
   riskScore: t.union([t.number, t.null]),
 });
-
 
 export const OneTrustRiskCategories = t.array(
   t.intersection([

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import * as t from 'io-ts';
 
 /**
@@ -346,8 +347,10 @@ export enum OneTrustAssessmentCsvHeader {
   /** The response effectivenessScale */
   Sections_Questions_QuestionResponses_EffectivenessScale = 'sections_questions_questionResponses_effectivenessScale',
   /** The response parentAssessmentDetailId */
+  // eslint-disable-next-line max-len
   Sections_Questions_QuestionResponses_ParentAssessmentDetailId = 'sections_questions_questionResponses_parentAssessmentDetailId',
   /** The response display label */
+
   Sections_Questions_QuestionResponses_DisplayLabel = 'sections_questions_questionResponses_displayLabel',
   /** The response type of the parent question */
   Sections_Questions_QuestionResponses_ParentQuestionType = 'sections_questions_questionResponses_parentQuestionType',
@@ -356,12 +359,14 @@ export enum OneTrustAssessmentCsvHeader {
   /** Whether it's local version */
   Sections_Questions_QuestionResponses_IsLocalVersion = 'sections_questions_questionResponses_isLocalVersion',
   /** Whether relationshipDisplayInformation */
+  // eslint-disable-next-line max-len
   Sections_Questions_QuestionResponses_RelationshipDisplayInformation = 'sections_questions_questionResponses_relationshipDisplayInformation',
   /** The response lock reason */
   Sections_Questions_QuestionResponses_LockReason = 'sections_questions_questionResponses_lockReason',
   /** The controlResponse */
   Sections_Questions_QuestionResponses_ControlResponse = 'sections_questions_questionResponses_controlResponse',
   /** The relationshipResponseDetails */
+  // eslint-disable-next-line max-len
   Sections_Questions_QuestionResponses_RelationshipResponseDetails = 'sections_questions_questionResponses_relationshipResponseDetails',
   /** The textRedacted */
   Sections_Questions_QuestionResponses_TextRedacted = 'sections_questions_questionResponses_textRedacted',
@@ -410,6 +415,7 @@ export enum OneTrustAssessmentCsvHeader {
  * OneTrust Assessment record has all expected keys before converting to a CSV row.
  */
 export const OneTrustAssessmentCsvRecord = t.record(
+  /** The keys found in the OneTrust CSV header */
   t.keyof({
     [OneTrustAssessmentCsvHeader.AssessmentId]: null,
     [OneTrustAssessmentCsvHeader.CreateDt]: null,
@@ -668,12 +674,15 @@ export const OneTrustAssessmentCsvRecord = t.record(
     [OneTrustAssessmentCsvHeader.Sections_Questions_QuestionResponses_Justification]:
       null,
   }),
+  /** The values of the header */
   t.union([t.string, t.number]),
 );
 
 /**
- *
+ * Type override
  */
 export type OneTrustAssessmentCsvRecord = t.TypeOf<
   typeof OneTrustAssessmentCsvRecord
 >;
+
+/* eslint-enable max-lines */

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import * as t from 'io-ts';
 
 /**
@@ -61,7 +62,6 @@ export type OneTrustAssessmentStatus = t.TypeOf<
   typeof OneTrustAssessmentStatus
 >;
 
-
 export const OneTrustPrimaryEntityDetails = t.array(
   t.type({
     /** Unique ID for the primary record. */
@@ -82,8 +82,6 @@ export const OneTrustPrimaryEntityDetails = t.array(
 export type OneTrustPrimaryEntityDetails = t.TypeOf<
   typeof OneTrustPrimaryEntityDetails
 >;
-
-
 
 export const OneTrustAssessmentSectionSubmittedBy = t.union([
   t.intersection([
@@ -144,7 +142,6 @@ export const OneTrustAssessmentQuestionOption = t.intersection([
 export type OneTrustAssessmentQuestionOption = t.TypeOf<
   typeof OneTrustAssessmentQuestionOption
 >;
-
 
 export const OneTrustAssessmentNestedQuestion = t.type({
   /** ID of the question. */
@@ -212,7 +209,6 @@ export const OneTrustAssessmentNestedQuestion = t.type({
 export type OneTrustAssessmentNestedQuestion = t.TypeOf<
   typeof OneTrustAssessmentNestedQuestion
 >;
-
 
 export const OneTrustAssessmentResponses = t.array(
   t.intersection([
@@ -324,19 +320,19 @@ export type OneTrustAssessmentResponses = t.TypeOf<
   typeof OneTrustAssessmentResponses
 >;
 
-
-export const OneTrustAssessmentQuestionResponses = t.array(t.type({
-  /** The responses */
-  responses: OneTrustAssessmentResponses,
-  /** Justification comments for the given response. */
-  justification: t.union([t.string, t.null]),
-}));
+export const OneTrustAssessmentQuestionResponses = t.array(
+  t.type({
+    /** The responses */
+    responses: OneTrustAssessmentResponses,
+    /** Justification comments for the given response. */
+    justification: t.union([t.string, t.null]),
+  }),
+);
 
 /** Type override */
 export type OneTrustAssessmentQuestionResponses = t.TypeOf<
   typeof OneTrustAssessmentQuestionResponses
 >;
-
 
 export const OneTrustAssessmentQuestionRisk = t.intersection([
   t.type({
@@ -466,7 +462,6 @@ export const OneTrustAssessmentSectionHeaderRiskStatistics = t.union([
 export type OneTrustAssessmentSectionHeaderRiskStatistics = t.TypeOf<
   typeof OneTrustAssessmentSectionHeaderRiskStatistics
 >;
-
 
 export const OneTrustAssessmentSectionHeader = t.intersection([
   t.type({
@@ -679,3 +674,5 @@ export const OneTrustGetAssessmentResponse = t.type({
 export type OneTrustGetAssessmentResponse = t.TypeOf<
   typeof OneTrustGetAssessmentResponse
 >;
+
+/* eslint-enable max-lines */
