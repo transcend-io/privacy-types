@@ -675,7 +675,7 @@ export const OneTrustAssessmentCsvRecord = t.record(
       null,
   }),
   /** The values of the header */
-  t.union([t.string, t.number]),
+  t.string,
 );
 
 /**
