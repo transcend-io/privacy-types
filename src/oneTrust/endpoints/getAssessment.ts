@@ -143,8 +143,6 @@ export type OneTrustAssessmentQuestionOption = t.TypeOf<
   typeof OneTrustAssessmentQuestionOption
 >;
 
-
-
 export const OneTrustAssessmentNestedQuestion = t.type({
   /** ID of the question. */
   id: t.string,
