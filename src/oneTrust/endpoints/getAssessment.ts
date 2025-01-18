@@ -203,6 +203,8 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   content: t.string,
   /** Indicates whether justification comments are required for the question. */
   requireJustification: t.boolean,
+  /** The attachmentRequired */
+  attachmentRequired: t.boolean,
 });
 
 /** Type override */
@@ -406,8 +408,6 @@ export const OneTrustAssessmentQuestion = t.intersection([
     topic: t.union([t.string, t.null]),
     /** The questionLaws */
     questionLaws: t.array(t.string),
-    /** The attachmentRequired */
-    attachmentRequired: t.boolean,
     /** The responseFilter */
     responseFilter: t.union([t.string, t.null]),
     /** The linkAssessmentToResponseEntity */
