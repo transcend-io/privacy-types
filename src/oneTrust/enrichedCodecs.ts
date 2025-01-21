@@ -12,6 +12,7 @@ import {
   OneTrustAssessmentCreatedBy,
 } from './endpoints';
 
+/** The default OneTrust Get Assessment risk response enriched with Get Risk response. */
 export const OneTrustEnrichedRisk = t.intersection([
   OneTrustAssessmentQuestionRisk,
   t.type({
@@ -38,6 +39,7 @@ export const OneTrustEnrichedRisks = t.union([
 /** Type override */
 export type OneTrustEnrichedRisks = t.TypeOf<typeof OneTrustEnrichedRisks>;
 
+/** The default OneTrust Get Assessment question response with enriched risks. */
 export const OneTrustEnrichedAssessmentQuestion = t.intersection([
   t.type({
     ...OneTrustAssessmentQuestion.types[0].props,
@@ -51,6 +53,7 @@ export type OneTrustEnrichedAssessmentQuestion = t.TypeOf<
   typeof OneTrustEnrichedAssessmentQuestion
 >;
 
+/** The default OneTrust Get Assessment section response with enriched questions. */
 export const OneTrustEnrichedAssessmentSection = t.type({
   ...OneTrustAssessmentSection.props,
   questions: t.array(OneTrustEnrichedAssessmentQuestion),
@@ -61,6 +64,7 @@ export type OneTrustEnrichedAssessmentSection = t.TypeOf<
   typeof OneTrustEnrichedAssessmentSection
 >;
 
+/** The OneTrust Get User details about a user. */
 export const OneTrustUserDetails = t.type({
   active: OneTrustGetUserResponse.props.active,
   userType: OneTrustGetUserResponse.props.userType,
@@ -72,6 +76,7 @@ export const OneTrustUserDetails = t.type({
 /** Type override */
 export type OneTrustUserDetails = t.TypeOf<typeof OneTrustUserDetails>;
 
+/** The default OneTrust Get Assessmenr user response enriched with Get User response */
 export const OneTrustEnrichedUser = t.type({
   ...OneTrustAssessmentCreatedBy.props,
   ...OneTrustUserDetails.props,
@@ -80,6 +85,7 @@ export const OneTrustEnrichedUser = t.type({
 /** Type override */
 export type OneTrustEnrichedUser = t.TypeOf<typeof OneTrustEnrichedUser>;
 
+/** The default OneTrust Get Assessment response with enriched approvers, respondents, creator, and sections */
 export const OneTrustEnrichedAssessmentResponse = t.type({
   ...OneTrustGetAssessmentResponse.props,
   approvers: t.array(
@@ -109,6 +115,7 @@ export type OneTrustEnrichedAssessmentResponse = t.TypeOf<
   typeof OneTrustEnrichedAssessmentResponse
 >;
 
+/** The default OneTrust Get List of Assessments response with enriched assessment */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { status, ...OneTrustAssessmentWithoutStatus } = OneTrustAssessment.props;
 export const OneTrustEnrichedAssessment = t.intersection([
@@ -118,5 +125,6 @@ export const OneTrustEnrichedAssessment = t.intersection([
 
 /** Type override */
 export type OneTrustEnrichedAssessment = t.TypeOf<
-  typeof OneTrustEnrichedAssessment
+  
+typeof OneTrustEnrichedAssessment
 >;
