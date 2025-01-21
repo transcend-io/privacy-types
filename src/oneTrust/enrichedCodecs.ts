@@ -125,6 +125,5 @@ export const OneTrustEnrichedAssessment = t.intersection([
 
 /** Type override */
 export type OneTrustEnrichedAssessment = t.TypeOf<
-  
-typeof OneTrustEnrichedAssessment
+  typeof OneTrustEnrichedAssessment
 >;
