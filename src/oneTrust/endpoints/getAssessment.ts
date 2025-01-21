@@ -537,6 +537,21 @@ export type OneTrustAssessmentSection = t.TypeOf<
   typeof OneTrustAssessmentSection
 >;
 
+export const OneTrustAssessmentCreatedBy = t.type({
+  /** The ID of the creator */
+  id: t.string,
+  /** The name of the creator */
+  name: t.string,
+  /** The name key of the template */
+  nameKey: t.union([t.string, t.null]),
+});
+
+/** Type override */
+export type OneTrustAssessmentCreatedBy = t.TypeOf<
+  typeof OneTrustAssessmentCreatedBy
+>;
+
+
 // ref: https://developer.onetrust.com/onetrust/reference/exportassessmentusingget
 export const OneTrustGetAssessmentResponse = t.type({
   /** List of users assigned as approvers of the assessment. */
@@ -550,14 +565,7 @@ export const OneTrustGetAssessmentResponse = t.type({
   /** Status of the assessment. */
   status: OneTrustAssessmentStatus,
   /** Creator of the Assessment */
-  createdBy: t.type({
-    /** The ID of the creator */
-    id: t.string,
-    /** The name of the creator */
-    name: t.string,
-    /** The name key of the template */
-    nameKey: t.union([t.string, t.null]),
-  }),
+  createdBy: OneTrustAssessmentCreatedBy,
   /** Date and time at which the assessment was created. */
   createdDT: t.string,
   /** Date and time by which the assessment must be completed. */
