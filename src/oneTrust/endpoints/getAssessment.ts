@@ -551,7 +551,6 @@ export type OneTrustAssessmentCreatedBy = t.TypeOf<
   typeof OneTrustAssessmentCreatedBy
 >;
 
-
 // ref: https://developer.onetrust.com/onetrust/reference/exportassessmentusingget
 export const OneTrustGetAssessmentResponse = t.type({
   /** List of users assigned as approvers of the assessment. */
