@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import * as t from 'io-ts';
 
 /**
@@ -352,3 +353,4 @@ export const OneTrustGetRiskResponse = t.type({
 
 /** Type override */
 export type OneTrustGetRiskResponse = t.TypeOf<typeof OneTrustGetRiskResponse>;
+/* eslint-enable max-lines */
