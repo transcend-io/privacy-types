@@ -118,7 +118,6 @@ export type OneTrustEnrichedAssessment = t.TypeOf<
   typeof OneTrustEnrichedAssessment
 >;
 
-
 export const OneTrustEnrichedAssessments = t.array(OneTrustEnrichedAssessment);
 
 /** Type override */

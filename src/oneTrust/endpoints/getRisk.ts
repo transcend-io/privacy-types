@@ -69,7 +69,7 @@ export const OneTrustRiskReference = t.type({
   /** The reference type of the risk reference */
   referenceType: OneTrustEntityType,
   /** The name of the risk reference */
-  name: t.union([t.string, t.null,]),
+  name: t.union([t.string, t.null]),
   /** The additional attributes of the risk reference */
   additionalAttributes: t.object,
 });
@@ -89,7 +89,6 @@ export const OneTrustRiskTemplate = t.type({
 });
 /** Type override */
 export type OneTrustRiskTemplate = t.TypeOf<typeof OneTrustRiskTemplate>;
-
 
 export const OneTrustGetRiskResponse = t.type({
   /** The risk references */
@@ -335,17 +334,20 @@ export const OneTrustGetRiskResponse = t.type({
     t.null,
   ]),
   /** The risk workflow */
-  workflow: t.intersection([t.type({
-    /** ID of an entity. */
-    id: t.string,
-    /** Name of an entity. */
-    name: t.string,
-  }), t.partial({
-    /** The nameKeu */
-    nameKey: t.array(t.string),
-    /** The badgeColor */
-    badgeColor: t.union([t.string, t.null]),
-  }),]),
+  workflow: t.intersection([
+    t.type({
+      /** ID of an entity. */
+      id: t.string,
+      /** Name of an entity. */
+      name: t.string,
+    }),
+    t.partial({
+      /** The nameKeu */
+      nameKey: t.array(t.string),
+      /** The badgeColor */
+      badgeColor: t.union([t.string, t.null]),
+    }),
+  ]),
 });
 
 /** Type override */
