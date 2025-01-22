@@ -61,7 +61,45 @@ export const OneTrustRiskCategories = t.array(
 /** Type override */
 export type OneTrustRiskCategories = t.TypeOf<typeof OneTrustRiskCategories>;
 
+export const OneTrustRiskReference = t.type({
+  /** The id of the risk reference */
+  id: t.string,
+  /** The type of the risk reference */
+  type: t.string,
+  /** The reference type of the risk reference */
+  referenceType: OneTrustEntityType,
+  /** The name of the risk reference */
+  name: t.union([t.string, t.null,]),
+  /** The additional attributes of the risk reference */
+  additionalAttributes: t.object,
+});
+/** Type override */
+export type OneTrustRiskReference = t.TypeOf<typeof OneTrustRiskReference>;
+
+export const OneTrustRiskReferences = t.array(OneTrustRiskReference);
+
+/** Type override */
+export type OneTrustRiskReferences = t.TypeOf<typeof OneTrustRiskReferences>;
+
+export const OneTrustRiskTemplate = t.type({
+  /** The id of the risk template */
+  id: t.union([t.string, t.null]),
+  /** The name of the risk template */
+  name: t.union([t.string, t.null]),
+});
+/** Type override */
+export type OneTrustRiskTemplate = t.TypeOf<typeof OneTrustRiskTemplate>;
+
+
 export const OneTrustGetRiskResponse = t.type({
+  /** The risk references */
+  references: OneTrustRiskReferences,
+  /** Whether the risk is closed */
+  closed: t.boolean,
+  /** The risk template */
+  riskTemplate: OneTrustRiskTemplate,
+  /** The currentStageApproversCount */
+  currentStageApproversCount: t.number,
   /** List of associated inventories to the risk. */
   associatedInventories: t.array(
     t.type({
@@ -206,6 +244,16 @@ export const OneTrustGetRiskResponse = t.type({
       t.literal('GENERIC'),
     ]),
   }),
+  /** Risk Source Type. */
+  sourceType: t.union([
+    t.literal('PIA'),
+    t.literal('RA'),
+    t.literal('GRA'),
+    t.literal('INVENTORY'),
+    t.literal('INCIDENT'),
+    t.literal('GENERIC'),
+    t.null,
+  ]),
   /** The risk stage */
   stage: t.intersection([
     t.partial({
@@ -287,12 +335,17 @@ export const OneTrustGetRiskResponse = t.type({
     t.null,
   ]),
   /** The risk workflow */
-  workflow: t.type({
+  workflow: t.intersection([t.type({
     /** ID of an entity. */
     id: t.string,
     /** Name of an entity. */
     name: t.string,
-  }),
+  }), t.partial({
+    /** The nameKeu */
+    nameKey: t.array(t.string),
+    /** The badgeColor */
+    badgeColor: t.union([t.string, t.null]),
+  }),]),
 });
 
 /** Type override */
