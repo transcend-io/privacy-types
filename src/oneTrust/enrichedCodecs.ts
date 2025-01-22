@@ -15,17 +15,7 @@ import {
 /** The default OneTrust Get Assessment risk response enriched with Get Risk response. */
 export const OneTrustEnrichedRisk = t.intersection([
   OneTrustAssessmentQuestionRisk,
-  t.type({
-    description: OneTrustGetRiskResponse.props.description,
-    name: OneTrustGetRiskResponse.props.name,
-    treatment: OneTrustGetRiskResponse.props.treatment,
-    treatmentStatus: OneTrustGetRiskResponse.props.treatmentStatus,
-    type: OneTrustGetRiskResponse.props.type,
-    stage: OneTrustGetRiskResponse.props.stage,
-    state: OneTrustGetRiskResponse.props.state,
-    result: OneTrustGetRiskResponse.props.result,
-    categories: OneTrustGetRiskResponse.props.categories,
-  }),
+  OneTrustGetRiskResponse,
 ]);
 
 /** Type override */
@@ -126,4 +116,11 @@ export const OneTrustEnrichedAssessment = t.intersection([
 /** Type override */
 export type OneTrustEnrichedAssessment = t.TypeOf<
   typeof OneTrustEnrichedAssessment
+>;
+
+export const OneTrustEnrichedAssessments = t.array(OneTrustEnrichedAssessment);
+
+/** Type override */
+export type OneTrustEnrichedAssessments = t.TypeOf<
+  typeof OneTrustEnrichedAssessments
 >;

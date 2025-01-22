@@ -60,7 +60,7 @@ export type OneTrustUserEmails = t.TypeOf<typeof OneTrustUserEmails>;
 
 /**
  * The response type of the OneTrust GetUser endpoint
- * ref: https://developer.onetrust.com/onetrust/reference/getriskusingget
+ * ref: https://developer.onetrust.com/onetrust/reference/getuserusingget
  */
 export const OneTrustGetUserResponse = t.type({
   /** ID of the user. */
