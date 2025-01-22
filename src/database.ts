@@ -16,7 +16,7 @@ export const DatabaseIntegration = makeEnum({
   amazons3: 'amazons3',
   databrickslakehouse: 'databrickslakehouse',
   ibmdb2: 'ibmdb2',
-  oracle: 'oracle'
+  oracle: 'oracle',
 });
 
 /**
@@ -32,7 +32,7 @@ export const SQLDriverWithDataMapping = makeEnum({
   [DatabaseIntegration.maria]: 'MariaDB',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
   [DatabaseIntegration.ibmdb2]: 'IBM DB2',
-  [DatabaseIntegration.oracle]: 'Oracle'
+  [DatabaseIntegration.oracle]: 'Oracle',
 });
 
 /** Overrides type */
