@@ -341,7 +341,7 @@ export const OneTrustGetRiskResponse = t.type({
       name: t.string,
     }),
     t.partial({
-      /** The nameKey */
+      /** The name Key */
       nameKey: t.union([t.string, t.null]),
       /** The badgeColor */
       badgeColor: t.union([t.string, t.null]),
