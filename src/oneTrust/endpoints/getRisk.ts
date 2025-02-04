@@ -141,8 +141,6 @@ export const OneTrustGetRiskResponse = t.type({
   description: t.union([t.string, t.null]),
   /** ID of the risk. */
   id: t.string,
-  /** Residual impact level name. */
-  impactLevel: t.union([t.string, t.null]),
   /** Residual impact level ID. */
   impactLevelId: t.union([t.number, t.null]),
   /** The inherent risk level */
@@ -343,8 +341,8 @@ export const OneTrustGetRiskResponse = t.type({
       name: t.string,
     }),
     t.partial({
-      /** The nameKey */
-      nameKey: t.array(t.string),
+      /** The name Key */
+      nameKey: t.union([t.string, t.null]),
       /** The badgeColor */
       badgeColor: t.union([t.string, t.null]),
     }),
