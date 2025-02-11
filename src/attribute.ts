@@ -34,6 +34,8 @@ export enum AttributeSupportedResourceType {
   LegalHold = 'legalHold',
   /** LegalMatter table */
   LegalMatter = 'legalMatter',
+  /** Processing activity table */
+  ProcessingActivity = 'processingActivity',
   /** Processing purpose table */
   ProcessingPurposeSubCategory = 'processingPurposeSubCategory',
   /** Prompt table */
