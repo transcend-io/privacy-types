@@ -227,11 +227,11 @@ export const OneTrustGetRiskResponse = t.type({
     /** Additional information about the Source Entity */
     additionalAttributes: t.object,
     /** Source Entity ID. */
-    id: t.string,
+    id:  t.union([t.string, t.null]),
     /** Source Entity Name. */
-    name: t.string,
+    name:  t.union([t.string, t.null]),
     /** The risk source type */
-    sourceType: OneTrustEntityType,
+    sourceType: t.union([OneTrustEntityType,t.null]),
     /** Source Entity Type. */
     type: t.union([
       t.literal('PIA'),
@@ -240,6 +240,7 @@ export const OneTrustGetRiskResponse = t.type({
       t.literal('INVENTORY'),
       t.literal('INCIDENT'),
       t.literal('GENERIC'),
+      t.null,
     ]),
   }),
   /** Risk Source Type. */
