@@ -46,6 +46,10 @@ export enum AttributeSupportedResourceType {
   PromptRun = 'promptRun',
   /** Requests table */
   Request = 'request',
+  /** ScannedObject table */
+  ScannedObject = 'scannedObject',
+  /** ScannedObjectPath table */
+  ScannedObjectPath = 'scannedObjectPath',
   /** Subject table */
   Subject = 'subject',
   /** Subdatapoints table (shows up under Data Inventory > Data Points tab) */
