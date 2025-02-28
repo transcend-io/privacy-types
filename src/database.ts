@@ -17,6 +17,7 @@ export const DatabaseIntegration = makeEnum({
   databrickslakehouse: 'databrickslakehouse',
   ibmdb2: 'ibmdb2',
   oracle: 'oracle',
+  redis: 'redis',
 });
 
 /**
@@ -49,6 +50,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
   [DatabaseIntegration.amazons3]: 'AmazonS3',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
+  [DatabaseIntegration.redis]: 'Redis',
 });
 
 /** Overrides type */
