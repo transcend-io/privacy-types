@@ -51,7 +51,6 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.amazons3]: 'AmazonS3',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
   [DatabaseIntegration.redis]: 'Redis',
-
 });
 
 /** Overrides type */
