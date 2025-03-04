@@ -13,8 +13,7 @@ export const CommunicationIdentifierType = makeEnum({
 /**
  * Overload with type of integration
  */
-export type CommunicationIdentifierType =
-  (typeof CommunicationIdentifierType)[keyof typeof CommunicationIdentifierType];
+export type CommunicationIdentifierType = typeof CommunicationIdentifierType[keyof typeof CommunicationIdentifierType];
 
 /**
  * The built in identification strategies
@@ -104,5 +103,4 @@ export const IdentifierType = makeEnum({
 /**
  * Overload with type of integration
  */
-export type IdentifierType =
-  (typeof IdentifierType)[keyof typeof IdentifierType];
+export type IdentifierType = typeof IdentifierType[keyof typeof IdentifierType];
