@@ -87,6 +87,18 @@ export const IdentifierType = makeEnum({
   OnfidoApplicantId: 'onfidoApplicantId',
   /** Custom ID for a Vero user */
   VeroUserId: 'veroUserId',
+  /**
+   * Adobe Privacy API ID's
+   * https://experienceleague.adobe.com/en/docs/experience-platform/privacy/api/appendix#standard-namespaces
+   */
+  /** Adobe Advertising Cloud ID */
+  AdobeAdvertisingCloudId: 'adobeAdvertisingCloudId',
+  /** Adobe Audience Manager UUID */
+  AdobeAudienceManagerId: 'adobeAudienceManagerId',
+  /** Adobe Experience Cloud ID */
+  AdobeExperienceCloudId: 'adobeExperienceCloudId',
+  /** Adobe Target ID */
+  AdobeTargetID: 'adobeTargetId',
 });
 
 /**
