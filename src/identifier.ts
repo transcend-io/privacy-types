@@ -89,6 +89,7 @@ export const IdentifierType = makeEnum({
   VeroUserId: 'veroUserId',
   /**
    * Adobe Privacy API ID's
+   * 
    * @see https://experienceleague.adobe.com/en/docs/experience-platform/privacy/api/appendix#standard-namespaces
    */
   /** Adobe Advertising Cloud ID */
