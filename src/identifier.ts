@@ -14,7 +14,7 @@ export const CommunicationIdentifierType = makeEnum({
  * Overload with type of integration
  */
 export type CommunicationIdentifierType =
-  typeof CommunicationIdentifierType[keyof typeof CommunicationIdentifierType];
+  (typeof CommunicationIdentifierType)[keyof typeof CommunicationIdentifierType];
 
 /**
  * The built in identification strategies
@@ -89,8 +89,7 @@ export const IdentifierType = makeEnum({
   VeroUserId: 'veroUserId',
   /**
    * Adobe Privacy API ID's
-   * 
-   * @see https://experienceleague.adobe.com/en/docs/experience-platform/privacy/api/appendix#standard-namespaces
+   * https://experienceleague.adobe.com/en/docs/experience-platform/privacy/api/appendix#standard-namespaces
    */
   /** Adobe Advertising Cloud ID */
   AdobeAdvertisingCloudId: 'adobeAdvertisingCloudId',
@@ -105,4 +104,5 @@ export const IdentifierType = makeEnum({
 /**
  * Overload with type of integration
  */
-export type IdentifierType = typeof IdentifierType[keyof typeof IdentifierType];
+export type IdentifierType =
+  (typeof IdentifierType)[keyof typeof IdentifierType];
