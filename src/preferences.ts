@@ -125,7 +125,7 @@ export const PreferenceQueryResponseItem = t.intersection([
     /** Preference store purposes */
     purposes: t.array(PreferenceStorePurposeResponse),
     /** Identifiers associated to the user */
-    identifiers:  t.array(
+    identifiers: t.array(
       t.type({
         /** The identifier name */
         name: t.string,
@@ -133,6 +133,7 @@ export const PreferenceQueryResponseItem = t.intersection([
         value: t.string,
       }),
     ),
+  }),
   t.partial({
     /** metadata */
     metadata: t.array(
