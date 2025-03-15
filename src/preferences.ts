@@ -124,7 +124,15 @@ export const PreferenceQueryResponseItem = t.intersection([
     consentManagement: t.partial(PreferenceStoreConsentFields.props),
     /** Preference store purposes */
     purposes: t.array(PreferenceStorePurposeResponse),
-  }),
+    /** Identifiers associated to the user */
+    identifiers:  t.array(
+      t.type({
+        /** The identifier name */
+        name: t.string,
+        /** The identifier value */
+        value: t.string,
+      }),
+    ),
   t.partial({
     /** metadata */
     metadata: t.array(
