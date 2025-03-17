@@ -8,6 +8,7 @@ export const CodePackageType = makeEnum({
   RequirementsTxt: 'REQUIREMENTS_TXT',
   Gradle: 'GRADLE',
   CocoaPods: 'COCOA_PODS',
+  Swift: 'SWIFT',
   Pubspec: 'PUBSPEC',
   Gemfile: 'GEMFILE',
   ComposerJson: 'COMPOSER_JSON',
