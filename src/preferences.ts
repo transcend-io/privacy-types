@@ -14,6 +14,21 @@ export type DecryptionStatus =
   typeof DecryptionStatus[keyof typeof DecryptionStatus];
 
 /**
+ * Preference store identifier
+ */
+export const PreferenceStoreIdentifier = t.type({
+  /** The identifier name (email, phone etc) */
+  name: t.string,
+  /** The identifier value */
+  value: t.string,
+});
+
+/** Override type */
+export type PreferenceStoreIdentifier = t.TypeOf<
+  typeof PreferenceStoreIdentifier
+>;
+
+/**
  * Preference store system attributes which are not user editable
  */
 export const PreferenceStoreSystemAttributes = t.intersection([
@@ -56,15 +71,6 @@ export type PreferenceStoreConsentFields = t.TypeOf<
  * The format key required fields of the preference store record
  */
 export const PreferenceStoreKeyConditionals = t.type({
-  /**
-   * Primary identifier of the user.
-   *
-   * - **Lookup**: This value may be encrypted or decrypted, depending on the decryption status.
-   * - **Upsert**: This value is always provided in decrypted form by the API user.
-   *
-   * Ensure to handle the user ID appropriately based on the context of the operation.
-   */
-  userId: t.string,
   /** The partition key */
   partition: t.string,
   /** last consent event timestamp (ISO 8601) */
@@ -126,6 +132,10 @@ export const PreferenceQueryResponseItem = t.intersection([
     purposes: t.array(PreferenceStorePurposeResponse),
   }),
   t.partial({
+    /** Primary identifier of the user. */
+    userId: t.string,
+    /** Identifiers associated to the user */
+    identifiers: t.array(PreferenceStoreIdentifier),
     /** metadata */
     metadata: t.array(
       t.type({
@@ -195,6 +205,10 @@ export type PreferenceStorePurposeUpdate = t.TypeOf<
 export const PreferenceUpdateItem = t.intersection([
   PreferenceStoreKeyConditionals,
   t.partial({
+    /** Primary identifier of the user. */
+    userId: t.string,
+    /** Identifiers associated to the user */
+    identifiers: t.array(PreferenceStoreIdentifier),
     /** Preference store purposes */
     purposes: t.array(PreferenceStorePurposeUpdate),
     /** Consent management related fields */
