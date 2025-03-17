@@ -205,7 +205,7 @@ export type PreferenceStorePurposeUpdate = t.TypeOf<
 export const PreferenceUpdateItem = t.intersection([
   PreferenceStoreKeyConditionals,
   t.partial({
-    /** Primary identifier of the user.*/
+    /** Primary identifier of the user. */
     userId: t.string,
     /** Identifiers associated to the user */
     identifiers: t.array(PreferenceStoreIdentifier),
