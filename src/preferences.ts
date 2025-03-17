@@ -17,7 +17,7 @@ export type DecryptionStatus =
  * Preference store identifier
  */
 export const PreferenceStoreIdentifier = t.type({
-  /** The identifier name */
+  /** The identifier name (email, phone etc) */
   name: t.string,
   /** The identifier value */
   value: t.string,
