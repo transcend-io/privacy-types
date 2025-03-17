@@ -15,15 +15,14 @@ export const AssessmentTriggerAction = makeEnum({
 export type AssessmentTriggerAction =
   typeof AssessmentTriggerAction[keyof typeof AssessmentTriggerAction];
 
-
 /**
  * The possible events to enable the actions of an Assessment Trigger configuration
  */
 export const AssessmentTriggerEvent = makeEnum({
-   /** triggers the action when the form is submitted */
-   OnSubmission: 'ON_SUBMISSION',
-   /** triggers the action when the form is approved */
-   OnApproval: 'ON_APPROVAL',
+  /** triggers the action when the form is submitted */
+  OnSubmission: 'ON_SUBMISSION',
+  /** triggers the action when the form is approved */
+  OnApproval: 'ON_APPROVAL',
 });
 
 /**
@@ -31,6 +30,3 @@ export const AssessmentTriggerEvent = makeEnum({
  */
 export type AssessmentTriggerEvent =
   typeof AssessmentTriggerEvent[keyof typeof AssessmentTriggerEvent];
-
-
-
