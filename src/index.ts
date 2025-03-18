@@ -16,6 +16,7 @@ export * from './regexes';
 export * from './attribute';
 export * from './consentManager';
 export * from './assessmentQuestion';
+export * from './assessmentTrigger';
 export * from './enricher';
 export * from './assessmentForm';
 export * from './datapoint';
