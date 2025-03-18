@@ -95,6 +95,7 @@ export enum ScopeName {
   ManageIntlMessages = 'manageIntlMessages',
   ViewIntlMessages = 'viewIntlMessages',
   LLMLogTransfer = 'llmLogTransfer',
+  ManageWorkflows = 'manageWorkflows',
 }
 
 /**
@@ -985,6 +986,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.StructuredDiscovery,
       TranscendProduct.UnstructuredDiscovery,
     ],
+  },
+  [ScopeName.ManageWorkflows]: {
+    title: 'Manage Workflows',
+    description: 'Ability to make updates to Workflows and their settings',
+    dependencies: [],
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DsrAutomation],
   },
 };
 
