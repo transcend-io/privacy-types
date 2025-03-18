@@ -95,6 +95,7 @@ export enum ScopeName {
   ManageIntlMessages = 'manageIntlMessages',
   ViewIntlMessages = 'viewIntlMessages',
   LLMLogTransfer = 'llmLogTransfer',
+  ManageWorkflows = 'manageWorkflows'
 }
 
 /**
