@@ -990,6 +990,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageWorkflows]: {
     title: 'Manage Workflows',
     description: 'Ability to make updates to Workflows and their settings',
+    dependencies: [],
     type: ScopeType.Modify,
     products: [
       TranscendProduct.DsrAutomation,
