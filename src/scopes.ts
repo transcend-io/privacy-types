@@ -993,7 +993,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     type: ScopeType.Modify,
     products: [TranscendProduct.DsrAutomation],
-  }
+  },
 };
 
 export const TRANSCEND_SCOPES: {
