@@ -992,7 +992,9 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'Ability to make updates to Workflows and their settings',
     dependencies: [],
     type: ScopeType.Modify,
-    products: [TranscendProduct.DsrAutomation]
+    products: [
+      TranscendProduct.DsrAutomation
+    ]
   }
 };
 
