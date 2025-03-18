@@ -987,6 +987,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.UnstructuredDiscovery,
     ],
   },
+  [ScopeName.ManageWorkflows]: {
+    title: 'Manage Workflows',
+    description: 'Ability to make updates to Workflows and their settings',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.DsrAutomation,
+    ]
+  }
 };
 
 export const TRANSCEND_SCOPES: {
