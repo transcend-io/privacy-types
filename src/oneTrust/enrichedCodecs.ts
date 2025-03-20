@@ -29,13 +29,36 @@ export const OneTrustEnrichedRisks = t.union([
 /** Type override */
 export type OneTrustEnrichedRisks = t.TypeOf<typeof OneTrustEnrichedRisks>;
 
+export const OneTrustQuestionComment = t.type({
+  comment: t.string,
+  CreatedBy: t.string,
+  CreateDate: t.string,
+});
+
+/**
+ * A OneTrust comment manually injected to the question
+ */
+export type OneTrustQuestionComment = t.TypeOf<typeof OneTrustQuestionComment>;
+
+export const OneTrustQuestionComments = t.array(OneTrustQuestionComment);
+
+/**
+ * A list of OneTrust comment manually injected to the question
+ */
+export type OneTrustQuestionComments = t.TypeOf<
+  typeof OneTrustQuestionComments
+>;
+
 /** The default OneTrust Get Assessment question response with enriched risks. */
 export const OneTrustEnrichedAssessmentQuestion = t.intersection([
   t.type({
     ...OneTrustAssessmentQuestion.types[0].props,
     risks: OneTrustEnrichedRisks,
   }),
-  t.partial({ ...OneTrustAssessmentQuestion.types[1].props }),
+  t.partial({
+    ...OneTrustAssessmentQuestion.types[1].props,
+    comments: OneTrustQuestionComments,
+  }),
 ]);
 
 /** Type override */
