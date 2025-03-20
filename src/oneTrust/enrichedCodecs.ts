@@ -39,7 +39,9 @@ export type OneTrustQuestionComment = t.TypeOf<typeof OneTrustQuestionComment>;
 
 export const OneTrustQuestionComments = t.array(OneTrustQuestionComment);
 
-export type OneTrustQuestionComments = t.TypeOf<typeof OneTrustQuestionComments>;
+export type OneTrustQuestionComments = t.TypeOf<
+  typeof OneTrustQuestionComments
+>;
 
 /** The default OneTrust Get Assessment question response with enriched risks. */
 export const OneTrustEnrichedAssessmentQuestion = t.intersection([
