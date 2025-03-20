@@ -36,14 +36,14 @@ export const OneTrustQuestionComment = t.type({
 });
 
 /**
- *
+ * A OneTrust comment manually injected to the question
  */
 export type OneTrustQuestionComment = t.TypeOf<typeof OneTrustQuestionComment>;
 
 export const OneTrustQuestionComments = t.array(OneTrustQuestionComment);
 
 /**
- *
+ * A list of OneTrust comment manually injected to the question
  */
 export type OneTrustQuestionComments = t.TypeOf<
   typeof OneTrustQuestionComments
