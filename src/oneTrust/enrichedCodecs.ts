@@ -35,10 +35,16 @@ export const OneTrustQuestionComment = t.type({
   CreateDate: t.string,
 });
 
+/**
+ *
+ */
 export type OneTrustQuestionComment = t.TypeOf<typeof OneTrustQuestionComment>;
 
 export const OneTrustQuestionComments = t.array(OneTrustQuestionComment);
 
+/**
+ *
+ */
 export type OneTrustQuestionComments = t.TypeOf<
   typeof OneTrustQuestionComments
 >;
