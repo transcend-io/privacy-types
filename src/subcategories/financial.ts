@@ -9,7 +9,7 @@ export const FinancialSubCategory = makeEnum({
   /** Income */
   Income: 'INCOME',
   /** Tax information */
-  Tax: 'TAX',
+  TaxInformation: 'TAX_INFORMATION',
   /** Routing number */
   RoutingNumber: 'ROUTING_NUMBER',
   /** Fallback subcategory */
