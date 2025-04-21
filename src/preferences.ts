@@ -169,7 +169,7 @@ export type CustomFieldApiInput = t.TypeOf<typeof CustomFieldApiInput>;
 export const PreferenceStorePurposeUpdate = t.intersection([
   PreferenceStorePurposeResponse,
   t.partial({
-    /** Timestamp of the purpose was last updated (ISO 8601) */
+    /** Timestamp of when the purpose was last updated (ISO 8601) */
     timestamp: t.string,
     /** Additional tags to forward to the DSR event */
     attributes: t.array(CustomFieldApiInput),
