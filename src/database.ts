@@ -17,6 +17,7 @@ export const DatabaseIntegration = makeEnum({
   databrickslakehouse: 'databrickslakehouse',
   ibmdb2: 'ibmdb2',
   oracle: 'oracle',
+  quickbase: 'quickbase',
   redis: 'redis',
   treasuredata: 'treasuredata',
 });
@@ -51,6 +52,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.amazondynamodb]: 'AmazonDynamoDB',
   [DatabaseIntegration.amazons3]: 'AmazonS3',
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
+  [DatabaseIntegration.quickbase]: 'Quickbase',
   [DatabaseIntegration.redis]: 'Redis',
   [DatabaseIntegration.treasuredata]: 'TreasureData',
 });
