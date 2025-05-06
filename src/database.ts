@@ -56,7 +56,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.quickbase]: 'Quickbase',
   [DatabaseIntegration.redis]: 'Redis',
   [DatabaseIntegration.treasuredata]: 'TreasureData',
-  [DatabaseIntegration.saps4hana]: 'SAPS4Hana',
+  [DatabaseIntegration.saps4hana]: 'SapS4Hana',
 });
 
 /** Overrides type */
