@@ -20,6 +20,7 @@ export const DatabaseIntegration = makeEnum({
   quickbase: 'quickbase',
   redis: 'redis',
   treasuredata: 'treasuredata',
+  saps4hana: 'saps4hana',
 });
 
 /**
@@ -55,6 +56,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.quickbase]: 'Quickbase',
   [DatabaseIntegration.redis]: 'Redis',
   [DatabaseIntegration.treasuredata]: 'TreasureData',
+  [DatabaseIntegration.saps4hana]: 'SapS4Hana',
 });
 
 /** Overrides type */
