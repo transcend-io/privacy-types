@@ -55,6 +55,7 @@ export const DataSiloAttribute = makeEnum({
   LastLookupProcessCreationTime: 'lastLookupProcessCreationTime',
   TransferRegions: 'transferRegions',
   Controllerships: 'controllerships',
+  CustomSiloConnectionStrategy: 'customSiloConnectionStrategy'
 });
 
 /** Type override */
@@ -116,7 +117,7 @@ type DataSiloAttributeImmutable =
   | 'URL'
   | 'WEBSITE_URL'
   | 'TRANSFER_REGIONS'
-  | 'CONTROLLERSHIPS';
+  | 'CONTROLLERSHIPS' | 'CUSTOM_SILO_CONNECTION_STRATEGY';
 
 /** The value of AssessmentQuestion's syncColumn that stands for DataSilo column */
 export const DataSiloAttributeSyncColumn = makeEnum<
@@ -174,6 +175,7 @@ export const DataSiloAttributeSyncColumn = makeEnum<
   websiteUrl: 'WEBSITE_URL',
   transferRegions: 'TRANSFER_REGIONS',
   controllerships: 'CONTROLLERSHIPS',
+  customSiloConnectionStrategy: 'CUSTOM_SILO_CONNECTION_STRATEGY'
 });
 
 /** Type override */
