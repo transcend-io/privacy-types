@@ -55,7 +55,7 @@ export const DataSiloAttribute = makeEnum({
   LastLookupProcessCreationTime: 'lastLookupProcessCreationTime',
   TransferRegions: 'transferRegions',
   Controllerships: 'controllerships',
-  CustomSiloConnectionStrategy: 'customSiloConnectionStrategy'
+  CustomSiloConnectionStrategy: 'customSiloConnectionStrategy',
 });
 
 /** Type override */
@@ -176,7 +176,7 @@ export const DataSiloAttributeSyncColumn = makeEnum<
   websiteUrl: 'WEBSITE_URL',
   transferRegions: 'TRANSFER_REGIONS',
   controllerships: 'CONTROLLERSHIPS',
-  customSiloConnectionStrategy: 'CUSTOM_SILO_CONNECTION_STRATEGY'
+  customSiloConnectionStrategy: 'CUSTOM_SILO_CONNECTION_STRATEGY',
 });
 
 /** Type override */
@@ -604,7 +604,7 @@ export const AssessmentSyncColumn = makeEnum<
   DATA_TYPE: 'DATA_TYPE',
   ENCRYPTION: 'ENCRYPTION',
   IS_PRIMARY_KEY: 'IS_PRIMARY_KEY',
-  CUSTOM_SILO_CONNECTION_STRATEGY: 'CUSTOM_SILO_CONNECTION_STRATEGY'
+  CUSTOM_SILO_CONNECTION_STRATEGY: 'CUSTOM_SILO_CONNECTION_STRATEGY',
 });
 
 /** Type override */
