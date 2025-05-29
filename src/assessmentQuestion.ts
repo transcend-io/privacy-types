@@ -604,6 +604,7 @@ export const AssessmentSyncColumn = makeEnum<
   DATA_TYPE: 'DATA_TYPE',
   ENCRYPTION: 'ENCRYPTION',
   IS_PRIMARY_KEY: 'IS_PRIMARY_KEY',
+  CUSTOM_SILO_CONNECTION_STRATEGY: 'CUSTOM_SILO_CONNECTION_STRATEGY'
 });
 
 /** Type override */
