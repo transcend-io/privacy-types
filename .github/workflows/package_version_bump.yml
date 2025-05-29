@@ -33,7 +33,7 @@ jobs:
             fi
           done
 
-          if [[ "$maybe_bumped" == "false" ]];
+          if [[ "$maybe_bumped" == "false" ]]; then
             echo "Please bump package.json as the following files have changed";
             echo "$ALL_CHANGED_FILES";
             exit 1;
