@@ -2,6 +2,10 @@ name: Package version bump
 on:
   pull_request:
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   changed-files:
     runs-on: ubuntu-latest
@@ -20,7 +24,7 @@ jobs:
             README.md
             yarn.lock
 
-      - name: Break if package.json was not changed
+      - name: Dumb check for package.json change
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
