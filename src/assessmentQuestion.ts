@@ -117,7 +117,8 @@ type DataSiloAttributeImmutable =
   | 'URL'
   | 'WEBSITE_URL'
   | 'TRANSFER_REGIONS'
-  | 'CONTROLLERSHIPS' | 'CUSTOM_SILO_CONNECTION_STRATEGY';
+  | 'CONTROLLERSHIPS'
+  | 'CUSTOM_SILO_CONNECTION_STRATEGY';
 
 /** The value of AssessmentQuestion's syncColumn that stands for DataSilo column */
 export const DataSiloAttributeSyncColumn = makeEnum<
