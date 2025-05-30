@@ -21,7 +21,7 @@ export const DatabaseIntegration = makeEnum({
   redis: 'redis',
   treasuredata: 'treasuredata',
   saps4hana: 'saps4hana',
-  googlebigtable: 'googlebigtable'
+  googlebigtable: 'googlebigtable',
 });
 
 /**
