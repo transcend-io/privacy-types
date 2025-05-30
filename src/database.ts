@@ -42,12 +42,12 @@ export const SQLDriverWithDataMapping = makeEnum({
 
 /** Overrides type */
 export type SQLDriverWithDataMapping =
-typeof SQLDriverWithDataMapping[keyof typeof SQLDriverWithDataMapping];
+  typeof SQLDriverWithDataMapping[keyof typeof SQLDriverWithDataMapping];
 
 /**
  * All possible drivers for a database integration, regardless
  * or not they support data mapping
-*/
+ */
 export const DatabaseDriver = makeEnum({
   ...SQLDriverWithDataMapping,
   [DatabaseIntegration.mongodb]: 'MongoDB',
