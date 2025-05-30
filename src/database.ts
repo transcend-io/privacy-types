@@ -21,6 +21,7 @@ export const DatabaseIntegration = makeEnum({
   redis: 'redis',
   treasuredata: 'treasuredata',
   saps4hana: 'saps4hana',
+  googlebigtable: 'googlebigtable'
 });
 
 /**
@@ -41,12 +42,12 @@ export const SQLDriverWithDataMapping = makeEnum({
 
 /** Overrides type */
 export type SQLDriverWithDataMapping =
-  typeof SQLDriverWithDataMapping[keyof typeof SQLDriverWithDataMapping];
+typeof SQLDriverWithDataMapping[keyof typeof SQLDriverWithDataMapping];
 
 /**
  * All possible drivers for a database integration, regardless
  * or not they support data mapping
- */
+*/
 export const DatabaseDriver = makeEnum({
   ...SQLDriverWithDataMapping,
   [DatabaseIntegration.mongodb]: 'MongoDB',
@@ -57,6 +58,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.redis]: 'Redis',
   [DatabaseIntegration.treasuredata]: 'TreasureData',
   [DatabaseIntegration.saps4hana]: 'SapS4Hana',
+  [DatabaseIntegration.googlebigtable]: 'Google Bigtable',
 });
 
 /** Overrides type */
