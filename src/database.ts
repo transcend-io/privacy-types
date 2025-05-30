@@ -21,6 +21,7 @@ export const DatabaseIntegration = makeEnum({
   redis: 'redis',
   treasuredata: 'treasuredata',
   saps4hana: 'saps4hana',
+  googlebigtable: 'googlebigtable',
 });
 
 /**
@@ -57,6 +58,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.redis]: 'Redis',
   [DatabaseIntegration.treasuredata]: 'TreasureData',
   [DatabaseIntegration.saps4hana]: 'SapS4Hana',
+  [DatabaseIntegration.googlebigtable]: 'Google Bigtable',
 });
 
 /** Overrides type */
