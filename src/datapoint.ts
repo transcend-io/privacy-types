@@ -40,3 +40,16 @@ export const UnstructuredSubDataPointRecommendationStatus = makeEnum({
 /** Type override */
 export type UnstructuredSubDataPointRecommendationStatus =
   typeof UnstructuredSubDataPointRecommendationStatus[keyof typeof UnstructuredSubDataPointRecommendationStatus];
+
+/**
+ * Encryption types for database table
+ */
+export const TableEncryptionType = makeEnum({
+  Unencrypted: 'UNENCRYPTED',
+  EncryptedApplicationSide: 'ENCRYPTED_APPLICATION_SIDE',
+  EncryptedByDataAtRest: 'ENCRYPTED_DATA_AT_REST',
+});
+
+/** Type override */
+export type TableEncryptionType =
+  typeof TableEncryptionType[keyof typeof TableEncryptionType];
