@@ -549,7 +549,8 @@ export const ProcessingActivityAttributeSyncColumn = makeEnum<
   retentionType: 'RETENTION_TYPE',
   retentionPeriod: 'RETENTION_PERIOD',
   dataProtectionImpactAssessmentLink: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
-  dataProtectionImpactAssessmentStatus: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
+  dataProtectionImpactAssessmentStatus: 
+    'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
 });
 
 /** Type override */
@@ -673,7 +674,7 @@ export const AssessmentSyncColumn = makeEnum<
   STORAGE_REGIONS: 'STORAGE_REGIONS',
   DATA_PROTECTION_IMPACT_ASSESSMENT_LINK:
     'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
-  DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS: 
+  DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS:
     'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
 });
 
