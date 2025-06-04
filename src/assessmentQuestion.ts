@@ -494,6 +494,68 @@ export const BusinessEntityAttributeSyncColumn = makeEnum<
 export type BusinessEntityAttributeSyncColumn =
   typeof BusinessEntityAttributeSyncColumn[keyof typeof BusinessEntityAttributeSyncColumn];
 
+
+/**
+ * The ProcessingActivityAttribute type in immutable values. They have a one-to-one
+ * mapping to the ProcessingActivityAttribute values and are used as the syncColumn
+ * of AssessmentQuestions. This ensures that an assessment question can
+ * always be synced to the correct processing activity column even if it changes.
+ */
+type ProcessingActivityAttributeImmutable =
+  | 'TITLE'
+  | 'DESCRIPTION'
+  | 'SECURITY_MEASURE_DETAILS'
+  | 'CONTROLLERSHIPS'
+  | 'STORAGE_REGIONS'
+  | 'TRANSFER_REGIONS'
+  | 'RETENTION_TYPE'
+  | 'RETENTION_PERIOD'
+  | 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK'
+  | 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS';
+
+/**
+ * The attributes of the ProcessingActivity model.
+ */
+export const ProcessingActivityAttribute = makeEnum({
+  Title: 'title',
+  Description: 'description',
+  SecurityMeasureDetails: 'securityMeasureDetails',
+  Controllerships: 'controllerships',
+  StorageRegions: 'storageRegions',
+  TransferRegions: 'transferRegions',
+  RetentionType: 'retentionType',
+  RetentionPeriod: 'retentionPeriod',
+  DataProtectionImpactAssessmentLink: 'dataProtectionImpactAssessmentLink',
+  DataProtectionImpactAssessmentStatus: 'dataProtectionImpactAssessmentStatus'
+});
+
+/** Type override */
+export type ProcessingActivityAttribute =
+  typeof ProcessingActivityAttribute[keyof typeof ProcessingActivityAttribute];
+
+/** The value of AssessmentQuestion's syncColumn that stands for ProcessingActivity column */
+export const ProcessingActivityAttributeSyncColumn = makeEnum<
+  {
+    [k in ProcessingActivityAttribute]: ProcessingActivityAttributeImmutable;
+  },
+  ProcessingActivityAttributeImmutable
+>({
+  title: 'TITLE',
+  description: 'DESCRIPTION',
+  securityMeasureDetails: 'SECURITY_MEASURE_DETAILS',
+  controllerships: 'CONTROLLERSHIPS',
+  storageRegions: 'STORAGE_REGIONS',
+  transferRegions: 'TRANSFER_REGIONS',
+  retentionType: 'RETENTION_TYPE',
+  retentionPeriod: 'RETENTION_PERIOD',
+  dataProtectionImpactAssessmentLink: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
+  dataProtectionImpactAssessmentStatus: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS'
+});
+
+/** Type override */
+export type ProcessingActivityAttributeSyncColumn =
+  typeof ProcessingActivityAttributeSyncColumn[keyof typeof ProcessingActivityAttributeSyncColumn];
+
 /**
  * All Attributes merged into a single type
  */
@@ -503,7 +565,8 @@ export type AssessmentSyncColumnAttribute =
   | VendorAttribute
   | DataSubCategoryAttribute
   | ProcessingPurposeSubCategoryAttribute
-  | BusinessEntityAttribute;
+  | BusinessEntityAttribute
+  | ProcessingActivityAttribute;
 
 /**
  * All Immutable Attributes merged into a single type
@@ -514,7 +577,8 @@ export type AssessmentSyncColumnImmutable =
   | VendorAttributeImmutable
   | DataSubCategoryAttributeImmutable
   | ProcessingPurposeSubCategoryAttributeImmutable
-  | BusinessEntityAttributeImmutable;
+  | BusinessEntityAttributeImmutable
+  | ProcessingActivityAttributeImmutable;
 
 /** The type of the AssessmentQuestion's  syncColumn field  */
 export const AssessmentSyncColumn = makeEnum<
@@ -605,6 +669,10 @@ export const AssessmentSyncColumn = makeEnum<
   ENCRYPTION: 'ENCRYPTION',
   IS_PRIMARY_KEY: 'IS_PRIMARY_KEY',
   CUSTOM_SILO_CONNECTION_STRATEGY: 'CUSTOM_SILO_CONNECTION_STRATEGY',
+  SECURITY_MEASURE_DETAILS: 'SECURITY_MEASURE_DETAILS',
+  STORAGE_REGIONS: 'STORAGE_REGIONS',
+  DATA_PROTECTION_IMPACT_ASSESSMENT_LINK: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
+  DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS'
 });
 
 /** Type override */
@@ -625,6 +693,8 @@ export const AssessmentSyncModel = makeEnum({
   ProcessingPurposeSubCategory: 'processingPurposeSubCategory',
   /** BusinessEntity model */
   BusinessEntity: 'businessEntity',
+  /** ProcessingActivity model */
+  ProcessingActivity: 'processingActivity',
 });
 
 /** Type overrides */
