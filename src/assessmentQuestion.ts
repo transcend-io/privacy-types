@@ -526,7 +526,7 @@ export const ProcessingActivityAttribute = makeEnum({
   RetentionType: 'retentionType',
   RetentionPeriod: 'retentionPeriod',
   DataProtectionImpactAssessmentLink: 'dataProtectionImpactAssessmentLink',
-  DataProtectionImpactAssessmentStatus: 'dataProtectionImpactAssessmentStatus'
+  DataProtectionImpactAssessmentStatus: 'dataProtectionImpactAssessmentStatus',
 });
 
 /** Type override */
@@ -549,7 +549,7 @@ export const ProcessingActivityAttributeSyncColumn = makeEnum<
   retentionType: 'RETENTION_TYPE',
   retentionPeriod: 'RETENTION_PERIOD',
   dataProtectionImpactAssessmentLink: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
-  dataProtectionImpactAssessmentStatus: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS'
+  dataProtectionImpactAssessmentStatus: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
 });
 
 /** Type override */
@@ -671,8 +671,10 @@ export const AssessmentSyncColumn = makeEnum<
   CUSTOM_SILO_CONNECTION_STRATEGY: 'CUSTOM_SILO_CONNECTION_STRATEGY',
   SECURITY_MEASURE_DETAILS: 'SECURITY_MEASURE_DETAILS',
   STORAGE_REGIONS: 'STORAGE_REGIONS',
-  DATA_PROTECTION_IMPACT_ASSESSMENT_LINK: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
-  DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS: 'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS'
+  DATA_PROTECTION_IMPACT_ASSESSMENT_LINK:
+    'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
+  DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS: 
+    'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
 });
 
 /** Type override */
