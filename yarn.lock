@@ -381,7 +381,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@transcend-io/privacy-types@workspace:."
   dependencies:
-    "@transcend-io/type-utils": "npm:^1.0.5"
+    "@transcend-io/type-utils": "npm:^1.8.4"
     "@types/chai": "npm:^4.3.11"
     "@types/mocha": "npm:^10.0.6"
     "@typescript-eslint/eslint-plugin": "npm:^6.13.2"
@@ -405,13 +405,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@transcend-io/type-utils@npm:^1.0.5":
-  version: 1.2.0
-  resolution: "@transcend-io/type-utils@npm:1.2.0"
+"@transcend-io/type-utils@npm:^1.8.4":
+  version: 1.8.4
+  resolution: "@transcend-io/type-utils@npm:1.8.4"
   dependencies:
     fp-ts: "npm:^2.16.1"
     io-ts: "npm:^2.2.21"
-  checksum: 10c0/79451c648d158b3dcd8b761615c611ef6403454f2cd484e7f1fc194e8b30580afb9d848018e604653497b853f311e2c34c68f4eea9602cee9824f7c241af9e00
+  checksum: 10c0/6da035c1972772f1d1188ce4444c12bb434be925ebf0654f4cb79056cc09fbe5f883600148548fd80bceb4ec65291c5cc17372a91816442d82daf6e1b3c49fed
   languageName: node
   linkType: hard
 
