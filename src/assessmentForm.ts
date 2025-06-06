@@ -85,6 +85,8 @@ export const AssessmentQuestionSubType = makeEnum({
   DataSubCategory: 'DATA_SUB_CATEGORY',
   /** A Processing Purpose SubCategory */
   ProcessingPurposeSubCategory: 'PROCESSING_PURPOSE_SUB_CATEGORY',
+  /** A Processing Activity */
+  ProcessingActivity: 'PROCESSING_ACTIVITY',
   /** A vendor */
   Vendor: 'VENDOR',
   /** A Region question */
