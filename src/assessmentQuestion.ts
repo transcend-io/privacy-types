@@ -549,7 +549,7 @@ export const ProcessingActivityAttributeSyncColumn = makeEnum<
   retentionType: 'RETENTION_TYPE',
   retentionPeriod: 'RETENTION_PERIOD',
   dataProtectionImpactAssessmentLink: 'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
-  dataProtectionImpactAssessmentStatus: 
+  dataProtectionImpactAssessmentStatus:
     'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
 });
 
