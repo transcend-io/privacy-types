@@ -494,7 +494,6 @@ export const BusinessEntityAttributeSyncColumn = makeEnum<
 export type BusinessEntityAttributeSyncColumn =
   typeof BusinessEntityAttributeSyncColumn[keyof typeof BusinessEntityAttributeSyncColumn];
 
-
 /**
  * The ProcessingActivityAttribute type in immutable values. They have a one-to-one
  * mapping to the ProcessingActivityAttribute values and are used as the syncColumn
