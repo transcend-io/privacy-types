@@ -189,20 +189,6 @@ export const LocalSyncOption = makeEnum({
 export type LocalSyncOption =
   typeof LocalSyncOption[keyof typeof LocalSyncOption];
 
-/** User-configurable user agent privacy signal */
-export const UserPrivacySignalEnum = makeEnum({
-  /** Global Privacy Control */
-  GPC: 'GPC',
-  /** Do Not Track */
-  DNT: 'DNT',
-});
-
-/**
- * Type override
- */
-export type UserPrivacySignalEnum =
-  typeof UserPrivacySignalEnum[keyof typeof UserPrivacySignalEnum];
-
 /**
  * The possible options for configuring default consent
  *
