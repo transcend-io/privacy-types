@@ -252,3 +252,16 @@ export const PreferenceTopicType = makeEnum({
 /** Override type */
 export type PreferenceTopicType =
   typeof PreferenceTopicType[keyof typeof PreferenceTopicType];
+
+/**
+ * The authentication level required for updating a purpose on preference store
+ */
+export const PreferenceStoreAuthLevel = makeEnum({
+  Required: 'REQUIRED',
+  Optional: 'OPTIONAL',
+  AllowOptOut: 'ALLOW_OPT_OUT',
+});
+
+/** Override type */
+export type PreferenceStoreAuthLevel =
+  typeof PreferenceStoreAuthLevel[keyof typeof PreferenceStoreAuthLevel];

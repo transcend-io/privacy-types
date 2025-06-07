@@ -188,3 +188,34 @@ export const LocalSyncOption = makeEnum({
 /** Type override */
 export type LocalSyncOption =
   typeof LocalSyncOption[keyof typeof LocalSyncOption];
+
+/** User-configurable user agent privacy signal */
+export const UserPrivacySignalEnum = makeEnum({
+  /** Global Privacy Control */
+  GPC: 'GPC',
+  /** Do Not Track */
+  DNT: 'DNT',
+});
+
+/**
+ * Type override
+ */
+export type UserPrivacySignalEnum =
+  typeof UserPrivacySignalEnum[keyof typeof UserPrivacySignalEnum];
+
+/**
+ * The possible options for configuring default consent
+ *
+ * These options are simplified for the UI.
+ * Their equivalence in the airgap.js browser API:
+ * Opt-in => 'off' / false
+ * Opt-out (unless for any reason not to; legal or otherwise) => 'Auto'
+ */
+export const DefaultConsentOption = makeEnum({
+  OptIn: 'off',
+  OptOut: 'Auto',
+});
+
+/** Override type */
+export type DefaultConsentOption =
+  typeof DefaultConsentOption[keyof typeof DefaultConsentOption];
