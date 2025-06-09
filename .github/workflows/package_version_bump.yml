@@ -26,7 +26,7 @@ jobs:
 
       - name: Check if package.json version has been modified
         shell: bash
-        if: ${{ github.base_ref == 'main' && steps.changed-markdown-files.outputs.any_changed == 'true' }}
+        if: ${{ github.base_ref == 'main' && steps.changed-files.outputs.any_changed == 'true' }}
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
