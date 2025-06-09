@@ -30,7 +30,7 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          if PAGER= git diff --unified=0 origin/main package.json | grep version > /dev/null; then
+          if PAGER= git diff --unified=0 origin/main package.json | grep grep '\+  "version":' > /dev/null; then
             echo "Looking good!";
           else
             echo "Please bump package.json as the following files have changed";
