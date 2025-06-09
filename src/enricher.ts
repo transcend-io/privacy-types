@@ -27,7 +27,7 @@ export const CustomEnricherType = makeEnum({
   /** Verify a government ID */
   GovernmentId: 'GOVERNMENT_ID',
   /** Custom Function enricher type. */
-  CustomFunction: 'CUSTOM_FUNCTION'
+  CustomFunction: 'CUSTOM_FUNCTION',
 });
 
 /**
