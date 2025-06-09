@@ -26,6 +26,8 @@ export const CustomEnricherType = makeEnum({
   WaitPeriod: 'WAIT_PERIOD',
   /** Verify a government ID */
   GovernmentId: 'GOVERNMENT_ID',
+  /** Custom Function enricher type. */
+  CustomFunction: 'CUSTOM_FUNCTION'
 });
 
 /**
