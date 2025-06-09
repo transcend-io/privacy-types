@@ -24,20 +24,15 @@ jobs:
             README.md
             yarn.lock
 
-      - name: Dumb check for package.json change
-        if: steps.changed-files.outputs.any_changed == 'true'
+      - name: Check if package.json version has been modified
+        shell: bash
+        if: ${{ github.base_ref == 'main' && steps.changed-markdown-files.outputs.any_changed == 'true' }}
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          maybe_bumped=false ;
-          for file in ${ALL_CHANGED_FILES}; do
-            if [[ "$file" == *"package.json" ]]; then
-              echo "$file was bumped" ;
-              maybe_bumped=true ;
-            fi
-          done
-
-          if [[ "$maybe_bumped" == "false" ]]; then
+          if PAGER= git diff --unified=0 origin/main package.json | grep version > /dev/null; then
+            echo "Looking good!";
+          else
             echo "Please bump package.json as the following files have changed";
             echo "$ALL_CHANGED_FILES";
             exit 1;
