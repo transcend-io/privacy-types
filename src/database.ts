@@ -22,6 +22,7 @@ export const DatabaseIntegration = makeEnum({
   treasuredata: 'treasuredata',
   saps4hana: 'saps4hana',
   googlebigtable: 'googlebigtable',
+  nosql: 'nosql'
 });
 
 /**
@@ -59,6 +60,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.treasuredata]: 'TreasureData',
   [DatabaseIntegration.saps4hana]: 'SapS4Hana',
   [DatabaseIntegration.googlebigtable]: 'Google Bigtable',
+  [DatabaseIntegration.nosql]: 'NoSQL'
 });
 
 /** Overrides type */
