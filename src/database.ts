@@ -22,6 +22,7 @@ export const DatabaseIntegration = makeEnum({
   treasuredata: 'treasuredata',
   saps4hana: 'saps4hana',
   googlebigtable: 'googlebigtable',
+  azuresynapse: 'azuresynapse',
   azurecosmosdbnosql: 'azurecosmosdbnosql'
 });
 
@@ -39,6 +40,7 @@ export const SQLDriverWithDataMapping = makeEnum({
   [DatabaseIntegration.databrickslakehouse]: 'Databricks Lakehouse',
   [DatabaseIntegration.ibmdb2]: 'IBM DB2',
   [DatabaseIntegration.oracle]: 'Oracle DB',
+  [DatabaseIntegration.azuresynapse]: 'Azure Synapse'
 });
 
 /** Overrides type */
