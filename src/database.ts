@@ -23,6 +23,7 @@ export const DatabaseIntegration = makeEnum({
   saps4hana: 'saps4hana',
   googlebigtable: 'googlebigtable',
   azuresynapse: 'azuresynapse',
+  azurecosmosdbnosql: 'azurecosmosdbnosql',
 });
 
 /**
@@ -61,6 +62,7 @@ export const DatabaseDriver = makeEnum({
   [DatabaseIntegration.treasuredata]: 'TreasureData',
   [DatabaseIntegration.saps4hana]: 'SapS4Hana',
   [DatabaseIntegration.googlebigtable]: 'Google Bigtable',
+  [DatabaseIntegration.azurecosmosdbnosql]: 'Azure Cosmos DB NoSQL',
 });
 
 /** Overrides type */
