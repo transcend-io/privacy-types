@@ -151,19 +151,7 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   /** Order in which the question appears in the assessment. */
   sequence: t.number,
   /** Type of question in the assessment. */
-  questionType: t.union([
-    t.literal('TEXTBOX'),
-    t.literal('MULTICHOICE'),
-    t.literal('YESNO'),
-    t.literal('DATE'),
-    t.literal('STATEMENT'),
-    t.literal('INVENTORY'),
-    t.literal('ATTRIBUTE'),
-    t.literal('PERSONAL_DATA'),
-    t.literal('ENGAGEMENT'),
-    t.literal('ASSESS_CONTROL'),
-    t.null,
-  ]),
+  questionType: t.union([t.string, t.null]),
   /** Indicates whether a response to the question is required. */
   required: t.boolean,
   /** Data element attributes that are directly updated by the question. */
@@ -185,18 +173,7 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   /** Indicates whether the question is valid. */
   valid: t.boolean,
   /** Type of question in the assessment. */
-  type: t.union([
-    t.literal('TEXTBOX'),
-    t.literal('MULTICHOICE'),
-    t.literal('YESNO'),
-    t.literal('DATE'),
-    t.literal('STATEMENT'),
-    t.literal('INVENTORY'),
-    t.literal('ATTRIBUTE'),
-    t.literal('PERSONAL_DATA'),
-    t.literal('ENGAGEMENT'),
-    t.literal('ASSESS_CONTROL'),
-  ]),
+  type: t.union([t.string, t.null]),
   /** Whether the response can be multi select */
   allowMultiSelect: t.boolean,
   /** The text of a question. */
@@ -260,11 +237,7 @@ export const OneTrustAssessmentResponses = t.array(
         t.literal('OTHERS'),
       ]),
       /** Source from which the assessment is launched. */
-      responseSourceType: t.union([
-        t.literal('LAUNCH_FROM_INVENTORY'),
-        t.literal('FORCE_CREATED_SOURCE'),
-        t.null,
-      ]),
+      responseSourceType: t.union([t.string, t.null]),
       /** Error associated with the response. */
       errorCode: t.union([
         t.literal('ATTRIBUTE_DISABLED'),
@@ -367,11 +340,7 @@ export const OneTrustAssessmentQuestion = t.intersection([
     /** Indicates whether the question is hidden on the assessment. */
     hidden: t.boolean,
     /** Reason for locking the question in the assessment. */
-    lockReason: t.union([
-      t.literal('LAUNCH_FROM_INVENTORY'),
-      t.literal('FORCE_CREATION_LOCK'),
-      t.null,
-    ]),
+    lockReason: t.union([t.string, t.null]),
     /** The copy errors */
     copyErrors: t.union([t.string, t.null]),
     /** Indicates whether navigation rules are enabled for the question. */
@@ -601,16 +570,7 @@ export const OneTrustGetAssessmentResponse = t.type({
   /** The primary record */
   primaryEntityDetails: OneTrustPrimaryEntityDetails,
   /** Type of inventory record designated as the primary record. */
-  primaryRecordType: t.union([
-    t.literal('ASSETS'),
-    t.literal('PROCESSING_ACTIVITY'),
-    t.literal('VENDORS'),
-    t.literal('ENTITIES'),
-    t.literal('ASSESS_CONTROL'),
-    t.literal('ENGAGEMENT'),
-    t.literal('projects'),
-    t.null,
-  ]),
+  primaryRecordType: t.union([t.string, t.null]),
   /** Overall risk score after considering existing controls. */
   residualRiskScore: t.union([t.number, t.null]),
   /** The respondent */
