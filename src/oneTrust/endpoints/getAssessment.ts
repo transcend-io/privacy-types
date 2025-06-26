@@ -176,9 +176,7 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   /** Indicates whether the question is valid. */
   valid: t.boolean,
   /** Type of question in the assessment. */
-  type: t.union([
-    t.string
-  ]),
+  type: t.string,
   /** Whether the response can be multi select */
   allowMultiSelect: t.boolean,
   /** The text of a question. */
