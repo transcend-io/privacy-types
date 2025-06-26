@@ -152,16 +152,7 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   sequence: t.number,
   /** Type of question in the assessment. */
   questionType: t.union([
-    t.literal('TEXTBOX'),
-    t.literal('MULTICHOICE'),
-    t.literal('YESNO'),
-    t.literal('DATE'),
-    t.literal('STATEMENT'),
-    t.literal('INVENTORY'),
-    t.literal('ATTRIBUTE'),
-    t.literal('PERSONAL_DATA'),
-    t.literal('ENGAGEMENT'),
-    t.literal('ASSESS_CONTROL'),
+    t.string,
     t.null,
   ]),
   /** Indicates whether a response to the question is required. */
@@ -186,16 +177,7 @@ export const OneTrustAssessmentNestedQuestion = t.type({
   valid: t.boolean,
   /** Type of question in the assessment. */
   type: t.union([
-    t.literal('TEXTBOX'),
-    t.literal('MULTICHOICE'),
-    t.literal('YESNO'),
-    t.literal('DATE'),
-    t.literal('STATEMENT'),
-    t.literal('INVENTORY'),
-    t.literal('ATTRIBUTE'),
-    t.literal('PERSONAL_DATA'),
-    t.literal('ENGAGEMENT'),
-    t.literal('ASSESS_CONTROL'),
+    t.string
   ]),
   /** Whether the response can be multi select */
   allowMultiSelect: t.boolean,
@@ -261,8 +243,7 @@ export const OneTrustAssessmentResponses = t.array(
       ]),
       /** Source from which the assessment is launched. */
       responseSourceType: t.union([
-        t.literal('LAUNCH_FROM_INVENTORY'),
-        t.literal('FORCE_CREATED_SOURCE'),
+        t.string,
         t.null,
       ]),
       /** Error associated with the response. */
@@ -368,8 +349,7 @@ export const OneTrustAssessmentQuestion = t.intersection([
     hidden: t.boolean,
     /** Reason for locking the question in the assessment. */
     lockReason: t.union([
-      t.literal('LAUNCH_FROM_INVENTORY'),
-      t.literal('FORCE_CREATION_LOCK'),
+      t.string,
       t.null,
     ]),
     /** The copy errors */
@@ -602,13 +582,7 @@ export const OneTrustGetAssessmentResponse = t.type({
   primaryEntityDetails: OneTrustPrimaryEntityDetails,
   /** Type of inventory record designated as the primary record. */
   primaryRecordType: t.union([
-    t.literal('ASSETS'),
-    t.literal('PROCESSING_ACTIVITY'),
-    t.literal('VENDORS'),
-    t.literal('ENTITIES'),
-    t.literal('ASSESS_CONTROL'),
-    t.literal('ENGAGEMENT'),
-    t.literal('projects'),
+    t.string,
     t.null,
   ]),
   /** Overall risk score after considering existing controls. */
