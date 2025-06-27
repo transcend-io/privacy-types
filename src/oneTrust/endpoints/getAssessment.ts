@@ -213,7 +213,7 @@ export const OneTrustAssessmentResponses = t.array(
     }),
     t.type({
       /** The controlResponse */
-      controlResponse: t.union([t.string, t.null]),
+      controlResponse: t.union([t.string, t.object, t.null]),
       /** The relationshipResponseDetails */
       relationshipResponseDetails: t.array(t.string),
       /** The textRedacted */
