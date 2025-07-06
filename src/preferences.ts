@@ -201,7 +201,7 @@ export const PreferenceStorePurposeUpdate = t.intersection([
     /** Additional tags to forward to the DSR event */
     attributes: t.array(CustomFieldApiInput),
     /** Consent workflow settings */
-    workflowSettings: ,
+    workflowSettings: PreferenceStoreWorkflowSettings,
     /** Language to translate request to */
     locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
   }),
