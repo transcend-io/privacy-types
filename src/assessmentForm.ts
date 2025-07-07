@@ -97,6 +97,9 @@ export const AssessmentQuestionSubType = makeEnum({
   SaaSCategory: 'SAA_S_CATEGORY',
   /** The Data Processing Agreement Status */
   DataProcessingAgreementStatus: 'DATA_PROCESSING_AGREEMENT_STATUS',
+  /** The Data Protection Impact Assessment Status */
+  DataProtectionImpactAssessmentStatus:
+    'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
   /** The deprecation state */
   DeprecationState: 'DEPRECATION_STATE',
   /** The identifier */
