@@ -163,6 +163,33 @@ export const CustomFieldApiInput = t.type({
 /** Override type */
 export type CustomFieldApiInput = t.TypeOf<typeof CustomFieldApiInput>;
 
+/** The format of the preference store workflow settings */
+export const PreferenceStoreWorkflowSettings = t.partial({
+  /** Additional tags to forward to the DSR event */
+  attributes: t.array(CustomFieldApiInput),
+  /** Data silo IDs to run the workflow on */
+  dataSiloIds: t.array(t.string),
+  /** The email template ID to use for the receipt */
+  emailReceiptTemplateId: t.string,
+  /** Data silo IDs to ignore when running the workflow */
+  ignoreDataSiloIds: t.array(t.string),
+  /** If the workflow is silent */
+  isSilent: t.boolean,
+  /** if the workflow is a test run */
+  isTest: t.boolean,
+  /** if the workflow should skip sending the receipt */
+  skipSendingReceipt: t.boolean,
+  /** if the workflow should skip the waiting period */
+  skipWaitingPeriod: t.boolean,
+  /** if the workflow should be skipped */
+  skipWorkflowTrigger: t.boolean,
+});
+
+/** Override types. */
+export type PreferenceStoreWorkflowSettings = t.TypeOf<
+  typeof PreferenceStoreWorkflowSettings
+>;
+
 /**
  * The format for a preference store purpose
  */
@@ -174,26 +201,7 @@ export const PreferenceStorePurposeUpdate = t.intersection([
     /** Additional tags to forward to the DSR event */
     attributes: t.array(CustomFieldApiInput),
     /** Consent workflow settings */
-    workflowSettings: t.partial({
-      /** Additional tags to forward to the DSR event */
-      attributes: t.array(CustomFieldApiInput),
-      /** Data silo IDs to run the workflow on */
-      dataSiloIds: t.array(t.string),
-      /** The email template ID to use for the receipt */
-      emailReceiptTemplateId: t.string,
-      /** Data silo IDs to ignore when running the workflow */
-      ignoreDataSiloIds: t.array(t.string),
-      /** If the workflow is silent */
-      isSilent: t.boolean,
-      /** if the workflow is a test run */
-      isTest: t.boolean,
-      /** if the workflow should skip sending the receipt */
-      skipSendingReceipt: t.boolean,
-      /** if the workflow should skip the waiting period */
-      skipWaitingPeriod: t.boolean,
-      /** if the workflow should be skipped */
-      skipWorkflowTrigger: t.boolean,
-    }),
+    workflowSettings: PreferenceStoreWorkflowSettings,
     /** Language to translate request to */
     locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
   }),
