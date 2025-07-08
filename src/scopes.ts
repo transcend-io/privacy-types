@@ -1009,7 +1009,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'View Data Sub Categories from Data Inventory',
     type: ScopeType.View,
     products: [TranscendProduct.DataInventory],
-  }
+  },
 };
 
 export const TRANSCEND_SCOPES: {
