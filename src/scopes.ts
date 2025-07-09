@@ -96,6 +96,8 @@ export enum ScopeName {
   ViewIntlMessages = 'viewIntlMessages',
   LLMLogTransfer = 'llmLogTransfer',
   ManageWorkflows = 'manageWorkflows',
+  ViewDataSubCategories = 'viewDataSubCategories',
+  ManageDataSubCategories = 'manageDataSubCategories',
 }
 
 /**
@@ -238,6 +240,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.PrivacyCenter,
       TranscendProduct.Assessments,
     ],
+  },
+  [ScopeName.ManageDataSubCategories]: {
+    dependencies: [ScopeName.ViewDataSubCategories],
+    description: 'Manage data sub categories mentioned in the data inventory',
+    title: 'Manage Data Sub Categories',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DataInventory],
   },
   [ScopeName.ViewCustomerDataPrivacyRequests]: {
     dependencies: [],
@@ -993,6 +1002,13 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     dependencies: [],
     type: ScopeType.Modify,
     products: [TranscendProduct.DsrAutomation],
+  },
+  [ScopeName.ViewDataSubCategories]: {
+    title: 'View Data Sub Categories',
+    dependencies: [],
+    description: 'View Data Sub Categories from Data Inventory',
+    type: ScopeType.View,
+    products: [TranscendProduct.DataInventory],
   },
 };
 
