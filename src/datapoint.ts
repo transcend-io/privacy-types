@@ -8,7 +8,7 @@ export const ConfidenceLabel = makeEnum({
 
 /** Override types */
 export type ConfidenceLabel =
-  typeof ConfidenceLabel[keyof typeof ConfidenceLabel];
+  (typeof ConfidenceLabel)[keyof typeof ConfidenceLabel];
 
 /** The approval status of the category guess for a subdatapoint */
 export const SubDataPointDataSubCategoryGuessStatus = makeEnum({
@@ -22,7 +22,7 @@ export const SubDataPointDataSubCategoryGuessStatus = makeEnum({
 
 /** Type override */
 export type SubDataPointDataSubCategoryGuessStatus =
-  typeof SubDataPointDataSubCategoryGuessStatus[keyof typeof SubDataPointDataSubCategoryGuessStatus];
+  (typeof SubDataPointDataSubCategoryGuessStatus)[keyof typeof SubDataPointDataSubCategoryGuessStatus];
 
 export const UnstructuredSubDataPointRecommendationStatus = makeEnum({
   /** The category was manually applied */
@@ -39,7 +39,7 @@ export const UnstructuredSubDataPointRecommendationStatus = makeEnum({
 
 /** Type override */
 export type UnstructuredSubDataPointRecommendationStatus =
-  typeof UnstructuredSubDataPointRecommendationStatus[keyof typeof UnstructuredSubDataPointRecommendationStatus];
+  (typeof UnstructuredSubDataPointRecommendationStatus)[keyof typeof UnstructuredSubDataPointRecommendationStatus];
 
 /**
  * Encryption types for database table
@@ -52,4 +52,34 @@ export const TableEncryptionType = makeEnum({
 
 /** Type override */
 export type TableEncryptionType =
-  typeof TableEncryptionType[keyof typeof TableEncryptionType];
+  (typeof TableEncryptionType)[keyof typeof TableEncryptionType];
+
+export const Controllership = makeEnum({
+  /** The current organization is a controller of the data */
+  Controller: 'CONTROLLER',
+  /** The current organization is a processor of the data */
+  Processor: 'PROCESSOR',
+  /** The current organization is a joint controller of the data */
+  JointController: 'JOINT_CONTROLLER',
+});
+
+/** Type override */
+export type Controllership =
+  (typeof Controllership)[keyof typeof Controllership];
+
+/** The type of retention schedule for personal data */
+export const RetentionType = makeEnum({
+  /** Collected user information is deleted, anonymized or aggregated after a specific time period */
+  StatedPeriod: 'STATED_PERIOD',
+  /** Data is deleted, anonymized, or aggregated at some point, but no specific retention period is stated */
+  Limited: 'LIMITED',
+  /** Collected user information is retained indefinitely */
+  Indefinite: 'INDEFINITE',
+  /** A specific retention type not covered above */
+  Other: 'OTHER',
+  /** Retention period is not stated or unclear */
+  Unspecified: 'UNSPECIFIED',
+});
+
+/** Type override */
+export type RetentionType = (typeof RetentionType)[keyof typeof RetentionType];
