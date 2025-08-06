@@ -14,4 +14,4 @@ export const DataProtectionImpactAssessmentStatus = makeEnum({
 
 /** Type override */
 export type DataProtectionImpactAssessmentStatus =
-  (typeof DataProtectionImpactAssessmentStatus)[keyof typeof DataProtectionImpactAssessmentStatus];
+  typeof DataProtectionImpactAssessmentStatus[keyof typeof DataProtectionImpactAssessmentStatus];

@@ -8,7 +8,7 @@ export const ConfidenceLabel = makeEnum({
 
 /** Override types */
 export type ConfidenceLabel =
-  (typeof ConfidenceLabel)[keyof typeof ConfidenceLabel];
+  typeof ConfidenceLabel[keyof typeof ConfidenceLabel];
 
 /** The approval status of the category guess for a subdatapoint */
 export const SubDataPointDataSubCategoryGuessStatus = makeEnum({
@@ -22,7 +22,7 @@ export const SubDataPointDataSubCategoryGuessStatus = makeEnum({
 
 /** Type override */
 export type SubDataPointDataSubCategoryGuessStatus =
-  (typeof SubDataPointDataSubCategoryGuessStatus)[keyof typeof SubDataPointDataSubCategoryGuessStatus];
+  typeof SubDataPointDataSubCategoryGuessStatus[keyof typeof SubDataPointDataSubCategoryGuessStatus];
 
 export const UnstructuredSubDataPointRecommendationStatus = makeEnum({
   /** The category was manually applied */
@@ -39,7 +39,7 @@ export const UnstructuredSubDataPointRecommendationStatus = makeEnum({
 
 /** Type override */
 export type UnstructuredSubDataPointRecommendationStatus =
-  (typeof UnstructuredSubDataPointRecommendationStatus)[keyof typeof UnstructuredSubDataPointRecommendationStatus];
+  typeof UnstructuredSubDataPointRecommendationStatus[keyof typeof UnstructuredSubDataPointRecommendationStatus];
 
 /**
  * Encryption types for database table
@@ -52,7 +52,7 @@ export const TableEncryptionType = makeEnum({
 
 /** Type override */
 export type TableEncryptionType =
-  (typeof TableEncryptionType)[keyof typeof TableEncryptionType];
+  typeof TableEncryptionType[keyof typeof TableEncryptionType];
 
 export const Controllership = makeEnum({
   /** The current organization is a controller of the data */
@@ -64,8 +64,7 @@ export const Controllership = makeEnum({
 });
 
 /** Type override */
-export type Controllership =
-  (typeof Controllership)[keyof typeof Controllership];
+export type Controllership = typeof Controllership[keyof typeof Controllership];
 
 /** The type of retention schedule for personal data */
 export const RetentionType = makeEnum({
@@ -82,4 +81,4 @@ export const RetentionType = makeEnum({
 });
 
 /** Type override */
-export type RetentionType = (typeof RetentionType)[keyof typeof RetentionType];
+export type RetentionType = typeof RetentionType[keyof typeof RetentionType];
