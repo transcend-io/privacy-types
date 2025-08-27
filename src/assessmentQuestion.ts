@@ -211,7 +211,8 @@ type SubDataPointAttributeImmutable =
   | 'DELETED_AT'
   | 'DATA_TYPE'
   | 'ENCRYPTION'
-  | 'IS_PRIMARY_KEY';
+  | 'IS_PRIMARY_KEY'
+  | 'METADATA';
 
 /**
  * The attributes of the SubDataPoint model.
@@ -239,6 +240,7 @@ export const SubDataPointAttribute = makeEnum({
   DataType: 'dataType',
   Encryption: 'encryption',
   IsPrimaryKey: 'isPrimaryKey',
+  Metadata: 'metadata',
 });
 
 /** Type override */
@@ -272,6 +274,7 @@ export const SubDataPointAttributeSyncColumn = makeEnum<
   dataType: 'DATA_TYPE',
   encryption: 'ENCRYPTION',
   isPrimaryKey: 'IS_PRIMARY_KEY',
+  metadata: 'METADATA',
 });
 
 /** Type override */
@@ -675,6 +678,7 @@ export const AssessmentSyncColumn = makeEnum<
     'DATA_PROTECTION_IMPACT_ASSESSMENT_LINK',
   DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS:
     'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
+  METADATA: 'METADATA',
 });
 
 /** Type override */
