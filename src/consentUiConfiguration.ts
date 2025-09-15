@@ -58,12 +58,12 @@ export const ButtonConfig = t.type({
 });
 
 /** Type override */
-export type ButtonConfigCodec = t.TypeOf<typeof ButtonConfigCodec>;
+export type ButtonConfig = t.TypeOf<typeof ButtonConfig>;
 
 /** Configuration for buttons in modals */
 export const ModalButtonConfig = t.type({
   type: valuesOf(ButtonType),
-  action: valuesOf(ModalButtonAction),
+  action: valuesOf(ModalButtonActions),
 });
 
 /** Type override */
