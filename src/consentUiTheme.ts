@@ -238,3 +238,136 @@ export const ContentLayout = t.union([PaddedContentLayout, FullWidthContentLayou
 
 /** Override type */
 export type ContentLayout = t.TypeOf<typeof ContentLayout>;
+
+/** Theme configuration for the toggle */
+export const ToggleTheme = t.intersection([
+  Text, Icon, enabledColor: RgbHexString, disabledColor: RgbHexString, knobColor: RgbHexString
+])
+
+/** Override type */
+export type ToggleTheme = t.TypeOf<typeof ToggleTheme>;
+
+/** Theme configuration shared between both First (banner) and Second Layers (modal) */
+export const CommonLayerTheme = t.intersection([
+  t.type({
+    buttons: t.tuple([
+      ButtonThemeIndex,
+      t.union([ButtonThemeIndex, t.undefined]),
+      t.union([ButtonThemeIndex, t.undefined]),
+    ]),
+    container: ContainerTheme,
+    description: DescriptionTheme,
+    footer: FooterTheme,
+    alwaysShowScrollbar: t.boolean,
+    horizontalAlign: valuesOf(HorizontalAlign),
+    cookieAndPrivacyPolicy: t.partial(Link),
+  }),
+  t.partial({
+    background: Background,
+    header: HeaderTheme,
+    closeButton: CloseButtonTheme,
+  })
+])
+
+/** Override type */
+export type CommonLayerTheme = t.TypeOf<typeof CommonLayerTheme>;
+
+/** Theme configuration for the First Layer (banner) */
+export const FirstLayerTheme = t.intersection([
+  CommonLayerTheme,
+  t.type({
+    contentFlow: valuesOf(ContentFlows),
+    verticalAlign: valuesOf(VerticalAlign),
+  }),
+]) 
+
+/** Override type */
+export type FirstLayerTheme = t.TypeOf<typeof FirstLayerTheme>;
+
+/** Theme configuration for the Second Layer (modal) */
+export const SecondLayerTheme = t.intersection([
+  CommonLayerTheme,
+  t.type({
+    modalTitle: Text,
+    modalSubtitle: Text,
+    purposeListTitle: Text,
+    caretIcon: Icon,
+    cardTitle: Text,
+    alwaysOnText: Text,
+    purposeDescription: DescriptionTheme,
+    purposeCard: ContainerTheme, // border color applies to dividers
+    toggle: ToggleTheme,
+    // lockToEdges is linked to horizontalAlign left/right. if left/right, this is forced to true. 
+    // if horizontalAlign is center and lockEdges is true then top and bottom are locked to edges
+    lockToEdges: t.boolean,
+    maxWidth: CssUnitString,
+    }),
+  t.partial({
+    bulkActionButtons: t.tuple([ButtonThemeIndex, ButtonThemeIndex]),
+    shrinkToFullWidth: CssUnitString,
+  })
+])
+
+/** Override type */
+export type SecondLayerTheme = t.TypeOf<typeof SecondLayerTheme>;
+
+/** Represents a button theme which can be either a full button or a link style */
+export const ButtonTheme = t.union([
+  t.intersection([Background, Border, Text]),
+  Link,
+]);
+
+/** Override type */
+export type ButtonTheme = t.TypeOf<typeof ButtonTheme>;
+
+/** Configuration shared between all themes types */
+export const SharedTopLevelTheme = t.type({
+  buttonThemes: t.array(ButtonTheme),
+});
+
+/** Override type */
+export type SharedTopLevelTheme = t.TypeOf<typeof SharedTopLevelTheme>;
+
+/** Banner-only theme configuration */
+export const ThemeConfigurationBannerOnly = t.intersection([
+  SharedTopLevelTheme,
+  t.type({
+    firstLayer: FirstLayerTheme,
+  }),
+]);
+
+/** Override type */
+export type ThemeConfigurationBannerOnly = t.TypeOf<typeof ThemeConfigurationBannerOnly>;
+
+/** Modal-only theme configuration */
+export const ThemeConfigurationModalOnly = t.intersection([
+  SharedTopLevelTheme,
+  t.type({
+    secondLayer: SecondLayerTheme,
+  }),
+]);
+
+/** Override type */
+export type ThemeConfigurationModalOnly = t.TypeOf<typeof ThemeConfigurationModalOnly>;
+
+/** Banner into modal theme configuration */
+export const ThemeConfigurationBannerIntoModal = t.intersection([
+  SharedTopLevelTheme,
+  t.type({
+    firstLayer: FirstLayerTheme,
+    secondLayer: SecondLayerTheme,
+  }),
+]);
+
+/** Override type */
+export type ThemeConfigurationBannerIntoModal = t.TypeOf<typeof ThemeConfigurationBannerIntoModal>;
+
+/** Union of all theme configurations */
+export const ThemeConfiguration = t.union([
+  ThemeConfigurationBannerOnly,
+  ThemeConfigurationModalOnly,
+  ThemeConfigurationBannerIntoModal,
+]);
+
+/** Override type */
+export type ThemeConfiguration = t.TypeOf<typeof ThemeConfiguration>;
