@@ -11,32 +11,40 @@ import { ThemeConfiguration } from './consentUiTheme';
 /** Key representing a specific regime */
 export const RegimeKey = t.string;
 
+/** Override type */
 export type RegimeKey = t.TypeOf<typeof RegimeKey>;
 
 /** Key representing a specific consent UI variant */
 export const VariantKey = t.string;
 
+/** Override type */
 export type VariantKey = t.TypeOf<typeof VariantKey>;
 
 /** Key representing a specific theme */
 export const ThemeKey = t.string;
 
+/** Override type */
 export type ThemeKey = t.TypeOf<typeof ThemeKey>;
 
 /** String that represents an integer value */
 export const IntegerString = t.string;
 
+/** Override type */
 export type IntegerString = t.TypeOf<typeof IntegerString>;
 
 /** String that represents a DOM element ID */
 export const DOMElementId = t.string;
 
+/** Override type */
 export type DOMElementId = t.TypeOf<typeof DOMElementId>;
 
 /** String that represents a semicolon-delimited list of regime keys */
 export const SemicolonDelimitedRegimeKeyString = t.string;
 
-export type SemicolonDelimitedRegimeKeyString = t.TypeOf<typeof SemicolonDelimitedRegimeKeyString>;
+/** Override type */
+export type SemicolonDelimitedRegimeKeyString = t.TypeOf<
+  typeof SemicolonDelimitedRegimeKeyString
+>;
 
 /**
  * Autofocus toggle values ("on" / "off").
@@ -50,17 +58,17 @@ export const AutofocusToggle = makeEnum({
 
 /** Override type */
 export type AutofocusToggle =
-  (typeof AutofocusToggle)[keyof typeof AutofocusToggle];
+  typeof AutofocusToggle[keyof typeof AutofocusToggle];
 
 /**
  * All valid autofocus values:
  * - `"on"` / `"off"`
  * - or a DOM element ID string
  */
-export const AutofocusValues = AutofocusToggle | DOMElementId;
+export const AutofocusValues = t.union([AutofocusToggle, DOMElementId]);
 
+/** Override type */
 export type AutofocusValues = t.TypeOf<typeof AutofocusValues>;
-
 
 /** The top-level configuration for the consent UI */
 export const LoadOptions = t.intersection([
@@ -73,12 +81,15 @@ export const LoadOptions = t.intersection([
     uiZIndex: IntegerString,
     // css: AbsoluteUrlString,
     // If messageMap is not defined, messages will be fetched from `${messageFolder}/${localeKey}.json`
-    messageFolder: AbsoluteUrlString,
+    // messageFolder: AbsoluteUrlString,
     regimePrecedence: SemicolonDelimitedRegimeKeyString, // e.g. 'GDPR;CPRA;nFADP'
-    // supportedLanguages: t.array(LocaleValue),
+    // supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
   }),
   t.partial({
-  // if message map is defined, it will be used to retrieve localized messages
-  messageMap: t.record(LocaleValue, AbsoluteUrlString),
-  })
-])
+    // if message map is defined, it will be used to retrieve localized messages
+    // messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
+  }),
+]);
+
+/** Override type */
+export type LoadOptions = t.TypeOf<typeof LoadOptions>;

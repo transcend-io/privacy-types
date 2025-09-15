@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 import * as t from 'io-ts';
 import { makeEnum, valuesOf } from '@transcend-io/type-utils';
 
@@ -18,8 +20,7 @@ export const VerticalAlign = makeEnum({
 });
 
 /** Override type */
-export type VerticalAlign =
-  (typeof VerticalAlign)[keyof typeof VerticalAlign];
+export type VerticalAlign = typeof VerticalAlign[keyof typeof VerticalAlign];
 
 /**
  * Horizontal alignment options for the consent UI content
@@ -35,7 +36,7 @@ export const HorizontalAlign = makeEnum({
 
 /** Override type */
 export type HorizontalAlign =
-  (typeof HorizontalAlign)[keyof typeof HorizontalAlign];
+  typeof HorizontalAlign[keyof typeof HorizontalAlign];
 
 /**
  * Position options for the logo in the consent UI
@@ -44,12 +45,11 @@ export const LogoPosition = makeEnum({
   /** Logo is positioned above the content */
   Above: 'above',
   /** Logo is positioned to the left of the content */
-  Left: 'left'
+  Left: 'left',
 });
 
 /** Override type */
-export type LogoPosition =
-  (typeof LogoPosition)[keyof typeof LogoPosition];
+export type LogoPosition = typeof LogoPosition[keyof typeof LogoPosition];
 
 /**
  * Defines how content can flow in a layout
@@ -60,12 +60,11 @@ export const ContentFlows = makeEnum({
   /** Items are stacked horizontally, often wrapping if space runs out */
   HorizontalStacked: 'horizontal-stacked',
   /** Items are laid out horizontally, in a single row */
-  HorizontalFlat: 'horizontal-flat'
+  HorizontalFlat: 'horizontal-flat',
 });
 
 /** Override type */
-export type ContentFlows =
-  (typeof ContentFlows)[keyof typeof ContentFlows];
+export type ContentFlows = typeof ContentFlows[keyof typeof ContentFlows];
 
 /**
  * Units available for responsive breakpoints.
@@ -78,8 +77,7 @@ export const BreakpointType = makeEnum({
 });
 
 /** Override type */
-export type BreakpointType =
-  (typeof BreakpointType)[keyof typeof BreakpointType];
+export type BreakpointType = typeof BreakpointType[keyof typeof BreakpointType];
 
 /** String that represents a CSS unit eg. px, em, etc. */
 export const CssUnitString = t.string;
@@ -87,20 +85,22 @@ export const CssUnitString = t.string;
 /** Type override */
 export type CssUnitString = t.TypeOf<typeof CssUnitString>;
 
-/** 
+/**
  * String that represents an RGBA hex color (8-digit hex with alpha channel),
  * e.g. "#FFFFFFFF" (opaque white) or "#FF000080" (semi-transparent red).
  */
 export const RgbaHexString = t.string;
 
+/** Override type */
 export type RgbaHexString = t.TypeOf<typeof RgbaHexString>;
 
-/** 
+/**
  * String that represents an RGB hex color (6-digit hex without alpha channel),
  * e.g. "#FFFFFF" (white) or "#000000" (black).
  */
 export const RgbHexString = t.string;
 
+/** Override type */
 export type RgbHexString = t.TypeOf<typeof RgbHexString>;
 
 /** Index of a button's theme */
@@ -166,7 +166,7 @@ export const Breakpoint = t.type({
   value: t.number,
   /** The unit of the breakpoint (px or percent) */
   unit: valuesOf(BreakpointType),
-})
+});
 
 /** Override type */
 export type Breakpoint = t.TypeOf<typeof Breakpoint>;
@@ -180,13 +180,20 @@ export const ContainerTheme = t.intersection([Background, Border]);
 export type ContainerTheme = t.TypeOf<typeof ContainerTheme>;
 
 /** Represents the header theme configuration */
-export const HeaderTheme = t.intersection([Text, logoPosition: LogoPosition]);
+export const HeaderTheme = t.intersection([
+  Text,
+  t.type({ logoPosition: LogoPosition }),
+]);
 
 /** Override type */
 export type HeaderTheme = t.TypeOf<typeof HeaderTheme>;
 
 /** Represents the configuration of the close button */
-export const CloseButtonTheme = t.intersection([Background, Border, iconColor: RgbHexString]);
+export const CloseButtonTheme = t.intersection([
+  Background,
+  Border,
+  t.type({ iconColor: RgbHexString }),
+]);
 
 /** Override type */
 export type CloseButtonTheme = t.TypeOf<typeof CloseButtonTheme>;
@@ -198,7 +205,10 @@ export const DescriptionTextTheme = t.intersection([Text, Link]);
 export type DescriptionTextTheme = t.TypeOf<typeof DescriptionTextTheme>;
 
 /** Represents the configuration of the footer */
-export const FooterTheme = t.intersection([Background, t.type({localePickerColor: RgbHexString})]);
+export const FooterTheme = t.intersection([
+  Background,
+  t.type({ localePickerColor: RgbHexString }),
+]);
 
 /** Override type */
 export type FooterTheme = t.TypeOf<typeof FooterTheme>;
@@ -206,10 +216,7 @@ export type FooterTheme = t.TypeOf<typeof FooterTheme>;
 /** Defines how content should be padded and sized at different breakpoints */
 export const PaddedContentLayout = t.type({
   breakpoint: Breakpoint,
-  maxWidths: t.record(
-    ContentFlows, 
-    CssUnitString
-  ),
+  maxWidths: t.record(ContentFlows, CssUnitString),
 });
 /** Override type */
 export type PaddedContentLayout = t.TypeOf<typeof PaddedContentLayout>;
@@ -223,15 +230,24 @@ export const FullWidthContentLayout = t.type({
 export type FullWidthContentLayout = t.TypeOf<typeof FullWidthContentLayout>;
 
 /** Represents either a padded content layout or a full-width layout */
-export const ContentLayout = t.union([PaddedContentLayout, FullWidthContentLayout]);
+export const ContentLayout = t.union([
+  PaddedContentLayout,
+  FullWidthContentLayout,
+]);
 
 /** Override type */
 export type ContentLayout = t.TypeOf<typeof ContentLayout>;
 
 /** Theme configuration for the toggle */
 export const ToggleTheme = t.intersection([
-  Text, Icon, t.type({enabledColor: RgbHexString, disabledColor: RgbHexString, knobColor: RgbHexString,})
-])
+  Text,
+  Icon,
+  t.type({
+    enabledColor: RgbHexString,
+    disabledColor: RgbHexString,
+    knobColor: RgbHexString,
+  }),
+]);
 
 /** Override type */
 export type ToggleTheme = t.TypeOf<typeof ToggleTheme>;
@@ -255,8 +271,8 @@ export const CommonLayerTheme = t.intersection([
     background: Background,
     header: HeaderTheme,
     closeButton: CloseButtonTheme,
-  })
-])
+  }),
+]);
 
 /** Override type */
 export type CommonLayerTheme = t.TypeOf<typeof CommonLayerTheme>;
@@ -268,7 +284,7 @@ export const FirstLayerTheme = t.intersection([
     contentFlow: valuesOf(ContentFlows),
     verticalAlign: valuesOf(VerticalAlign),
   }),
-]) 
+]);
 
 /** Override type */
 export type FirstLayerTheme = t.TypeOf<typeof FirstLayerTheme>;
@@ -286,16 +302,16 @@ export const SecondLayerTheme = t.intersection([
     purposeDescription: DescriptionTextTheme,
     purposeCard: ContainerTheme, // border color applies to dividers
     toggle: ToggleTheme,
-    // lockToEdges is linked to horizontalAlign left/right. if left/right, this is forced to true. 
+    // lockToEdges is linked to horizontalAlign left/right. if left/right, this is forced to true.
     // if horizontalAlign is center and lockEdges is true then top and bottom are locked to edges
     lockToEdges: t.boolean,
     maxWidth: CssUnitString,
-    }),
+  }),
   t.partial({
     bulkActionButtons: t.tuple([ButtonThemeIndex, ButtonThemeIndex]),
     shrinkToFullWidth: CssUnitString,
-  })
-])
+  }),
+]);
 
 /** Override type */
 export type SecondLayerTheme = t.TypeOf<typeof SecondLayerTheme>;
@@ -326,7 +342,9 @@ export const ThemeConfigurationBannerOnly = t.intersection([
 ]);
 
 /** Override type */
-export type ThemeConfigurationBannerOnly = t.TypeOf<typeof ThemeConfigurationBannerOnly>;
+export type ThemeConfigurationBannerOnly = t.TypeOf<
+  typeof ThemeConfigurationBannerOnly
+>;
 
 /** Modal-only theme configuration */
 export const ThemeConfigurationModalOnly = t.intersection([
@@ -337,7 +355,9 @@ export const ThemeConfigurationModalOnly = t.intersection([
 ]);
 
 /** Override type */
-export type ThemeConfigurationModalOnly = t.TypeOf<typeof ThemeConfigurationModalOnly>;
+export type ThemeConfigurationModalOnly = t.TypeOf<
+  typeof ThemeConfigurationModalOnly
+>;
 
 /** Banner into modal theme configuration */
 export const ThemeConfigurationBannerIntoModal = t.intersection([
@@ -349,7 +369,9 @@ export const ThemeConfigurationBannerIntoModal = t.intersection([
 ]);
 
 /** Override type */
-export type ThemeConfigurationBannerIntoModal = t.TypeOf<typeof ThemeConfigurationBannerIntoModal>;
+export type ThemeConfigurationBannerIntoModal = t.TypeOf<
+  typeof ThemeConfigurationBannerIntoModal
+>;
 
 /** Union of all theme configurations */
 export const ThemeConfiguration = t.union([
@@ -360,3 +382,4 @@ export const ThemeConfiguration = t.union([
 
 /** Override type */
 export type ThemeConfiguration = t.TypeOf<typeof ThemeConfiguration>;
+/* eslint-enable max-lines */
