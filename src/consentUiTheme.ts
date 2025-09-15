@@ -68,27 +68,6 @@ export type ContentFlows =
   (typeof ContentFlows)[keyof typeof ContentFlows];
 
 /**
- * Autofocus toggle values ("on" / "off").
- */
-export const AutofocusToggle = makeEnum({
-  /** Enable autofocus */
-  On: 'on',
-  /** Disable autofocus */
-  Off: 'off',
-});
-
-/** Override type */
-export type AutofocusToggle =
-  (typeof AutofocusToggle)[keyof typeof AutofocusToggle];
-
-/**
- * All valid autofocus values:
- * - `"on"` / `"off"`
- * - or a DOM element ID string
- */
-export type AutofocusValues = AutofocusToggle | DOMElementId;
-
-/**
  * Units available for responsive breakpoints.
  */
 export const BreakpointType = makeEnum({
