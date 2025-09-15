@@ -24,6 +24,7 @@
     "test": "yarn mocha './src/**/*.test.ts'"
   },
   "dependencies": {
+    "@transcend-io/internationalization": "^1.7.4",
     "@transcend-io/type-utils": "^1.8.4",
     "fp-ts": "^2.16.1",
     "io-ts": "^2.2.21"
