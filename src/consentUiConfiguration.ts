@@ -185,4 +185,4 @@ export const UIConfiguration = t.union([
 ]);
 
 /** Type override */
-export type UIConfiguration = t.TypeOf<typeof UIConfigurationModalOnly>;
+export type UIConfiguration = t.TypeOf<typeof UIConfiguration>;
