@@ -12,7 +12,7 @@ export const ModalButtonActions = makeEnum({
 
 /** Type override */
 export type ModalButtonActions =
-  (typeof ModalButtonActions)[keyof typeof ModalButtonActions];
+  typeof ModalButtonActions[keyof typeof ModalButtonActions];
 
 /** All action types for buttons */
 export const ButtonAction = makeEnum({
@@ -21,7 +21,7 @@ export const ButtonAction = makeEnum({
 });
 
 /** Type override */
-export type ButtonAction = (typeof ButtonAction)[keyof typeof ButtonAction];
+export type ButtonAction = typeof ButtonAction[keyof typeof ButtonAction];
 
 /** Button Type */
 export const ButtonType = makeEnum({
@@ -30,7 +30,7 @@ export const ButtonType = makeEnum({
 });
 
 /** Type override */
-export type ButtonType = (typeof ButtonType)[keyof typeof ButtonType];
+export type ButtonType = typeof ButtonType[keyof typeof ButtonType];
 
 /** Absolute URL string */
 export const AbsoluteUrlString = t.string;
