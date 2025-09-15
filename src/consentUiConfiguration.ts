@@ -11,7 +11,7 @@ export const ModalButtonActions = makeEnum({
 });
 
 /** Type override */
-export type ModalButtonAction =
+export type ModalButtonActions =
   (typeof ModalButtonActions)[keyof typeof ModalButtonActions];
 
 /** All action types for buttons */
