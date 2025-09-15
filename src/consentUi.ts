@@ -1,26 +1,42 @@
 import * as t from 'io-ts';
 
+import { makeEnum } from '@transcend-io/type-utils';
+
+import { ThemeConfiguration } from './consentUiTheme';
+
 /**
  * Types representing the top-level consent UI configuration
  * Includes keys for regimes, variants, and themes
  */
 /** Key representing a specific regime */
-export type RegimeKey = t.string;
+export const RegimeKey = t.string;
+
+export type RegimeKey = t.TypeOf<typeof RegimeKey>;
 
 /** Key representing a specific consent UI variant */
-export type VariantKey = t.string;
+export const VariantKey = t.string;
+
+export type VariantKey = t.TypeOf<typeof VariantKey>;
 
 /** Key representing a specific theme */
-export type ThemeKey = t.string;
+export const ThemeKey = t.string;
+
+export type ThemeKey = t.TypeOf<typeof ThemeKey>;
 
 /** String that represents an integer value */
-export type IntegerString = t.string;
+export const IntegerString = t.string;
+
+export type IntegerString = t.TypeOf<typeof IntegerString>;
 
 /** String that represents a DOM element ID */
-export type DOMElementId = t.string;
+export const DOMElementId = t.string;
+
+export type DOMElementId = t.TypeOf<typeof DOMElementId>;
 
 /** String that represents a semicolon-delimited list of regime keys */
-export type SemicolonDelimitedRegimeKeyString = t.string;
+export const SemicolonDelimitedRegimeKeyString = t.string;
+
+export type SemicolonDelimitedRegimeKeyString = t.TypeOf<typeof SemicolonDelimitedRegimeKeyString>;
 
 /**
  * Autofocus toggle values ("on" / "off").
@@ -41,7 +57,9 @@ export type AutofocusToggle =
  * - `"on"` / `"off"`
  * - or a DOM element ID string
  */
-export type AutofocusValues = AutofocusToggle | DOMElementId;
+export const AutofocusValues = AutofocusToggle | DOMElementId;
+
+export type AutofocusValues = t.TypeOf<typeof AutofocusValues>;
 
 
 /** The top-level configuration for the consent UI */

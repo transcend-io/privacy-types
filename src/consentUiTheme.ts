@@ -1,5 +1,5 @@
 import * as t from 'io-ts';
-import { makeEnum } from '@transcend-io/type-utils';
+import { makeEnum, valuesOf } from '@transcend-io/type-utils';
 
 /**
  * Types representing the consent UI theme configuration
@@ -82,22 +82,32 @@ export type BreakpointType =
   (typeof BreakpointType)[keyof typeof BreakpointType];
 
 /** String that represents a CSS unit eg. px, em, etc. */
-export type CssUnitString = t.string;
+export const CssUnitString = t.string;
+
+/** Type override */
+export type CssUnitString = t.TypeOf<typeof CssUnitString>;
 
 /** 
  * String that represents an RGBA hex color (8-digit hex with alpha channel),
  * e.g. "#FFFFFFFF" (opaque white) or "#FF000080" (semi-transparent red).
  */
-export type RgbaHexString = t.string;
+export const RgbaHexString = t.string;
+
+export type RgbaHexString = t.TypeOf<typeof RgbaHexString>;
 
 /** 
  * String that represents an RGB hex color (6-digit hex without alpha channel),
  * e.g. "#FFFFFF" (white) or "#000000" (black).
  */
-export type RgbHexString = t.string;
+export const RgbHexString = t.string;
+
+export type RgbHexString = t.TypeOf<typeof RgbHexString>;
 
 /** Index of a button's theme */
-export type ButtonThemeIndex = t.number;
+export const ButtonThemeIndex = t.number;
+
+/** Override type */
+export type ButtonThemeIndex = t.TypeOf<typeof ButtonThemeIndex>;
 
 /** Represents background color configuration */
 export const Background = t.type({
@@ -188,7 +198,7 @@ export const DescriptionTextTheme = t.intersection([Text, Link]);
 export type DescriptionTextTheme = t.TypeOf<typeof DescriptionTextTheme>;
 
 /** Represents the configuration of the footer */
-export const FooterTheme = t.intersection([Background, localePickerColor: RgbHexString]);
+export const FooterTheme = t.intersection([Background, t.type({localePickerColor: RgbHexString})]);
 
 /** Override type */
 export type FooterTheme = t.TypeOf<typeof FooterTheme>;
@@ -220,7 +230,7 @@ export type ContentLayout = t.TypeOf<typeof ContentLayout>;
 
 /** Theme configuration for the toggle */
 export const ToggleTheme = t.intersection([
-  Text, Icon, enabledColor: RgbHexString, disabledColor: RgbHexString, knobColor: RgbHexString
+  Text, Icon, t.type({enabledColor: RgbHexString, disabledColor: RgbHexString, knobColor: RgbHexString,})
 ])
 
 /** Override type */
@@ -235,7 +245,7 @@ export const CommonLayerTheme = t.intersection([
       t.union([ButtonThemeIndex, t.undefined]),
     ]),
     container: ContainerTheme,
-    description: DescriptionTheme,
+    description: DescriptionTextTheme,
     footer: FooterTheme,
     alwaysShowScrollbar: t.boolean,
     horizontalAlign: valuesOf(HorizontalAlign),
@@ -273,7 +283,7 @@ export const SecondLayerTheme = t.intersection([
     caretIcon: Icon,
     cardTitle: Text,
     alwaysOnText: Text,
-    purposeDescription: DescriptionTheme,
+    purposeDescription: DescriptionTextTheme,
     purposeCard: ContainerTheme, // border color applies to dividers
     toggle: ToggleTheme,
     // lockToEdges is linked to horizontalAlign left/right. if left/right, this is forced to true. 
