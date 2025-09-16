@@ -182,7 +182,7 @@ export type ContainerTheme = t.TypeOf<typeof ContainerTheme>;
 /** Represents the header theme configuration */
 export const HeaderTheme = t.intersection([
   Text,
-  t.type({ logoPosition: LogoPosition }),
+  t.type({ logoPosition: valuesOf(LogoPosition) }),
 ]);
 
 /** Override type */
