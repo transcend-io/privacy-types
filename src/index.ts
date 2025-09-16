@@ -8,6 +8,7 @@ export * from './code';
 export * from './consentManager';
 export * from './consentUi';
 export * from './consentUiTheme';
+export * from './consentUiConfiguration';
 export * from './database';
 export * from './datapoint';
 export * from './enricher';
