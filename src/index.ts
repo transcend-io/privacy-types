@@ -6,6 +6,7 @@ export * from './attribute';
 export * from './browserTimeZones';
 export * from './code';
 export * from './consentManager';
+export * from './consentUiConfiguration';
 export * from './database';
 export * from './datapoint';
 export * from './enricher';
