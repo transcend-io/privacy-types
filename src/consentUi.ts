@@ -1,8 +1,10 @@
 import * as t from 'io-ts';
 
-import { makeEnum } from '@transcend-io/type-utils';
+import { makeEnum, valuesOf } from '@transcend-io/type-utils';
+import { LOCALE_KEY } from '@transcend-io/internationalization';
 
 import { ThemeConfiguration } from './consentUiTheme';
+import { AbsoluteUrlString, UIConfiguration } from './consentUiConfiguration';
 
 /**
  * Types representing the top-level consent UI configuration
@@ -65,7 +67,10 @@ export type AutofocusToggle =
  * - `"on"` / `"off"`
  * - or a DOM element ID string
  */
-export const AutofocusValues = t.union([AutofocusToggle, DOMElementId]);
+export const AutofocusValues = t.union([
+  valuesOf(AutofocusToggle),
+  DOMElementId,
+]);
 
 /** Override type */
 export type AutofocusValues = t.TypeOf<typeof AutofocusValues>;
@@ -75,19 +80,20 @@ export const LoadOptions = t.intersection([
   t.type({
     regimeVariantMap: t.record(RegimeKey, VariantKey),
     regimeAutoPromptMap: t.record(RegimeKey, t.boolean),
-    // variantConfigMap: t.record(VariantKey, UIConfiguration),
+    variantConfigMap: t.record(VariantKey, UIConfiguration),
+    variantThemeMap: t.record(VariantKey, ThemeKey),
     themeConfigMap: t.record(ThemeKey, ThemeConfiguration),
     autofocus: AutofocusValues,
     uiZIndex: IntegerString,
-    // css: AbsoluteUrlString,
+    css: AbsoluteUrlString,
     // If messageMap is not defined, messages will be fetched from `${messageFolder}/${localeKey}.json`
-    // messageFolder: AbsoluteUrlString,
+    messageFolder: AbsoluteUrlString,
     regimePrecedence: SemicolonDelimitedRegimeKeyString, // e.g. 'GDPR;CPRA;nFADP'
-    // supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
+    supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
   }),
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
-    // messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
+    messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
   }),
 ]);
 
