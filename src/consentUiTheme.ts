@@ -216,7 +216,7 @@ export type FooterTheme = t.TypeOf<typeof FooterTheme>;
 /** Defines how content should be padded and sized at different breakpoints */
 export const PaddedContentLayout = t.type({
   breakpoint: Breakpoint,
-  maxWidths: t.record(ContentFlows, CssUnitString),
+  maxWidths: t.record(valuesOf(ContentFlows), CssUnitString),
 });
 /** Override type */
 export type PaddedContentLayout = t.TypeOf<typeof PaddedContentLayout>;
@@ -265,7 +265,7 @@ export const CommonLayerTheme = t.intersection([
     footer: FooterTheme,
     alwaysShowScrollbar: t.boolean,
     horizontalAlign: valuesOf(HorizontalAlign),
-    cookieAndPrivacyPolicy: t.partial(Link),
+    cookieAndPrivacyPolicy: t.partial(Link.props),
   }),
   t.partial({
     background: Background,
