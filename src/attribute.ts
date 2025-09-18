@@ -57,7 +57,7 @@ export enum AttributeSupportedResourceType {
   /** Vendor table */
   Vendor = 'vendor',
   /** Workflow config table */
-  WorkflowConfig = 'workflowConfig'
+  WorkflowConfig = 'workflowConfig',
 }
 
 /**
