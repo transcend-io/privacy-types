@@ -1,5 +1,6 @@
 import * as t from 'io-ts';
 import { makeEnum, valuesOf } from '@transcend-io/type-utils';
+import { IsoCountryCode, IsoCountrySubdivisionCode } from './isoRegion';
 
 /**
  * Types of decryption status
@@ -228,6 +229,13 @@ export const PreferenceUpdateItem = t.intersection([
      * TODO: https://transcend.height.app/T-40208 - move this to `PreferenceStoreKeyConditionals` when stored on record
      */
     locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    /** Country and/or country subdivision, to pass along to DSR request */
+    region: t.partial({
+      /** The country ISO code */
+      country: IsoCountryCode,
+      /** The country subdivision ISO code */
+      countrySubDivision: IsoCountrySubdivisionCode,
+    }),
     /** The metadata associated with the record */
     metadata: t.array(
       t.type({
