@@ -232,9 +232,9 @@ export const PreferenceUpdateItem = t.intersection([
     /** Country and/or country subdivision, to pass along to DSR request */
     region: t.partial({
       /** The country ISO code */
-      country: IsoCountryCode,
+      country: valuesOf(IsoCountryCode),
       /** The country subdivision ISO code */
-      countrySubDivision: IsoCountrySubdivisionCode,
+      countrySubDivision: valuesOf(IsoCountrySubdivisionCode),
     }),
     /** The metadata associated with the record */
     metadata: t.array(
