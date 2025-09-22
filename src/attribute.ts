@@ -56,8 +56,6 @@ export enum AttributeSupportedResourceType {
   SubDataPoint = 'subDataPoint',
   /** Vendor table */
   Vendor = 'vendor',
-  /** Workflow config table */
-  WorkflowConfig = 'workflowConfig',
 }
 
 /**
