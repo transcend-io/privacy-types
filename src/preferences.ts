@@ -184,6 +184,13 @@ export const PreferenceStoreWorkflowSettings = t.partial({
   skipWaitingPeriod: t.boolean,
   /** if the workflow should be skipped */
   skipWorkflowTrigger: t.boolean,
+  /** Country and/or country subdivision, to pass along to DSR request */
+  region: t.partial({
+    /** The country ISO code */
+    country: valuesOf(IsoCountryCode),
+    /** The country subdivision ISO code */
+    countrySubDivision: valuesOf(IsoCountrySubdivisionCode),
+  }),
 });
 
 /** Override types. */
@@ -229,13 +236,6 @@ export const PreferenceUpdateItem = t.intersection([
      * TODO: https://transcend.height.app/T-40208 - move this to `PreferenceStoreKeyConditionals` when stored on record
      */
     locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
-    /** Country and/or country subdivision, to pass along to DSR request */
-    region: t.partial({
-      /** The country ISO code */
-      country: valuesOf(IsoCountryCode),
-      /** The country subdivision ISO code */
-      countrySubDivision: valuesOf(IsoCountrySubdivisionCode),
-    }),
     /** The metadata associated with the record */
     metadata: t.array(
       t.type({
