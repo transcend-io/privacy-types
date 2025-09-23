@@ -16,6 +16,8 @@ export const CODE_PACKAGE_TYPE_TO_LINK: {
   [CodePackageType.Gemfile]: (name) => `https://rubygems.org/gems/${name}`,
   [CodePackageType.ComposerJson]: (name) =>
     `https://packagist.org/packages/${name}`,
+  [CodePackageType.Kotlin]: (name) =>
+    `https://mvnrepository.com/artifact/${name.split(':').join('/')}`,
 };
 
 /**
