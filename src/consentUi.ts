@@ -91,7 +91,6 @@ export const ShadowRootOptions = makeEnum({
 export type ShadowRootOptions =
   typeof ShadowRootOptions[keyof typeof ShadowRootOptions];
 
-
 /** The top-level configuration for the consent UI */
 export const LoadOptions = t.intersection([
   t.type({
