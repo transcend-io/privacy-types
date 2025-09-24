@@ -75,6 +75,23 @@ export const AutofocusValues = t.union([
 /** Override type */
 export type AutofocusValues = t.TypeOf<typeof AutofocusValues>;
 
+/**
+ * Shadow root options ("open" / "closed" / "none").
+ */
+export const ShadowRootOptions = makeEnum({
+  /** Enable shadow root */
+  Open: 'open',
+  /** Disable shadow root */
+  Closed: 'closed',
+  /** Disable shadow root */
+  None: 'none',
+});
+
+/** Override type */
+export type ShadowRootOptions =
+  typeof ShadowRootOptions[keyof typeof ShadowRootOptions];
+
+
 /** The top-level configuration for the consent UI */
 export const LoadOptions = t.intersection([
   t.type({
@@ -90,6 +107,7 @@ export const LoadOptions = t.intersection([
     messageFolder: AbsoluteUrlString,
     regimePrecedence: SemicolonDelimitedRegimeKeyString, // e.g. 'GDPR;CPRA;nFADP'
     supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
+    uiShadowRoot: ShadowRootOptions,
   }),
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
