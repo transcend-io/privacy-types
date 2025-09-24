@@ -184,6 +184,8 @@ export const PreferenceStoreWorkflowSettings = t.partial({
   skipWaitingPeriod: t.boolean,
   /** if the workflow should be skipped */
   skipWorkflowTrigger: t.boolean,
+  /** Force trigger the workflow even when there was no concent/preference change */
+  forceTriggerWorkflow: t.boolean,
   /** Country and/or country subdivision, to pass along to DSR request */
   region: t.partial({
     /** The country ISO code */
