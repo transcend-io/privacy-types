@@ -15,6 +15,7 @@ export * from './enricher';
 export * from './getRegistryLink';
 export * from './identifier';
 export * from './isoConstants';
+export * from './sql';
 export * from './isoRegion';
 export * from './largeLanguageModels';
 export * from './macroregion';
