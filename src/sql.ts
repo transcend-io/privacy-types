@@ -4,6 +4,14 @@ import { RequestAction } from './actions';
 import { LOCALE_KEY } from '@transcend-io/internationalization';
 
 /**
+ * Allowed database variable formats
+ */
+export const DatabaseVariables = t.record(
+  t.string,
+  t.union([t.boolean, t.string, t.null, t.array(t.string)]),
+);
+
+/**
  * The supported variables when running SQL queries for a privacy request
  *
  * e.g. INSERT INTO table (id, type) VALUES (@requestId, @requestType);
@@ -48,7 +56,7 @@ export const DatabaseSqlVariablesForPrivacyRequest = t.intersection([
    * - consentPreference_<slug> - the consent preference value associated with consentPurpose change
    * - customField_<slug> - the custom field value associated with the request
    */
-  t.record(t.string, t.union([t.string, t.boolean, t.null])),
+  DatabaseVariables,
 ]);
 
 /**
