@@ -11,6 +11,9 @@ export const DatabaseVariables = t.record(
   t.union([t.boolean, t.string, t.null, t.array(t.string)]),
 );
 
+/** Override type */
+export type DatabaseVariables = t.TypeOf<typeof DatabaseVariables>;
+
 /**
  * The supported variables when running SQL queries for a privacy request
  *
