@@ -8,7 +8,7 @@ import { LOCALE_KEY } from '@transcend-io/internationalization';
  */
 export const DatabaseVariables = t.record(
   t.string,
-  t.union([t.boolean, t.string, t.null, t.array(t.string)]),
+  t.union([t.boolean, t.string, t.null, t.number, t.array(t.string)]),
 );
 
 /** Override type */
