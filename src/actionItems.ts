@@ -153,10 +153,6 @@ export enum ActionItemCode {
    */
   RequestAssignedToUser = 'REQUEST_ASSIGNED_TO_USER',
   /**
-   * a dataSilo that has less than 80% of discovered sub data points classified
-   */
-  DataSiloNeedsTraining = 'DATA_SILO_NEEDS_TRAINING',
-  /**
    * business entity needing documentation
    */
   BusinessEntityNeedsDocumentation = 'BUSINESS_ENTITY_NEEDS_DOCUMENTATION',
