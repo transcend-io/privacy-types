@@ -213,7 +213,7 @@ export const PreferenceStorePurposeUpdate = t.intersection([
     /** Consent workflow settings */
     workflowSettings: PreferenceStoreWorkflowSettings,
     /** Language to translate request to */
-    locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    locale: t.string, // Should be LOCALE_KEY but omitting to allow for sombra to update independently
   }),
 ]);
 
@@ -237,7 +237,7 @@ export const PreferenceUpdateItem = t.intersection([
      * Language to translate DSR processing
      * TODO: https://transcend.height.app/T-40208 - move this to `PreferenceStoreKeyConditionals` when stored on record
      */
-    locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    locale: t.string, // Should be LOCALE_KEY but omitting to allow for sombra to update independently
     /** The metadata associated with the record */
     metadata: t.array(
       t.type({
