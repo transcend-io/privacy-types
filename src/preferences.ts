@@ -12,7 +12,7 @@ export const DecryptionStatus = makeEnum({
 
 /** Type overrides */
 export type DecryptionStatus =
-  typeof DecryptionStatus[keyof typeof DecryptionStatus];
+  (typeof DecryptionStatus)[keyof typeof DecryptionStatus];
 
 /**
  * Preference store identifier
@@ -213,7 +213,7 @@ export const PreferenceStorePurposeUpdate = t.intersection([
     /** Consent workflow settings */
     workflowSettings: PreferenceStoreWorkflowSettings,
     /** Language to translate request to */
-    locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    locale: t.string, // Should be LOCALE_KEY but omitting to allow for sombra to update independently
   }),
 ]);
 
@@ -237,7 +237,7 @@ export const PreferenceUpdateItem = t.intersection([
      * Language to translate DSR processing
      * TODO: https://transcend.height.app/T-40208 - move this to `PreferenceStoreKeyConditionals` when stored on record
      */
-    locale: t.string, // Should be LanguageKey but omitting to allow for sombra to update independently
+    locale: t.string, // Should be LOCALE_KEY but omitting to allow for sombra to update independently
     /** The metadata associated with the record */
     metadata: t.array(
       t.type({
@@ -269,7 +269,7 @@ export const PreferenceTopicType = makeEnum({
 
 /** Override type */
 export type PreferenceTopicType =
-  typeof PreferenceTopicType[keyof typeof PreferenceTopicType];
+  (typeof PreferenceTopicType)[keyof typeof PreferenceTopicType];
 
 /**
  * The authentication level required for updating a purpose on preference store
@@ -282,4 +282,4 @@ export const PreferenceStoreAuthLevel = makeEnum({
 
 /** Override type */
 export type PreferenceStoreAuthLevel =
-  typeof PreferenceStoreAuthLevel[keyof typeof PreferenceStoreAuthLevel];
+  (typeof PreferenceStoreAuthLevel)[keyof typeof PreferenceStoreAuthLevel];
