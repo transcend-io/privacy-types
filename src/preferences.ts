@@ -12,7 +12,7 @@ export const DecryptionStatus = makeEnum({
 
 /** Type overrides */
 export type DecryptionStatus =
-  (typeof DecryptionStatus)[keyof typeof DecryptionStatus];
+  typeof DecryptionStatus[keyof typeof DecryptionStatus];
 
 /**
  * Preference store identifier
@@ -269,7 +269,7 @@ export const PreferenceTopicType = makeEnum({
 
 /** Override type */
 export type PreferenceTopicType =
-  (typeof PreferenceTopicType)[keyof typeof PreferenceTopicType];
+  typeof PreferenceTopicType[keyof typeof PreferenceTopicType];
 
 /**
  * The authentication level required for updating a purpose on preference store
@@ -282,4 +282,4 @@ export const PreferenceStoreAuthLevel = makeEnum({
 
 /** Override type */
 export type PreferenceStoreAuthLevel =
-  (typeof PreferenceStoreAuthLevel)[keyof typeof PreferenceStoreAuthLevel];
+  typeof PreferenceStoreAuthLevel[keyof typeof PreferenceStoreAuthLevel];
