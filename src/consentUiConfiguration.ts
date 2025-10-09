@@ -87,7 +87,7 @@ export const CommonLayerConfig = t.intersection([
   t.partial({
     logoImageUrl: AbsoluteUrlString,
     alphaMask: t.boolean,
-    showLanguagePicker: t.boolean,
+    showLocalePicker: t.boolean,
     footer: FooterConfig,
     links: t.array(AbsoluteUrlString),
   }),
