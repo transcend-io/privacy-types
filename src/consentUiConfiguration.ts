@@ -44,8 +44,8 @@ export const SharedTopLevelConfig = t.type({
   locales: t.array(valuesOf(LOCALE_KEY)),
   /** The transcend URL where the transcend logo links to */
   transcendUrl: AbsoluteUrlString,
-  /** The default language to use - must be one of the supported locales */
-  defaultLanguage: valuesOf(LOCALE_KEY),
+  /** The default locale to use - must be one of the supported locales */
+  defaultLocale: valuesOf(LOCALE_KEY),
 });
 
 /** Type override */
