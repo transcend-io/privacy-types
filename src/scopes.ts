@@ -97,6 +97,7 @@ export enum ScopeName {
   ManageWorkflows = 'manageWorkflows',
   ViewDataSubCategories = 'viewDataSubCategories',
   ManageDataSubCategories = 'manageDataSubCategories',
+  GeneratePreferenceAccessTokens = 'generatePreferenceAccessTokens',
 }
 
 /**
@@ -1001,6 +1002,16 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description: 'View Data Sub Categories from Data Inventory',
     type: ScopeType.View,
     products: [TranscendProduct.DataInventory],
+  },
+  [ScopeName.GeneratePreferenceAccessTokens]: {
+    title: 'Generate Preference Access Tokens',
+    dependencies: [],
+    description: 'Ability to generate access tokens for user preferences',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.PreferenceManagement,
+      TranscendProduct.PrivacyCenter,
+    ],
   },
 };
 
