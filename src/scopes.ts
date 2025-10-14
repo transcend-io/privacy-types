@@ -97,6 +97,7 @@ export enum ScopeName {
   ManageWorkflows = 'manageWorkflows',
   ViewDataSubCategories = 'viewDataSubCategories',
   ManageDataSubCategories = 'manageDataSubCategories',
+  GeneratePreferenceAccessTokens = 'generatePreferenceAccessTokens',
 }
 
 /**
