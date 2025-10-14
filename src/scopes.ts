@@ -1003,6 +1003,16 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     type: ScopeType.View,
     products: [TranscendProduct.DataInventory],
   },
+  [ScopeName.GeneratePreferenceAccessTokens]: {
+    title: 'Generate Preference Access Tokens',
+    dependencies: [],
+    description: 'Ability to generate access tokens for user preferences',
+    type: ScopeType.Modify,
+    products: [
+      TranscendProduct.PreferenceManagement,
+      TranscendProduct.PrivacyCenter,
+    ],
+  },
 };
 
 export const TRANSCEND_SCOPES: {
