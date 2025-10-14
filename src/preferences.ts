@@ -283,3 +283,15 @@ export const PreferenceStoreAuthLevel = makeEnum({
 /** Override type */
 export type PreferenceStoreAuthLevel =
   typeof PreferenceStoreAuthLevel[keyof typeof PreferenceStoreAuthLevel];
+
+/** The standard scopes which are used to access the Sombra APIs */
+export const SombraStandardScope = makeEnum({
+  /** Access to Preference Management APIs */
+  PreferenceManagement: 'preferenceManagement',
+  /** DSR Automation APIs */
+  DSRAutomation: 'dsrAutomation',
+});
+
+/** Type override */
+export type SombraStandardScope =
+  typeof SombraStandardScope[keyof typeof SombraStandardScope];
