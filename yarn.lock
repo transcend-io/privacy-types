@@ -377,10 +377,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@transcend-io/internationalization@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@transcend-io/internationalization@npm:2.2.0"
-  checksum: 10c0/224762ce0f2596586ab1c51fa2e85062c794040e946c72df6e84e2e507f6ea09a446ef3f18c39c468824aec599f24fc4324f9c44321659b9b0558516073498d5
+"@transcend-io/internationalization@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@transcend-io/internationalization@npm:2.3.0"
+  checksum: 10c0/3b32411d2bae0c4b7a63a52eca3103c164959b5a3075cf886ece81209d194983766398372e9be50a77ac8a0dbaf04733c55470ac4f20444b41fdd025454051b1
   languageName: node
   linkType: hard
 
@@ -388,7 +388,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@transcend-io/privacy-types@workspace:."
   dependencies:
-    "@transcend-io/internationalization": "npm:^2.2.0"
+    "@transcend-io/internationalization": "npm:^2.3.0"
     "@transcend-io/type-utils": "npm:^1.8.4"
     "@types/chai": "npm:^4.3.11"
     "@types/mocha": "npm:^10.0.6"
