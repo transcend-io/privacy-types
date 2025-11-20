@@ -252,6 +252,21 @@ export const PreferenceUpdateItem = t.intersection([
         value: t.union([t.string, t.null]),
       }),
     ),
+    /** Options to configure the upsert behavior */
+    options: t.partial({
+      /**
+       * Whether to merge consent records, if the any one of the
+       * identifiers in `identifiers` list is already associated to an existing record.
+       *
+       * If true, the consent record will be merged
+       *  combining the identifiers and consent details.
+       *
+       * If false, an error will be returned if a conflict is detected.
+       *
+       * Default: true
+       */
+      mergeRecordsOnConflict: t.boolean,
+    }),
   }),
 ]);
 
