@@ -403,7 +403,7 @@ export type DataSubCategoryAttributeSyncColumn =
  * correct subDataPoint column even if it changes.
  */
 type ProcessingPurposeSubCategoryAttributeImmutable =
-  | 'TITLE'
+  | 'NAME'
   | 'SLUG'
   | 'DESCRIPTION'
   | 'PURPOSE'
@@ -431,7 +431,7 @@ export const ProcessingPurposeSubCategoryAttributeSyncColumn = makeEnum<
   },
   ProcessingPurposeSubCategoryAttributeImmutable
 >({
-  name: 'TITLE',
+  name: 'NAME',
   slug: 'SLUG',
   description: 'DESCRIPTION',
   purpose: 'PURPOSE',
