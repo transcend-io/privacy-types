@@ -29,6 +29,8 @@ export enum CustomizableComponent {
   HeroBackground = 'heroBackground',
   /** Take control confirmation styles */
   TakeControlConfirmation = 'takeControlConfirmation',
+  /** Modal styles */
+  Modal = 'modal',
 }
 
 /**
@@ -115,6 +117,17 @@ export const OptionalConfigurableColorPaletteColor = makeEnum({
   BgAccent: 'bgAccent',
   /** Error color -- something went wrong */
   Error: 'error',
+  // /////////// //
+  // Base Colors //
+  // /////////// //
+  /** White color */
+  White: 'white',
+  /** Black color */
+  Black: 'black',
+  /** Light gray color */
+  Gray1: 'gray1',
+  /** Medium gray color */
+  Gray4: 'gray4',
 });
 
 /** Type override */
