@@ -29,6 +29,8 @@ export enum CustomizableComponent {
   HeroBackground = 'heroBackground',
   /** Take control confirmation styles */
   TakeControlConfirmation = 'takeControlConfirmation',
+  /** Modal styles */
+  Modal = 'modal',
 }
 
 /**
