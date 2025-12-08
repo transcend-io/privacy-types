@@ -120,6 +120,8 @@ export const AssessmentQuestionSubType = makeEnum({
   HasPersonalData: 'HAS_PERSONAL_DATA',
   /** The Attribute Key referring to a custom field */
   AttributeKey: 'ATTRIBUTE_KEY',
+  /** A sensitive category */
+  SensitiveCategory: 'SENSITIVE_CATEGORY',
 });
 
 /**
