@@ -701,6 +701,8 @@ export const AssessmentSyncModel = makeEnum({
   BusinessEntity: 'businessEntity',
   /** ProcessingActivity model */
   ProcessingActivity: 'processingActivity',
+  /** SensitiveCategory model */
+  SensitiveCategory: 'sensitiveCategory',
 });
 
 /** Type overrides */
