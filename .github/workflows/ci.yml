@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3.1.1
+      - uses: actions/setup-node@v6
         with:
           node-version: '22.18.0'
       - run: npm install -g "yarn@1.22.5"
@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 22.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
           node-version: 22.x
       - run: yarn
@@ -52,7 +52,7 @@ jobs:
           fetch-depth: 100 # need the history to do a changed files check below (source, origin)
       - uses: actions/setup-python@v2
       - name: Use Node.js 22.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
           node-version: 22.x
       - run: yarn
@@ -61,6 +61,10 @@ jobs:
   build-to-npm:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      packages: write
     needs:
       - run-mocha
       - run-depcheck
@@ -69,16 +73,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
           node-version: '22.x'
+      # See: https://docs.npmjs.com/trusted-publishers
+      # See: https://github.com/actions/setup-node/issues/1445
+      - name: Set npm to version that supports trusted publishers
+        run: npm install -g npm@11.5.1
+        shell: bash
       - run: yarn
-      - name: Configure NPM authentication
-        run: |
-          yarn config set npmAlwaysAuth true
-          yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
       - name: Publish to yarn/npm
-        run: yarn npm publish
+        run: NODE_AUTH_TOKEN="" yarn npm publish
 
   build-to-github-packages:
     if: github.ref == 'refs/heads/main'
@@ -91,7 +96,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
           node-version: '22.x'
       - run: yarn
