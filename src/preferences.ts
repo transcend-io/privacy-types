@@ -193,6 +193,10 @@ export const PreferenceStoreWorkflowSettings = t.partial({
     /** The country subdivision ISO code */
     countrySubDivision: valuesOf(IsoCountrySubdivisionCode),
   }),
+  /** Language to translate request to */
+  locale: t.string,
+  /** The data subject type associated with the request */
+  subjectType: t.string,
 });
 
 /** Override types. */
