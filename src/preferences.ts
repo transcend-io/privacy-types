@@ -197,6 +197,8 @@ export const PreferenceStoreWorkflowSettings = t.partial({
   locale: t.string,
   /** The data subject type associated with the request */
   subjectType: t.string,
+  /** The workflow's V2 configuration ID to use */
+  workflowConfigId: t.string,
 });
 
 /** Override types. */
