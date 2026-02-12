@@ -212,7 +212,8 @@ type SubDataPointAttributeImmutable =
   | 'DATA_TYPE'
   | 'ENCRYPTION'
   | 'IS_PRIMARY_KEY'
-  | 'METADATA';
+  | 'METADATA'
+  | 'SCHEDULING_PRIORITY';
 
 /**
  * The attributes of the SubDataPoint model.
@@ -241,6 +242,7 @@ export const SubDataPointAttribute = makeEnum({
   Encryption: 'encryption',
   IsPrimaryKey: 'isPrimaryKey',
   Metadata: 'metadata',
+  SchedulingPriority: 'schedulingPriority',
 });
 
 /** Type override */
@@ -275,6 +277,7 @@ export const SubDataPointAttributeSyncColumn = makeEnum<
   encryption: 'ENCRYPTION',
   isPrimaryKey: 'IS_PRIMARY_KEY',
   metadata: 'METADATA',
+  schedulingPriority: 'SCHEDULING_PRIORITY',
 });
 
 /** Type override */
