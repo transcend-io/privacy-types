@@ -30,6 +30,7 @@ export enum ScopeName {
   ManageAssignedDataInventory = 'managedAssignedDataInventory',
   ManageAssignedConsentManager = 'managedAssignedConsentManager',
   ManageAssignedRequests = 'managedAssignedRequests',
+  ManageAssignedBulkRespond = 'manageAssignedBulkRespond',
   ViewAssignedIntegrations = 'viewAssignedIntegrations',
   ViewAssignedDataInventory = 'viewAssignedDataInventory',
   ViewAssignedConsentManager = 'viewAssignedConsentManager',
@@ -395,6 +396,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Make changes to the compilation process of a request for requests assigned to your or your team. This involves changing the status of data silos in your Data Map, as well as editing profiles and files.', // eslint-disable-line max-len
     title: 'Manage Assigned Privacy Requests',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DsrAutomation],
+  },
+  [ScopeName.ManageAssignedBulkRespond]: {
+    dependencies: [ScopeName.ViewAssignedRequests],
+    description:
+      'Bulk respond to privacy requests assigned to you or your team.',
+    title: 'Manage Assigned Bulk Respond',
     type: ScopeType.Modify,
     products: [TranscendProduct.DsrAutomation],
   },
