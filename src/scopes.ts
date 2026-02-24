@@ -400,7 +400,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     products: [TranscendProduct.DsrAutomation],
   },
   [ScopeName.ManageAssignedBulkRespond]: {
-    dependencies: [ScopeName.ViewAssignedRequests],
+    dependencies: [],
     description:
       'Bulk respond to privacy requests assigned to you or your team.',
     title: 'Manage Assigned Bulk Respond',
