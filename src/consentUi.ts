@@ -110,8 +110,6 @@ export const LoadOptions = t.intersection([
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
     messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
-    /** @deprecated supportedLanguages is no longer used by the consent UI in favor of variant config locales */
-    supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
   }),
 ]);
 
