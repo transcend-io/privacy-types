@@ -105,12 +105,13 @@ export const LoadOptions = t.intersection([
     // If messageMap is not defined, messages will be fetched from `${messageFolder}/${localeKey}.json`
     messageFolder: AbsoluteUrlString,
     regimePrecedence: SemicolonDelimitedRegimeKeyString, // e.g. 'GDPR;CPRA;nFADP'
-    supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
     uiShadowRoot: valuesOf(ShadowRootOptions),
   }),
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
     messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
+    /** @deprecated supportedLanguages is no longer used by the consent UI */
+    supportedLanguages: t.array(valuesOf(LOCALE_KEY)),
   }),
 ]);
 
