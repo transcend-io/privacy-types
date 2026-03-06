@@ -106,6 +106,7 @@ export const LoadOptions = t.intersection([
     messageFolder: AbsoluteUrlString,
     regimePrecedence: SemicolonDelimitedRegimeKeyString, // e.g. 'GDPR;CPRA;nFADP'
     uiShadowRoot: valuesOf(ShadowRootOptions),
+    forceTheme: ThemeKey,
   }),
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
