@@ -110,6 +110,7 @@ export const LoadOptions = t.intersection([
   t.partial({
     // if message map is defined, it will be used to retrieve localized messages
     messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
+    forceTheme: ThemeKey,
   }),
 ]);
 
