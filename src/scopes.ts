@@ -103,7 +103,7 @@ export enum ScopeName {
   ManageRules = 'manageRules',
   ViewAssignedRules = 'viewAssignedRules',
   ManageAssignedRules = 'manageAssignedRules',
-  ExecuteRules = 'executeRules'
+  ExecuteRules = 'executeRules',
 }
 
 /**
@@ -1031,16 +1031,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     [ScopeName.ViewRules]: {
     title: 'View Rules',
     dependencies: [],
-    description:
-      'View rules, their triggers, actions, and execution history.',
+    description: 'View rules, their triggers, actions, and execution history.',
     type: ScopeType.View,
     products: [TranscendProduct.RulesAutomation],
   },
   [ScopeName.ManageRules]: {
     title: 'Manage Rules',
     dependencies: [ScopeName.ViewRules],
-    description:
-      'Create, update, and delete rules and their configurations.',
+    description: 'Create, update, and delete rules and their configurations.',
     type: ScopeType.Modify,
     products: [TranscendProduct.RulesAutomation],
   },
@@ -1054,8 +1052,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
   [ScopeName.ManageAssignedRules]: {
     title: 'Manage Assigned Rules',
     dependencies: [ScopeName.ViewAssignedRules],
-    description:
-      'Manage and edit rules assigned to you or your team.',
+    description: 'Manage and edit rules assigned to you or your team.',
     type: ScopeType.Modify,
     products: [TranscendProduct.RulesAutomation],
   },
