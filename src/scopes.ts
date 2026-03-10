@@ -1028,7 +1028,7 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.PrivacyCenter,
     ],
   },
-    [ScopeName.ViewRules]: {
+  [ScopeName.ViewRules]: {
     title: 'View Rules',
     dependencies: [],
     description: 'View rules, their triggers, actions, and execution history.',
