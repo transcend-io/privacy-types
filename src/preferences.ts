@@ -252,7 +252,7 @@ export const PreferenceUpdateItem = t.intersection([
         value: t.union([t.string, t.null]),
       }),
     ),
-    /** User birthdate (ISO 8601 date YYYY-MM-DD). Optional; used for age-gating and native birthdate flows. */
+    /** User birthdate. Optional. Accepted formats: YYYY-MM-DD, YYYY-MM, or MM-YYYY. Format enforcement is in the main repo. */
     birthDate: t.string,
   }),
 ]);
