@@ -193,6 +193,12 @@ export const PreferenceStoreWorkflowSettings = t.partial({
     /** The country subdivision ISO code */
     countrySubDivision: valuesOf(IsoCountrySubdivisionCode),
   }),
+  /** Language to translate request to */
+  locale: t.string,
+  /** The data subject type associated with the request */
+  subjectType: t.string,
+  /** The workflow's V2 configuration ID to use */
+  workflowConfigId: t.string,
 });
 
 /** Override types. */
@@ -254,6 +260,21 @@ export const PreferenceUpdateItem = t.intersection([
     ),
     /** User birthdate. Optional. Accepted formats: YYYY-MM-DD, YYYY-MM, or MM-YYYY. Format enforcement is in the main repo. */
     birthDate: t.string,
+    /** Options to configure the upsert behavior */
+    options: t.partial({
+      /**
+       * Whether to merge consent records, if the any one of the
+       * identifiers in `identifiers` list is already associated to an existing record.
+       *
+       * If true, the consent record will be merged
+       *  combining the identifiers and consent details.
+       *
+       * If false, an error will be returned if a conflict is detected.
+       *
+       * Default: true
+       */
+      mergeRecordsOnConflict: t.boolean,
+    }),
   }),
 ]);
 

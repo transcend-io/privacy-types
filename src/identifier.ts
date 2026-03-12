@@ -99,6 +99,8 @@ export const IdentifierType = makeEnum({
   AdobeExperienceCloudId: 'adobeExperienceCloudId',
   /** Adobe Target ID */
   AdobeTargetID: 'adobeTargetId',
+  /** The special Transcend identifier on consent preference records */
+  Transcend: 'transcend',
 });
 
 /**

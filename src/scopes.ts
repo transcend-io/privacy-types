@@ -30,6 +30,7 @@ export enum ScopeName {
   ManageAssignedDataInventory = 'managedAssignedDataInventory',
   ManageAssignedConsentManager = 'managedAssignedConsentManager',
   ManageAssignedRequests = 'managedAssignedRequests',
+  ManageAssignedBulkRespond = 'manageAssignedBulkRespond',
   ViewAssignedIntegrations = 'viewAssignedIntegrations',
   ViewAssignedDataInventory = 'viewAssignedDataInventory',
   ViewAssignedConsentManager = 'viewAssignedConsentManager',
@@ -98,6 +99,11 @@ export enum ScopeName {
   ViewDataSubCategories = 'viewDataSubCategories',
   ManageDataSubCategories = 'manageDataSubCategories',
   GeneratePreferenceAccessTokens = 'generatePreferenceAccessTokens',
+  ViewRules = 'viewRules',
+  ManageRules = 'manageRules',
+  ViewAssignedRules = 'viewAssignedRules',
+  ManageAssignedRules = 'manageAssignedRules',
+  ExecuteRules = 'executeRules',
 }
 
 /**
@@ -130,6 +136,7 @@ export enum TranscendProduct {
   StructuredDiscovery = 'STRUCTURED_DISCOVERY',
   UnstructuredDiscovery = 'UNSTRUCTURED_DISCOVERY',
   DataLineage = 'DATA_LINEAGE',
+  RulesAutomation = 'RULES_AUTOMATION',
 }
 
 /**
@@ -395,6 +402,14 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
     description:
       'Make changes to the compilation process of a request for requests assigned to your or your team. This involves changing the status of data silos in your Data Map, as well as editing profiles and files.', // eslint-disable-line max-len
     title: 'Manage Assigned Privacy Requests',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.DsrAutomation],
+  },
+  [ScopeName.ManageAssignedBulkRespond]: {
+    dependencies: [],
+    description:
+      'Bulk respond to privacy requests assigned to you or your team.',
+    title: 'Manage Assigned Bulk Respond',
     type: ScopeType.Modify,
     products: [TranscendProduct.DsrAutomation],
   },
@@ -1012,6 +1027,41 @@ const SCOPES_WITHOUT_VIEW_ONLY: {
       TranscendProduct.PreferenceManagement,
       TranscendProduct.PrivacyCenter,
     ],
+  },
+  [ScopeName.ViewRules]: {
+    title: 'View Rules',
+    dependencies: [],
+    description: 'View rules, their triggers, actions, and execution history.',
+    type: ScopeType.View,
+    products: [TranscendProduct.RulesAutomation],
+  },
+  [ScopeName.ManageRules]: {
+    title: 'Manage Rules',
+    dependencies: [ScopeName.ViewRules],
+    description: 'Create, update, and delete rules and their configurations.',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.RulesAutomation],
+  },
+  [ScopeName.ViewAssignedRules]: {
+    title: 'View Assigned Rules',
+    dependencies: [],
+    description: 'View rules assigned to you or your team.',
+    type: ScopeType.View,
+    products: [TranscendProduct.RulesAutomation],
+  },
+  [ScopeName.ManageAssignedRules]: {
+    title: 'Manage Assigned Rules',
+    dependencies: [ScopeName.ViewAssignedRules],
+    description: 'Manage and edit rules assigned to you or your team.',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.RulesAutomation],
+  },
+  [ScopeName.ExecuteRules]: {
+    title: 'Execute Rules',
+    dependencies: [ScopeName.ViewRules],
+    description: 'Trigger rule execution and view the outputs.',
+    type: ScopeType.Modify,
+    products: [TranscendProduct.RulesAutomation],
   },
 };
 

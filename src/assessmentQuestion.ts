@@ -212,7 +212,8 @@ type SubDataPointAttributeImmutable =
   | 'DATA_TYPE'
   | 'ENCRYPTION'
   | 'IS_PRIMARY_KEY'
-  | 'METADATA';
+  | 'METADATA'
+  | 'SCHEDULING_PRIORITY';
 
 /**
  * The attributes of the SubDataPoint model.
@@ -241,6 +242,7 @@ export const SubDataPointAttribute = makeEnum({
   Encryption: 'encryption',
   IsPrimaryKey: 'isPrimaryKey',
   Metadata: 'metadata',
+  SchedulingPriority: 'schedulingPriority',
 });
 
 /** Type override */
@@ -275,6 +277,7 @@ export const SubDataPointAttributeSyncColumn = makeEnum<
   encryption: 'ENCRYPTION',
   isPrimaryKey: 'IS_PRIMARY_KEY',
   metadata: 'METADATA',
+  schedulingPriority: 'SCHEDULING_PRIORITY',
 });
 
 /** Type override */
@@ -403,7 +406,7 @@ export type DataSubCategoryAttributeSyncColumn =
  * correct subDataPoint column even if it changes.
  */
 type ProcessingPurposeSubCategoryAttributeImmutable =
-  | 'TITLE'
+  | 'NAME'
   | 'SLUG'
   | 'DESCRIPTION'
   | 'PURPOSE'
@@ -431,7 +434,7 @@ export const ProcessingPurposeSubCategoryAttributeSyncColumn = makeEnum<
   },
   ProcessingPurposeSubCategoryAttributeImmutable
 >({
-  name: 'TITLE',
+  name: 'NAME',
   slug: 'SLUG',
   description: 'DESCRIPTION',
   purpose: 'PURPOSE',
@@ -679,6 +682,7 @@ export const AssessmentSyncColumn = makeEnum<
   DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS:
     'DATA_PROTECTION_IMPACT_ASSESSMENT_STATUS',
   METADATA: 'METADATA',
+  SCHEDULING_PRIORITY: 'SCHEDULING_PRIORITY',
 });
 
 /** Type override */
