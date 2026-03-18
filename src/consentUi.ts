@@ -111,6 +111,8 @@ export const LoadOptions = t.intersection([
     // if message map is defined, it will be used to retrieve localized messages
     messageMap: t.record(valuesOf(LOCALE_KEY), AbsoluteUrlString),
     forceTheme: ThemeKey,
+    // if cssFolder is defined, per-theme CSS will be fetched from `${cssFolder}/${themeKey}.css`
+    cssFolder: AbsoluteUrlString,
   }),
 ]);
 
